@@ -31,7 +31,7 @@ Deno.serve(async (req) => {
     return json({ error: "ANTHROPIC_API_KEY is not configured on the server" }, 500);
   }
 
-  let prompt: unknown, max_tokens = 1000, model = "claude-sonnet-4-20250514";
+  let prompt: unknown, max_tokens = 2000, model = "claude-sonnet-5";
   try {
     const body = await req.json();
     prompt = body?.prompt;
@@ -60,6 +60,10 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         model,
         max_tokens,
+        // Recipe generation is pure JSON extraction — no reasoning needed.
+        // Sonnet 5 runs adaptive thinking by default; disable it so the whole
+        // token budget goes to the recipe and latency/cost stay low.
+        thinking: { type: "disabled" },
         messages: [{ role: "user", content: prompt }],
       }),
     });
