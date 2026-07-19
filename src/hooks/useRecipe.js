@@ -1,5 +1,6 @@
 import { useState, useCallback, useRef } from "react";
 import { supabase } from "../lib/supabase";
+import { callClaude } from "../lib/claude";
 import { toPalatePrompt } from "./usePalate";
 
 // localStorage key for a given recipe
@@ -98,25 +99,7 @@ Format your response as JSON only, no markdown, no backticks. Use this exact str
   "leftoversUse": "One sentence on how to use leftovers tomorrow"
 }`;
 
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": import.meta.env.VITE_ANTHROPIC_API_KEY,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true",
-    },
-    body: JSON.stringify({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1000,
-      messages: [{ role: "user", content: prompt }],
-    }),
-  });
-
-  const data = await res.json();
-  const text = data.content?.find((b) => b.type === "text")?.text ?? "";
-  const clean = text.replace(/```json|```/g, "").trim();
-  const recipe = JSON.parse(clean);
+  const recipe = await callClaude(prompt);
   recipe._source = "api";
   return recipe;
 }

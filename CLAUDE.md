@@ -23,13 +23,17 @@ npm run lint       # ESLint
 - React 18 with hooks
 - Vite
 - Plain CSS-in-JS (inline styles, no Tailwind, no CSS modules)
-- Anthropic API for recipe generation (claude-sonnet-4-20250514)
-- No backend — all client-side
+- Anthropic API for recipe generation (claude-sonnet-4-20250514), proxied through
+  a Supabase Edge Function so the API key stays server-side (never in the client bundle)
+- Supabase (Postgres recipe library + Edge Functions)
 
 ## Architecture
 
 - `src/data/chains.js` — single source of truth for all meal data
-- `src/hooks/useRecipe.js` — handles API calls and in-memory recipe caching
+- `src/hooks/useRecipe.js` — tiered recipe loading (Supabase → localStorage → AI) + caching
+- `src/lib/claude.js` — client helper; calls the Edge Function (never Anthropic directly)
+- `supabase/functions/recipe/` — Deno Edge Function that proxies Anthropic with the
+  server-side `ANTHROPIC_API_KEY` secret. See `supabase/functions/README.md` to deploy.
 - `src/components/RecipeCalendar.jsx` — main calendar UI
 - `src/components/RecipePanel.jsx` — recipe detail panel
 - Recipes are cached in React state (no localStorage, no backend)
