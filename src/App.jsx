@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { callClaude } from "./lib/claude";
-import { chains } from "./data/chains";
+import { chains, mealId } from "./data/chains";
+import { useRecipe } from "./hooks/useRecipe";
 
 const CUISINE_META = {
   Mexican:  { color: "#e84040", flag: "🇲🇽" },
@@ -13,62 +13,30 @@ const CUISINE_META = {
   American: { color: "#94a3b8", flag: "🇺🇸" },
 };
 
-async function fetchRecipe(meal, cuisine) {
-  const prompt = `You are a frugal home cook expert. Give a complete recipe for "${meal}" (${cuisine} cuisine).
-
-Format your response as JSON only, no markdown, no backticks. Use this exact structure:
-{
-  "description": "2-sentence description of the dish",
-  "servings": "4",
-  "prepTime": "15 min",
-  "cookTime": "45 min",
-  "passiveTip": "one sentence on what to do while it cooks (if it's a slow cook)",
-  "ingredients": [
-    {"amount": "2", "unit": "lbs", "item": "chicken thighs"},
-    ...
-  ],
-  "steps": [
-    {"n": 1, "title": "Short title", "text": "Full instruction."},
-    ...
-  ],
-  "frugalTips": ["tip 1", "tip 2"],
-  "leftoversUse": "One sentence on how to use leftovers tomorrow"
-}`;
-
-  return callClaude(prompt);
-}
+// Every meal flattened once, carrying its chain id + stable meal_id.
+const FLAT_DAYS = chains.flatMap((c) =>
+  c.days.map((d) => ({ ...d, chainId: c.id, mealId: mealId(c.id, d.day) })),
+);
 
 export default function App() {
   const [openChain, setOpenChain] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
-  const [recipes, setRecipes] = useState({});
-  const [loading, setLoading] = useState({});
+  const { getRecipe, loadRecipe } = useRecipe();
 
   const selDayData = selectedDay
-    ? chains.flatMap(c => c.days).find(d => d.day === selectedDay)
+    ? FLAT_DAYS.find(d => d.day === selectedDay)
     : null;
-
-  async function loadRecipe(day) {
-    if (recipes[day] || loading[day]) return;
-    setLoading(l => ({ ...l, [day]: true }));
-    try {
-      const d = chains.flatMap(c => c.days).find(x => x.day === day);
-      const recipe = await fetchRecipe(d.meal, d.cuisine);
-      setRecipes(r => ({ ...r, [day]: recipe }));
-    } catch (e) {
-      setRecipes(r => ({ ...r, [day]: { error: "Could not load recipe. Try again." } }));
-    }
-    setLoading(l => ({ ...l, [day]: false }));
-  }
 
   function selectDay(day) {
     if (selectedDay === day) { setSelectedDay(null); return; }
     setSelectedDay(day);
-    loadRecipe(day);
+    const dd = FLAT_DAYS.find(d => d.day === day);
+    if (dd) loadRecipe(dd.mealId, dd.meal, dd.cuisine);
   }
 
-  const recipe = selectedDay ? recipes[selectedDay] : null;
-  const isLoading = selectedDay ? loading[selectedDay] : false;
+  const current = selDayData ? getRecipe(selDayData.mealId) : null;
+  const isLoading = !!current?.loading;
+  const recipe = current && !current.loading ? current : null;
   const cm = selDayData ? CUISINE_META[selDayData.cuisine] : null;
 
   return (
@@ -116,8 +84,9 @@ export default function App() {
                     {chain.days.map((d, i) => {
                       const dcm = CUISINE_META[d.cuisine];
                       const isSel = selectedDay === d.day;
-                      const hasRecipe = !!recipes[d.day];
-                      const isLd = loading[d.day];
+                      const entry = getRecipe(mealId(chain.id, d.day));
+                      const isLd = !!entry?.loading;
+                      const hasRecipe = !!entry && !entry.loading && !entry.error;
                       return (
                         <div key={d.day} onClick={() => selectDay(d.day)} style={{
                           display:"flex", alignItems:"center", gap:"10px",
