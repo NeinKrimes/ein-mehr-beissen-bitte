@@ -3,6 +3,8 @@
 // Supabase secret and is NEVER shipped to the browser bundle. The client calls
 // this function via supabase.functions.invoke("recipe", { body: { prompt } }).
 
+import { SYSTEM_PROMPT } from "./prompt.js";
+
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
 
 const corsHeaders = {
@@ -64,6 +66,11 @@ Deno.serve(async (req) => {
         // Sonnet 5 runs adaptive thinking by default; disable it so the whole
         // token budget goes to the recipe and latency/cost stay low.
         thinking: { type: "disabled" },
+        // Shared frugal / WFH / anchor framing + JSON+nutrition output shape.
+        // Cached so the (large, stable) prompt is paid for once across calls.
+        system: [
+          { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+        ],
         messages: [{ role: "user", content: prompt }],
       }),
     });
