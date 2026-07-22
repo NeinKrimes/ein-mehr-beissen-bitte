@@ -120,6 +120,21 @@ export function useRecipe() {
     return cache.current[mealId] ?? null;
   }, []);
 
+  // Prime the whole seeded library in one read so cost/calorie badges and the
+  // shopping list have data without clicking each meal. Zero Anthropic calls.
+  const preloadLibrary = useCallback(async () => {
+    const { data, error } = await supabase.from("recipes").select("*");
+    if (error || !data) return;
+    let added = false;
+    for (const row of data) {
+      if (!cache.current[row.meal_id]) {
+        cache.current[row.meal_id] = fromSupabaseRow(row);
+        added = true;
+      }
+    }
+    if (added) forceRender((n) => n + 1);
+  }, []);
+
   const loadRecipe = useCallback(async (mealId, meal, cuisine, palate) => {
     // Already in flight or loaded
     if (cache.current[mealId]) return;
@@ -157,5 +172,5 @@ export function useRecipe() {
     forceRender((n) => n + 1);
   }, []);
 
-  return { getRecipe, loadRecipe, clearRecipe };
+  return { getRecipe, loadRecipe, clearRecipe, preloadLibrary };
 }

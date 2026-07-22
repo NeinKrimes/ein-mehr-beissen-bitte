@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { chains, mealId } from "./data/chains";
 import { useRecipe } from "./hooks/useRecipe";
+import ShoppingList from "./components/ShoppingList";
 
 const CUISINE_META = {
   Mexican:  { color: "#e84040", flag: "🇲🇽" },
@@ -21,7 +22,12 @@ const FLAT_DAYS = chains.flatMap((c) =>
 export default function App() {
   const [openChain, setOpenChain] = useState(null);
   const [selectedDay, setSelectedDay] = useState(null);
-  const { getRecipe, loadRecipe } = useRecipe();
+  const [showShopping, setShowShopping] = useState(false);
+  const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
+
+  // Prime the seeded library once so cost/calorie badges + the shopping list
+  // have data on first paint (single DB read, no AI calls).
+  useEffect(() => { preloadLibrary(); }, [preloadLibrary]);
 
   const selDayData = selectedDay
     ? FLAT_DAYS.find(d => d.day === selectedDay)
@@ -51,6 +57,11 @@ export default function App() {
         <p style={{ color:"#555", fontSize:"12px", margin:0, fontStyle:"italic" }}>
           Tap any meal to generate a full recipe with ingredients & steps
         </p>
+        <button onClick={() => setShowShopping(true)} style={{
+          marginTop:"12px", background:"#161620", border:"1px solid #2a2a3a", color:"#e8a020",
+          cursor:"pointer", padding:"6px 14px", borderRadius:"6px", fontSize:"12px",
+          fontFamily:"inherit", letterSpacing:"1px",
+        }}>🛒 Weekly shopping list</button>
       </div>
 
       <div style={{ display:"flex", flex:1, overflow:"hidden", flexDirection: selectedDay ? "row" : "column" }}>
@@ -109,8 +120,13 @@ export default function App() {
                           </div>
                           <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-end", gap:"2px" }}>
                             <span style={{ fontSize:"10px", color:"#e8a020" }}>{d.cost}</span>
+                            {hasRecipe && Number.isFinite(Number(entry.est_cost_usd)) && (
+                              <span style={{ fontSize:"9px", color:"#22c55e" }}>${Number(entry.est_cost_usd).toFixed(2)}/serv</span>
+                            )}
+                            {hasRecipe && Number.isFinite(Number(entry.cal_per_dollar)) && (
+                              <span style={{ fontSize:"9px", color:"#888" }}>{Math.round(entry.cal_per_dollar)} cal/$</span>
+                            )}
                             {isLd && <span style={{ fontSize:"9px", color:"#555" }}>loading…</span>}
-                            {hasRecipe && !isLd && <span style={{ fontSize:"9px", color:"#22c55e" }}>✓ ready</span>}
                           </div>
                         </div>
                       );
@@ -164,6 +180,27 @@ export default function App() {
                     </div>
                   ))}
                 </div>
+
+                {/* Cost & nutrition badges (frugal core) */}
+                {(() => {
+                  const badges = [
+                    Number.isFinite(Number(recipe.est_cost_usd)) && ["$/serving", `$${Number(recipe.est_cost_usd).toFixed(2)}`],
+                    Number.isFinite(Number(recipe.cal_per_dollar)) && ["cal / $", `${Math.round(recipe.cal_per_dollar)}`],
+                    Number.isFinite(Number(recipe.calories)) && ["Calories", `${recipe.calories}`],
+                    Number.isFinite(Number(recipe.protein_g)) && ["Protein", `${recipe.protein_g} g`],
+                  ].filter(Boolean);
+                  if (!badges.length) return null;
+                  return (
+                    <div style={{ display:"flex", gap:"10px", flexWrap:"wrap", marginBottom:"20px" }}>
+                      {badges.map(([k,v]) => (
+                        <div key={k} style={{ background:"#0f140f", border:"1px solid #1e2a1e", borderRadius:"6px", padding:"8px 14px", textAlign:"center" }}>
+                          <div style={{ fontSize:"9px", color:"#4a6a4a", letterSpacing:"2px", textTransform:"uppercase", marginBottom:"2px" }}>{k}</div>
+                          <div style={{ fontSize:"13px", color:"#22c55e" }}>{v}</div>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })()}
 
                 {/* Passive tip */}
                 {recipe.passiveTip && (
@@ -239,6 +276,14 @@ export default function App() {
           </div>
         )}
       </div>
+
+      {showShopping && (
+        <ShoppingList
+          flatDays={FLAT_DAYS}
+          getRecipe={getRecipe}
+          onClose={() => setShowShopping(false)}
+        />
+      )}
     </div>
   );
 }
