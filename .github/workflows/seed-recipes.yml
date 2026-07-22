@@ -1,0 +1,30 @@
+name: Seed recipes
+
+# Secrets required (repo Settings → Secrets and variables → Actions):
+#   ANTHROPIC_API_KEY
+#   SUPABASE_URL
+#   SUPABASE_SERVICE_ROLE_KEY
+#
+# The seed is idempotent (content_hash-gated), so this just backfills
+# missing/changed recipes into the Supabase library.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run seed
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
