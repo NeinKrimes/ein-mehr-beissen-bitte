@@ -4,10 +4,14 @@ import { callClaude } from "../lib/claude";
 import { toPalatePrompt } from "./usePalate";
 
 // Tiered recipe loader keyed by a stable meal_id ("<chainId>-d<day>"):
-//   1. Supabase `recipes` library (primary — hits for all 30 seeded core meals)
+//   1. Supabase `meal_library` table (primary — hits for all 30 seeded core meals)
 //   2. in-memory / localStorage cache
 //   3. on-demand Edge Function generation (fallback ONLY — meals not in the DB)
 // Once the DB is seeded, tier 1 answers every core meal with zero Anthropic calls.
+//
+// NOTE: the table is `meal_library`, not `recipes` — EBBM2 already has an unrelated
+// normalized `recipes` table, so this app keeps its flat library under its own name.
+const LIBRARY_TABLE = "meal_library";
 
 function lsKey(mealId) {
   return `embb_recipe::${mealId}`;
@@ -57,7 +61,7 @@ function fromSupabaseRow(row) {
 
 async function fetchFromSupabase(mealId) {
   const { data, error } = await supabase
-    .from("recipes")
+    .from(LIBRARY_TABLE)
     .select("*")
     .eq("meal_id", mealId)
     .maybeSingle();
@@ -105,7 +109,7 @@ async function persistToSupabase(mealId, meal, cuisine, recipe) {
     est_cost_usd: Number(recipe.est_cost_usd) || null,
   };
   try {
-    await supabase.from("recipes").upsert(row, { onConflict: "meal_id" });
+    await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_id" });
   } catch {
     // Expected under anon RLS — localStorage already holds it for this browser.
   }
@@ -123,7 +127,7 @@ export function useRecipe() {
   // Prime the whole seeded library in one read so cost/calorie badges and the
   // shopping list have data without clicking each meal. Zero Anthropic calls.
   const preloadLibrary = useCallback(async () => {
-    const { data, error } = await supabase.from("recipes").select("*");
+    const { data, error } = await supabase.from(LIBRARY_TABLE).select("*");
     if (error || !data) return;
     let added = false;
     for (const row of data) {

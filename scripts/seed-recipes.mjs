@@ -132,7 +132,7 @@ async function main() {
 
   // 1. Which meals are already up to date?
   const { data: existing, error: readErr } = await supabase
-    .from("recipes")
+    .from("meal_library")
     .select("meal_id, content_hash");
   if (readErr) {
     console.error("Failed to read existing recipes:", readErr.message);
@@ -200,7 +200,7 @@ async function main() {
     }
 
     const { error: upsertErr } = await supabase
-      .from("recipes")
+      .from("meal_library")
       .upsert(row, { onConflict: "meal_id" });
     if (upsertErr) {
       failed++;
