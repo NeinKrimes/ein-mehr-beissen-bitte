@@ -1,0 +1,22 @@
+# Caddy site config for Ein Mehr Beissen Bitte (static Vite SPA).
+# Lives on the Hetzner server at /etc/caddy/Caddyfile.
+#
+# Replace embb.example.com with your domain. Its A record (and AAAA if you use
+# IPv6) must point at the server's IP *before* reloading Caddy — Caddy fetches a
+# Let's Encrypt cert automatically on first request.
+#
+# No domain yet? Replace the domain line with `:80` to serve over plain HTTP on
+# the IP (no TLS), or `https://` with `tls internal` for a self-signed cert.
+
+embb.example.com {
+	root * /var/www/embb
+	encode zstd gzip
+
+	# Vite fingerprints asset filenames, so they can cache hard.
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=31536000, immutable"
+
+	# SPA fallback: unknown paths return index.html (fresh, no cache).
+	try_files {path} /index.html
+	file_server
+}
