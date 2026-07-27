@@ -109,7 +109,7 @@ async function persistToSupabase(mealId, meal, cuisine, recipe) {
     est_cost_usd: Number(recipe.est_cost_usd) || null,
   };
   try {
-    await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_id" });
+    await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_name,cuisine" });
   } catch {
     // Expected under anon RLS — localStorage already holds it for this browser.
   }

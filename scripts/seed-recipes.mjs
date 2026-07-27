@@ -201,7 +201,7 @@ async function main() {
 
     const { error: upsertErr } = await supabase
       .from("meal_library")
-      .upsert(row, { onConflict: "meal_id" });
+      .upsert(row, { onConflict: "meal_name,cuisine" });
     if (upsertErr) {
       failed++;
       console.warn(`  ✗ ${result.custom_id}: upsert — ${upsertErr.message}`);

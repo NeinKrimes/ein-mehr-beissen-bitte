@@ -52,6 +52,7 @@ alter table public.recipes add column if not exists est_cost_usd   numeric;
 
 create index if not exists recipes_meal_id_idx      on public.recipes (meal_id);
 create index if not exists recipes_content_hash_idx on public.recipes (content_hash);
+create unique index if not exists recipes_meal_name_cuisine_idx on public.recipes (meal_name, cuisine);
 
 -- Keep updated_at fresh on every write.
 create or replace function public.set_updated_at()
