@@ -128,6 +128,7 @@ export default function App() {
         <RecipePage
           meal={openMeal}
           entry={getRecipe(openMeal.mealId)}
+          palate={palate}
           onClose={() => setOpenDay(null)}
         />
       )}
