@@ -49,6 +49,7 @@ create table if not exists public.meal_library (
 
 create index if not exists meal_library_meal_id_idx      on public.meal_library (meal_id);
 create index if not exists meal_library_content_hash_idx on public.meal_library (content_hash);
+create unique index if not exists meal_library_meal_name_cuisine_idx on public.meal_library (meal_name, cuisine);
 
 -- Keep updated_at fresh on every write (reuse a shared trigger fn).
 create or replace function public.set_updated_at()

@@ -115,6 +115,41 @@ async function fetchFromAPI(mealId, meal, cuisine, palate) {
   return recipe;
 }
 
+// Best-effort write-back of a fallback recipe so it's free next time.
+// NOTE: RLS restricts `recipes` writes to the service role, so this succeeds only
+// under a privileged context — under the anon client it no-ops. localStorage
+// (tier 2) is the reliable per-browser cache; the 30 core meals come pre-seeded.
+async function persistToSupabase(mealId, meal, cuisine, recipe) {
+  const m = /^(.*)-d(\d+)$/.exec(mealId);
+  const row = {
+    meal_id: mealId,
+    chain_id: m ? m[1] : null,
+    day: m ? Number(m[2]) : null,
+    cuisine,
+    meal_name: meal,
+    content_hash: "runtime-fallback",
+    description: recipe.description ?? null,
+    servings: parseInt(String(recipe.servings ?? ""), 10) || null,
+    prep_time: recipe.prepTime ?? null,
+    cook_time: recipe.cookTime ?? null,
+    passive_tip: recipe.passiveTip ?? null,
+    ingredients: recipe.ingredients ?? [],
+    steps: recipe.steps ?? [],
+    frugal_tips: recipe.frugalTips ?? [],
+    leftovers_use: recipe.leftoversUse ?? null,
+    calories: parseInt(String(recipe.calories ?? ""), 10) || null,
+    protein_g: parseInt(String(recipe.protein_g ?? ""), 10) || null,
+    carbs_g: parseInt(String(recipe.carbs_g ?? ""), 10) || null,
+    fat_g: parseInt(String(recipe.fat_g ?? ""), 10) || null,
+    est_cost_usd: Number(recipe.est_cost_usd) || null,
+  };
+  try {
+    await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_name,cuisine" });
+  } catch {
+    // Expected under anon RLS — localStorage already holds it for this browser.
+  }
+}
+
 export function useRecipe() {
   const { palate } = usePalate();
   // In-memory cache: { [cacheKey]: recipe | { loading: true } | { error } }
