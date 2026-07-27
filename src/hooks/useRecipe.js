@@ -1,6 +1,15 @@
 import { useState, useCallback, useRef } from "react";
 import { supabase } from "../lib/supabase";
 import { callClaude } from "../lib/claude";
+import { usePalate, toPalatePrompt } from "./usePalate";
+
+// POLICY: Palate-keyed caching.
+// - All recipe caching tiers (in-memory, localStorage) honor the user's palate preferences consistently.
+// - Tier 1 (Supabase meal_library table) only stores canonical (palate-independent) shared recipes.
+//   Therefore, Tier 1 is only queried/loaded when the user has NO active palate preferences (canonical/default palate).
+//   If the user has active palate preferences, Tier 1 is bypassed to ensure the user receives a palate-personalized recipe
+//   from Tier 3 (Edge Function generation), which is then cached in Tier 2 (localStorage) under a palate-specific key.
+// - This ensures that a cache hit/miss behaves identically and honors the palate consistently.
 
 // Tiered recipe loader keyed by a stable meal_id ("<chainId>-d<day>"):
 //   1. Supabase `meal_library` table (primary — hits for all 30 seeded core meals)
@@ -12,22 +21,50 @@ import { callClaude } from "../lib/claude";
 // normalized `recipes` table, so this app keeps its flat library under its own name.
 const LIBRARY_TABLE = "meal_library";
 
-function lsKey(mealId) {
-  return `embb_recipe::${mealId}`;
+// Generate a stable, sorted key representing the active palate preferences.
+// Returns "canonical" if the palate is empty or has no active preferences.
+export function getPalateKey(palate) {
+  if (!palate) return "canonical";
+
+  const parts = [];
+
+  if (palate.proteinBlocks?.length) {
+    parts.push(`exclude:${[...palate.proteinBlocks].sort().join(",")}`);
+  }
+
+  if (palate.dislikes?.length) {
+    parts.push(`avoid:${[...palate.dislikes].sort().join(",")}`);
+  }
+
+  if (palate.likedProteins?.length) {
+    parts.push(`like-prot:${[...palate.likedProteins].sort().join(",")}`);
+  }
+
+  if (palate.likedFlavours?.length) {
+    parts.push(`like-flav:${[...palate.likedFlavours].sort().join(",")}`);
+  }
+
+  return parts.length ? parts.join(";") : "canonical";
 }
 
-function readFromLocalStorage(mealId) {
+function lsKey(mealId, palateKey) {
+  return palateKey === "canonical"
+    ? `embb_recipe::${mealId}`
+    : `embb_recipe::${mealId}::${palateKey}`;
+}
+
+function readFromLocalStorage(mealId, palateKey) {
   try {
-    const raw = localStorage.getItem(lsKey(mealId));
+    const raw = localStorage.getItem(lsKey(mealId, palateKey));
     return raw ? JSON.parse(raw) : null;
   } catch {
     return null;
   }
 }
 
-function writeToLocalStorage(mealId, recipe) {
+function writeToLocalStorage(mealId, palateKey, recipe) {
   try {
-    localStorage.setItem(lsKey(mealId), JSON.stringify(recipe));
+    localStorage.setItem(lsKey(mealId, palateKey), JSON.stringify(recipe));
   } catch {
     // storage quota exceeded — silently skip
   }
@@ -79,64 +116,85 @@ async function fetchFromAPI(mealId, meal, cuisine, palate) {
 }
 
 export function useRecipe() {
-  // In-memory cache: { [mealId]: recipe | { loading: true } | { error } }
+  const { palate } = usePalate();
+  // In-memory cache: { [cacheKey]: recipe | { loading: true } | { error } }
+  // Where cacheKey is `${mealId}::${palateKey}`
   const cache = useRef({});
   const [, forceRender] = useState(0);
 
   const getRecipe = useCallback((mealId) => {
-    return cache.current[mealId] ?? null;
-  }, []);
+    const pKey = getPalateKey(palate);
+    const cacheKey = `${mealId}::${pKey}`;
+    return cache.current[cacheKey] ?? null;
+  }, [palate]);
 
   // Prime the whole seeded library in one read so cost/calorie badges and the
   // shopping list have data without clicking each meal. Zero Anthropic calls.
+  // We preload them as the canonical recipes.
   const preloadLibrary = useCallback(async () => {
     const { data, error } = await supabase.from(LIBRARY_TABLE).select("*");
     if (error || !data) return;
     let added = false;
     for (const row of data) {
-      if (!cache.current[row.meal_id]) {
-        cache.current[row.meal_id] = fromSupabaseRow(row);
+      const cacheKey = `${row.meal_id}::canonical`;
+      if (!cache.current[cacheKey]) {
+        cache.current[cacheKey] = fromSupabaseRow(row);
         added = true;
       }
     }
     if (added) forceRender((n) => n + 1);
   }, []);
 
-  const loadRecipe = useCallback(async (mealId, meal, cuisine, palate) => {
-    // Already in flight or loaded
-    if (cache.current[mealId]) return;
+  const loadRecipe = useCallback(async (mealId, meal, cuisine) => {
+    const pKey = getPalateKey(palate);
+    const cacheKey = `${mealId}::${pKey}`;
 
-    cache.current[mealId] = { loading: true };
+    // Already in flight or loaded
+    if (cache.current[cacheKey]) return;
+
+    cache.current[cacheKey] = { loading: true };
     forceRender((n) => n + 1);
 
     try {
-      // Tier 1 — Supabase library (primary)
-      let recipe = await fetchFromSupabase(mealId);
+      let recipe = null;
 
-      // Tier 2 — localStorage
+      // Tier 1 — Supabase library (primary) - ONLY queried/loaded if user has NO active palate preferences.
+      if (pKey === "canonical") {
+        recipe = await fetchFromSupabase(mealId);
+      }
+
+      // Tier 2 — localStorage (keyed by palateKey)
       if (!recipe) {
-        recipe = readFromLocalStorage(mealId);
+        recipe = readFromLocalStorage(mealId, pKey);
         if (recipe) recipe._source = "localStorage";
       }
 
       // Tier 3 — Edge Function generation (fallback only)
       if (!recipe) {
+        recipe = await fetchFromAPI(meal, cuisine, palate);
+        writeToLocalStorage(mealId, pKey, recipe);
+        // Only write back to Supabase if it's canonical. We don't save palate-specific recipes to shared table.
+        if (pKey === "canonical") {
+          persistToSupabase(mealId, meal, cuisine, recipe);
+        }
         recipe = await fetchFromAPI(mealId, meal, cuisine, palate);
         writeToLocalStorage(mealId, recipe);
       }
 
-      cache.current[mealId] = recipe;
+      cache.current[cacheKey] = recipe;
     } catch {
-      cache.current[mealId] = { error: "Could not load recipe. Try again." };
+      cache.current[cacheKey] = { error: "Could not load recipe. Try again." };
     }
 
     forceRender((n) => n + 1);
-  }, []);
+  }, [palate]);
 
   const clearRecipe = useCallback((mealId) => {
-    delete cache.current[mealId];
+    const pKey = getPalateKey(palate);
+    const cacheKey = `${mealId}::${pKey}`;
+    delete cache.current[cacheKey];
     forceRender((n) => n + 1);
-  }, []);
+  }, [palate]);
 
   return { getRecipe, loadRecipe, clearRecipe, preloadLibrary };
 }
