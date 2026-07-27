@@ -47,4 +47,4 @@ Plus `components/RecipePage.jsx` — the "level two" recipe overlay; opens via
 - The Chains left page has a decorative radial-glow div — it needs
   `pointerEvents:"none"` or it swallows clicks on the chapter arrows.
 - `ShoppingList` takes `MEALS` directly (it only reads `.day` and `.mealId`).
-- `PaletteQuestionnaire`/`usePalate` remain unwired (unchanged from before).
+- `PaletteQuestionnaire`/`usePalate` are fully integrated into `App.jsx` to support palate-based onboarding and personalization of generated recipes.

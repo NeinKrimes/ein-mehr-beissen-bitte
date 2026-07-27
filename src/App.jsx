@@ -8,6 +8,8 @@ import ChainsRoom from "./components/ChainsRoom";
 import KitchenRoom from "./components/KitchenRoom";
 import RecipePage from "./components/RecipePage";
 import ShoppingList from "./components/ShoppingList";
+import { usePalate } from "./hooks/usePalate";
+import PaletteQuestionnaire from "./components/PaletteQuestionnaire";
 
 // "The printed cookbook, lit by one lamp." Four rooms behind one masthead:
 // Board (others), Calendar (when), Chains (why), My Kitchen (mine).
@@ -44,6 +46,16 @@ export default function App() {
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
   const clock = useClock();
 
+  const { palate, savePalate, syncing } = usePalate();
+  const [showQuestionnaire, setShowQuestionnaire] = useState(false);
+
+  // Show questionnaire on first visit if no palate has been saved yet
+  useEffect(() => {
+    if (!syncing && !palate?.householdSize) {
+      setShowQuestionnaire(true);
+    }
+  }, [syncing, palate]);
+
   // Prime the seeded library once so stats and the shopping list have data
   // on first paint (single DB read, no AI calls).
   useEffect(() => { preloadLibrary(); }, [preloadLibrary]);
@@ -52,7 +64,7 @@ export default function App() {
     const m = mealByDay(day);
     if (!m) return;
     setOpenDay(day);
-    loadRecipe(m.mealId, m.meal, m.cuisine);
+    loadRecipe(m.mealId, m.meal, m.cuisine, palate);
   }
 
   function toggleSave(day) {
@@ -61,6 +73,16 @@ export default function App() {
       next.has(day) ? next.delete(day) : next.add(day);
       return next;
     });
+  }
+
+  if (showQuestionnaire) {
+    return (
+      <PaletteQuestionnaire
+        onComplete={() => setShowQuestionnaire(false)}
+        onClose={palate?.householdSize ? () => setShowQuestionnaire(false) : null}
+        savePalate={savePalate}
+      />
+    );
   }
 
   const openMeal = openDay ? mealByDay(openDay) : null;
@@ -84,6 +106,12 @@ export default function App() {
               }}>{r}</span>
             );
           })}
+          <span onClick={() => setShowQuestionnaire(true)} style={{
+            ...label(11, parch(0.42)),
+            cursor: "pointer", paddingBottom: 4,
+            borderBottom: "1px solid transparent",
+            transition: `color 320ms ${EASE}`,
+          }}>Palate</span>
         </div>
         <div style={mono(11, parch(0.34))}>{clock}</div>
       </div>
