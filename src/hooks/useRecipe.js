@@ -35,7 +35,7 @@ function writeToLocalStorage(mealId, recipe) {
 }
 
 // Map a denormalized `recipes` row into the app's recipe shape (incl. nutrition).
-function fromSupabaseRow(row) {
+export function fromSupabaseRow(row) {
   if (!row) return null;
   return {
     description: row.description ?? "",
