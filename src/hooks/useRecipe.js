@@ -1,7 +1,6 @@
 import { useState, useCallback, useRef } from "react";
 import { supabase } from "../lib/supabase";
 import { callClaude } from "../lib/claude";
-import { toPalatePrompt } from "./usePalate";
 
 // Tiered recipe loader keyed by a stable meal_id ("<chainId>-d<day>"):
 //   1. Supabase `meal_library` table (primary — hits for all 30 seeded core meals)
@@ -70,49 +69,13 @@ async function fetchFromSupabase(mealId) {
   return fromSupabaseRow(data);
 }
 
-async function fetchFromAPI(meal, cuisine, palate) {
-  // The Edge Function owns the frugal/WFH framing + JSON+nutrition output shape
-  // (its shared system prompt), so the client only names the dish + preferences.
-  const palatePrompt = toPalatePrompt(palate);
-  const prompt = `Give a complete recipe for "${meal}" (${cuisine} cuisine).${palatePrompt}`;
-  const recipe = await callClaude(prompt);
+async function fetchFromAPI(mealId, meal, cuisine, palate) {
+  // Pass structured parameters directly to the server-side Edge Function.
+  // The Edge Function performs the DB lookup first, and only on a cache-miss
+  // triggers Anthropic generation and upserts the result back into Supabase using service_role.
+  const recipe = await callClaude({ meal, cuisine, palate, mealId });
   recipe._source = "api";
   return recipe;
-}
-
-// Best-effort write-back of a fallback recipe so it's free next time.
-// NOTE: RLS restricts `recipes` writes to the service role, so this succeeds only
-// under a privileged context — under the anon client it no-ops. localStorage
-// (tier 2) is the reliable per-browser cache; the 30 core meals come pre-seeded.
-async function persistToSupabase(mealId, meal, cuisine, recipe) {
-  const m = /^(.*)-d(\d+)$/.exec(mealId);
-  const row = {
-    meal_id: mealId,
-    chain_id: m ? m[1] : null,
-    day: m ? Number(m[2]) : null,
-    cuisine,
-    meal_name: meal,
-    content_hash: "runtime-fallback",
-    description: recipe.description ?? null,
-    servings: parseInt(String(recipe.servings ?? ""), 10) || null,
-    prep_time: recipe.prepTime ?? null,
-    cook_time: recipe.cookTime ?? null,
-    passive_tip: recipe.passiveTip ?? null,
-    ingredients: recipe.ingredients ?? [],
-    steps: recipe.steps ?? [],
-    frugal_tips: recipe.frugalTips ?? [],
-    leftovers_use: recipe.leftoversUse ?? null,
-    calories: parseInt(String(recipe.calories ?? ""), 10) || null,
-    protein_g: parseInt(String(recipe.protein_g ?? ""), 10) || null,
-    carbs_g: parseInt(String(recipe.carbs_g ?? ""), 10) || null,
-    fat_g: parseInt(String(recipe.fat_g ?? ""), 10) || null,
-    est_cost_usd: Number(recipe.est_cost_usd) || null,
-  };
-  try {
-    await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_id" });
-  } catch {
-    // Expected under anon RLS — localStorage already holds it for this browser.
-  }
 }
 
 export function useRecipe() {
@@ -158,9 +121,8 @@ export function useRecipe() {
 
       // Tier 3 — Edge Function generation (fallback only)
       if (!recipe) {
-        recipe = await fetchFromAPI(meal, cuisine, palate);
+        recipe = await fetchFromAPI(mealId, meal, cuisine, palate);
         writeToLocalStorage(mealId, recipe);
-        persistToSupabase(mealId, meal, cuisine, recipe);
       }
 
       cache.current[mealId] = recipe;
