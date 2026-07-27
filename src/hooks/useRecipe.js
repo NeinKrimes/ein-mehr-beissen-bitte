@@ -216,6 +216,9 @@ export function useRecipe() {
         writeToLocalStorage(mealId, recipe);
       }
 
+      cache.current[mealId] = recipe;
+    } catch (err) {
+      cache.current[mealId] = { error: err?.message || "Could not load recipe. Try again." };
       cache.current[cacheKey] = recipe;
     } catch {
       cache.current[cacheKey] = { error: "Could not load recipe. Try again." };

@@ -4,6 +4,7 @@
 // this function via supabase.functions.invoke("recipe", { body: { prompt } }).
 
 import { SYSTEM_PROMPT } from "./prompt.js";
+import { validateRecipe } from "./validator.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
@@ -169,6 +170,72 @@ Deno.serve(async (req) => {
     // Proceed to generation anyway to avoid failing the user request
   }
 
+  const maxRetries = 3;
+  let attempts = 0;
+  let parsedRecipe: any = null;
+  let validationErrors: string[] = [];
+  let lastErrorMsg = "";
+
+  while (attempts < maxRetries) {
+    attempts++;
+    try {
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": ANTHROPIC_API_KEY,
+          "anthropic-version": "2023-06-01",
+        },
+        body: JSON.stringify({
+          model,
+          max_tokens,
+          // Recipe generation is pure JSON extraction — no reasoning needed.
+          // Sonnet 5 runs adaptive thinking by default; disable it so the whole
+          // token budget goes to the recipe and latency/cost stay low.
+          thinking: { type: "disabled" },
+          // Shared frugal / WFH / anchor framing + JSON+nutrition output shape.
+          // Cached so the (large, stable) prompt is paid for once across calls.
+          system: [
+            { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+          ],
+          messages: [{ role: "user", content: prompt }],
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        lastErrorMsg = data?.error?.message ?? `Anthropic API error (status: ${res.status})`;
+        continue;
+      }
+
+      const data = await res.json();
+      const text =
+        data.content?.find((b: { type: string }) => b.type === "text")?.text ?? "";
+
+      if (!text) {
+        lastErrorMsg = "Received empty text from Anthropic API.";
+        continue;
+      }
+
+      const clean = text.replace(/```json|```/g, "").trim();
+      let jsonObj: any;
+      try {
+        jsonObj = JSON.parse(clean);
+      } catch (e) {
+        lastErrorMsg = `Failed to parse JSON: ${String(e)}`;
+        continue;
+      }
+
+      validationErrors = validateRecipe(jsonObj);
+      if (validationErrors.length > 0) {
+        lastErrorMsg = `Recipe validation failed: ${validationErrors.join("; ")}`;
+        continue;
+      }
+
+      parsedRecipe = jsonObj;
+      break;
+    } catch (e) {
+      lastErrorMsg = `Upstream request failed: ${String(e)}`;
   // 2. Cache-miss: generate recipe with Anthropic API
   // Note on Palate Strategy (Option A): To maintain maximum reuse across all future users,
   // we generate a canonical, shared base recipe (without the user's specific palate prompt).
@@ -201,7 +268,15 @@ Deno.serve(async (req) => {
         res.status,
       );
     }
+  }
 
+  if (parsedRecipe) {
+    return json({ text: JSON.stringify(parsedRecipe), recipe: parsedRecipe });
+  } else {
+    return json(
+      { error: `Failed to generate a valid recipe after ${maxRetries} attempts. Last error: ${lastErrorMsg}` },
+      422,
+    );
     const text =
       data.content?.find((b: { type: string }) => b.type === "text")?.text ?? "";
     const clean = text.replace(/```json|```/g, "").trim();

@@ -18,6 +18,8 @@ export async function callClaude(payload, { maxTokens = 3500, model } = {}) {
   if (error) throw error;
   if (data?.error) throw new Error(data.error);
 
+  if (data?.recipe) {
+    return data.recipe;
   // If the Edge function returned an already parsed JSON recipe object (structured mode),
   // return it directly. Otherwise, clean and parse the text response (legacy fallback).
   if (data && typeof data === "object" && !data.text) {
