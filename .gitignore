@@ -1,6 +1,9 @@
 node_modules/
 dist/
 .env
+
+# Build artifacts
+*.zip
 .env.local
 .DS_Store
 *.log
