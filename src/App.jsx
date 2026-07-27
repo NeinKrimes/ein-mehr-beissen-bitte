@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MEALS, mealByDay } from "./data/mealStats";
 import { useRecipe } from "./hooks/useRecipe";
+import { usePalate } from "./hooks/usePalate";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "./theme";
 import BoardRoom from "./components/BoardRoom";
 import CalendarRoom from "./components/CalendarRoom";
@@ -42,6 +43,7 @@ export default function App() {
   const [saved, setSaved] = useState(() => new Set());
   const [showShopping, setShowShopping] = useState(false);
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
+  const { palate } = usePalate();
   const clock = useClock();
 
   // Prime the seeded library once so stats and the shopping list have data
@@ -52,7 +54,7 @@ export default function App() {
     const m = mealByDay(day);
     if (!m) return;
     setOpenDay(day);
-    loadRecipe(m.mealId, m.meal, m.cuisine);
+    loadRecipe(m.mealId, m.meal, m.cuisine, palate);
   }
 
   function toggleSave(day) {
@@ -100,6 +102,7 @@ export default function App() {
         <RecipePage
           meal={openMeal}
           entry={getRecipe(openMeal.mealId)}
+          palate={palate}
           onClose={() => setOpenDay(null)}
         />
       )}
