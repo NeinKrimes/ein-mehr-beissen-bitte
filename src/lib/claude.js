@@ -11,6 +11,10 @@ export async function callClaude(prompt, { maxTokens = 3500, model } = {}) {
   if (error) throw error;
   if (data?.error) throw new Error(data.error);
 
+  if (data?.recipe) {
+    return data.recipe;
+  }
+
   const clean = (data?.text ?? "").replace(/```json|```/g, "").trim();
   return JSON.parse(clean);
 }

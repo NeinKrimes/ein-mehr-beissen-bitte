@@ -164,8 +164,8 @@ export function useRecipe() {
       }
 
       cache.current[mealId] = recipe;
-    } catch {
-      cache.current[mealId] = { error: "Could not load recipe. Try again." };
+    } catch (err) {
+      cache.current[mealId] = { error: err?.message || "Could not load recipe. Try again." };
     }
 
     forceRender((n) => n + 1);
