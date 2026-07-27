@@ -6,7 +6,7 @@ import ValueGauge from "./ValueGauge";
 
 // The recipe page. Opens because you chose a line — overview to detail, a cross-fade
 // over a plum veil. Never a slide, never on hover.
-export default function RecipePanel({ day, entry, onClose, valueRange, cooked, onToggleCooked }) {
+export default function RecipePanel({ day, entry, onClose, valueRange, cooked, onToggleCooked, palate }) {
   if (!day) return null;
   const color = cuisineColor(day.cuisine);
   const loading = !!entry?.loading;
@@ -73,13 +73,72 @@ export default function RecipePanel({ day, entry, onClose, valueRange, cooked, o
             <div>
               <Eyebrow style={{ marginBottom: 16 }}>What you need</Eyebrow>
               <div>
-                {recipe.ingredients?.map((ing, i) => (
-                  <div key={i} className="leader" style={{ padding: "8px 0", cursor: "default", borderTop: i ? `1px solid ${T.lineSoft}` : "none" }}>
-                    <span style={{ fontFamily: T.body, fontSize: 15, color: T.ink }}>{ing.item}</span>
-                    <span className="leader-fill" />
-                    <span className="mono" style={{ fontSize: 12.5, color: T.ink2 }}>{ing.amount} {ing.unit}</span>
-                  </div>
-                ))}
+                {recipe.ingredients?.map((ing, i) => {
+                  const itemLower = (ing.item || "").toLowerCase();
+                  const isBlocked = palate?.proteinBlocks?.some((block) =>
+                    itemLower.includes(block.toLowerCase())
+                  );
+                  const isDisliked = palate?.dislikes?.some((dis) =>
+                    itemLower.includes(dis.toLowerCase())
+                  );
+
+                  return (
+                    <div key={i} className="leader" style={{
+                      padding: "8px 0",
+                      cursor: "default",
+                      borderTop: i ? `1px solid ${T.lineSoft}` : "none",
+                      opacity: (isBlocked || isDisliked) ? 0.6 : 1,
+                    }}>
+                      <span style={{
+                        fontFamily: T.body,
+                        fontSize: 15,
+                        color: isBlocked ? T.ink3 : T.ink,
+                        textDecoration: isBlocked ? "line-through" : "none",
+                      }}>
+                        {ing.item}
+                        {isBlocked && (
+                          <span style={{
+                            fontFamily: T.sans,
+                            fontSize: 9,
+                            fontWeight: 700,
+                            letterSpacing: ".05em",
+                            color: "#e06b4a",
+                            marginLeft: 8,
+                            border: "1px solid #e06b4a",
+                            borderRadius: 3,
+                            padding: "1px 4px",
+                            textDecoration: "none",
+                            display: "inline-block",
+                          }}>
+                            Avoid: Blocked
+                          </span>
+                        )}
+                        {isDisliked && !isBlocked && (
+                          <span style={{
+                            fontFamily: T.sans,
+                            fontSize: 9,
+                            fontWeight: 700,
+                            letterSpacing: ".05em",
+                            color: T.gold,
+                            marginLeft: 8,
+                            border: `1px solid ${T.gold}`,
+                            borderRadius: 3,
+                            padding: "1px 4px",
+                            display: "inline-block",
+                          }}>
+                            Disliked: Substitute
+                          </span>
+                        )}
+                      </span>
+                      <span className="leader-fill" />
+                      <span className="mono" style={{
+                        fontSize: 12.5,
+                        color: T.ink2,
+                        textDecoration: isBlocked ? "line-through" : "none",
+                      }}>{ing.amount} {ing.unit}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
