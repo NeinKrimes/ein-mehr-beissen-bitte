@@ -10,6 +10,15 @@ import { usePalate, toPalatePrompt } from "./usePalate";
 //   If the user has active palate preferences, Tier 1 is bypassed to ensure the user receives a palate-personalized recipe
 //   from Tier 3 (Edge Function generation), which is then cached in Tier 2 (localStorage) under a palate-specific key.
 // - This ensures that a cache hit/miss behaves identically and honors the palate consistently.
+
+// Tiered recipe loader keyed by a stable meal_id ("<chainId>-d<day>"):
+//   1. Supabase `meal_library` table (primary — hits for all 30 seeded core meals)
+//   2. in-memory / localStorage cache
+//   3. on-demand Edge Function generation (fallback ONLY — meals not in the DB)
+// Once the DB is seeded, tier 1 answers every core meal with zero Anthropic calls.
+//
+// NOTE: the table is `meal_library`, not `recipes` — EBBM2 already has an unrelated
+// normalized `recipes` table, so this app keeps its flat library under its own name.
 const LIBRARY_TABLE = "meal_library";
 
 // Generate a stable, sorted key representing the active palate preferences.
@@ -97,49 +106,13 @@ async function fetchFromSupabase(mealId) {
   return fromSupabaseRow(data);
 }
 
-async function fetchFromAPI(meal, cuisine, palate) {
-  // The Edge Function owns the frugal/WFH framing + JSON+nutrition output shape
-  // (its shared system prompt), so the client only names the dish + preferences.
-  const palatePrompt = toPalatePrompt(palate);
-  const prompt = `Give a complete recipe for "${meal}" (${cuisine} cuisine).${palatePrompt}`;
-  const recipe = await callClaude(prompt);
+async function fetchFromAPI(mealId, meal, cuisine, palate) {
+  // Pass structured parameters directly to the server-side Edge Function.
+  // The Edge Function performs the DB lookup first, and only on a cache-miss
+  // triggers Anthropic generation and upserts the result back into Supabase using service_role.
+  const recipe = await callClaude({ meal, cuisine, palate, mealId });
   recipe._source = "api";
   return recipe;
-}
-
-// Best-effort write-back of a fallback recipe so it's free next time.
-// NOTE: RLS restricts `recipes` writes to the service role, so this succeeds only
-// under a privileged context — under the anon client it no-ops. localStorage
-// (tier 2) is the reliable per-browser cache; the 30 core meals come pre-seeded.
-async function persistToSupabase(mealId, meal, cuisine, recipe) {
-  const m = /^(.*)-d(\d+)$/.exec(mealId);
-  const row = {
-    meal_id: mealId,
-    chain_id: m ? m[1] : null,
-    day: m ? Number(m[2]) : null,
-    cuisine,
-    meal_name: meal,
-    content_hash: "runtime-fallback",
-    description: recipe.description ?? null,
-    servings: parseInt(String(recipe.servings ?? ""), 10) || null,
-    prep_time: recipe.prepTime ?? null,
-    cook_time: recipe.cookTime ?? null,
-    passive_tip: recipe.passiveTip ?? null,
-    ingredients: recipe.ingredients ?? [],
-    steps: recipe.steps ?? [],
-    frugal_tips: recipe.frugalTips ?? [],
-    leftovers_use: recipe.leftoversUse ?? null,
-    calories: parseInt(String(recipe.calories ?? ""), 10) || null,
-    protein_g: parseInt(String(recipe.protein_g ?? ""), 10) || null,
-    carbs_g: parseInt(String(recipe.carbs_g ?? ""), 10) || null,
-    fat_g: parseInt(String(recipe.fat_g ?? ""), 10) || null,
-    est_cost_usd: Number(recipe.est_cost_usd) || null,
-  };
-  try {
-    await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_id" });
-  } catch {
-    // Expected under anon RLS — localStorage already holds it for this browser.
-  }
 }
 
 export function useRecipe() {
@@ -204,6 +177,8 @@ export function useRecipe() {
         if (pKey === "canonical") {
           persistToSupabase(mealId, meal, cuisine, recipe);
         }
+        recipe = await fetchFromAPI(mealId, meal, cuisine, palate);
+        writeToLocalStorage(mealId, recipe);
       }
 
       cache.current[cacheKey] = recipe;
