@@ -5,6 +5,8 @@
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.8";
 import { SYSTEM_PROMPT } from "./prompt.js";
+import { validateRecipe } from "./validator.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const ANTHROPIC_API_KEY = Deno.env.get("ANTHROPIC_API_KEY");
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") ?? "";
@@ -206,12 +208,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         model,
         max_tokens,
-        // Recipe generation is pure JSON extraction — no reasoning needed.
-        // Sonnet 5 runs adaptive thinking by default; disable it so the whole
-        // token budget goes to the recipe and latency/cost stay low.
         thinking: { type: "disabled" },
-        // Shared frugal / WFH / anchor framing + JSON+nutrition output shape.
-        // Cached so the (large, stable) prompt is paid for once across calls.
         system: [
           { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
         ],
@@ -227,7 +224,15 @@ Deno.serve(async (req) => {
         req
       );
     }
+  }
 
+  if (parsedRecipe) {
+    return json({ text: JSON.stringify(parsedRecipe), recipe: parsedRecipe });
+  } else {
+    return json(
+      { error: `Failed to generate a valid recipe after ${maxRetries} attempts. Last error: ${lastErrorMsg}` },
+      422,
+    );
     const text =
       data.content?.find((b: { type: string }) => b.type === "text")?.text ?? "";
     return json({ text }, 200, req);
