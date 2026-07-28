@@ -9,7 +9,6 @@ import ChainsRoom from "./components/ChainsRoom";
 import KitchenRoom from "./components/KitchenRoom";
 import RecipePage from "./components/RecipePage";
 import ShoppingList from "./components/ShoppingList";
-import { usePalate } from "./hooks/usePalate";
 import PaletteQuestionnaire from "./components/PaletteQuestionnaire";
 
 // "The printed cookbook, lit by one lamp." Four rooms behind one masthead:
@@ -45,7 +44,6 @@ export default function App() {
   const [saved, setSaved] = useState(() => new Set());
   const [showShopping, setShowShopping] = useState(false);
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
-  const { palate } = usePalate();
   const clock = useClock();
 
   const { palate, savePalate, syncing } = usePalate();

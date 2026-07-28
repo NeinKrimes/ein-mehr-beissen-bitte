@@ -11,6 +11,10 @@ let supabaseUpsertCalled = [];
 vi.mock("../lib/supabase", () => {
   return {
     supabase: {
+      auth: {
+        getSession: vi.fn(() => Promise.resolve({ data: { session: null } })),
+        onAuthStateChange: vi.fn(() => ({ data: { subscription: { unsubscribe: vi.fn() } } })),
+      },
       from: vi.fn(() => {
         return {
           select: vi.fn(() => {
