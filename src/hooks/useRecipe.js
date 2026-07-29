@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef } from "react";
 import { supabase } from "../lib/supabase";
 import { callClaude } from "../lib/claude";
-import { usePalate, toPalatePrompt } from "./usePalate";
+import { usePalate } from "./usePalate";
 
 // POLICY: Palate-keyed caching.
 // - All recipe caching tiers (in-memory, localStorage) honor the user's palate preferences consistently.
@@ -206,22 +206,17 @@ export function useRecipe() {
 
       // Tier 3 — Edge Function generation (fallback only)
       if (!recipe) {
-        recipe = await fetchFromAPI(meal, cuisine, palate);
+        recipe = await fetchFromAPI(mealId, meal, cuisine, palate);
         writeToLocalStorage(mealId, pKey, recipe);
         // Only write back to Supabase if it's canonical. We don't save palate-specific recipes to shared table.
         if (pKey === "canonical") {
           persistToSupabase(mealId, meal, cuisine, recipe);
         }
-        recipe = await fetchFromAPI(mealId, meal, cuisine, palate);
-        writeToLocalStorage(mealId, recipe);
       }
 
-      cache.current[mealId] = recipe;
-    } catch (err) {
-      cache.current[mealId] = { error: err?.message || "Could not load recipe. Try again." };
       cache.current[cacheKey] = recipe;
-    } catch {
-      cache.current[cacheKey] = { error: "Could not load recipe. Try again." };
+    } catch (err) {
+      cache.current[cacheKey] = { error: err?.message || "Could not load recipe. Try again." };
     }
 
     forceRender((n) => n + 1);
