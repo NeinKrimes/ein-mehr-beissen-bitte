@@ -25,7 +25,7 @@ const KEYFRAMES = `
 }
 `;
 
-function useClock() {
+function Clock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 30_000);
@@ -35,7 +35,7 @@ function useClock() {
   let h = now.getHours();
   const ampm = h >= 12 ? "pm" : "am";
   h = h % 12 || 12;
-  return `Day ${day} · ${h}:${String(now.getMinutes()).padStart(2, "0")} ${ampm}`;
+  return <span>Day {day} · {h}:{String(now.getMinutes()).padStart(2, "0")} {ampm}</span>;
 }
 
 export default function App() {
@@ -44,7 +44,6 @@ export default function App() {
   const [saved, setSaved] = useState(() => new Set());
   const [showShopping, setShowShopping] = useState(false);
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
-  const clock = useClock();
 
   const { palate, savePalate, syncing } = usePalate();
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
@@ -113,7 +112,7 @@ export default function App() {
             transition: `color 320ms ${EASE}`,
           }}>Palate</span>
         </div>
-        <div style={mono(11, parch(0.34))}>{clock}</div>
+        <div style={mono(11, parch(0.34))}><Clock /></div>
       </div>
 
       {/* The lit room */}
