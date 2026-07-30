@@ -1,4 +1,6 @@
-import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "../theme";
+import { COLORS, FONTS, EASE, CUISINE_COLORS, label, mono, display, parch, rgba, hairline } from "../theme";
+import { mealsByChain, mealByDay, variantsForDay } from "../data/mealStats";
+import ChainFilmstrip from "./ChainFilmstrip";
 
 // The recipe page — level two of the cookbook. Opens because you chose a
 // line, not because you hovered. Renders over the current room.
@@ -12,7 +14,7 @@ function StatCell({ k, v, color = COLORS.parchment }) {
   );
 }
 
-export default function RecipePage({ meal, entry, onClose }) {
+export default function RecipePage({ meal, entry, onClose, onOpenRecipe }) {
   const loading = !!entry?.loading;
   const error = !loading && entry?.error;
   const recipe = !loading && entry && !entry.error ? entry : null;
@@ -21,6 +23,18 @@ export default function RecipePage({ meal, entry, onClose }) {
   const cost = Number.isFinite(Number(recipe?.est_cost_usd)) ? Number(recipe.est_cost_usd) : meal.cost;
   const kcal = Number.isFinite(Number(recipe?.calories)) ? Number(recipe.calories) : meal.kcal;
   const cpd = Number.isFinite(Number(recipe?.cal_per_dollar)) ? Math.round(recipe.cal_per_dollar) : meal.cpd;
+
+  // Cuisine-swap pilot: a handful of days offer an alternate-cuisine take
+  // (see chains.js `variants`). Build the list of "swap for" options —
+  // the base meal (if currently viewing a variant) plus any other variants.
+  const dayVariants = variantsForDay(meal.day);
+  const baseMeal = meal.isVariant ? mealByDay(meal.day) : meal;
+  const swapOptions = [
+    ...(meal.isVariant && baseMeal ? [{ key: baseMeal.mealId, cuisine: baseMeal.cuisine, onClick: () => onOpenRecipe?.(meal.day, null) }] : []),
+    ...dayVariants
+      .filter((v) => v.mealId !== meal.mealId)
+      .map((v) => ({ key: v.mealId, cuisine: v.cuisine, onClick: () => onOpenRecipe?.(meal.day, v.variantId) })),
+  ];
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 40, background: "rgba(8,8,10,0.72)", display: "flex", justifyContent: "center", overflowY: "auto", padding: "40px 20px" }}>
@@ -41,6 +55,21 @@ export default function RecipePage({ meal, entry, onClose }) {
             padding: "9px 16px", cursor: "pointer", flexShrink: 0,
           }}>Close</button>
         </div>
+
+        <ChainFilmstrip chainMeals={mealsByChain(meal.chainId)} currentDay={meal.day} onOpenRecipe={onOpenRecipe} />
+
+        {swapOptions.length > 0 && (
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: -8, marginBottom: 8 }}>
+            <span style={label(9, parch(0.4), ".1em")}>Swap for</span>
+            {swapOptions.map((opt) => (
+              <span key={opt.key} onClick={opt.onClick} style={{
+                ...label(9, CUISINE_COLORS[opt.cuisine], ".06em"),
+                border: `1px solid ${rgba(CUISINE_COLORS[opt.cuisine], 0.35)}`,
+                borderRadius: 999, padding: "6px 12px", cursor: "pointer",
+              }}>{opt.cuisine}</span>
+            ))}
+          </div>
+        )}
 
         <div style={{ display: "flex", borderTop: hairline, borderBottom: hairline, padding: "14px 0", margin: "22px 0" }}>
           <StatCell k="Cost" v={`$${cost.toFixed(2)}`} color={COLORS.green} />
