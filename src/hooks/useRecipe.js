@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useMemo } from "react";
 import { supabase } from "../lib/supabase";
 import { callClaude } from "../lib/claude";
 import { usePalate } from "./usePalate";
@@ -157,11 +157,12 @@ export function useRecipe() {
   const cache = useRef({});
   const [, forceRender] = useState(0);
 
+  const memoizedPalateKey = useMemo(() => getPalateKey(palate), [palate]);
+
   const getRecipe = useCallback((mealId) => {
-    const pKey = getPalateKey(palate);
-    const cacheKey = `${mealId}::${pKey}`;
+    const cacheKey = `${mealId}::${memoizedPalateKey}`;
     return cache.current[cacheKey] ?? null;
-  }, [palate]);
+  }, [memoizedPalateKey]);
 
   // Prime the whole seeded library in one read so cost/calorie badges and the
   // shopping list have data without clicking each meal. Zero Anthropic calls.
@@ -181,7 +182,7 @@ export function useRecipe() {
   }, []);
 
   const loadRecipe = useCallback(async (mealId, meal, cuisine) => {
-    const pKey = getPalateKey(palate);
+    const pKey = memoizedPalateKey;
     const cacheKey = `${mealId}::${pKey}`;
 
     // Already in flight or loaded
@@ -220,14 +221,14 @@ export function useRecipe() {
     }
 
     forceRender((n) => n + 1);
-  }, [palate]);
+  }, [memoizedPalateKey, palate]);
 
   const clearRecipe = useCallback((mealId) => {
-    const pKey = getPalateKey(palate);
+    const pKey = memoizedPalateKey;
     const cacheKey = `${mealId}::${pKey}`;
     delete cache.current[cacheKey];
     forceRender((n) => n + 1);
-  }, [palate]);
+  }, [memoizedPalateKey]);
 
   return { getRecipe, loadRecipe, clearRecipe, preloadLibrary };
 }
