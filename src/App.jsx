@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MEALS, mealByDay, variantMealById } from "./data/mealStats";
 import { variantMealId } from "./data/chains";
 import { useRecipe } from "./hooks/useRecipe";
+import { usePalate } from "./hooks/usePalate";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "./theme";
 import BoardRoom from "./components/BoardRoom";
 import CalendarRoom from "./components/CalendarRoom";
@@ -10,6 +11,7 @@ import WebRoom from "./components/WebRoom";
 import KitchenRoom from "./components/KitchenRoom";
 import RecipePage from "./components/RecipePage";
 import ShoppingList from "./components/ShoppingList";
+import PaletteQuestionnaire from "./components/PaletteQuestionnaire";
 
 // "The printed cookbook, lit by one lamp." Rooms behind one masthead:
 // Board (others), Calendar (when), Chains (why), Web (how it all connects),
@@ -36,7 +38,7 @@ const KEYFRAMES = `
 }
 `;
 
-function useClock() {
+function Clock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 30_000);
@@ -46,7 +48,7 @@ function useClock() {
   let h = now.getHours();
   const ampm = h >= 12 ? "pm" : "am";
   h = h % 12 || 12;
-  return `Day ${day} · ${h}:${String(now.getMinutes()).padStart(2, "0")} ${ampm}`;
+  return <span>Day {day} · {h}:{String(now.getMinutes()).padStart(2, "0")} {ampm}</span>;
 }
 
 export default function App() {
@@ -56,7 +58,16 @@ export default function App() {
   const [saved, setSaved] = useState(readSavedRecipes);
   const [showShopping, setShowShopping] = useState(false);
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
-  const clock = useClock();
+
+  const { palate, savePalate, syncing } = usePalate();
+  const [showQuestionnaire, setShowQuestionnaire] = useState(false);
+
+  // Show questionnaire on first visit if no palate has been saved yet
+  useEffect(() => {
+    if (!syncing && !palate?.householdSize) {
+      setShowQuestionnaire(true);
+    }
+  }, [syncing, palate]);
 
   // Prime the seeded library once so stats and the shopping list have data
   // on first paint (single DB read, no AI calls).
@@ -115,8 +126,14 @@ export default function App() {
               }}>{r}</span>
             );
           })}
+          <span onClick={() => setShowQuestionnaire(true)} style={{
+            ...label(11, parch(0.42)),
+            cursor: "pointer", paddingBottom: 4,
+            borderBottom: "1px solid transparent",
+            transition: `color 320ms ${EASE}`,
+          }}>Palate</span>
         </div>
-        <div style={mono(11, parch(0.34))}>{clock}</div>
+        <div style={mono(11, parch(0.34))}><Clock /></div>
       </div>
 
       {/* The lit room */}

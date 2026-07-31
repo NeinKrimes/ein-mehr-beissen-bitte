@@ -568,7 +568,17 @@ export default function PaletteQuestionnaire({ onComplete }) {
   return (
     <div style={containerStyle}>
       {/* Header */}
-      <div style={{ background: "#0e0e16", borderBottom: "1px solid #1e1e2e", padding: "16px 20px", textAlign: "center" }}>
+      <div style={{ background: "#0e0e16", borderBottom: "1px solid #1e1e2e", padding: "16px 20px", textAlign: "center", position: "relative" }}>
+        {onClose && (
+          <button onClick={onClose} style={{
+            position: "absolute", right: 20, top: "50%", transform: "translateY(-50%)",
+            background: "none", border: "1px solid #2a2a3a", color: "#888",
+            padding: "6px 12px", borderRadius: 4, cursor: "pointer",
+            fontSize: 12, fontFamily: "inherit", transition: "all 0.15s",
+          }}>
+            Close
+          </button>
+        )}
         <div style={{ fontSize: 10, letterSpacing: 5, color: "#555", marginBottom: 4, textTransform: "uppercase" }}>
           Ein Mehr Beissen Bitte
         </div>

@@ -11,7 +11,7 @@ function fmtAmount(n) {
 }
 
 // item -> (unit -> summed amount | null when non-numeric) across a set of recipes.
-function aggregate(recipes) {
+export function aggregate(recipes) {
   const items = new Map();
   for (const r of recipes) {
     for (const ing of r.ingredients ?? []) {
@@ -32,7 +32,7 @@ function aggregate(recipes) {
   return items;
 }
 
-function weekTotalCost(recipes) {
+export function weekTotalCost(recipes) {
   return recipes.reduce((sum, r) => {
     const perServing = Number(r.est_cost_usd);
     const servings = parseInt(String(r.servings ?? ""), 10) || 4;

@@ -8,7 +8,7 @@ import { chains, mealId, variantMealId } from "./chains";
 import { COLORS, CUISINE_COLORS } from "../theme";
 
 // day: [kcal, cost, protein, activeMin, short, blurb]
-const RAW = {
+export const RAW = {
   1:  [520, 2.35, 42, 25, "Poulet Roti", "Butter under the skin, an hour of quiet, forty minutes of noise."],
   2:  [410, 2.05, 28, 20, "Tinga Tacos", "The breast meat, pulled cold, warmed through chipotle and tomato."],
   3:  [560, 2.45, 32, 25, "Khao Soi", "Stock from the carcass, curry paste, crisp noodles on top."],

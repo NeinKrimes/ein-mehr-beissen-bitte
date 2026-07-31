@@ -52,6 +52,7 @@ alter table public.recipes add column if not exists est_cost_usd   numeric;
 
 create index if not exists recipes_meal_id_idx      on public.recipes (meal_id);
 create index if not exists recipes_content_hash_idx on public.recipes (content_hash);
+create unique index if not exists recipes_meal_name_cuisine_idx on public.recipes (meal_name, cuisine);
 
 -- Keep updated_at fresh on every write.
 create or replace function public.set_updated_at()
@@ -86,3 +87,16 @@ create policy "recipes service write"
   to service_role
   using (true)
   with check (true);
+-- This migration has been neutralized.
+--
+-- Originally, this file created `public.recipes` and added columns to it.
+-- However, the shared Supabase project ("EBBM2") already contains an unrelated,
+-- normalized `public.recipes` table with its own schema and 216 rows of data
+-- which must not be modified or overwritten.
+--
+-- This migration was superseded by `20260725160000_meal_library.sql`, which
+-- implements the app's flat recipe library in a separate table named `meal_library`.
+--
+-- The body of this migration has been emptied to ensure that fresh environments
+-- do not create or alter `public.recipes`. The file is preserved with its filename
+-- to maintain migration history consistency for environments that have already applied it.

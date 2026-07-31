@@ -118,14 +118,69 @@ export default function RecipePage({ meal, entry, isSaved, onToggleSave, onClose
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, marginBottom: 30 }}>
               <div>
                 <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
-                {recipe.ingredients?.map((ing, i) => (
-                  <div key={i} style={{ display: "flex", gap: 12, alignItems: "baseline", padding: "8px 0", borderBottom: `1px solid ${parch(0.07)}` }}>
-                    <span style={{ ...mono(12, COLORS.gold), minWidth: 74, textAlign: "right", flexShrink: 0 }}>
-                      {[ing.amount, ing.unit].filter(Boolean).join(" ")}
-                    </span>
-                    <span style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.listInk }}>{ing.item}</span>
-                  </div>
-                ))}
+                {recipe.ingredients?.map((ing, i) => {
+                  const itemLower = (ing.item || "").toLowerCase();
+                  const isBlocked = palate?.proteinBlocks?.some((block) =>
+                    itemLower.includes(block.toLowerCase())
+                  );
+                  const isDisliked = palate?.dislikes?.some((dis) =>
+                    itemLower.includes(dis.toLowerCase())
+                  );
+
+                  return (
+                    <div key={i} style={{
+                      display: "flex",
+                      gap: 12,
+                      alignItems: "baseline",
+                      padding: "8px 0",
+                      borderBottom: `1px solid ${parch(0.07)}`,
+                      opacity: (isBlocked || isDisliked) ? 0.6 : 1,
+                    }}>
+                      <span style={{
+                        ...mono(12, COLORS.gold),
+                        minWidth: 74,
+                        textAlign: "right",
+                        flexShrink: 0,
+                        textDecoration: isBlocked ? "line-through" : "none",
+                      }}>
+                        {[ing.amount, ing.unit].filter(Boolean).join(" ")}
+                      </span>
+                      <span style={{
+                        fontFamily: FONTS.body,
+                        fontSize: 15,
+                        color: isBlocked ? COLORS.faint : COLORS.listInk,
+                        textDecoration: isBlocked ? "line-through" : "none",
+                      }}>
+                        {ing.item}
+                        {isBlocked && (
+                          <span style={{
+                            ...mono(9, "#e84040"),
+                            marginLeft: 8,
+                            border: "1px solid #e84040",
+                            borderRadius: 3,
+                            padding: "1px 4px",
+                            textDecoration: "none",
+                            display: "inline-block",
+                          }}>
+                            Avoid: Blocked
+                          </span>
+                        )}
+                        {isDisliked && !isBlocked && (
+                          <span style={{
+                            ...mono(9, COLORS.gold),
+                            marginLeft: 8,
+                            border: `1px solid ${COLORS.gold}`,
+                            borderRadius: 3,
+                            padding: "1px 4px",
+                            display: "inline-block",
+                          }}>
+                            Disliked: Substitute if possible
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
               <div>
