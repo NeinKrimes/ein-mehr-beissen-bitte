@@ -1,21 +1,34 @@
 import { useState, useEffect } from "react";
-import { MEALS, mealByDay } from "./data/mealStats";
+import { MEALS, mealByDay, variantMealById } from "./data/mealStats";
+import { variantMealId } from "./data/chains";
 import { useRecipe } from "./hooks/useRecipe";
 import { usePalate } from "./hooks/usePalate";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "./theme";
 import BoardRoom from "./components/BoardRoom";
 import CalendarRoom from "./components/CalendarRoom";
 import ChainsRoom from "./components/ChainsRoom";
+import WebRoom from "./components/WebRoom";
 import KitchenRoom from "./components/KitchenRoom";
 import RecipePage from "./components/RecipePage";
 import ShoppingList from "./components/ShoppingList";
 import PaletteQuestionnaire from "./components/PaletteQuestionnaire";
 
-// "The printed cookbook, lit by one lamp." Four rooms behind one masthead:
-// Board (others), Calendar (when), Chains (why), My Kitchen (mine).
-// From the claude.ai/design project "Ein Mehr Beissen Bitte UI Design".
+// "The printed cookbook, lit by one lamp." Rooms behind one masthead:
+// Board (others), Calendar (when), Chains (why), Web (how it all connects),
+// My Kitchen (mine). From the claude.ai/design project
+// "Ein Mehr Beissen Bitte UI Design".
 
-const ROOMS = ["Board", "Calendar", "Chains", "My Kitchen"];
+const ROOMS = ["Board", "Calendar", "Chains", "Web", "My Kitchen"];
+const SAVED_KEY = "embb_saved_recipes";
+
+function readSavedRecipes() {
+  try {
+    const days = JSON.parse(localStorage.getItem(SAVED_KEY) ?? "[]");
+    return new Set(Array.isArray(days) ? days.filter((day) => mealByDay(day)) : []);
+  } catch {
+    return new Set();
+  }
+}
 
 const KEYFRAMES = `
 @keyframes embRise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
@@ -41,7 +54,8 @@ function Clock() {
 export default function App() {
   const [room, setRoom] = useState("Calendar");
   const [openDay, setOpenDay] = useState(null);
-  const [saved, setSaved] = useState(() => new Set());
+  const [openVariant, setOpenVariant] = useState(null);
+  const [saved, setSaved] = useState(readSavedRecipes);
   const [showShopping, setShowShopping] = useState(false);
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
 
@@ -59,20 +73,39 @@ export default function App() {
   // on first paint (single DB read, no AI calls).
   useEffect(() => { preloadLibrary(); }, [preloadLibrary]);
 
-  function openRecipe(day) {
-    const m = mealByDay(day);
-    if (!m) return;
+  // variantId=null opens the base day's meal; otherwise opens that day's
+  // cuisine-swap alternate (see the `variants` field in chains.js). Every
+  // room still calls this with just a day number — only the swap pills in
+  // RecipePage use the second argument.
+  function openRecipe(day, variantId = null) {
+    const base = mealByDay(day);
+    if (!base) return;
+    if (variantId) {
+      const v = variantMealById(variantMealId(base.chainId, day, variantId));
+      if (!v) return;
+      setOpenDay(day);
+      setOpenVariant(variantId);
+      loadRecipe(v.mealId, v.meal, v.cuisine, palate);
+      return;
+    }
     setOpenDay(day);
-    loadRecipe(m.mealId, m.meal, m.cuisine, palate);
+    setOpenVariant(null);
+    loadRecipe(base.mealId, base.meal, base.cuisine, palate);
   }
 
   function toggleSave(day) {
     setSaved((prev) => {
       const next = new Set(prev);
       next.has(day) ? next.delete(day) : next.add(day);
+      localStorage.setItem(SAVED_KEY, JSON.stringify([...next]));
       return next;
     });
   }
+
+  const baseOpenMeal = openDay ? mealByDay(openDay) : null;
+  const openMeal = openVariant && baseOpenMeal
+    ? variantMealById(variantMealId(baseOpenMeal.chainId, openDay, openVariant))
+    : baseOpenMeal;
 
   if (showQuestionnaire) {
     return (
@@ -83,8 +116,6 @@ export default function App() {
       />
     );
   }
-
-  const openMeal = openDay ? mealByDay(openDay) : null;
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: COLORS.ground, color: COLORS.parchment, fontFamily: FONTS.body }}>
@@ -120,7 +151,8 @@ export default function App() {
         {room === "Board" && <BoardRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} />}
         {room === "Calendar" && <CalendarRoom onOpenRecipe={openRecipe} />}
         {room === "Chains" && <ChainsRoom onOpenRecipe={openRecipe} />}
-        {room === "My Kitchen" && <KitchenRoom saved={saved} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
+        {room === "Web" && <WebRoom onOpenRecipe={openRecipe} />}
+        {room === "My Kitchen" && <KitchenRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
       </div>
 
       {openMeal && (
@@ -128,7 +160,10 @@ export default function App() {
           meal={openMeal}
           entry={getRecipe(openMeal.mealId)}
           palate={palate}
-          onClose={() => setOpenDay(null)}
+          isSaved={saved.has(openMeal.day)}
+          onToggleSave={() => toggleSave(openMeal.day)}
+          onClose={() => { setOpenDay(null); setOpenVariant(null); }}
+          onOpenRecipe={openRecipe}
         />
       )}
 

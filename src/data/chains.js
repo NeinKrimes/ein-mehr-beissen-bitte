@@ -6,7 +6,8 @@
 export const chains = [
   { id:"c1", anchor:"Whole Roast Chicken + Stock", emoji:"🐔", passive:"~2 hrs roast + 8 hrs stock (overnight)", days:[
     {day:1,dow:"Sun",cuisine:"French",  type:"ANCHOR",meal:"Poulet Roti with Herbed Butter",       cost:"$$"},
-    {day:2,dow:"Mon",cuisine:"Mexican", type:"CHAIN", meal:"Chicken Tinga Tacos",                  cost:"$"},
+    {day:2,dow:"Mon",cuisine:"Mexican", type:"CHAIN", meal:"Chicken Tinga Tacos",                  cost:"$",
+      variants:[{id:"thai", cuisine:"Thai", meal:"Thai Larb-Style Chicken Lettuce Wraps", cost:"$"}]},
     {day:3,dow:"Tue",cuisine:"Thai",    type:"CHAIN", meal:"Thai Chicken Noodle Soup (Khao Soi)",  cost:"$"},
     {day:4,dow:"Wed",cuisine:"Indian",  type:"CHAIN", meal:"Chicken Stock Dal",                    cost:"$"},
   ]},
@@ -17,7 +18,8 @@ export const chains = [
   ]},
   { id:"c3", anchor:"Dried Black Beans — Big Batch", emoji:"🫘", passive:"3–4 hrs simmer (passive)", days:[
     {day:8, dow:"Sun",cuisine:"Mexican", type:"ANCHOR",meal:"Frijoles de la Olla",                 cost:"$"},
-    {day:9, dow:"Mon",cuisine:"Jamaican",type:"CHAIN", meal:"Jamaican Rice & Peas",                cost:"$"},
+    {day:9, dow:"Mon",cuisine:"Jamaican",type:"CHAIN", meal:"Jamaican Rice & Peas",                cost:"$",
+      variants:[{id:"indian", cuisine:"Indian", meal:"Black Bean Chana-Style Curry", cost:"$"}]},
     {day:10,dow:"Tue",cuisine:"Mexican", type:"CHAIN", meal:"Black Bean Enchiladas",               cost:"$"},
   ]},
   { id:"c4", anchor:"Whole Chicken #2 — Poached", emoji:"🐔", passive:"1.5 hrs poach + stock ready", days:[
@@ -42,7 +44,8 @@ export const chains = [
   ]},
   { id:"c8", anchor:"Whole Chicken #3 — The World Tour", emoji:"🐔", passive:"60 min roast + overnight stock", days:[
     {day:23,dow:"Mon",cuisine:"Jamaican",type:"ANCHOR",meal:"Jerk Grilled Chicken + Festival Bread", cost:"$$"},
-    {day:24,dow:"Tue",cuisine:"Thai",    type:"CHAIN", meal:"Green Curry with Chicken",            cost:"$"},
+    {day:24,dow:"Tue",cuisine:"Thai",    type:"CHAIN", meal:"Green Curry with Chicken",            cost:"$",
+      variants:[{id:"indian", cuisine:"Indian", meal:"Chicken Korma with Roast Chicken Leftovers", cost:"$"}]},
     {day:25,dow:"Wed",cuisine:"Italian", type:"CHAIN", meal:"Chicken Cacciatore",                  cost:"$"},
     {day:26,dow:"Thu",cuisine:"Indian",  type:"CHAIN", meal:"Chicken Biryani (leftover chicken)",  cost:"$"},
   ]},
@@ -59,6 +62,15 @@ export const chains = [
 // Stable key for a meal across the app + DB + scripts. Format: "<chainId>-d<day>" e.g. "c1-d2".
 export function mealId(chainId, day) {
   return `${chainId}-d${day}`;
+}
+
+// A handful of chain days optionally carry a `variants` array — an alternate
+// cuisine take on that day's leftover stage (e.g. day 2's Tinga Tacos also
+// has a Thai wrap option). Addressed as an extension of the base mealId so
+// the existing Supabase meal_library / localStorage / useRecipe cache all
+// work unmodified — it's just another string key, not a new dimension.
+export function variantMealId(chainId, day, variantId) {
+  return `${mealId(chainId, day)}-alt-${variantId}`;
 }
 
 // Flatten every meal across all chains, carrying its chain context and stable meal_id.

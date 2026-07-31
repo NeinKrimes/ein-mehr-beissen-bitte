@@ -4,7 +4,7 @@
 // Shape merged onto chains.js days: kcal, cost ($/serving), p (protein g),
 // time (active minutes), short (contents-page name), blurb (plate caption).
 
-import { chains, mealId } from "./chains";
+import { chains, mealId, variantMealId } from "./chains";
 import { COLORS, CUISINE_COLORS } from "../theme";
 
 // day: [kcal, cost, protein, activeMin, short, blurb]
@@ -41,6 +41,16 @@ export const RAW = {
   30: [380, 1.05, 14, 30, "French Onion Soup", "Onions cooked past patience, a stale bagel as the raft."],
 };
 
+// Pilot cuisine-swap alternates — one alternate cuisine option on a handful
+// of follow-up days (see the `variants` arrays in chains.js). Same tuple
+// shape as RAW, keyed by the synthetic variantMealId instead of a day number
+// since a day can have more than one of these.
+const RAW_VARIANTS = {
+  "c1-d2-alt-thai": [430, 2.10, 26, 22, "Larb Wraps", "The same pulled chicken, dressed Thai-style — fish sauce, lime, crushed peanuts, cold lettuce cups."],
+  "c3-d9-alt-indian": [460, 0.98, 16, 20, "Chana-Style Curry", "The same pot of beans, finished with garam masala and a tomato-ginger base instead of coconut and thyme."],
+  "c8-d24-alt-indian": [560, 2.15, 36, 25, "Chicken Korma", "The same leftover roast chicken, folded into a cashew-yogurt korma instead of a green curry paste."],
+};
+
 // Every meal, flattened and merged with its stats. Macro split is estimated
 // from kcal/protein (42% of energy from carbs, remainder fat).
 export const MEALS = chains.flatMap((c) =>
@@ -73,3 +83,30 @@ export const LENSES = {
 };
 
 export const mealByDay = (day) => MEALS.find((m) => m.day === day);
+export const mealsByChain = (chainId) => MEALS.filter((m) => m.chainId === chainId);
+export const mealById = (id) => MEALS.find((m) => m.mealId === id);
+
+// Cuisine-swap pilot alternates — deliberately kept OUT of MEALS so Board/
+// Calendar/Kitchen/Web (which all iterate MEALS by day) are unaffected;
+// only the swap UI in RecipePage touches this.
+export const VARIANT_MEALS = chains.flatMap((c) =>
+  c.days.flatMap((d) =>
+    (d.variants ?? []).map((v) => {
+      const vId = variantMealId(c.id, d.day, v.id);
+      const [kcal, cost, p, time, short, blurb] = RAW_VARIANTS[vId];
+      const carbs = Math.round((kcal * 0.42) / 4);
+      const fat = Math.max(4, Math.round((kcal - p * 4 - carbs * 4) / 9));
+      return {
+        day: d.day, dow: d.dow, cuisine: v.cuisine, type: d.type, meal: v.meal,
+        chainId: c.id, mealId: vId, anchor: c.anchor, passive: c.passive,
+        kcal, cost, p, carbs, fat, time, short, blurb,
+        cpd: Math.round(kcal / cost),
+        color: CUISINE_COLORS[v.cuisine],
+        isVariant: true, variantId: v.id, baseMealId: mealId(c.id, d.day),
+      };
+    }),
+  ),
+);
+
+export const variantsForDay = (day) => VARIANT_MEALS.filter((m) => m.day === day);
+export const variantMealById = (id) => VARIANT_MEALS.find((m) => m.mealId === id);

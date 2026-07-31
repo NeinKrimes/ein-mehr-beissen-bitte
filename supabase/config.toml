@@ -4,3 +4,6 @@ project_id = "ein-mehr-beissen-bitte"
 # Require a valid Supabase JWT (the anon key qualifies). Keeps the proxy tied to
 # this project rather than being open to the entire internet.
 verify_jwt = true
+
+[functions.shopping-cart]
+verify_jwt = true

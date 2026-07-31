@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePalate } from "../hooks/usePalate";
 
 // ─── Static data ─────────────────────────────────────────────────────────────
@@ -52,11 +52,6 @@ const TIER_CONFIG = {
   avoid: { bg: "#f59e0b18", border: "#f59e0b", text: "#f59e0b", dot: "●", label: "Avoid" },
   never: { bg: "#e8404018", border: "#e84040", text: "#e84040", dot: "●", label: "Never" },
 };
-
-function nextTier(current) {
-  const cycle = [null, "like", "avoid", "never"];
-  return cycle[(cycle.indexOf(current) + 1) % cycle.length];
-}
 
 // ─── Shared primitives ────────────────────────────────────────────────────────
 
@@ -134,10 +129,10 @@ function SelectionChip({ label, selected, onClick }) {
   );
 }
 
-function TierChip({ label, tier, onClick }) {
+function TierChip({ label, tier, activeTier, onClick }) {
   const cfg = tier ? TIER_CONFIG[tier] : null;
   return (
-    <button onClick={onClick} style={{
+    <button onClick={onClick} aria-label={`${label}: ${tier ?? "neutral"}. Set to ${activeTier}.`} style={{
       background: cfg ? cfg.bg : "#131318",
       border: `1px solid ${cfg ? cfg.border : "#2a2a3a"}`,
       color: cfg ? cfg.text : "#555",
@@ -273,32 +268,47 @@ function StepMethods({ answers, setAnswer, onBack, onNext }) {
 }
 
 function StepTierChips({ title, sub, step, items, ratings, setRatings, onBack, onNext }) {
-  function cycle(item) {
-    setRatings(prev => ({ ...prev, [item]: nextTier(prev[item] ?? null) }));
+  const [activeTier, setActiveTier] = useState("like");
+
+  function rate(item) {
+    setRatings(prev => {
+      const next = { ...prev };
+      if (next[item] === activeTier) delete next[item];
+      else next[item] = activeTier;
+      return next;
+    });
   }
+
+  const counts = Object.values(ratings).reduce((acc, tier) => ({ ...acc, [tier]: (acc[tier] ?? 0) + 1 }), {});
   return (
     <div>
       <StepHeading title={title} sub={sub} />
       <div style={{
-        display: "flex", flexDirection: "row", gap: 8, marginBottom: 12, flexWrap: "nowrap", overflowX: "auto",
-        padding: "2px 0 8px",
+        display: "flex", gap: 8, marginBottom: 18, flexWrap: "wrap",
+        padding: 5, background: "#0d0d12", border: "1px solid #1e1e2e", borderRadius: 8,
       }}>
         {[
           { tier: "like",  label: "Like",  color: "#22c55e" },
           { tier: "avoid", label: "Avoid", color: "#f59e0b" },
           { tier: "never", label: "Never", color: "#e84040" },
         ].map(({ tier, label, color }) => (
-          <div key={tier} style={{ display: "flex", alignItems: "center", gap: 5, flexShrink: 0 }}>
-            <span style={{ fontSize: 10, color, fontWeight: "bold", letterSpacing: 1, textTransform: "uppercase" }}>
-              ● {label}
-            </span>
-          </div>
+          <button key={tier} onClick={() => setActiveTier(tier)} style={{
+            flex: 1, minWidth: 100, padding: "10px 12px", borderRadius: 6, cursor: "pointer",
+            border: `1px solid ${activeTier === tier ? color : "transparent"}`,
+            background: activeTier === tier ? `${color}18` : "transparent",
+            color: activeTier === tier ? color : "#666", fontFamily: "inherit",
+            fontSize: 11, fontWeight: "bold", letterSpacing: 1, textTransform: "uppercase",
+          }}>
+            {activeTier === tier ? "✓ " : ""}{label} <span style={{ opacity: .6 }}>· {counts[tier] ?? 0}</span>
+          </button>
         ))}
-        <span style={{ fontSize: 11, color: "#444", marginLeft: 6, fontStyle: "italic", flexShrink: 0 }}>— tap to cycle</span>
+      </div>
+      <div style={{ fontSize: 11, color: "#555", margin: "-8px 0 12px", fontStyle: "italic" }}>
+        “{TIER_CONFIG[activeTier].label}” is selected — tap as many items as you want. Tap an assigned item again to clear it.
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
         {items.map(item => (
-          <TierChip key={item} label={item} tier={ratings[item] ?? null} onClick={() => cycle(item)} />
+          <TierChip key={item} label={item} tier={ratings[item] ?? null} activeTier={activeTier} onClick={() => rate(item)} />
         ))}
       </div>
       <NavButtons step={step} onBack={onBack} onNext={onNext} />
@@ -450,12 +460,40 @@ const EMPTY_ANSWERS = {
   cuisinePriorities: [],
 };
 
-export default function PaletteQuestionnaire({ onComplete, onClose, savePalate: propSavePalate }) {
+const DRAFT_KEY = "embb_palate_draft";
+
+function answersFromPalate(palate) {
+  return {
+    ...EMPTY_ANSWERS,
+    householdSize: palate?.householdSize ?? null,
+    skillLevel: palate?.skillLevel ?? null,
+    weekdayTimeMins: palate?.weekdayTimeMins ?? null,
+    weekendTimeMins: palate?.weekendTimeMins ?? null,
+    cookingMethods: palate?.cookingMethods ?? [],
+    proteinRatings: palate?.proteinRatings ?? {},
+    flavourRatings: palate?.flavourRatings ?? {},
+    cuisinePriorities: palate?.cuisinePriorities ?? [],
+  };
+}
+
+function initialAnswers(palate) {
+  try {
+    const draft = JSON.parse(localStorage.getItem(DRAFT_KEY) ?? "null");
+    return draft ? { ...answersFromPalate(palate), ...draft } : answersFromPalate(palate);
+  } catch {
+    return answersFromPalate(palate);
+  }
+}
+
+export default function PaletteQuestionnaire({ onComplete, onClose }) {
+  const { palate, savePalate } = usePalate();
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState(EMPTY_ANSWERS);
+  const [answers, setAnswers] = useState(() => initialAnswers(palate));
   const [saving, setSaving] = useState(false);
-  const { savePalate: hookSavePalate } = usePalate();
-  const savePalate = propSavePalate || hookSavePalate;
+
+  useEffect(() => {
+    localStorage.setItem(DRAFT_KEY, JSON.stringify(answers));
+  }, [answers]);
 
   function setAnswer(key, value) {
     setAnswers(prev => ({ ...prev, [key]: value }));
@@ -501,6 +539,7 @@ export default function PaletteQuestionnaire({ onComplete, onClose, savePalate: 
       };
 
       await savePalate(fullPalate);
+      localStorage.removeItem(DRAFT_KEY);
       onComplete?.(fullPalate);
     } finally {
       setSaving(false);
@@ -568,7 +607,7 @@ export default function PaletteQuestionnaire({ onComplete, onClose, savePalate: 
             <StepTierChips
               step={4}
               title="Rate your protein preferences"
-              sub="Tap each chip to cycle: Like (green) → Avoid (amber) → Never (red). Leave neutral if you're indifferent."
+              sub="Choose a rating, then paint it onto as many proteins as you like. Leave neutral if you're indifferent."
               items={PROTEINS}
               ratings={answers.proteinRatings}
               setRatings={setRatings("proteinRatings")}
@@ -580,7 +619,7 @@ export default function PaletteQuestionnaire({ onComplete, onClose, savePalate: 
             <StepTierChips
               step={5}
               title="Rate your flavour preferences"
-              sub="Tap to cycle through Like, Avoid, and Never. Neutral means no strong feeling."
+              sub="Choose a rating once, then tap every flavour it applies to. Neutral means no strong feeling."
               items={FLAVOURS}
               ratings={answers.flavourRatings}
               setRatings={setRatings("flavourRatings")}
