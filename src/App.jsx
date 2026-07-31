@@ -85,12 +85,12 @@ export default function App() {
       if (!v) return;
       setOpenDay(day);
       setOpenVariant(variantId);
-      loadRecipe(v.mealId, v.meal, v.cuisine);
+      loadRecipe(v.mealId, v.meal, v.cuisine, palate);
       return;
     }
     setOpenDay(day);
     setOpenVariant(null);
-    loadRecipe(base.mealId, base.meal, base.cuisine);
+    loadRecipe(base.mealId, base.meal, base.cuisine, palate);
   }
 
   function toggleSave(day) {
@@ -106,6 +106,16 @@ export default function App() {
   const openMeal = openVariant && baseOpenMeal
     ? variantMealById(variantMealId(baseOpenMeal.chainId, openDay, openVariant))
     : baseOpenMeal;
+
+  if (showQuestionnaire) {
+    return (
+      <PaletteQuestionnaire
+        onComplete={() => setShowQuestionnaire(false)}
+        onClose={palate?.householdSize ? () => setShowQuestionnaire(false) : null}
+        savePalate={savePalate}
+      />
+    );
+  }
 
   return (
     <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: COLORS.ground, color: COLORS.parchment, fontFamily: FONTS.body }}>
@@ -149,6 +159,7 @@ export default function App() {
         <RecipePage
           meal={openMeal}
           entry={getRecipe(openMeal.mealId)}
+          palate={palate}
           isSaved={saved.has(openMeal.day)}
           onToggleSave={() => toggleSave(openMeal.day)}
           onClose={() => { setOpenDay(null); setOpenVariant(null); }}

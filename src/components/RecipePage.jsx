@@ -14,7 +14,7 @@ function StatCell({ k, v, color = COLORS.parchment }) {
   );
 }
 
-export default function RecipePage({ meal, entry, isSaved, onToggleSave, onClose, onOpenRecipe }) {
+export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave, onClose, onOpenRecipe }) {
   const loading = !!entry?.loading;
   const error = !loading && entry?.error;
   const recipe = !loading && entry && !entry.error ? entry : null;

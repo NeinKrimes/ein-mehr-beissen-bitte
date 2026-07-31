@@ -485,7 +485,7 @@ function initialAnswers(palate) {
   }
 }
 
-export default function PaletteQuestionnaire({ onComplete }) {
+export default function PaletteQuestionnaire({ onComplete, onClose }) {
   const { palate, savePalate } = usePalate();
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState(() => initialAnswers(palate));
