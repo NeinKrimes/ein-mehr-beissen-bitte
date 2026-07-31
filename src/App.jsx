@@ -17,6 +17,16 @@ import ShoppingList from "./components/ShoppingList";
 // "Ein Mehr Beissen Bitte UI Design".
 
 const ROOMS = ["Board", "Calendar", "Chains", "Web", "My Kitchen"];
+const SAVED_KEY = "embb_saved_recipes";
+
+function readSavedRecipes() {
+  try {
+    const days = JSON.parse(localStorage.getItem(SAVED_KEY) ?? "[]");
+    return new Set(Array.isArray(days) ? days.filter((day) => mealByDay(day)) : []);
+  } catch {
+    return new Set();
+  }
+}
 
 const KEYFRAMES = `
 @keyframes embRise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
@@ -43,7 +53,7 @@ export default function App() {
   const [room, setRoom] = useState("Calendar");
   const [openDay, setOpenDay] = useState(null);
   const [openVariant, setOpenVariant] = useState(null);
-  const [saved, setSaved] = useState(() => new Set());
+  const [saved, setSaved] = useState(readSavedRecipes);
   const [showShopping, setShowShopping] = useState(false);
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
   const clock = useClock();
@@ -76,6 +86,7 @@ export default function App() {
     setSaved((prev) => {
       const next = new Set(prev);
       next.has(day) ? next.delete(day) : next.add(day);
+      localStorage.setItem(SAVED_KEY, JSON.stringify([...next]));
       return next;
     });
   }
@@ -114,13 +125,15 @@ export default function App() {
         {room === "Calendar" && <CalendarRoom onOpenRecipe={openRecipe} />}
         {room === "Chains" && <ChainsRoom onOpenRecipe={openRecipe} />}
         {room === "Web" && <WebRoom onOpenRecipe={openRecipe} />}
-        {room === "My Kitchen" && <KitchenRoom saved={saved} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
+        {room === "My Kitchen" && <KitchenRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
       </div>
 
       {openMeal && (
         <RecipePage
           meal={openMeal}
           entry={getRecipe(openMeal.mealId)}
+          isSaved={saved.has(openMeal.day)}
+          onToggleSave={() => toggleSave(openMeal.day)}
           onClose={() => { setOpenDay(null); setOpenVariant(null); }}
           onOpenRecipe={openRecipe}
         />

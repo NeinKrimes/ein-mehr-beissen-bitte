@@ -14,7 +14,7 @@ function StatCell({ k, v, color = COLORS.parchment }) {
   );
 }
 
-export default function RecipePage({ meal, entry, onClose, onOpenRecipe }) {
+export default function RecipePage({ meal, entry, isSaved, onToggleSave, onClose, onOpenRecipe }) {
   const loading = !!entry?.loading;
   const error = !loading && entry?.error;
   const recipe = !loading && entry && !entry.error ? entry : null;
@@ -49,11 +49,20 @@ export default function RecipePage({ meal, entry, onClose, onOpenRecipe }) {
             <div style={{ ...display(40, 1.02), color: COLORS.parchment, textWrap: "pretty" }}>{meal.meal}</div>
             <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 15, color: COLORS.faint, marginTop: 8 }}>from {meal.anchor}</div>
           </div>
-          <button onClick={onClose} style={{
-            ...label(10, parch(0.55), ".14em"),
-            background: "transparent", border: `1px solid ${parch(0.18)}`, borderRadius: 999,
-            padding: "9px 16px", cursor: "pointer", flexShrink: 0,
-          }}>Close</button>
+          <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+            <button onClick={onToggleSave} style={{
+              ...label(10, isSaved ? COLORS.parchment : COLORS.ground, ".14em"),
+              background: isSaved ? rgba(COLORS.gold, .12) : COLORS.gold,
+              border: `1px solid ${isSaved ? rgba(COLORS.gold, .48) : COLORS.gold}`,
+              borderRadius: 999, padding: "9px 16px", cursor: "pointer",
+              boxShadow: isSaved ? "none" : "0 0 22px rgba(232,160,32,.25)",
+            }}>{isSaved ? "✓ In my kitchen" : "+ Save to kitchen"}</button>
+            <button onClick={onClose} style={{
+              ...label(10, parch(0.55), ".14em"),
+              background: "transparent", border: `1px solid ${parch(0.18)}`, borderRadius: 999,
+              padding: "9px 16px", cursor: "pointer",
+            }}>Close</button>
+          </div>
         </div>
 
         <ChainFilmstrip chainMeals={mealsByChain(meal.chainId)} currentDay={meal.day} onOpenRecipe={onOpenRecipe} />

@@ -1,210 +1,108 @@
 import { useState } from "react";
-import { MEALS, LENSES, mealByDay } from "../data/mealStats";
-import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "../theme";
+import { MEALS, mealByDay, mealsByChain } from "../data/mealStats";
+import { chains } from "../data/chains";
+import { COLORS, FONTS, EASE, label, mono, display, parch, rgba, hairline } from "../theme";
 
-// Calendar — "the contents page". Thirty nights as dotted-leader lines,
-// ordered by one lens at a time; the right rail is the chosen night's
-// plate caption, macro donut and value gauge.
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const WEEKS = Array.from({ length: 35 }, (_, i) => i < 30 ? mealByDay(i + 1) : null);
 
-const DONUT_C = 2 * Math.PI * 54;
-const ARC_LEN = Math.PI * 70;
+function chainColor(chainId) {
+  const first = mealsByChain(chainId)[0];
+  return first?.color ?? COLORS.gold;
+}
 
-function LensToggle({ lens, onLens }) {
+function ChainConnectors() {
   return (
-    <div style={{ display: "flex", gap: 4, padding: 4, border: `1px solid ${parch(0.14)}`, borderRadius: 999 }}>
-      {Object.keys(LENSES).map((k) => {
-        const on = k === lens;
-        return (
-          <div key={k} onClick={() => onLens(k)} style={{
-            ...label(11, on ? COLORS.ground : "#8d8578", ".16em"),
-            padding: "9px 17px", borderRadius: 999, cursor: "pointer",
-            transition: `all 320ms ${EASE}`,
-            background: on ? COLORS.gold : "transparent",
-          }}>{LENSES[k].label}</div>
-        );
-      })}
-    </div>
+    <svg aria-hidden="true" viewBox="0 0 700 500" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
+      {chains.flatMap((chain) => chain.days.slice(1).map((day, index) => {
+        const from = chain.days[index].day - 1;
+        const to = day.day - 1;
+        const x1 = (from % 7) * 100 + 50;
+        const y1 = Math.floor(from / 7) * 100 + 50;
+        const x2 = (to % 7) * 100 + 50;
+        const y2 = Math.floor(to / 7) * 100 + 50;
+        const wraps = y2 !== y1;
+        const d = wraps
+          ? `M ${x1} ${y1} C ${x1 + 80} ${y1 + 25}, ${x2 - 80} ${y2 - 25}, ${x2} ${y2}`
+          : `M ${x1} ${y1} L ${x2} ${y2}`;
+        return <path key={`${chain.id}-${day.day}`} d={d} fill="none" stroke={chainColor(chain.id)} strokeWidth="3" strokeDasharray={wraps ? "8 6" : undefined} opacity=".42" vectorEffect="non-scaling-stroke" />;
+      }))}
+    </svg>
+  );
+}
+
+function MealCard({ meal, selected, onSelect }) {
+  if (!meal) return <div style={{ minHeight: 122, border: `1px solid ${parch(.04)}`, background: "rgba(0,0,0,.08)" }} />;
+  const color = chainColor(meal.chainId);
+  const position = mealsByChain(meal.chainId).findIndex((m) => m.day === meal.day) + 1;
+  const total = mealsByChain(meal.chainId).length;
+  return (
+    <button onClick={() => onSelect(meal.day)} aria-label={`Day ${meal.day}: ${meal.meal}`} style={{
+      minHeight: 122, position: "relative", zIndex: 1, overflow: "hidden", textAlign: "left",
+      padding: "12px 12px 10px", cursor: "pointer", fontFamily: "inherit",
+      border: `1px solid ${selected ? color : parch(.10)}`,
+      background: selected ? `linear-gradient(150deg, ${rgba(color, .17)}, ${COLORS.pageAlt} 72%)` : "rgba(15,15,20,.94)",
+      boxShadow: selected ? `0 0 0 1px ${rgba(color, .24)}, 0 12px 28px rgba(0,0,0,.28)` : "none",
+      transform: selected ? "translateY(-2px)" : "none", transition: `all 240ms ${EASE}`,
+    }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center" }}>
+        <span style={mono(11, selected ? COLORS.parchment : parch(.38))}>{String(meal.day).padStart(2, "0")}</span>
+        <span style={{ ...label(8, color, ".12em"), whiteSpace: "nowrap" }}>{meal.type === "ANCHOR" ? "Anchor" : `${position} of ${total}`}</span>
+      </div>
+      <div style={{ fontFamily: FONTS.display, color: COLORS.parchment, fontSize: 18, lineHeight: 1.04, marginTop: 13 }}>{meal.short}</div>
+      <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
+        <span style={{ width: 7, height: 7, borderRadius: "50%", background: color, boxShadow: `0 0 0 3px ${rgba(color, .12)}` }} />
+        <span style={label(8, parch(.38), ".12em")}>{meal.cuisine}</span>
+      </div>
+    </button>
   );
 }
 
 export default function CalendarRoom({ onOpenRecipe }) {
-  const [lens, setLens] = useState("value");
   const [selDay, setSelDay] = useState(1);
-
-  const L = LENSES[lens];
-  const sorted = [...MEALS].sort((a, b) => (L.high ? b[L.key] - a[L.key] : a[L.key] - b[L.key]));
   const sel = mealByDay(selDay) ?? MEALS[0];
-
-  const gTotal = sel.p + sel.carbs + sel.fat;
-  const segP = (sel.p / gTotal) * DONUT_C;
-  const segC = (sel.carbs / gTotal) * DONUT_C;
-  const segF = (sel.fat / gTotal) * DONUT_C;
-
-  const vb = LENSES.value;
-  const gT = Math.max(0, Math.min(1, (sel.cpd - vb.min) / (vb.max - vb.min)));
-  const gaugeColor = gT > 0.55 ? COLORS.green : gT > 0.25 ? COLORS.gold : COLORS.amber;
-  const gaugeVerdict = gT > 0.55 ? "Pantry money." : gT > 0.25 ? "Fair trade." : "A treat night.";
-
-  const bars = sorted.slice(0, 5);
-  const topVal = bars[0][L.key];
+  const chain = chains.find((c) => c.id === sel.chainId);
+  const chainMeals = mealsByChain(sel.chainId);
+  const color = chainColor(sel.chainId);
 
   return (
-    <div style={{ flex: 1, display: "flex", minHeight: 0 }}>
-
-      {/* Left page — the contents list */}
-      <div style={{ flex: 1, minWidth: 0, background: COLORS.page, borderRight: hairline, padding: "34px 40px 26px", display: "flex", flexDirection: "column", minHeight: 0 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", paddingBottom: 16, borderBottom: `1px solid ${parch(0.14)}`, gap: 20, flexWrap: "wrap" }}>
-          <div>
-            <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 8 }}>Contents · thirty nights</div>
-            <div style={{ ...display(38, 1), color: COLORS.parchment }}>
-              Ordered by <span style={{ fontStyle: "italic" }}>{L.label.toLowerCase()}</span>
-            </div>
-          </div>
-          <LensToggle lens={lens} onLens={setLens} />
+    <div style={{ flex: 1, minHeight: 0, overflowY: "auto", background: COLORS.page, padding: "28px clamp(18px,3vw,42px) 36px" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 24, flexWrap: "wrap", marginBottom: 22 }}>
+        <div>
+          <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 7 }}>Thirty-night plan</div>
+          <div style={{ ...display(40), color: COLORS.parchment }}>Your recipe calendar</div>
+          <div style={{ fontFamily: FONTS.body, fontStyle: "italic", color: COLORS.faint, fontSize: 14, marginTop: 7 }}>Follow each coloured thread from an anchor cook into its leftover meals.</div>
         </div>
-
-        <div style={{ flex: 1, minHeight: 0, overflowY: "auto", display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: 44, gridAutoRows: "min-content", paddingTop: 8 }}>
-          {sorted.map((m) => {
-            const raw = (m[L.key] - L.min) / (L.max - L.min);
-            const t = Math.max(0, Math.min(1, L.high ? raw : 1 - raw));
-            const on = m.day === selDay;
-            return (
-              <div key={m.day} onClick={() => setSelDay(m.day)} style={{
-                display: "flex", alignItems: "baseline", gap: 12, padding: "9px 10px",
-                cursor: "pointer", borderRadius: 8, transition: `background 320ms ${EASE}`,
-                background: on ? "rgba(232,160,32,0.10)" : "transparent",
-              }}>
-                <span style={{ width: 7, height: 7, borderRadius: "50%", flex: "0 0 7px", transform: "translateY(-1px)", background: m.color }} />
-                <span style={{ ...mono(11, parch(0.34)), width: 26, flex: "0 0 26px" }}>{String(m.day).padStart(2, "0")}</span>
-                <span style={{ fontFamily: FONTS.body, fontSize: 16, color: COLORS.listInk, whiteSpace: "nowrap" }}>{m.short}</span>
-                <span style={{ flex: 1, height: 1, borderBottom: `1px dotted ${parch(0.18)}`, transform: "translateY(-4px)" }} />
-                <span style={mono(15, t > 0.45 ? L.color : "#9c9486")}>{m[L.key]}</span>
-              </div>
-            );
-          })}
+        <div style={{ ...label(9, parch(.42), ".13em"), display: "flex", gap: 15 }}>
+          <span><b style={{ color: COLORS.gold }}>●</b> Anchor</span><span>— Same ingredient chain</span><span>┈ Week wrap</span>
         </div>
       </div>
 
-      {/* Right rail — the chosen night */}
-      <div style={{ width: 430, flex: "0 0 430px", background: COLORS.pageAlt, padding: "34px 34px 28px", display: "flex", flexDirection: "column", gap: 22, overflowY: "auto" }}>
-
-        <div style={{ display: "flex", gap: 20, alignItems: "center" }}>
-          <div style={{
-            width: 120, height: 120, flex: "0 0 120px", borderRadius: "50%",
-            background: `linear-gradient(0deg,${sel.color}4d,${sel.color}4d), ${COLORS.plate}`,
-            border: `1px solid ${parch(0.14)}`,
-          }} />
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ ...label(10, sel.color), marginBottom: 7 }}>{sel.cuisine} · day {sel.day}</div>
-            <div style={{ ...display(29, 1.05), color: COLORS.parchment, textWrap: "pretty" }}>{sel.meal}</div>
-            <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 14, color: COLORS.faint, marginTop: 7 }}>from {sel.anchor}</div>
-          </div>
+      <div style={{ border: hairline, borderRadius: 12, overflow: "hidden", background: COLORS.pageAlt, minWidth: 760 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", background: COLORS.masthead }}>
+          {WEEKDAYS.map((day) => <div key={day} style={{ ...label(9, parch(.42), ".18em"), textAlign: "center", padding: "10px 4px", borderRight: hairline }}>{day}</div>)}
         </div>
-
-        <div style={{ display: "flex", borderTop: hairline, borderBottom: hairline, padding: "14px 0" }}>
-          {[
-            ["Serves", "2", COLORS.parchment],
-            ["Cost", `$${sel.cost.toFixed(2)}`, COLORS.green],
-            ["Energy", sel.kcal, COLORS.amber],
-            ["Value", sel.cpd, gaugeColor],
-          ].map(([k, v, c]) => (
-            <div key={k} style={{ flex: 1 }}>
-              <div style={label(9, parch(0.36), ".16em")}>{k}</div>
-              <div style={{ ...mono(16, c), marginTop: 5 }}>{v}</div>
-            </div>
-          ))}
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", gridTemplateRows: "repeat(5, minmax(122px, 1fr))", gap: 7, padding: 7 }}>
+          <ChainConnectors />
+          {WEEKS.map((meal, i) => <MealCard key={meal?.day ?? `empty-${i}`} meal={meal} selected={meal?.day === selDay} onSelect={setSelDay} />)}
         </div>
+      </div>
 
-        {/* Macro donut */}
-        <div style={{ display: "flex", gap: 22, alignItems: "center" }}>
-          <div style={{ position: "relative", width: 126, height: 126, flex: "0 0 126px" }}>
-            <svg width="126" height="126" viewBox="0 0 140 140">
-              <circle cx="70" cy="70" r="54" fill="none" stroke={parch(0.09)} strokeWidth="14" />
-              <circle cx="70" cy="70" r="54" fill="none" stroke={COLORS.gold} strokeWidth="14"
-                strokeDasharray={`${segP.toFixed(1)} ${(DONUT_C - segP).toFixed(1)}`} transform="rotate(-90 70 70)" />
-              <circle cx="70" cy="70" r="54" fill="none" stroke={COLORS.amber} strokeWidth="14"
-                strokeDasharray={`${segC.toFixed(1)} ${(DONUT_C - segC).toFixed(1)}`} strokeDashoffset={(-segP).toFixed(1)} transform="rotate(-90 70 70)" />
-              <circle cx="70" cy="70" r="54" fill="none" stroke={parch(0.34)} strokeWidth="14"
-                strokeDasharray={`${segF.toFixed(1)} ${(DONUT_C - segF).toFixed(1)}`} strokeDashoffset={(-(segP + segC)).toFixed(1)} transform="rotate(-90 70 70)" />
-            </svg>
-            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", pointerEvents: "none" }}>
-              <div style={{ ...mono(24), lineHeight: 1 }}>{sel.kcal}</div>
-              <div style={{ ...mono(10, parch(0.34)), letterSpacing: ".18em", marginTop: 4 }}>KCAL</div>
-            </div>
-          </div>
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 11 }}>
-            {[
-              ["Protein", sel.p, COLORS.gold],
-              ["Carbohydrate", sel.carbs, COLORS.amber],
-              ["Fat", sel.fat, parch(0.34)],
-            ].map(([name, g, c]) => (
-              <div key={name} style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
-                <span style={{ width: 9, height: 9, borderRadius: 2, background: c }} />
-                <span style={{ fontFamily: FONTS.label, fontSize: 12, color: parch(0.62), flex: 1 }}>{name}</span>
-                <span style={mono(14)}>{g} g</span>
-              </div>
-            ))}
-          </div>
+      <div style={{ marginTop: 18, border: `1px solid ${rgba(color, .35)}`, borderRadius: 12, background: `linear-gradient(100deg, ${rgba(color, .12)}, ${COLORS.pageAlt} 45%)`, padding: "18px 20px", display: "flex", gap: 22, alignItems: "center", flexWrap: "wrap" }}>
+        <div style={{ fontSize: 34 }}>{chain?.emoji}</div>
+        <div style={{ flex: "1 1 260px" }}>
+          <div style={label(9, color, ".18em")}>Day {sel.day} · {sel.type === "ANCHOR" ? "Start this chain" : `Use the ${chain?.anchor.toLowerCase()}`}</div>
+          <div style={{ ...display(26), marginTop: 5 }}>{sel.meal}</div>
+          <div style={{ color: COLORS.faint, fontSize: 13, fontStyle: "italic", marginTop: 5 }}>{chain?.passive}</div>
         </div>
-
-        {/* Value gauge */}
-        <div>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 2 }}>
-            <span style={label(9, parch(0.36))}>Value against the month</span>
-            <span style={mono(10, parch(0.30))}>{vb.min} → {vb.max}</span>
-          </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-            <svg width="160" height="94" viewBox="0 0 168 98">
-              <path d="M14 88 A70 70 0 0 1 154 88" fill="none" stroke={parch(0.09)} strokeWidth="12" strokeLinecap="round" />
-              <path d="M14 88 A70 70 0 0 1 154 88" fill="none" stroke="url(#embGauge)" strokeWidth="12" strokeLinecap="round"
-                strokeDasharray={`${(ARC_LEN * gT).toFixed(1)} ${ARC_LEN.toFixed(1)}`} />
-              <defs>
-                <linearGradient id="embGauge" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor={COLORS.amber} />
-                  <stop offset="55%" stopColor={COLORS.gold} />
-                  <stop offset="100%" stopColor={COLORS.green} />
-                </linearGradient>
-              </defs>
-              <g style={{ transform: `rotate(${Math.round(-90 + 180 * gT)}deg)`, transformOrigin: "84px 88px", transition: `transform 420ms ${EASE}` }}>
-                <line x1="84" y1="88" x2="84" y2="36" stroke={COLORS.parchment} strokeWidth="2" strokeLinecap="round" />
-              </g>
-              <circle cx="84" cy="88" r="4.5" fill={COLORS.parchment} />
-            </svg>
-            <div>
-              <div style={{ ...mono(30, gaugeColor), lineHeight: 1 }}>{sel.cpd}</div>
-              <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 14, color: COLORS.faint, marginTop: 8 }}>{gaugeVerdict}</div>
-            </div>
-          </div>
+        <div style={{ display: "flex", gap: 7, alignItems: "center" }}>
+          {chainMeals.map((meal, i) => <button key={meal.day} onClick={() => setSelDay(meal.day)} title={meal.meal} style={{ width: 29, height: 29, borderRadius: "50%", cursor: "pointer", border: `1px solid ${meal.day === selDay ? color : parch(.15)}`, color: meal.day === selDay ? COLORS.ground : parch(.54), background: meal.day === selDay ? color : "transparent", ...mono(10, meal.day === selDay ? COLORS.ground : parch(.54)) }}>{i + 1}</button>)}
         </div>
-
-        <button onClick={() => onOpenRecipe(sel.day)} style={{
-          ...label(11, COLORS.ground, ".16em"),
-          background: COLORS.gold, border: "none", borderRadius: 999,
-          padding: "13px 22px", cursor: "pointer", alignSelf: "flex-start",
-          boxShadow: "0 0 24px rgba(232,160,32,0.35)",
-        }}>Open the recipe</button>
-
-        {/* Best five */}
-        <div style={{ marginTop: "auto", borderTop: hairline, paddingTop: 16 }}>
-          <div style={{ ...label(9, parch(0.36)), marginBottom: 12 }}>Best five · {L.label.toLowerCase()}</div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {bars.map((m) => {
-              const pct = Math.round((L.high ? m[L.key] / topVal : topVal / m[L.key]) * 100);
-              return (
-                <div key={m.day} style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-                    <span style={{ fontFamily: FONTS.body, fontSize: 14, color: "#b8b0a1" }}>{m.short}</span>
-                    <span style={mono(12, L.color)}>{m[L.key]} {L.unit}</span>
-                  </div>
-                  <div style={{ height: 3, borderRadius: 999, background: parch(0.09), overflow: "hidden" }}>
-                    <div style={{ height: 3, borderRadius: 999, transition: `width 420ms ${EASE}`, width: `${pct}%`, background: L.color }} />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+        <div style={{ display: "flex", gap: 22 }}>
+          <div><div style={label(8)}>Active</div><div style={{ ...mono(14), marginTop: 4 }}>{sel.time} min</div></div>
+          <div><div style={label(8)}>Cost</div><div style={{ ...mono(14, COLORS.green), marginTop: 4 }}>${sel.cost.toFixed(2)}</div></div>
         </div>
-
+        <button onClick={() => onOpenRecipe(sel.day)} style={{ ...label(10, COLORS.ground, ".14em"), border: 0, borderRadius: 999, background: COLORS.gold, padding: "12px 19px", cursor: "pointer" }}>Open recipe →</button>
       </div>
     </div>
   );
