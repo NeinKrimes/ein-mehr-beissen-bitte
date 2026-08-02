@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { MEALS, mealByDay, mealsByChain } from "../data/mealStats";
 import { chains } from "../data/chains";
 import { COLORS, FONTS, EASE, label, mono, display, parch, rgba, hairline } from "../theme";
@@ -11,7 +11,8 @@ function chainColor(chainId) {
   return first?.color ?? COLORS.gold;
 }
 
-function ChainConnectors() {
+// Memoize to prevent re-rendering when parent CalendarRoom state changes (e.g. day selection)
+const ChainConnectors = memo(function ChainConnectors() {
   return (
     <svg aria-hidden="true" viewBox="0 0 700 500" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
       {chains.flatMap((chain) => chain.days.slice(1).map((day, index) => {
@@ -29,9 +30,10 @@ function ChainConnectors() {
       }))}
     </svg>
   );
-}
+});
 
-function MealCard({ meal, selected, onSelect }) {
+// Memoize to prevent all 35 cards from re-rendering when only one changes its selected state
+const MealCard = memo(function MealCard({ meal, selected, onSelect }) {
   if (!meal) return <div style={{ minHeight: 122, border: `1px solid ${parch(.04)}`, background: "rgba(0,0,0,.08)" }} />;
   const color = chainColor(meal.chainId);
   const position = mealsByChain(meal.chainId).findIndex((m) => m.day === meal.day) + 1;
@@ -56,7 +58,7 @@ function MealCard({ meal, selected, onSelect }) {
       </div>
     </button>
   );
-}
+});
 
 export default function CalendarRoom({ onOpenRecipe }) {
   const [selDay, setSelDay] = useState(1);

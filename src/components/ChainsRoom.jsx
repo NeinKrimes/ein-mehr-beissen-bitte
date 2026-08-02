@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { chains } from "../data/chains";
 import { MEALS } from "../data/mealStats";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline, rgba } from "../theme";
@@ -19,15 +19,21 @@ function splitAnchor(anchor) {
 
 export default function ChainsRoom({ onOpenRecipe }) {
   const [chapter, setChapter] = useState(0);
-  const chain = chains[chapter];
-  const meals = MEALS.filter((m) => m.chainId === chain.id);
-  const anchorMeal = meals.find((m) => m.type === "ANCHOR") ?? meals[0];
 
-  const totalCost = meals.reduce((s, m) => s + m.cost, 0);
-  const avgCpd = Math.round(meals.reduce((s, m) => s + m.cpd, 0) / meals.length);
-  const passiveShort = chain.passive.replace(/\s*\(.*\)$/, "");
-  const [anchorA, anchorB] = splitAnchor(chain.anchor);
-  const followups = meals.filter((m) => m.type !== "ANCHOR").map((m) => m.short);
+  // Memoize heavy derived state calculations to prevent redundant re-computation on every render
+  const { chain, meals, anchorMeal, totalCost, avgCpd, passiveShort, anchorA, anchorB, followups } = useMemo(() => {
+    const chain = chains[chapter];
+    const meals = MEALS.filter((m) => m.chainId === chain.id);
+    const anchorMeal = meals.find((m) => m.type === "ANCHOR") ?? meals[0];
+
+    const totalCost = meals.reduce((s, m) => s + m.cost, 0);
+    const avgCpd = Math.round(meals.reduce((s, m) => s + m.cpd, 0) / meals.length);
+    const passiveShort = chain.passive.replace(/\s*\(.*\)$/, "");
+    const [anchorA, anchorB] = splitAnchor(chain.anchor);
+    const followups = meals.filter((m) => m.type !== "ANCHOR").map((m) => m.short);
+
+    return { chain, meals, anchorMeal, totalCost, avgCpd, passiveShort, anchorA, anchorB, followups };
+  }, [chapter]);
 
   return (
     <div style={{ flex: 1, display: "flex", minHeight: 0 }}>
