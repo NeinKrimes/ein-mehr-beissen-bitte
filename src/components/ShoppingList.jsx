@@ -2,7 +2,7 @@
 // like items and summing amounts where units match, with an estimated total cost.
 // Reads from the preloaded recipe cache (getRecipe) — no network, no AI calls.
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { sendToRetailer } from "../lib/shoppingCart";
 
 function fmtAmount(n) {
@@ -97,13 +97,28 @@ function RetailerButton({ retailer, items }) {
 }
 
 export default function ShoppingList({ flatDays, getRecipe, onClose }) {
-  // Group days into 7-day spans (week 1 = days 1–7, …).
-  const weeks = new Map();
-  for (const d of flatDays) {
-    const w = Math.ceil(d.day / 7);
-    if (!weeks.has(w)) weeks.set(w, []);
-    weeks.get(w).push(d);
-  }
+  const weeksData = useMemo(() => {
+    // Group days into 7-day spans (week 1 = days 1–7, …).
+    const weeks = new Map();
+    for (const d of flatDays) {
+      const w = Math.ceil(d.day / 7);
+      if (!weeks.has(w)) weeks.set(w, []);
+      weeks.get(w).push(d);
+    }
+
+    // Pre-calculate aggregated recipes and costs for each week to avoid
+    // redundant expensive iterations on every render.
+    return [...weeks.keys()].sort((a, b) => a - b).map((w) => {
+      const days = weeks.get(w);
+      const recipes = days
+        .map((d) => getRecipe(d.mealId))
+        .filter((r) => r && !r.loading && !r.error);
+      const items = aggregate(recipes);
+      const total = weekTotalCost(recipes);
+      const dayRange = `${days[0].day}–${days[days.length - 1].day}`;
+      return { w, days, recipes, items, total, dayRange };
+    });
+  }, [flatDays, getRecipe]);
 
   return (
     <div
@@ -132,15 +147,7 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
           >✕</button>
         </div>
 
-        {[...weeks.keys()].sort((a, b) => a - b).map((w) => {
-          const days = weeks.get(w);
-          const recipes = days
-            .map((d) => getRecipe(d.mealId))
-            .filter((r) => r && !r.loading && !r.error);
-          const items = aggregate(recipes);
-          const total = weekTotalCost(recipes);
-          const dayRange = `${days[0].day}–${days[days.length - 1].day}`;
-
+        {weeksData.map(({ w, recipes, items, total, dayRange }) => {
           return (
             <div key={w} style={{ marginBottom: "22px" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `1px solid #2a2a3a`, paddingBottom: "6px", marginBottom: "10px" }}>
