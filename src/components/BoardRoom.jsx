@@ -42,7 +42,7 @@ export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
             const on = f.key === filter;
             return (
               <button key={f.key} onClick={() => setFilter(f.key)} style={{
-                ...label(10, on ? COLORS.ground : parch(0.55), ".14em"),
+                ...label(10, on ? COLORS.ground : COLORS.muted, ".14em"),
                 padding: "10px 18px", borderRadius: 999, cursor: "pointer",
                 transition: `all 320ms ${EASE}`,
                 background: on ? COLORS.gold : "transparent",
@@ -72,24 +72,23 @@ export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
                   ...label(10, isSaved ? COLORS.parchment : COLORS.ground, ".14em"),
                   padding: "8px 15px", borderRadius: 999, cursor: "pointer",
                   transition: `all 320ms ${EASE}`,
-                  background: isSaved ? "rgba(12,12,15,0.8)" : COLORS.gold,
+                  background: isSaved ? COLORS.pageAlt : COLORS.gold,
                   border: isSaved ? `1px solid ${parch(0.24)}` : "1px solid transparent",
-                  boxShadow: isSaved ? "none" : "0 0 24px rgba(232,160,32,0.35)",
                 }}>{isSaved ? "Saved" : "Save"}</span>
               </div>
               <div style={{ ...label(10, m.color), margin: "18px 0 6px" }}>
                 {m.cuisine}{m.type === "ANCHOR" ? " · anchor" : ""}
               </div>
               <div style={{ ...display(23, 1.08), color: COLORS.parchment, textWrap: "pretty" }}>{p.title}</div>
-              <div style={{ ...mono(12, parch(0.42)), marginTop: 8 }}>
+              <div style={{ ...mono(12, COLORS.faint), marginTop: 8 }}>
                 <span style={{ color: hotKcal ? COLORS.amber : "inherit" }}>{m.kcal} kcal</span>
                 {" · "}
                 <span style={{ color: goodValue && !hotKcal ? COLORS.green : "inherit" }}>{m.cpd} cal/$</span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: "auto", paddingTop: 12, borderTop: `1px solid ${parch(0.08)}` }}>
                 <span style={{ width: 22, height: 22, borderRadius: "50%", background: parch(0.12) }} />
-                <span style={{ fontFamily: FONTS.body, fontSize: 14, color: "#8d8578", flex: 1 }}>{p.cook}</span>
-                <span style={mono(11, parch(0.34))}>{p.cooks}</span>
+                <span style={{ fontFamily: FONTS.body, fontSize: 14, color: COLORS.muted, flex: 1 }}>{p.cook}</span>
+                <span style={mono(11, COLORS.faint)}>{p.cooks}</span>
               </div>
             </div>
           );

@@ -4,6 +4,7 @@
 
 import { useState } from "react";
 import { sendToRetailer } from "../lib/shoppingCart";
+import { COLORS, FONTS, hairline } from "../theme";
 
 function fmtAmount(n) {
   if (!Number.isFinite(n)) return "";
@@ -52,8 +53,6 @@ function flattenForCart(items) {
   return lines;
 }
 
-const GOLD = "#e8a020";
-
 const RETAILERS = [
   { id: "instacart", label: "Instacart" },
   { id: "walmart", label: "Walmart" },
@@ -81,7 +80,7 @@ function RetailerButton({ retailer, items }) {
         onClick={handleClick}
         disabled={state === "loading"}
         style={{
-          background: "none", border: `1px solid ${GOLD}`, color: GOLD,
+          background: "none", border: `1px solid ${COLORS.gold}`, color: COLORS.gold,
           cursor: state === "loading" ? "default" : "pointer", padding: "4px 10px",
           borderRadius: "999px", fontSize: "11px", letterSpacing: "0.5px",
           opacity: state === "loading" ? 0.6 : 1,
@@ -90,7 +89,7 @@ function RetailerButton({ retailer, items }) {
         {state === "loading" ? "Sending…" : `Shop on ${retailer.label}`}
       </button>
       {state === "error" && (
-        <span style={{ fontSize: "10px", color: "#e84040", fontStyle: "italic" }}>{message}</span>
+        <span style={{ fontSize: "10px", color: COLORS.danger, fontStyle: "italic" }}>{message}</span>
       )}
     </div>
   );
@@ -117,18 +116,18 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: "#131318", border: "1px solid #2a2a3a", borderRadius: "10px",
-          width: "100%", maxWidth: "620px", padding: "20px",
+          background: COLORS.page, border: hairline, borderRadius: "10px",
+          width: "100%", maxWidth: "620px", padding: "20px", fontFamily: FONTS.body,
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
           <div>
-            <div style={{ fontSize: "10px", letterSpacing: "4px", color: "#555", textTransform: "uppercase" }}>Frugal Prep</div>
-            <h2 style={{ fontSize: "18px", fontWeight: "normal", margin: "4px 0 0", color: "#f0e8d8" }}>🛒 Weekly Shopping List</h2>
+            <div style={{ fontSize: "10px", letterSpacing: "4px", color: COLORS.muted, textTransform: "uppercase" }}>Frugal Prep</div>
+            <h2 style={{ fontFamily: FONTS.display, fontSize: "18px", fontWeight: "normal", margin: "4px 0 0", color: COLORS.parchment }}>Weekly Shopping List</h2>
           </div>
           <button
             onClick={onClose}
-            style={{ background: "none", border: "1px solid #2a2a3a", color: "#555", cursor: "pointer", padding: "4px 10px", borderRadius: "4px", fontSize: "16px" }}
+            style={{ background: "none", border: hairline, color: COLORS.muted, cursor: "pointer", padding: "4px 10px", borderRadius: "4px", fontSize: "16px" }}
           >✕</button>
         </div>
 
@@ -143,15 +142,15 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
 
           return (
             <div key={w} style={{ marginBottom: "22px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `1px solid #2a2a3a`, paddingBottom: "6px", marginBottom: "10px" }}>
-                <div style={{ fontSize: "13px", color: GOLD, letterSpacing: "1px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: hairline, paddingBottom: "6px", marginBottom: "10px" }}>
+                <div style={{ fontSize: "13px", color: COLORS.gold, letterSpacing: "1px" }}>
                   Week {w} · Days {dayRange}
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <div style={{ fontSize: "12px", color: "#888" }}>
+                  <div style={{ fontSize: "12px", color: COLORS.muted }}>
                     {recipes.length > 0
-                      ? <>est. <span style={{ color: "#22c55e" }}>${total.toFixed(2)}</span></>
-                      : <span style={{ color: "#555" }}>not seeded yet</span>}
+                      ? <>est. <span style={{ color: COLORS.green }}>${total.toFixed(2)}</span></>
+                      : <span style={{ color: COLORS.muted }}>not seeded yet</span>}
                   </div>
                   {items.size > 0 && (
                     <div style={{ display: "flex", gap: "8px" }}>
@@ -164,7 +163,7 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
               </div>
 
               {items.size === 0 ? (
-                <div style={{ fontSize: "12px", color: "#555", fontStyle: "italic" }}>
+                <div style={{ fontSize: "12px", color: COLORS.muted, fontStyle: "italic" }}>
                   Recipes for this week aren’t in the library yet — run the seed.
                 </div>
               ) : (
@@ -177,9 +176,9 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
                       .filter(Boolean)
                       .join(" · ");
                     return (
-                      <div key={item} style={{ display: "flex", gap: "6px", padding: "3px 0", fontSize: "12px", borderBottom: "1px solid #1a1a26" }}>
-                        <span style={{ color: GOLD, minWidth: "64px", textAlign: "right", flexShrink: 0 }}>{qty}</span>
-                        <span style={{ color: "#c0b8a8" }}>{item}</span>
+                      <div key={item} style={{ display: "flex", gap: "6px", padding: "3px 0", fontSize: "12px", borderBottom: hairline }}>
+                        <span style={{ color: COLORS.gold, minWidth: "64px", textAlign: "right", flexShrink: 0 }}>{qty}</span>
+                        <span style={{ color: COLORS.listInk }}>{item}</span>
                       </div>
                     );
                   })}

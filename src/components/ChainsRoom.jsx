@@ -34,16 +34,14 @@ export default function ChainsRoom({ onOpenRecipe }) {
 
       {/* Left page — the anchor */}
       <div style={{ width: "44%", minWidth: 420, flex: "0 0 auto", background: COLORS.page, borderRight: hairline, position: "relative", overflow: "hidden", padding: "46px 48px", display: "flex", flexDirection: "column" }}>
-        <div style={{ position: "absolute", right: -90, top: -70, width: 300, height: 300, borderRadius: "50%", pointerEvents: "none", background: "radial-gradient(circle at 36% 34%, rgba(232,160,32,0.30), rgba(232,160,32,0.05) 62%, transparent 74%)" }} />
-
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12 }}>
           <div style={label(10, COLORS.gold, ".3em")}>Chapter {CHAPTER_WORDS[chapter]} · the anchor</div>
           <div style={{ display: "flex", gap: 14 }}>
             <span onClick={() => setChapter((chapter + chains.length - 1) % chains.length)}
-              style={{ ...mono(13, parch(0.42)), cursor: "pointer" }}>←</span>
-            <span style={mono(11, parch(0.30))}>{chapter + 1} / {chains.length}</span>
+              style={{ ...mono(13, COLORS.faint), cursor: "pointer" }}>←</span>
+            <span style={mono(11, COLORS.faint)}>{chapter + 1} / {chains.length}</span>
             <span onClick={() => setChapter((chapter + 1) % chains.length)}
-              style={{ ...mono(13, parch(0.42)), cursor: "pointer" }}>→</span>
+              style={{ ...mono(13, COLORS.faint), cursor: "pointer" }}>→</span>
           </div>
         </div>
 
@@ -61,8 +59,7 @@ export default function ChainsRoom({ onOpenRecipe }) {
           <div onClick={() => onOpenRecipe(anchorMeal.day)} style={{
             width: 230, height: 230, borderRadius: "50%", cursor: "pointer",
             background: `linear-gradient(0deg,${rgba(anchorMeal.color, 0.18)},${rgba(anchorMeal.color, 0.18)}), ${COLORS.plate}`,
-            border: "1px solid rgba(232,160,32,0.42)",
-            boxShadow: "0 0 0 9px rgba(232,160,32,0.08), 0 0 60px rgba(232,160,32,0.14)",
+            border: `1px solid ${COLORS.gold}`,
           }} />
         </div>
 
@@ -74,7 +71,7 @@ export default function ChainsRoom({ onOpenRecipe }) {
             ["Average", `${avgCpd} cal/$`, COLORS.green],
           ].map(([k, v, c], i) => (
             <div key={k} style={{ flex: 1, paddingLeft: i ? 22 : 0, borderLeft: i ? hairline : "none" }}>
-              <div style={label(10, parch(0.36), ".16em")}>{k}</div>
+              <div style={label(10, COLORS.faint, ".16em")}>{k}</div>
               <div style={{ ...mono(15, c), marginTop: 6 }}>{v}</div>
             </div>
           ))}
@@ -85,7 +82,7 @@ export default function ChainsRoom({ onOpenRecipe }) {
       <div style={{ flex: 1, minWidth: 0, padding: "46px 48px", display: "flex", flexDirection: "column", background: COLORS.pageAlt, overflowY: "auto" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 14 }}>
           <div style={{ ...display(34), color: COLORS.parchment }}>What it becomes</div>
-          <div style={label(10, parch(0.36))}>
+          <div style={label(10, COLORS.faint)}>
             Days {meals[0].day} – {meals[meals.length - 1].day} · {new Set(meals.map((m) => m.cuisine)).size} cuisines
           </div>
         </div>
@@ -114,7 +111,7 @@ export default function ChainsRoom({ onOpenRecipe }) {
               </div>
               <div style={{ textAlign: "right", flex: "0 0 auto" }}>
                 <div style={{ ...mono(26, COLORS.green), lineHeight: 1 }}>{m.cpd}</div>
-                <div style={{ ...mono(10, parch(0.34)), letterSpacing: ".1em", marginTop: 4 }}>cal/$</div>
+                <div style={{ ...mono(10, COLORS.faint), letterSpacing: ".1em", marginTop: 4 }}>cal/$</div>
                 <div style={{ ...mono(12, COLORS.muted), marginTop: 8 }}>{m.kcal} kcal · ${m.cost.toFixed(2)}</div>
               </div>
             </div>
@@ -129,7 +126,6 @@ export default function ChainsRoom({ onOpenRecipe }) {
             ...label(11, COLORS.ground, ".16em"),
             background: COLORS.gold, border: "none", borderRadius: 999,
             padding: "14px 24px", cursor: "pointer", whiteSpace: "nowrap",
-            boxShadow: "0 0 24px rgba(232,160,32,0.35)",
           }}>Start the chain</button>
         </div>
       </div>

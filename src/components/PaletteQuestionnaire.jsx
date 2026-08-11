@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { usePalate } from "../hooks/usePalate";
+import { COLORS, FONTS, rgba, hairline } from "../theme";
 
 // ─── Static data ─────────────────────────────────────────────────────────────
 
@@ -48,9 +49,9 @@ const TOTAL_STEPS = 8;
 // ─── Tier chip helpers ────────────────────────────────────────────────────────
 
 const TIER_CONFIG = {
-  like:  { bg: "#22c55e18", border: "#22c55e", text: "#22c55e", dot: "●", label: "Like"  },
-  avoid: { bg: "#f59e0b18", border: "#f59e0b", text: "#f59e0b", dot: "●", label: "Avoid" },
-  never: { bg: "#e8404018", border: "#e84040", text: "#e84040", dot: "●", label: "Never" },
+  like:  { bg: rgba(COLORS.green, .10), border: COLORS.green, text: COLORS.green, dot: "●", label: "Like"  },
+  avoid: { bg: rgba(COLORS.amber, .10), border: COLORS.amber, text: COLORS.amber, dot: "●", label: "Avoid" },
+  never: { bg: rgba(COLORS.danger, .10), border: COLORS.danger, text: COLORS.danger, dot: "●", label: "Never" },
 };
 
 // ─── Shared primitives ────────────────────────────────────────────────────────
@@ -60,15 +61,15 @@ function ProgressBar({ step }) {
   return (
     <div style={{ padding: "16px 20px 0", position: "relative" }}>
       <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6 }}>
-        <span style={{ fontSize: 11, color: "#666", letterSpacing: 2, textTransform: "uppercase" }}>
+        <span style={{ fontSize: 11, color: COLORS.faint, letterSpacing: 2, textTransform: "uppercase" }}>
           Step {step + 1} of {TOTAL_STEPS}
         </span>
-        <span style={{ fontSize: 11, color: "#444" }}>{pct}%</span>
+        <span style={{ fontSize: 11, color: COLORS.faintest }}>{pct}%</span>
       </div>
-      <div style={{ height: 3, background: "#1e1e2e", borderRadius: 2, overflow: "hidden" }}>
+      <div style={{ height: 3, background: COLORS.border, borderRadius: 2, overflow: "hidden" }}>
         <div style={{
           height: "100%", width: `${pct}%`,
-          background: "linear-gradient(90deg, #e8a020, #f0c040)",
+          background: COLORS.gold,
           borderRadius: 2, transition: "width 0.3s ease",
         }} />
       </div>
@@ -79,10 +80,10 @@ function ProgressBar({ step }) {
 function StepHeading({ title, sub }) {
   return (
     <div style={{ marginBottom: 24 }}>
-      <h2 style={{ fontSize: "clamp(18px,3.5vw,24px)", fontWeight: "normal", margin: "0 0 6px", color: "#f0e8d8" }}>
+      <h2 style={{ fontFamily: FONTS.display, fontSize: "clamp(18px,3.5vw,24px)", fontWeight: "normal", margin: "0 0 6px", color: COLORS.parchment }}>
         {title}
       </h2>
-      {sub && <p style={{ fontSize: 13, color: "#555", margin: 0, fontStyle: "italic", lineHeight: 1.5 }}>{sub}</p>}
+      {sub && <p style={{ fontSize: 13, color: COLORS.muted, margin: 0, fontStyle: "italic", lineHeight: 1.5 }}>{sub}</p>}
     </div>
   );
 }
@@ -92,7 +93,7 @@ function NavButtons({ step, onBack, onNext, nextLabel = "Next", nextDisabled = f
     <div style={{ display: "flex", gap: 10, marginTop: 32, justifyContent: "flex-end" }}>
       {step > 0 && (
         <button onClick={onBack} style={{
-          background: "none", border: "1px solid #2a2a3a", color: "#888",
+          background: "none", border: hairline, color: COLORS.muted,
           padding: "10px 20px", borderRadius: 6, cursor: "pointer",
           fontSize: 13, fontFamily: "inherit",
         }}>
@@ -100,8 +101,8 @@ function NavButtons({ step, onBack, onNext, nextLabel = "Next", nextDisabled = f
         </button>
       )}
       <button onClick={onNext} disabled={nextDisabled} style={{
-        background: nextDisabled ? "#1e1e2e" : "#e8a020",
-        color: nextDisabled ? "#444" : "#0c0c0f",
+        background: nextDisabled ? COLORS.masthead : COLORS.gold,
+        color: nextDisabled ? COLORS.faintest : COLORS.ground,
         border: "none", padding: "10px 24px", borderRadius: 6,
         cursor: nextDisabled ? "default" : "pointer",
         fontSize: 13, fontWeight: "bold", fontFamily: "inherit",
@@ -116,9 +117,9 @@ function NavButtons({ step, onBack, onNext, nextLabel = "Next", nextDisabled = f
 function SelectionChip({ label, selected, onClick }) {
   return (
     <button onClick={onClick} style={{
-      background: selected ? "#e8a02020" : "#131318",
-      border: `1px solid ${selected ? "#e8a020" : "#2a2a3a"}`,
-      color: selected ? "#e8a020" : "#888",
+      background: selected ? rgba(COLORS.gold, .10) : COLORS.page,
+      border: `1px solid ${selected ? COLORS.gold : COLORS.border}`,
+      color: selected ? COLORS.gold : COLORS.muted,
       padding: "10px 18px", borderRadius: 6,
       cursor: "pointer", fontSize: 13, fontFamily: "inherit",
       transition: "all 0.15s", whiteSpace: "nowrap",
@@ -133,9 +134,9 @@ function TierChip({ label, tier, activeTier, onClick }) {
   const cfg = tier ? TIER_CONFIG[tier] : null;
   return (
     <button onClick={onClick} aria-label={`${label}: ${tier ?? "neutral"}. Set to ${activeTier}.`} style={{
-      background: cfg ? cfg.bg : "#131318",
-      border: `1px solid ${cfg ? cfg.border : "#2a2a3a"}`,
-      color: cfg ? cfg.text : "#555",
+      background: cfg ? cfg.bg : COLORS.page,
+      border: `1px solid ${cfg ? cfg.border : COLORS.border}`,
+      color: cfg ? cfg.text : COLORS.muted,
       padding: "8px 14px", borderRadius: 6,
       cursor: "pointer", fontSize: 12, fontFamily: "inherit",
       display: "flex", alignItems: "center", gap: 6,
@@ -178,20 +179,20 @@ function StepSkill({ answers, setAnswer, onBack, onNext }) {
           const sel = answers.skillLevel === opt.value;
           return (
             <button key={opt.value} onClick={() => setAnswer("skillLevel", opt.value)} style={{
-              background: sel ? "#e8a02012" : "#131318",
-              border: `1px solid ${sel ? "#e8a020" : "#2a2a3a"}`,
-              color: sel ? "#f0e8d8" : "#888",
+              background: sel ? rgba(COLORS.gold, .08) : COLORS.page,
+              border: `1px solid ${sel ? COLORS.gold : COLORS.border}`,
+              color: sel ? COLORS.parchment : COLORS.muted,
               padding: "14px 18px", borderRadius: 8,
               cursor: "pointer", textAlign: "left", fontFamily: "inherit",
               transition: "all 0.15s",
             }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 14, fontWeight: sel ? "bold" : "normal", color: sel ? "#e8a020" : "#c0b8a8" }}>
+                <span style={{ fontSize: 14, fontWeight: sel ? "bold" : "normal", color: sel ? COLORS.gold : COLORS.listInk }}>
                   {opt.label}
                 </span>
-                {sel && <span style={{ color: "#e8a020", fontSize: 14 }}>✓</span>}
+                {sel && <span style={{ color: COLORS.gold, fontSize: 14 }}>✓</span>}
               </div>
-              <div style={{ fontSize: 12, color: "#555", marginTop: 4, fontStyle: "italic", lineHeight: 1.4 }}>{opt.desc}</div>
+              <div style={{ fontSize: 12, color: COLORS.muted, marginTop: 4, fontStyle: "italic", lineHeight: 1.4 }}>{opt.desc}</div>
             </button>
           );
         })}
@@ -205,7 +206,7 @@ function StepTime({ answers, setAnswer, onBack, onNext }) {
   function TimeSelector({ label, options, value, field }) {
     return (
       <div>
-        <div style={{ fontSize: 11, letterSpacing: 2, color: "#555", textTransform: "uppercase", marginBottom: 10 }}>
+        <div style={{ fontSize: 11, letterSpacing: 2, color: COLORS.muted, textTransform: "uppercase", marginBottom: 10 }}>
           {label}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -213,9 +214,9 @@ function StepTime({ answers, setAnswer, onBack, onNext }) {
             const sel = value === opt.value;
             return (
               <button key={opt.value} onClick={() => setAnswer(field, opt.value)} style={{
-                background: sel ? "#e8a02012" : "#131318",
-                border: `1px solid ${sel ? "#e8a020" : "#2a2a3a"}`,
-                color: sel ? "#e8a020" : "#888",
+                background: sel ? rgba(COLORS.gold, .08) : COLORS.page,
+                border: `1px solid ${sel ? COLORS.gold : COLORS.border}`,
+                color: sel ? COLORS.gold : COLORS.muted,
                 padding: "10px 16px", borderRadius: 6,
                 cursor: "pointer", textAlign: "left",
                 fontFamily: "inherit", fontSize: 13,
@@ -285,25 +286,25 @@ function StepTierChips({ title, sub, step, items, ratings, setRatings, onBack, o
       <StepHeading title={title} sub={sub} />
       <div style={{
         display: "flex", gap: 8, marginBottom: 18, flexWrap: "wrap",
-        padding: 5, background: "#0d0d12", border: "1px solid #1e1e2e", borderRadius: 8,
+        padding: 5, background: COLORS.pageAlt, border: hairline, borderRadius: 8,
       }}>
         {[
-          { tier: "like",  label: "Like",  color: "#22c55e" },
-          { tier: "avoid", label: "Avoid", color: "#f59e0b" },
-          { tier: "never", label: "Never", color: "#e84040" },
+          { tier: "like",  label: "Like",  color: COLORS.green },
+          { tier: "avoid", label: "Avoid", color: COLORS.amber },
+          { tier: "never", label: "Never", color: COLORS.danger },
         ].map(({ tier, label, color }) => (
           <button key={tier} onClick={() => setActiveTier(tier)} style={{
             flex: 1, minWidth: 100, padding: "10px 12px", borderRadius: 6, cursor: "pointer",
             border: `1px solid ${activeTier === tier ? color : "transparent"}`,
-            background: activeTier === tier ? `${color}18` : "transparent",
-            color: activeTier === tier ? color : "#666", fontFamily: "inherit",
+            background: activeTier === tier ? rgba(color, .10) : "transparent",
+            color: activeTier === tier ? color : COLORS.faint, fontFamily: "inherit",
             fontSize: 11, fontWeight: "bold", letterSpacing: 1, textTransform: "uppercase",
           }}>
             {activeTier === tier ? "✓ " : ""}{label} <span style={{ opacity: .6 }}>· {counts[tier] ?? 0}</span>
           </button>
         ))}
       </div>
-      <div style={{ fontSize: 11, color: "#555", margin: "-8px 0 12px", fontStyle: "italic" }}>
+      <div style={{ fontSize: 11, color: COLORS.muted, margin: "-8px 0 12px", fontStyle: "italic" }}>
         “{TIER_CONFIG[activeTier].label}” is selected — tap as many items as you want. Tap an assigned item again to clear it.
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -337,15 +338,15 @@ function StepCuisines({ answers, setAnswer, onBack, onNext }) {
       <div style={{ display: "flex", gap: 10, marginBottom: 20, minHeight: 44 }}>
         {[0, 1, 2].map(i => (
           <div key={i} style={{
-            flex: 1, background: priorities[i] ? "#e8a02018" : "#0d0d12",
-            border: `1px solid ${priorities[i] ? "#e8a020" : "#1e1e2e"}`,
+            flex: 1, background: priorities[i] ? rgba(COLORS.gold, .10) : COLORS.pageAlt,
+            border: `1px solid ${priorities[i] ? COLORS.gold : COLORS.border}`,
             borderRadius: 6, padding: "8px 10px",
             display: "flex", flexDirection: "column", alignItems: "center", gap: 3,
           }}>
-            <span style={{ fontSize: 10, color: "#444", letterSpacing: 1, textTransform: "uppercase" }}>{rankLabels[i]}</span>
+            <span style={{ fontSize: 10, color: COLORS.faintest, letterSpacing: 1, textTransform: "uppercase" }}>{rankLabels[i]}</span>
             {priorities[i]
-              ? <span style={{ fontSize: 13, color: "#e8a020" }}>{priorities[i]}</span>
-              : <span style={{ fontSize: 12, color: "#333", fontStyle: "italic" }}>—</span>
+              ? <span style={{ fontSize: 13, color: COLORS.gold }}>{priorities[i]}</span>
+              : <span style={{ fontSize: 12, color: COLORS.faintest, fontStyle: "italic" }}>—</span>
             }
           </div>
         ))}
@@ -358,9 +359,9 @@ function StepCuisines({ answers, setAnswer, onBack, onNext }) {
           const full = priorities.length >= 3 && !selected;
           return (
             <button key={c} onClick={() => !full && toggle(c)} style={{
-              background: selected ? "#e8a02020" : "#131318",
-              border: `1px solid ${selected ? "#e8a020" : full ? "#1a1a26" : "#2a2a3a"}`,
-              color: selected ? "#e8a020" : full ? "#333" : "#888",
+              background: selected ? rgba(COLORS.gold, .10) : COLORS.page,
+              border: `1px solid ${selected ? COLORS.gold : COLORS.border}`,
+              color: selected ? COLORS.gold : full ? COLORS.faintest : COLORS.muted,
               padding: "8px 14px", borderRadius: 6,
               cursor: full ? "default" : "pointer",
               fontSize: 12, fontFamily: "inherit",
@@ -379,11 +380,11 @@ function StepCuisines({ answers, setAnswer, onBack, onNext }) {
 
 function SummaryRow({ label, value }) {
   return (
-    <div style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: "1px solid #1a1a26", alignItems: "flex-start" }}>
-      <span style={{ fontSize: 11, color: "#555", letterSpacing: 1, textTransform: "uppercase", minWidth: 140, flexShrink: 0, marginTop: 1 }}>
+    <div style={{ display: "flex", gap: 12, padding: "9px 0", borderBottom: hairline, alignItems: "flex-start" }}>
+      <span style={{ fontSize: 11, color: COLORS.muted, letterSpacing: 1, textTransform: "uppercase", minWidth: 140, flexShrink: 0, marginTop: 1 }}>
         {label}
       </span>
-      <span style={{ fontSize: 13, color: "#c0b8a8", lineHeight: 1.5 }}>{value || <em style={{ color: "#333" }}>not set</em>}</span>
+      <span style={{ fontSize: 13, color: COLORS.listInk, lineHeight: 1.5 }}>{value || <em style={{ color: COLORS.faintest }}>not set</em>}</span>
     </div>
   );
 }
@@ -409,7 +410,7 @@ function StepSummary({ answers, onBack, onFinish, saving }) {
   return (
     <div>
       <StepHeading title="Your palate summary" sub="Everything looks good? Hit the button to build your personalised calendar." />
-      <div style={{ background: "#0d0d12", border: "1px solid #1e1e2e", borderRadius: 8, padding: "4px 16px", marginBottom: 24 }}>
+      <div style={{ background: COLORS.pageAlt, border: hairline, borderRadius: 8, padding: "4px 16px", marginBottom: 24 }}>
         <SummaryRow label="Household" value={answers.householdSize ? `${answers.householdSize} ${answers.householdSize === "1" ? "person" : "people"}` : null} />
         <SummaryRow label="Skill level" value={answers.skillLevel} />
         <SummaryRow label="Weekday time" value={answers.weekdayTimeMins ? timeLabel(answers.weekdayTimeMins, WEEKDAY_OPTIONS) : null} />
@@ -426,15 +427,15 @@ function StepSummary({ answers, onBack, onFinish, saving }) {
       </div>
       <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
         <button onClick={onBack} style={{
-          background: "none", border: "1px solid #2a2a3a", color: "#888",
+          background: "none", border: hairline, color: COLORS.muted,
           padding: "10px 20px", borderRadius: 6, cursor: "pointer",
           fontSize: 13, fontFamily: "inherit",
         }}>
           ← Back
         </button>
         <button onClick={onFinish} disabled={saving} style={{
-          background: saving ? "#1e1e2e" : "#e8a020",
-          color: saving ? "#444" : "#0c0c0f",
+          background: saving ? COLORS.masthead : COLORS.gold,
+          color: saving ? COLORS.faintest : COLORS.ground,
           border: "none", padding: "12px 28px", borderRadius: 6,
           cursor: saving ? "default" : "pointer",
           fontSize: 14, fontWeight: "bold", fontFamily: "inherit",
@@ -548,9 +549,9 @@ export default function PaletteQuestionnaire({ onComplete, onClose }) {
 
   const containerStyle = {
     minHeight: "100vh",
-    background: "#0c0c0f",
-    fontFamily: "'Palatino Linotype', Palatino, serif",
-    color: "#e0d8c8",
+    background: COLORS.ground,
+    fontFamily: FONTS.body,
+    color: COLORS.parchment,
     display: "flex",
     flexDirection: "column",
   };
@@ -568,21 +569,21 @@ export default function PaletteQuestionnaire({ onComplete, onClose }) {
   return (
     <div style={containerStyle}>
       {/* Header */}
-      <div style={{ background: "#0e0e16", borderBottom: "1px solid #1e1e2e", padding: "16px 20px", textAlign: "center", position: "relative" }}>
+      <div style={{ background: COLORS.masthead, borderBottom: hairline, padding: "16px 20px", textAlign: "center", position: "relative" }}>
         {onClose && (
           <button onClick={onClose} style={{
             position: "absolute", right: 20, top: "50%", transform: "translateY(-50%)",
-            background: "none", border: "1px solid #2a2a3a", color: "#888",
+            background: "none", border: hairline, color: COLORS.muted,
             padding: "6px 12px", borderRadius: 4, cursor: "pointer",
             fontSize: 12, fontFamily: "inherit", transition: "all 0.15s",
           }}>
             Close
           </button>
         )}
-        <div style={{ fontSize: 10, letterSpacing: 5, color: "#555", marginBottom: 4, textTransform: "uppercase" }}>
+        <div style={{ fontSize: 10, letterSpacing: 5, color: COLORS.muted, marginBottom: 4, textTransform: "uppercase" }}>
           Ein Mehr Beissen Bitte
         </div>
-        <h1 style={{ fontSize: "clamp(16px,3vw,22px)", fontWeight: "normal", margin: 0, color: "#f0e8d8" }}>
+        <h1 style={{ fontFamily: FONTS.display, fontSize: "clamp(16px,3vw,22px)", fontWeight: "normal", margin: 0, color: COLORS.parchment }}>
           Build your palate profile
         </h1>
       </div>
