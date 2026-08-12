@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { COLORS, FONTS, EASE, CUISINE_COLORS, label, mono, display, parch, rgba, hairline } from "../theme";
 import { mealsByChain, mealByDay, variantsForDay } from "../data/mealStats";
 import ChainFilmstrip from "./ChainFilmstrip";
@@ -19,6 +20,9 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
   const error = !loading && entry?.error;
   const recipe = !loading && entry && !entry.error ? entry : null;
 
+  const lowerBlocks = useMemo(() => palate?.proteinBlocks?.map(b => b.toLowerCase()) || [], [palate?.proteinBlocks]);
+  const lowerDislikes = useMemo(() => palate?.dislikes?.map(d => d.toLowerCase()) || [], [palate?.dislikes]);
+
   // DB numbers win over the design-time baseline where they exist.
   const cost = Number.isFinite(Number(recipe?.est_cost_usd)) ? Number(recipe.est_cost_usd) : meal.cost;
   const kcal = Number.isFinite(Number(recipe?.calories)) ? Number(recipe.calories) : meal.kcal;
@@ -27,14 +31,16 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
   // Cuisine-swap pilot: a handful of days offer an alternate-cuisine take
   // (see chains.js `variants`). Build the list of "swap for" options —
   // the base meal (if currently viewing a variant) plus any other variants.
-  const dayVariants = variantsForDay(meal.day);
-  const baseMeal = meal.isVariant ? mealByDay(meal.day) : meal;
-  const swapOptions = [
-    ...(meal.isVariant && baseMeal ? [{ key: baseMeal.mealId, cuisine: baseMeal.cuisine, onClick: () => onOpenRecipe?.(meal.day, null) }] : []),
-    ...dayVariants
-      .filter((v) => v.mealId !== meal.mealId)
-      .map((v) => ({ key: v.mealId, cuisine: v.cuisine, onClick: () => onOpenRecipe?.(meal.day, v.variantId) })),
-  ];
+  const swapOptions = useMemo(() => {
+    const dayVariants = variantsForDay(meal.day);
+    const baseMeal = meal.isVariant ? mealByDay(meal.day) : meal;
+    return [
+      ...(meal.isVariant && baseMeal ? [{ key: baseMeal.mealId, cuisine: baseMeal.cuisine, onClick: () => onOpenRecipe?.(meal.day, null) }] : []),
+      ...dayVariants
+        .filter((v) => v.mealId !== meal.mealId)
+        .map((v) => ({ key: v.mealId, cuisine: v.cuisine, onClick: () => onOpenRecipe?.(meal.day, v.variantId) })),
+    ];
+  }, [meal.day, meal.isVariant, meal.mealId, meal, onOpenRecipe]);
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 40, background: "rgba(8,8,10,0.72)", display: "flex", justifyContent: "center", overflowY: "auto", padding: "40px 20px" }}>
@@ -120,12 +126,8 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
                 <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
                 {recipe.ingredients?.map((ing, i) => {
                   const itemLower = (ing.item || "").toLowerCase();
-                  const isBlocked = palate?.proteinBlocks?.some((block) =>
-                    itemLower.includes(block.toLowerCase())
-                  );
-                  const isDisliked = palate?.dislikes?.some((dis) =>
-                    itemLower.includes(dis.toLowerCase())
-                  );
+                  const isBlocked = lowerBlocks.some((block) => itemLower.includes(block));
+                  const isDisliked = lowerDislikes.some((dis) => itemLower.includes(dis));
 
                   return (
                     <div key={i} style={{
