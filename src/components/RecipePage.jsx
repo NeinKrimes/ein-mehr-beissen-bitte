@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { COLORS, FONTS, EASE, CUISINE_COLORS, label, mono, display, parch, rgba, hairline } from "../theme";
 import { mealsByChain, mealByDay, variantsForDay } from "../data/mealStats";
 import ChainFilmstrip from "./ChainFilmstrip";
@@ -35,6 +36,10 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
       .filter((v) => v.mealId !== meal.mealId)
       .map((v) => ({ key: v.mealId, cuisine: v.cuisine, onClick: () => onOpenRecipe?.(meal.day, v.variantId) })),
   ];
+
+  // Memoize palate preference processing to avoid O(N*M) allocation overhead in mapping ingredients
+  const lowerBlocks = useMemo(() => palate?.proteinBlocks?.map(b => b.toLowerCase()) ?? [], [palate?.proteinBlocks]);
+  const lowerDislikes = useMemo(() => palate?.dislikes?.map(d => d.toLowerCase()) ?? [], [palate?.dislikes]);
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 40, background: "rgba(8,8,10,0.72)", display: "flex", justifyContent: "center", overflowY: "auto", padding: "40px 20px" }}>
@@ -120,11 +125,11 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
                 <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
                 {recipe.ingredients?.map((ing, i) => {
                   const itemLower = (ing.item || "").toLowerCase();
-                  const isBlocked = palate?.proteinBlocks?.some((block) =>
-                    itemLower.includes(block.toLowerCase())
+                  const isBlocked = lowerBlocks.some((block) =>
+                    itemLower.includes(block)
                   );
-                  const isDisliked = palate?.dislikes?.some((dis) =>
-                    itemLower.includes(dis.toLowerCase())
+                  const isDisliked = lowerDislikes.some((dis) =>
+                    itemLower.includes(dis)
                   );
 
                   return (
