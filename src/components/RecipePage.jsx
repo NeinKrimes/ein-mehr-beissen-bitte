@@ -1,4 +1,5 @@
 import { COLORS, FONTS, EASE, CUISINE_COLORS, label, mono, display, parch, rgba, hairline } from "../theme";
+import { useMemo } from "react";
 import { mealsByChain, mealByDay, variantsForDay } from "../data/mealStats";
 import ChainFilmstrip from "./ChainFilmstrip";
 
@@ -18,6 +19,10 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
   const loading = !!entry?.loading;
   const error = !loading && entry?.error;
   const recipe = !loading && entry && !entry.error ? entry : null;
+
+  // Memoize lowercased preferences to avoid N*M string allocations in ingredient rendering loop
+  const lowerBlocks = useMemo(() => palate?.proteinBlocks?.map(b => b.toLowerCase()) || [], [palate?.proteinBlocks]);
+  const lowerDislikes = useMemo(() => palate?.dislikes?.map(d => d.toLowerCase()) || [], [palate?.dislikes]);
 
   // DB numbers win over the design-time baseline where they exist.
   const cost = Number.isFinite(Number(recipe?.est_cost_usd)) ? Number(recipe.est_cost_usd) : meal.cost;
@@ -120,12 +125,8 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
                 <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
                 {recipe.ingredients?.map((ing, i) => {
                   const itemLower = (ing.item || "").toLowerCase();
-                  const isBlocked = palate?.proteinBlocks?.some((block) =>
-                    itemLower.includes(block.toLowerCase())
-                  );
-                  const isDisliked = palate?.dislikes?.some((dis) =>
-                    itemLower.includes(dis.toLowerCase())
-                  );
+                  const isBlocked = lowerBlocks.some((block) => itemLower.includes(block));
+                  const isDisliked = lowerDislikes.some((dis) => itemLower.includes(dis));
 
                   return (
                     <div key={i} style={{
