@@ -57,7 +57,7 @@ export default function App() {
   const [openVariant, setOpenVariant] = useState(null);
   const [saved, setSaved] = useState(readSavedRecipes);
   const [showShopping, setShowShopping] = useState(false);
-  const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
+  const { getRecipe, loadRecipe, preloadLibrary, cacheTick } = useRecipe();
 
   const { palate, savePalate, syncing } = usePalate();
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
@@ -171,6 +171,7 @@ export default function App() {
         <ShoppingList
           flatDays={MEALS}
           getRecipe={getRecipe}
+          cacheTick={cacheTick}
           onClose={() => setShowShopping(false)}
         />
       )}

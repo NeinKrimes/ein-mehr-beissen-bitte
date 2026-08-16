@@ -155,7 +155,7 @@ export function useRecipe() {
   // In-memory cache: { [cacheKey]: recipe | { loading: true } | { error } }
   // Where cacheKey is `${mealId}::${palateKey}`
   const cache = useRef({});
-  const [, forceRender] = useState(0);
+  const [cacheTick, forceRender] = useState(0);
 
   const memoizedPalateKey = useMemo(() => getPalateKey(palate), [palate]);
 
@@ -230,5 +230,5 @@ export function useRecipe() {
     forceRender((n) => n + 1);
   }, [memoizedPalateKey]);
 
-  return { getRecipe, loadRecipe, clearRecipe, preloadLibrary };
+  return { getRecipe, loadRecipe, clearRecipe, preloadLibrary, cacheTick };
 }
