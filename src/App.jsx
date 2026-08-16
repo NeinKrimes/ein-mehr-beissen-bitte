@@ -3,7 +3,9 @@ import { MEALS, mealByDay, variantMealById } from "./data/mealStats";
 import { variantMealId } from "./data/chains";
 import { useRecipe } from "./hooks/useRecipe";
 import { usePalate } from "./hooks/usePalate";
+import { useViewport } from "./hooks/useViewport";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "./theme";
+import GlobalStyle from "./components/GlobalStyle";
 import BoardRoom from "./components/BoardRoom";
 import CalendarRoom from "./components/CalendarRoom";
 import ChainsRoom from "./components/ChainsRoom";
@@ -52,6 +54,7 @@ function Clock() {
 }
 
 export default function App() {
+  const { isMobile } = useViewport();
   const [room, setRoom] = useState("Calendar");
   const [openDay, setOpenDay] = useState(null);
   const [openVariant, setOpenVariant] = useState(null);
@@ -118,19 +121,39 @@ export default function App() {
   }
 
   return (
-    <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: COLORS.ground, color: COLORS.parchment, fontFamily: FONTS.body }}>
+    <div style={{ height: "100vh", display: "flex", flexDirection: "column", background: COLORS.ground, color: COLORS.parchment, fontFamily: FONTS.body, overflowX: "hidden" }}>
+      <GlobalStyle />
       <style>{KEYFRAMES}</style>
 
-      {/* Masthead — four rooms, one lit */}
-      <div style={{ height: 76, flex: "0 0 76px", borderBottom: hairline, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 34px", background: COLORS.masthead }}>
-        <div style={{ ...display(23), color: COLORS.parchment }}>Ein Mehr Beissen Bitte</div>
-        <div style={{ display: "flex", gap: 30, alignItems: "center" }}>
+      {/* Masthead — four rooms, one lit. On mobile the room links become a
+          single horizontally-scrollable strip (.embb-scrollx) instead of
+          wrapping into extra rows, so the masthead height stays predictable. */}
+      <div style={{
+        flex: isMobile ? "0 0 auto" : "0 0 76px",
+        borderBottom: hairline,
+        display: "flex",
+        flexDirection: isMobile ? "column" : "row",
+        alignItems: isMobile ? "stretch" : "center",
+        justifyContent: "space-between",
+        gap: isMobile ? 8 : 0,
+        padding: isMobile ? "12px 16px" : "0 34px",
+        background: COLORS.masthead,
+      }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div style={{ ...display(isMobile ? 19 : 23), color: COLORS.parchment }}>Ein Mehr Beissen Bitte</div>
+          {!isMobile && <div style={{ ...mono(11, COLORS.faint), marginLeft: 24 }}><Clock /></div>}
+        </div>
+        <div
+          className={isMobile ? "embb-scrollx" : undefined}
+          style={{ display: "flex", gap: isMobile ? 18 : 30, alignItems: "center", flexWrap: isMobile ? "nowrap" : "wrap" }}
+        >
           {ROOMS.map((r) => {
             const on = r === room;
             return (
               <span key={r} onClick={() => setRoom(r)} style={{
                 ...label(11, on ? COLORS.gold : COLORS.muted),
-                cursor: "pointer", paddingBottom: 4,
+                cursor: "pointer", paddingBottom: 4, minHeight: 40, display: "flex", alignItems: "center",
+                whiteSpace: "nowrap",
                 borderBottom: on ? `1px solid ${COLORS.gold}` : "1px solid transparent",
                 transition: `color 320ms ${EASE}`,
               }}>{r}</span>
@@ -138,16 +161,16 @@ export default function App() {
           })}
           <span onClick={() => setShowQuestionnaire(true)} style={{
             ...label(11, parch(0.42)),
-            cursor: "pointer", paddingBottom: 4,
+            cursor: "pointer", paddingBottom: 4, minHeight: 40, display: "flex", alignItems: "center",
+            whiteSpace: "nowrap",
             borderBottom: "1px solid transparent",
             transition: `color 320ms ${EASE}`,
           }}>Palate</span>
         </div>
-        <div style={mono(11, COLORS.faint)}><Clock /></div>
       </div>
 
       {/* The lit room */}
-      <div style={{ flex: 1, display: "flex", minHeight: 0 }}>
+      <div style={{ flex: 1, display: "flex", minHeight: 0, minWidth: 0, overflowX: "hidden" }}>
         {room === "Board" && <BoardRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} />}
         {room === "Calendar" && <CalendarRoom onOpenRecipe={openRecipe} />}
         {room === "Chains" && <ChainsRoom onOpenRecipe={openRecipe} />}

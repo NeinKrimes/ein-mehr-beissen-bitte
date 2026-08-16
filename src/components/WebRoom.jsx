@@ -2,6 +2,7 @@ import { useState } from "react";
 import { chains } from "../data/chains";
 import { mealsByChain } from "../data/mealStats";
 import { COLORS, FONTS, CUISINE_COLORS, label, display, parch, rgba } from "../theme";
+import { useIsMobile } from "../hooks/useViewport";
 
 // The Web — every chain at once. Anchors ring an inner circle, their
 // follow-ups fan outward within each chain's own sector (mirroring the
@@ -61,23 +62,33 @@ function buildLayout() {
 const { nodes, spokes, links } = buildLayout();
 
 export default function WebRoom({ onOpenRecipe }) {
+  const isMobile = useIsMobile();
   const [hoverDay, setHoverDay] = useState(null);
   const hoverNode = hoverDay != null ? nodes.find((n) => n.day === hoverDay) : null;
 
+  // On mobile the side-panel captions would crowd out the diagram, so they
+  // move to a compact header above it and the legend/detail panels are
+  // dropped to a bottom strip instead of floating over the SVG.
   return (
-    <div style={{ flex: 1, display: "flex", minHeight: 0, background: COLORS.page, position: "relative" }}>
-      <div style={{ position: "absolute", top: 40, left: 48, maxWidth: 260 }}>
+    <div style={{ flex: 1, display: "flex", flexDirection: isMobile ? "column" : "row", minHeight: 0, background: COLORS.page, position: "relative", overflowY: isMobile ? "auto" : undefined }}>
+      <div style={isMobile
+        ? { padding: "20px 16px 0" }
+        : { position: "absolute", top: 40, left: 48, maxWidth: 260 }
+      }>
         <div style={label(10, COLORS.gold, ".3em")}>The web</div>
-        <div style={{ ...display(30), color: COLORS.parchment, marginTop: 10 }}>
+        <div style={{ ...display(isMobile ? 22 : 30), color: COLORS.parchment, marginTop: 10 }}>
           Every chain, at once
         </div>
-        <div style={{ fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.6, color: COLORS.faint, marginTop: 10 }}>
+        <div style={{ fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.6, color: COLORS.faint, marginTop: 10, maxWidth: isMobile ? "48ch" : "none" }}>
           Ten anchors, thirty meals. Arcs connect dishes across different anchors that
-          share a cuisine — hover a node to trace them.
+          share a cuisine — tap a node to trace them.
         </div>
       </div>
 
-      <div style={{ position: "absolute", bottom: 36, left: 48, display: "flex", flexWrap: "wrap", gap: "8px 18px", maxWidth: 260 }}>
+      <div style={isMobile
+        ? { display: "flex", flexWrap: "wrap", gap: "8px 18px", padding: "16px 16px 0" }
+        : { position: "absolute", bottom: 36, left: 48, display: "flex", flexWrap: "wrap", gap: "8px 18px", maxWidth: 260 }
+      }>
         {Object.entries(CUISINE_COLORS).map(([cuisine, color]) => (
           <div key={cuisine} style={{ display: "flex", alignItems: "center", gap: 7 }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: color, flexShrink: 0 }} />
@@ -86,8 +97,8 @@ export default function WebRoom({ onOpenRecipe }) {
         ))}
       </div>
 
-      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 0 }}>
-        <svg viewBox={`0 0 ${SIZE} ${SIZE}`} preserveAspectRatio="xMidYMid meet" style={{ width: "min(100%, 84vh)", height: "min(100%, 84vh)" }}>
+      <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", minWidth: 0, padding: isMobile ? "16px" : 0 }}>
+        <svg viewBox={`0 0 ${SIZE} ${SIZE}`} preserveAspectRatio="xMidYMid meet" style={{ width: isMobile ? "min(100%, 92vw)" : "min(100%, 84vh)", height: isMobile ? "min(92vw, 480px)" : "min(100%, 84vh)" }}>
           {spokes.map((s, i) => {
             const active = hoverNode && (hoverNode.day === s.day2 || hoverNode.chainId === s.chainId);
             return (
@@ -134,7 +145,10 @@ export default function WebRoom({ onOpenRecipe }) {
       </div>
 
       {hoverNode && (
-        <div style={{ position: "absolute", top: 40, right: 48, textAlign: "right", maxWidth: 260 }}>
+        <div style={isMobile
+          ? { padding: "0 16px 20px", textAlign: "left" }
+          : { position: "absolute", top: 40, right: 48, textAlign: "right", maxWidth: 260 }
+        }>
           <div style={label(9, hoverNode.color, ".14em")}>{hoverNode.cuisine} · day {hoverNode.day}</div>
           <div style={{ ...display(22), color: COLORS.parchment, marginTop: 6 }}>{hoverNode.meal}</div>
           <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 13, color: COLORS.faint, marginTop: 6 }}>
