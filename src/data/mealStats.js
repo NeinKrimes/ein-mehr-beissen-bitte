@@ -79,7 +79,7 @@ export const LENSES = {
   value:    { label: "Value",    unit: "cal/$", key: "cpd",  color: COLORS.green,  high: true,  ...bounds("cpd") },
   calories: { label: "Calories", unit: "kcal",  key: "kcal", color: COLORS.amber,  high: true,  ...bounds("kcal") },
   protein:  { label: "Protein",  unit: "g",     key: "p",    color: COLORS.gold,   high: true,  ...bounds("p") },
-  time:     { label: "Time",     unit: "min",   key: "time", color: "#94a3b8",     high: false, ...bounds("time") },
+  time:     { label: "Time",     unit: "min",   key: "time", color: COLORS.steel,   high: false, ...bounds("time") },
 };
 
 export const mealByDay = (day) => MEALS.find((m) => m.day === day);

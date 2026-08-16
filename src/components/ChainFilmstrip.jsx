@@ -25,11 +25,10 @@ export default function ChainFilmstrip({ chainMeals, currentDay, onOpenRecipe })
               <div style={{
                 width: isCurrent ? 46 : 36, height: isCurrent ? 46 : 36, borderRadius: "50%", flexShrink: 0,
                 background: `linear-gradient(0deg,${rgba(m.color, isCurrent ? 0.5 : 0.26)},${rgba(m.color, isCurrent ? 0.5 : 0.26)}), ${COLORS.plate}`,
-                border: isCurrent ? "1px solid rgba(232,160,32,0.55)" : `1px solid ${rgba(m.color, 0.28)}`,
-                boxShadow: isCurrent ? "0 0 0 5px rgba(232,160,32,0.10)" : "none",
+                border: isCurrent ? `1px solid ${COLORS.gold}` : `1px solid ${rgba(m.color, 0.28)}`,
                 transition: "all 220ms ease",
               }} />
-              <div style={{ ...label(8, isCurrent ? COLORS.gold : parch(0.42), ".08em"), textAlign: "center", whiteSpace: "nowrap" }}>
+              <div style={{ ...label(8, isCurrent ? COLORS.gold : COLORS.faint, ".08em"), textAlign: "center", whiteSpace: "nowrap" }}>
                 {m.type === "ANCHOR" ? "anchor" : `day ${m.day}`}
               </div>
             </div>

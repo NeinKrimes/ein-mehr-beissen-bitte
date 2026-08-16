@@ -38,7 +38,7 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - `src/components/` — Room-based UI ("cookbook after dark" redesign):
   - `BoardRoom.jsx` (Community plates/photos), `CalendarRoom.jsx` (Dotted leaders, lens toggle, detail rail), `ChainsRoom.jsx` (Anchor & follow-up spreads), `KitchenRoom.jsx` (Month ledger, saved plates, shopping list link)
   - `RecipePage.jsx` (Recipe detail overlay sheet), `ShoppingList.jsx` (Dotted-leader ingredient list)
-- **Wiring status:** `useRecipe` and `ShoppingList` are fully wired to `App.jsx`. `usePalate` and `PaletteQuestionnaire` exist but are currently **unwired** (planned T6).
+- **Wiring status:** `useRecipe`, `ShoppingList`, `usePalate`, and `PaletteQuestionnaire` are all fully wired to `App.jsx` (T6 landed).
 - **Database & Scripts:** `supabase/migrations/` defines schema. `scripts/seed-recipes.mjs` runs batch seeding. `scripts/export-obsidian.mjs` exports vault.
 - **GitHub Workflows:** `ci.yml` (lint/build), `claude.yml` (agent background), `deploy-pages.yml` (pages deploy), `export-obsidian.yml` (obsidian export), `seed-recipes.yml` (recipe seeding).
 
@@ -107,10 +107,10 @@ The Anthropic API is prompted to return JSON:
 
 ## Planned Features (good first issues)
 
-- [ ] Wire palate preferences (`usePalate` and `PaletteQuestionnaire`) into generation + My Kitchen (T6)
+- [x] Wire palate preferences (`usePalate` and `PaletteQuestionnaire`) into generation + My Kitchen (T6) — done
+- [ ] Community board backend (T7) — Codex handoff: `docs/codex-handoff-t7-community-board.md`
+- [ ] More cuisine chains, Month 2 days 31–46 (T8) — issues #45 (infra prereq), #47–#50
 - [ ] Mobile responsive layout improvements (T3)
-- [ ] Community board backend with profiles and posts (T7)
-- [ ] Add more cuisine chains (Vietnamese, Ethiopian, Japanese, Greek) (T8)
 
 ## Notes
 
