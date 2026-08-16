@@ -9,7 +9,7 @@ import ChainFilmstrip from "./ChainFilmstrip";
 function StatCell({ k, v, color = COLORS.parchment }) {
   return (
     <div style={{ flex: 1 }}>
-      <div style={label(9, parch(0.36), ".16em")}>{k}</div>
+      <div style={label(9, COLORS.faint, ".16em")}>{k}</div>
       <div style={{ ...mono(16, color), marginTop: 5 }}>{v}</div>
     </div>
   );
@@ -65,10 +65,9 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
               background: isSaved ? rgba(COLORS.gold, .12) : COLORS.gold,
               border: `1px solid ${isSaved ? rgba(COLORS.gold, .48) : COLORS.gold}`,
               borderRadius: 999, padding: "9px 16px", cursor: "pointer",
-              boxShadow: isSaved ? "none" : "0 0 22px rgba(232,160,32,.25)",
             }}>{isSaved ? "✓ In my kitchen" : "+ Save to kitchen"}</button>
             <button onClick={onClose} style={{
-              ...label(10, parch(0.55), ".14em"),
+              ...label(10, COLORS.muted, ".14em"),
               background: "transparent", border: `1px solid ${parch(0.18)}`, borderRadius: 999,
               padding: "9px 16px", cursor: "pointer",
             }}>Close</button>
@@ -79,7 +78,7 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
 
         {swapOptions.length > 0 && (
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: -8, marginBottom: 8 }}>
-            <span style={label(9, parch(0.4), ".1em")}>Swap for</span>
+            <span style={label(9, COLORS.faint, ".1em")}>Swap for</span>
             {swapOptions.map((opt) => (
               <span key={opt.key} onClick={opt.onClick} style={{
                 ...label(9, CUISINE_COLORS[opt.cuisine], ".06em"),
@@ -108,7 +107,7 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
         )}
 
         {error && (
-          <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 15, color: "#e84040", padding: "24px 0" }}>{entry.error}</div>
+          <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 15, color: COLORS.danger, padding: "24px 0" }}>{entry.error}</div>
         )}
 
         {recipe && (
@@ -127,7 +126,7 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, marginBottom: 30 }}>
               <div>
-                <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
+                <div style={{ ...label(10, COLORS.faint), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
                 {recipe.ingredients?.map((ing, i) => {
                   const itemLower = (ing.item || "").toLowerCase();
                   const isBlocked = lowerBlocks.some((block) =>
@@ -194,9 +193,9 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
               </div>
 
               <div>
-                <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Frugal notes</div>
+                <div style={{ ...label(10, COLORS.faint), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Frugal notes</div>
                 {recipe.frugalTips?.map((tip, i) => (
-                  <div key={i} style={{ fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.55, color: "#8d8578", padding: "8px 0", borderBottom: `1px solid ${parch(0.07)}` }}>
+                  <div key={i} style={{ fontFamily: FONTS.body, fontSize: 14, lineHeight: 1.55, color: COLORS.muted, padding: "8px 0", borderBottom: `1px solid ${parch(0.07)}` }}>
                     {tip}
                   </div>
                 ))}
@@ -208,7 +207,7 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
               </div>
             </div>
 
-            <div style={{ ...label(10, parch(0.36)), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 18 }}>Directions</div>
+            <div style={{ ...label(10, COLORS.faint), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 18 }}>Directions</div>
             {recipe.steps?.map((step, i) => (
               <div key={i} style={{ display: "flex", gap: 18, marginBottom: 18 }}>
                 <div style={{ ...mono(13, COLORS.gold), minWidth: 26, textAlign: "right", flexShrink: 0, paddingTop: 3 }}>
@@ -216,7 +215,7 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
                 </div>
                 <div>
                   <div style={{ ...display(19), color: COLORS.parchment, marginBottom: 3 }}>{step.title}</div>
-                  <div style={{ fontFamily: FONTS.body, fontSize: 15, color: "#9a9284", lineHeight: 1.65, maxWidth: "62ch" }}>{step.text}</div>
+                  <div style={{ fontFamily: FONTS.body, fontSize: 15, color: COLORS.muted, lineHeight: 1.65, maxWidth: "62ch" }}>{step.text}</div>
                 </div>
               </div>
             ))}
