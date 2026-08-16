@@ -129,7 +129,7 @@ export default function App() {
             const on = r === room;
             return (
               <span key={r} onClick={() => setRoom(r)} style={{
-                ...label(11, on ? COLORS.gold : parch(0.42)),
+                ...label(11, on ? COLORS.gold : COLORS.muted),
                 cursor: "pointer", paddingBottom: 4,
                 borderBottom: on ? `1px solid ${COLORS.gold}` : "1px solid transparent",
                 transition: `color 320ms ${EASE}`,
@@ -143,7 +143,7 @@ export default function App() {
             transition: `color 320ms ${EASE}`,
           }}>Palate</span>
         </div>
-        <div style={mono(11, parch(0.34))}><Clock /></div>
+        <div style={mono(11, COLORS.faint)}><Clock /></div>
       </div>
 
       {/* The lit room */}

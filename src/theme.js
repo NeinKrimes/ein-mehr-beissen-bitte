@@ -1,37 +1,43 @@
-// Design tokens for the "cookbook after dark" UI (claude.ai/design project
-// "Ein Mehr Beissen Bitte UI Design", turn 2). One gold thing per page.
+// Design tokens for the soft-industrial kitchen UI. Warm mineral surfaces,
+// brushed steel, oak, and a single paprika accent keep the palette restrained.
 
 export const FONTS = {
   display: "'Instrument Serif', serif",
-  body: "'Newsreader', serif",
-  label: "'Space Grotesk', sans-serif",
+  body: "'Avenir Next', 'Segoe UI', system-ui, sans-serif",
+  label: "'Avenir Next', 'Segoe UI', system-ui, sans-serif",
   mono: "'IBM Plex Mono', monospace",
 };
 
 export const COLORS = {
-  ground: "#0c0c0f",      // page ground
-  masthead: "#101014",    // top bar
-  page: "#15151b",        // left/primary page surface
-  pageAlt: "#0f0f14",     // right/secondary page surface
-  plate: "#101015",       // photo-circle base
-  parchment: "#ece3d2",   // primary text
-  gold: "#e8a020",        // lamp gold — one per view
-  goldLight: "#f5bb55",
-  green: "#46d18a",       // frugal green — value only
-  amber: "#ff9d3c",       // calorie amber — energy only
-  muted: "#a29a8b",       // muted body
-  faint: "#7d766a",       // italic captions
-  faintest: "#6f6a5f",
-  listInk: "#d6cebd",     // contents-page row text
+  ground: "#F4F0E8",      // warm ivory page ground
+  masthead: "#E6E0D5",    // limestone top bar
+  page: "#FBF8F2",        // primary work surface
+  pageAlt: "#EDE7DC",     // secondary limestone surface
+  plate: "#D8DDE0",       // brushed-steel inset
+  parchment: "#2B2925",   // primary ink (legacy token name)
+  gold: "#8C3B2B",        // paprika accent (legacy token name)
+  goldLight: "#9F4533",   // lighter paprika, still AA on all surfaces
+  green: "#356347",       // restrained herb green — value only
+  amber: "#895323",       // toasted oak — energy only
+  muted: "#5D5952",       // secondary body ink
+  faint: "#646058",       // captions
+  faintest: "#656058",    // lowest-emphasis AA text
+  listInk: "#3C3934",     // contents-page row text
+  steel: "#56636A",       // cool structural detail
+  oak: "#765C3C",         // warm material detail
+  brass: "#745B18",       // sparing non-interactive material accent
+  border: "#827A70",      // AA-visible limestone hairline / control edge
+  borderStrong: "#7F776E",
+  danger: "#963D34",
 };
 
 export const CUISINE_COLORS = {
-  Mexican: "#e84040", Italian: "#4a9eff", Indian: "#ff9500", French: "#a78bfa",
-  Jamaican: "#22c55e", Thai: "#f472b6", Chinese: "#facc15", American: "#94a3b8",
+  Mexican: "#963D34", Italian: "#35647A", Indian: "#865122", French: "#68527A",
+  Jamaican: "#3F684D", Thai: "#884765", Chinese: "#735A16", American: "#596166",
 };
 
-// rgba() over the parchment tone — hairlines, dotted leaders, dimmed text.
-export const parch = (a) => `rgba(236,227,210,${a})`;
+// rgba() over the primary ink — hairlines, dotted leaders, and dimmed details.
+export const parch = (a) => `rgba(43,41,37,${a})`;
 
 export const rgba = (hex, a) => {
   const n = parseInt(hex.slice(1), 16);
@@ -40,8 +46,8 @@ export const rgba = (hex, a) => {
 
 export const EASE = "cubic-bezier(.22,.61,.36,1)";
 
-// Space Grotesk microlabel — the design's universal caption voice.
-export const label = (size = 10, color = parch(0.36), tracking = ".2em") => ({
+// Humanist-sans microlabel — the design's universal caption voice.
+export const label = (size = 10, color = COLORS.faint, tracking = ".2em") => ({
   fontFamily: FONTS.label, fontSize: size, fontWeight: 700,
   letterSpacing: tracking, textTransform: "uppercase", color,
 });
@@ -54,4 +60,4 @@ export const display = (size, lineHeight = 1.05) => ({
   fontFamily: FONTS.display, fontSize: size, lineHeight, fontWeight: 400,
 });
 
-export const hairline = `1px solid ${parch(0.10)}`;
+export const hairline = `1px solid ${COLORS.border}`;

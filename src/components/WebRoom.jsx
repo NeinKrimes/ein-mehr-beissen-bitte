@@ -81,7 +81,7 @@ export default function WebRoom({ onOpenRecipe }) {
         {Object.entries(CUISINE_COLORS).map(([cuisine, color]) => (
           <div key={cuisine} style={{ display: "flex", alignItems: "center", gap: 7 }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: color, flexShrink: 0 }} />
-            <span style={label(9, parch(0.5), ".08em")}>{cuisine}</span>
+            <span style={label(9, COLORS.faint, ".08em")}>{cuisine}</span>
           </div>
         ))}
       </div>
@@ -118,12 +118,12 @@ export default function WebRoom({ onOpenRecipe }) {
                 style={{ cursor: "pointer", opacity: dim ? 0.35 : 1, transition: "opacity 200ms ease" }}>
                 <circle cx={n.x} cy={n.y} r={n.r}
                   fill={rgba(n.color, isAnchor ? 0.5 : 0.3)}
-                  stroke={isAnchor ? "rgba(232,160,32,0.6)" : rgba(n.color, 0.4)}
+                  stroke={isAnchor ? COLORS.gold : rgba(n.color, 0.4)}
                   strokeWidth={isAnchor ? 1.5 : 1} />
                 {isAnchor && (
                   <text x={n.x} y={n.y - n.r - 8} textAnchor="middle"
-                    style={{ fontFamily: FONTS.label, fontSize: 9, fontWeight: 700, letterSpacing: ".04em", fill: parch(0.6) }}>
-                    {n.emoji} {n.short}
+                    style={{ fontFamily: FONTS.label, fontSize: 9, fontWeight: 700, letterSpacing: ".04em", fill: COLORS.faint }}>
+                    {n.short}
                   </text>
                 )}
                 <title>{n.meal} — {n.cuisine} · day {n.day}</title>
