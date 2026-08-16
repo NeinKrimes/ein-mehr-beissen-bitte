@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { MEALS, mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, label, mono, display, rgba, hairline } from "../theme";
+import { useIsMobile } from "../hooks/useViewport";
 
 const monthCost = MEALS.reduce((sum, meal) => sum + meal.cost, 0);
 const avgKcal = Math.round(MEALS.reduce((sum, meal) => sum + meal.kcal, 0) / MEALS.length);
@@ -15,6 +16,7 @@ function PantryStat({ labelText, value, color }) {
 }
 
 export default function KitchenRoom({ saved, onToggleSave, onOpenRecipe, onOpenShopping }) {
+  const isMobile = useIsMobile();
   // Memoize mapping, filtering and sorting to only run when the 'saved' set changes
   const savedMeals = useMemo(() => {
     return [...saved].map(mealByDay).filter(Boolean).sort((a, b) => a.day - b.day);
@@ -22,19 +24,19 @@ export default function KitchenRoom({ saved, onToggleSave, onOpenRecipe, onOpenS
 
   return (
     <div style={{ flex: 1, minHeight: 0, overflowY: "auto", color: COLORS.parchment, background: COLORS.ground }}>
-      <div style={{ minHeight: "100%", padding: "34px clamp(20px,4vw,54px) 48px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", gap: 24, flexWrap: "wrap" }}>
+      <div style={{ minHeight: "100%", padding: isMobile ? "24px 16px 40px" : "34px clamp(20px,4vw,54px) 48px" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "stretch" : "flex-end", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 16 : 24, flexWrap: "wrap" }}>
           <div>
             <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 8 }}>My kitchen · open pantry</div>
-            <div style={{ ...display(42, 1), color: COLORS.parchment }}>Recipes worth <span style={{ fontStyle: "italic", color: COLORS.gold }}>cooking again.</span></div>
+            <div style={{ ...display(isMobile ? 30 : 42, 1), color: COLORS.parchment }}>Recipes worth <span style={{ fontStyle: "italic", color: COLORS.gold }}>cooking again.</span></div>
             <div style={{ fontFamily: FONTS.body, fontStyle: "italic", color: COLORS.muted, marginTop: 9 }}>Your saved recipes, provisions, and next grocery run — all on one counter.</div>
           </div>
-          <button onClick={onOpenShopping} style={{ ...label(10, COLORS.ground, ".15em"), background: COLORS.gold, border: `1px solid ${COLORS.gold}`, borderRadius: 4, padding: "13px 20px", cursor: "pointer" }}>Open shopping list</button>
+          <button onClick={onOpenShopping} style={{ ...label(10, COLORS.ground, ".15em"), background: COLORS.gold, border: `1px solid ${COLORS.gold}`, borderRadius: 4, minHeight: 44, padding: "13px 20px", cursor: "pointer" }}>Open shopping list</button>
         </div>
 
         <div style={{ height: 18, marginTop: 25, borderTop: hairline }} />
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(130px, 1fr))", maxWidth: 760, gap: 7, marginBottom: 34 }}>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(4, minmax(130px, 1fr))", maxWidth: 760, gap: 7, marginBottom: 34 }}>
           <PantryStat labelText="Recipe tin" value={`${savedMeals.length} saved`} color={COLORS.oak} />
           <PantryStat labelText="Monthly provisions" value={`$${monthCost.toFixed(2)}`} color={COLORS.green} />
           <PantryStat labelText="Average plate" value={`$${(monthCost / MEALS.length).toFixed(2)}`} color={COLORS.green} />

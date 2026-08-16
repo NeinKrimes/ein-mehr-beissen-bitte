@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { usePalate } from "../hooks/usePalate";
 import { COLORS, FONTS, rgba, hairline } from "../theme";
+import { useIsMobile } from "../hooks/useViewport";
 
 // ─── Static data ─────────────────────────────────────────────────────────────
 
@@ -94,7 +95,7 @@ function NavButtons({ step, onBack, onNext, nextLabel = "Next", nextDisabled = f
       {step > 0 && (
         <button onClick={onBack} style={{
           background: "none", border: hairline, color: COLORS.muted,
-          padding: "10px 20px", borderRadius: 6, cursor: "pointer",
+          padding: "10px 20px", minHeight: 44, borderRadius: 6, cursor: "pointer",
           fontSize: 13, fontFamily: "inherit",
         }}>
           ← Back
@@ -103,7 +104,7 @@ function NavButtons({ step, onBack, onNext, nextLabel = "Next", nextDisabled = f
       <button onClick={onNext} disabled={nextDisabled} style={{
         background: nextDisabled ? COLORS.masthead : COLORS.gold,
         color: nextDisabled ? COLORS.faintest : COLORS.ground,
-        border: "none", padding: "10px 24px", borderRadius: 6,
+        border: "none", padding: "10px 24px", minHeight: 44, borderRadius: 6,
         cursor: nextDisabled ? "default" : "pointer",
         fontSize: 13, fontWeight: "bold", fontFamily: "inherit",
         transition: "background 0.2s",
@@ -234,10 +235,11 @@ function StepTime({ answers, setAnswer, onBack, onNext }) {
   }
 
   const bothSet = answers.weekdayTimeMins !== null && answers.weekendTimeMins !== null;
+  const isMobile = useIsMobile();
   return (
     <div>
       <StepHeading title="How much time can you spend cooking?" sub="Weekday vs. weekend — we'll plan around your real schedule." />
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24 }}>
         <TimeSelector label="Weekday evenings" options={WEEKDAY_OPTIONS} value={answers.weekdayTimeMins} field="weekdayTimeMins" />
         <TimeSelector label="Weekends" options={WEEKEND_OPTIONS} value={answers.weekendTimeMins} field="weekendTimeMins" />
       </div>

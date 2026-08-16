@@ -8,7 +8,7 @@ export default function ChainFilmstrip({ chainMeals, currentDay, onOpenRecipe })
   if (!chainMeals || chainMeals.length < 2) return null;
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 2, padding: "18px 2px", borderBottom: hairline, marginBottom: 22, overflowX: "auto" }}>
+    <div className="embb-scrollx" style={{ display: "flex", alignItems: "center", gap: 2, padding: "18px 2px", borderBottom: hairline, marginBottom: 22 }}>
       {chainMeals.map((m, i) => {
         const isCurrent = m.day === currentDay;
         return (

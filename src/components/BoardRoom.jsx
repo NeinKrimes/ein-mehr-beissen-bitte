@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, EASE, label, mono, display, parch, rgba } from "../theme";
+import { useIsMobile } from "../hooks/useViewport";
 
 // Board — "plates from other kitchens". Round photographs, plate captions,
 // no icons. Each plate is a calendar meal as cooked by someone else tonight.
@@ -24,26 +25,27 @@ const FILTERS = [
 ];
 
 export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
+  const isMobile = useIsMobile();
   const [filter, setFilter] = useState("all");
   const shown = PLATES.filter((p) => FILTERS.find((f) => f.key === filter).test(p.meal));
 
   return (
-    <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: "30px 40px 24px", background: COLORS.page, overflowY: "auto" }}>
+    <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px 24px" : "30px 40px 24px", background: COLORS.page, overflowY: "auto" }}>
 
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", paddingBottom: 18, borderBottom: `1px solid ${parch(0.14)}`, gap: 20, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "flex-end", flexDirection: isMobile ? "column" : "row", paddingBottom: 18, borderBottom: `1px solid ${parch(0.14)}`, gap: 20, flexWrap: "wrap" }}>
         <div>
           <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 8 }}>Tonight · {PLATES.length} kitchens</div>
-          <div style={{ ...display(38, 1), color: COLORS.parchment }}>
+          <div style={{ ...display(isMobile ? 27 : 38, 1), color: COLORS.parchment }}>
             Someone is already <span style={{ fontStyle: "italic" }}>cooking this.</span>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+        <div className={isMobile ? "embb-scrollx" : undefined} style={{ display: "flex", gap: 8, alignItems: "center", flexWrap: isMobile ? "nowrap" : "wrap", width: isMobile ? "100%" : "auto" }}>
           {FILTERS.map((f) => {
             const on = f.key === filter;
             return (
               <button key={f.key} onClick={() => setFilter(f.key)} style={{
                 ...label(10, on ? COLORS.ground : COLORS.muted, ".14em"),
-                padding: "10px 18px", borderRadius: 999, cursor: "pointer",
+                padding: "10px 18px", minHeight: 40, flexShrink: 0, whiteSpace: "nowrap", borderRadius: 999, cursor: "pointer",
                 transition: `all 320ms ${EASE}`,
                 background: on ? COLORS.gold : "transparent",
                 border: on ? "1px solid transparent" : `1px solid ${parch(0.18)}`,
@@ -53,7 +55,7 @@ export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
         </div>
       </div>
 
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "26px 30px", paddingTop: 26 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fill, minmax(250px, 1fr))", gap: isMobile ? "22px" : "26px 30px", paddingTop: 26 }}>
         {shown.map((p) => {
           const m = p.meal;
           const isSaved = saved.has(p.day);

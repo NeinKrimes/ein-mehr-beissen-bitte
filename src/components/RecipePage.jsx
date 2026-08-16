@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { COLORS, FONTS, EASE, CUISINE_COLORS, label, mono, display, parch, rgba, hairline } from "../theme";
 import { mealsByChain, mealByDay, variantsForDay } from "../data/mealStats";
+import { useIsMobile } from "../hooks/useViewport";
 import ChainFilmstrip from "./ChainFilmstrip";
 
 // The recipe page — level two of the cookbook. Opens because you chose a
@@ -16,6 +17,7 @@ function StatCell({ k, v, color = COLORS.parchment }) {
 }
 
 export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave, onClose, onOpenRecipe }) {
+  const isMobile = useIsMobile();
   const loading = !!entry?.loading;
   const error = !loading && entry?.error;
   const recipe = !loading && entry && !entry.error ? entry : null;
@@ -47,29 +49,41 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
   ];
 
   return (
-    <div style={{ position: "fixed", inset: 0, zIndex: 40, background: "rgba(8,8,10,0.72)", display: "flex", justifyContent: "center", overflowY: "auto", padding: "40px 20px" }}>
-      <div style={{ width: "min(880px, 100%)", background: COLORS.pageAlt, border: hairline, borderRadius: 20, padding: "46px 52px", height: "fit-content", animation: `embRise 420ms ${EASE} both` }}>
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 40, background: isMobile ? COLORS.pageAlt : "rgba(8,8,10,0.72)",
+      display: "flex", justifyContent: "center", overflowY: "auto",
+      padding: isMobile ? 0 : "40px 20px",
+    }}>
+      <div style={{
+        width: isMobile ? "100%" : "min(880px, 100%)",
+        minHeight: isMobile ? "100%" : undefined,
+        background: COLORS.pageAlt, border: isMobile ? "none" : hairline,
+        borderRadius: isMobile ? 0 : 20,
+        padding: isMobile ? "20px 18px 48px" : "46px 52px",
+        height: "fit-content",
+        animation: `embRise 420ms ${EASE} both`,
+      }}>
 
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 20, flexWrap: isMobile ? "wrap" : "nowrap" }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
               <span style={{ width: 16, height: 1, background: meal.color }} />
               <span style={label(10, meal.color)}>{meal.cuisine} · day {meal.day}{meal.type === "ANCHOR" ? " · anchor" : ""}</span>
             </div>
-            <div style={{ ...display(40, 1.02), color: COLORS.parchment, textWrap: "pretty" }}>{meal.meal}</div>
+            <div style={{ ...display(isMobile ? 28 : 40, 1.02), color: COLORS.parchment, textWrap: "pretty" }}>{meal.meal}</div>
             <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 15, color: COLORS.faint, marginTop: 8 }}>from {meal.anchor}</div>
           </div>
-          <div style={{ display: "flex", gap: 8, flexShrink: 0 }}>
+          <div style={{ display: "flex", gap: 8, flexShrink: 0, minHeight: 40 }}>
             <button onClick={onToggleSave} style={{
               ...label(10, isSaved ? COLORS.parchment : COLORS.ground, ".14em"),
               background: isSaved ? rgba(COLORS.gold, .12) : COLORS.gold,
               border: `1px solid ${isSaved ? rgba(COLORS.gold, .48) : COLORS.gold}`,
-              borderRadius: 999, padding: "9px 16px", cursor: "pointer",
+              borderRadius: 999, padding: "9px 16px", cursor: "pointer", minHeight: 40,
             }}>{isSaved ? "✓ In my kitchen" : "+ Save to kitchen"}</button>
             <button onClick={onClose} style={{
               ...label(10, COLORS.muted, ".14em"),
               background: "transparent", border: `1px solid ${parch(0.18)}`, borderRadius: 999,
-              padding: "9px 16px", cursor: "pointer",
+              padding: "9px 16px", cursor: "pointer", minHeight: 40,
             }}>Close</button>
           </div>
         </div>
@@ -89,7 +103,12 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
           </div>
         )}
 
-        <div style={{ display: "flex", borderTop: hairline, borderBottom: hairline, padding: "14px 0", margin: "22px 0" }}>
+        <div style={{
+          display: isMobile ? "grid" : "flex",
+          gridTemplateColumns: isMobile ? "repeat(3, 1fr)" : undefined,
+          rowGap: isMobile ? 16 : 0,
+          borderTop: hairline, borderBottom: hairline, padding: "14px 0", margin: "22px 0",
+        }}>
           <StatCell k="Cost" v={`$${cost.toFixed(2)}`} color={COLORS.green} />
           <StatCell k="Energy" v={kcal} color={COLORS.amber} />
           <StatCell k="Value" v={`${cpd} cal/$`} color={COLORS.green} />
@@ -124,7 +143,7 @@ export default function RecipePage({ meal, entry, palate, isSaved, onToggleSave,
               </div>
             )}
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, marginBottom: 30 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 30 : 40, marginBottom: 30 }}>
               <div>
                 <div style={{ ...label(10, COLORS.faint), borderBottom: `1px solid ${parch(0.14)}`, paddingBottom: 10, marginBottom: 4 }}>Ingredients</div>
                 {recipe.ingredients?.map((ing, i) => {

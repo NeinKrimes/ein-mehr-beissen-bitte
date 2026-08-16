@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { sendToRetailer } from "../lib/shoppingCart";
 import { COLORS, FONTS, hairline } from "../theme";
+import { useIsMobile } from "../hooks/useViewport";
 
 function fmtAmount(n) {
   if (!Number.isFinite(n)) return "";
@@ -96,6 +97,7 @@ function RetailerButton({ retailer, items }) {
 }
 
 export default function ShoppingList({ flatDays, getRecipe, onClose }) {
+  const isMobile = useIsMobile();
   // Group days into 7-day spans (week 1 = days 1–7, …).
   const weeks = new Map();
   for (const d of flatDays) {
@@ -109,15 +111,16 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
       onClick={onClose}
       style={{
         position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)",
-        display: "flex", justifyContent: "center", alignItems: "flex-start",
-        padding: "24px 12px", overflowY: "auto", zIndex: 50,
+        display: "flex", justifyContent: "center", alignItems: isMobile ? "stretch" : "flex-start",
+        padding: isMobile ? 0 : "24px 12px", overflowY: "auto", zIndex: 50,
       }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: COLORS.page, border: hairline, borderRadius: "10px",
-          width: "100%", maxWidth: "620px", padding: "20px", fontFamily: FONTS.body,
+          background: COLORS.page, border: isMobile ? "none" : hairline, borderRadius: isMobile ? 0 : "10px",
+          width: "100%", maxWidth: isMobile ? "100%" : "620px", minHeight: isMobile ? "100%" : undefined,
+          padding: isMobile ? "16px 16px 40px" : "20px", fontFamily: FONTS.body,
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
@@ -127,7 +130,7 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
           </div>
           <button
             onClick={onClose}
-            style={{ background: "none", border: hairline, color: COLORS.muted, cursor: "pointer", padding: "4px 10px", borderRadius: "4px", fontSize: "16px" }}
+            style={{ background: "none", border: hairline, color: COLORS.muted, cursor: "pointer", padding: "10px 14px", minHeight: 40, minWidth: 40, borderRadius: "4px", fontSize: "16px" }}
           >✕</button>
         </div>
 
@@ -142,18 +145,23 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
 
           return (
             <div key={w} style={{ marginBottom: "22px" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: hairline, paddingBottom: "6px", marginBottom: "10px" }}>
+              <div style={{
+                display: "flex", flexDirection: isMobile ? "column" : "row",
+                justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "baseline",
+                gap: isMobile ? 8 : 0,
+                borderBottom: hairline, paddingBottom: "6px", marginBottom: "10px",
+              }}>
                 <div style={{ fontSize: "13px", color: COLORS.gold, letterSpacing: "1px" }}>
                   Week {w} · Days {dayRange}
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
                   <div style={{ fontSize: "12px", color: COLORS.muted }}>
                     {recipes.length > 0
                       ? <>est. <span style={{ color: COLORS.green }}>${total.toFixed(2)}</span></>
                       : <span style={{ color: COLORS.muted }}>not seeded yet</span>}
                   </div>
                   {items.size > 0 && (
-                    <div style={{ display: "flex", gap: "8px" }}>
+                    <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                       {RETAILERS.map((r) => (
                         <RetailerButton key={r.id} retailer={r} items={items} />
                       ))}
@@ -167,7 +175,7 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
                   Recipes for this week aren’t in the library yet — run the seed.
                 </div>
               ) : (
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4px 16px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "4px 16px" }}>
                   {[...items.keys()].sort().map((item) => {
                     const units = items.get(item);
                     const qty = [...units.entries()]
