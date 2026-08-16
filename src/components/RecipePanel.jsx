@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { T, cuisineColor } from "../theme";
 import { Button, Plate, Eyebrow } from "./Gloam";
 import DataChip, { StatRail } from "./DataChip";
@@ -12,6 +13,15 @@ export default function RecipePanel({ day, entry, onClose, valueRange, cooked, o
   const loading = !!entry?.loading;
   const recipe = entry && !entry.loading && !entry.error ? entry : null;
   const cost = recipe && Number.isFinite(Number(recipe.est_cost_usd)) ? Number(recipe.est_cost_usd) : null;
+
+  const lowerBlocks = useMemo(() =>
+    palate?.proteinBlocks?.map(b => b.toLowerCase()) || [],
+    [palate?.proteinBlocks]
+  );
+  const lowerDislikes = useMemo(() =>
+    palate?.dislikes?.map(d => d.toLowerCase()) || [],
+    [palate?.dislikes]
+  );
 
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 50, display: "flex", justifyContent: "flex-end" }}>
@@ -75,11 +85,11 @@ export default function RecipePanel({ day, entry, onClose, valueRange, cooked, o
               <div>
                 {recipe.ingredients?.map((ing, i) => {
                   const itemLower = (ing.item || "").toLowerCase();
-                  const isBlocked = palate?.proteinBlocks?.some((block) =>
-                    itemLower.includes(block.toLowerCase())
+                  const isBlocked = lowerBlocks.some((block) =>
+                    itemLower.includes(block)
                   );
-                  const isDisliked = palate?.dislikes?.some((dis) =>
-                    itemLower.includes(dis.toLowerCase())
+                  const isDisliked = lowerDislikes.some((dis) =>
+                    itemLower.includes(dis)
                   );
 
                   return (
