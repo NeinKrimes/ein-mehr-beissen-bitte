@@ -1,7 +1,7 @@
 import { useState, memo } from "react";
 import { MEALS, mealByDay, mealsByChain } from "../data/mealStats";
 import { chains } from "../data/chains";
-import { COLORS, FONTS, EASE, label, mono, display, parch, rgba, hairline } from "../theme";
+import { COLORS, FONTS, EASE, label, mono, display, rgba, hairline } from "../theme";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const WEEKS = Array.from({ length: 35 }, (_, i) => i < 30 ? mealByDay(i + 1) : null);
@@ -34,7 +34,7 @@ const ChainConnectors = memo(function ChainConnectors() {
 
 // Memoize to prevent all 35 cards from re-rendering when only one changes its selected state
 const MealCard = memo(function MealCard({ meal, selected, onSelect }) {
-  if (!meal) return <div style={{ minHeight: 122, border: `1px solid ${parch(.04)}`, background: "rgba(0,0,0,.08)" }} />;
+  if (!meal) return <div style={{ minHeight: 122, border: hairline, background: COLORS.pageAlt }} />;
   const color = chainColor(meal.chainId);
   const position = mealsByChain(meal.chainId).findIndex((m) => m.day === meal.day) + 1;
   const total = mealsByChain(meal.chainId).length;
@@ -42,19 +42,18 @@ const MealCard = memo(function MealCard({ meal, selected, onSelect }) {
     <button onClick={() => onSelect(meal.day)} aria-label={`Day ${meal.day}: ${meal.meal}`} style={{
       minHeight: 122, position: "relative", zIndex: 1, overflow: "hidden", textAlign: "left",
       padding: "12px 12px 10px", cursor: "pointer", fontFamily: "inherit",
-      border: `1px solid ${selected ? color : parch(.10)}`,
-      background: selected ? `linear-gradient(150deg, ${rgba(color, .17)}, ${COLORS.pageAlt} 72%)` : "rgba(15,15,20,.94)",
-      boxShadow: selected ? `0 0 0 1px ${rgba(color, .24)}, 0 12px 28px rgba(0,0,0,.28)` : "none",
-      transform: selected ? "translateY(-2px)" : "none", transition: `all 240ms ${EASE}`,
+      border: `1px solid ${selected ? color : COLORS.border}`,
+      background: selected ? `linear-gradient(150deg, ${rgba(color, .10)}, ${COLORS.pageAlt} 72%)` : COLORS.page,
+      transition: `all 240ms ${EASE}`,
     }}>
       <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "center" }}>
-        <span style={mono(11, selected ? COLORS.parchment : parch(.38))}>{String(meal.day).padStart(2, "0")}</span>
+        <span style={mono(11, selected ? COLORS.parchment : COLORS.faint)}>{String(meal.day).padStart(2, "0")}</span>
         <span style={{ ...label(8, color, ".12em"), whiteSpace: "nowrap" }}>{meal.type === "ANCHOR" ? "Anchor" : `${position} of ${total}`}</span>
       </div>
       <div style={{ fontFamily: FONTS.display, color: COLORS.parchment, fontSize: 18, lineHeight: 1.04, marginTop: 13 }}>{meal.short}</div>
       <div style={{ display: "flex", alignItems: "center", gap: 6, marginTop: 10 }}>
-        <span style={{ width: 7, height: 7, borderRadius: "50%", background: color, boxShadow: `0 0 0 3px ${rgba(color, .12)}` }} />
-        <span style={label(8, parch(.38), ".12em")}>{meal.cuisine}</span>
+        <span style={{ width: 7, height: 7, borderRadius: "50%", background: color }} />
+        <span style={label(8, COLORS.faint, ".12em")}>{meal.cuisine}</span>
       </div>
     </button>
   );
@@ -75,14 +74,14 @@ export default function CalendarRoom({ onOpenRecipe }) {
           <div style={{ ...display(40), color: COLORS.parchment }}>Your recipe calendar</div>
           <div style={{ fontFamily: FONTS.body, fontStyle: "italic", color: COLORS.faint, fontSize: 14, marginTop: 7 }}>Follow each coloured thread from an anchor cook into its leftover meals.</div>
         </div>
-        <div style={{ ...label(9, parch(.42), ".13em"), display: "flex", gap: 15 }}>
+        <div style={{ ...label(9, COLORS.faint, ".13em"), display: "flex", gap: 15 }}>
           <span><b style={{ color: COLORS.gold }}>●</b> Anchor</span><span>— Same ingredient chain</span><span>┈ Week wrap</span>
         </div>
       </div>
 
       <div style={{ border: hairline, borderRadius: 12, overflow: "hidden", background: COLORS.pageAlt, minWidth: 760 }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", background: COLORS.masthead }}>
-          {WEEKDAYS.map((day) => <div key={day} style={{ ...label(9, parch(.42), ".18em"), textAlign: "center", padding: "10px 4px", borderRight: hairline }}>{day}</div>)}
+          {WEEKDAYS.map((day) => <div key={day} style={{ ...label(9, COLORS.faint, ".18em"), textAlign: "center", padding: "10px 4px", borderRight: hairline }}>{day}</div>)}
         </div>
         <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", gridTemplateRows: "repeat(5, minmax(122px, 1fr))", gap: 7, padding: 7 }}>
           <ChainConnectors />
@@ -91,14 +90,13 @@ export default function CalendarRoom({ onOpenRecipe }) {
       </div>
 
       <div style={{ marginTop: 18, border: `1px solid ${rgba(color, .35)}`, borderRadius: 12, background: `linear-gradient(100deg, ${rgba(color, .12)}, ${COLORS.pageAlt} 45%)`, padding: "18px 20px", display: "flex", gap: 22, alignItems: "center", flexWrap: "wrap" }}>
-        <div style={{ fontSize: 34 }}>{chain?.emoji}</div>
         <div style={{ flex: "1 1 260px" }}>
           <div style={label(9, color, ".18em")}>Day {sel.day} · {sel.type === "ANCHOR" ? "Start this chain" : `Use the ${chain?.anchor.toLowerCase()}`}</div>
           <div style={{ ...display(26), marginTop: 5 }}>{sel.meal}</div>
           <div style={{ color: COLORS.faint, fontSize: 13, fontStyle: "italic", marginTop: 5 }}>{chain?.passive}</div>
         </div>
         <div style={{ display: "flex", gap: 7, alignItems: "center" }}>
-          {chainMeals.map((meal, i) => <button key={meal.day} onClick={() => setSelDay(meal.day)} title={meal.meal} style={{ width: 29, height: 29, borderRadius: "50%", cursor: "pointer", border: `1px solid ${meal.day === selDay ? color : parch(.15)}`, color: meal.day === selDay ? COLORS.ground : parch(.54), background: meal.day === selDay ? color : "transparent", ...mono(10, meal.day === selDay ? COLORS.ground : parch(.54)) }}>{i + 1}</button>)}
+          {chainMeals.map((meal, i) => <button key={meal.day} onClick={() => setSelDay(meal.day)} title={meal.meal} style={{ width: 29, height: 29, borderRadius: "50%", cursor: "pointer", border: `1px solid ${meal.day === selDay ? color : COLORS.border}`, color: meal.day === selDay ? COLORS.ground : COLORS.faint, background: meal.day === selDay ? color : "transparent", ...mono(10, meal.day === selDay ? COLORS.ground : COLORS.faint) }}>{i + 1}</button>)}
         </div>
         <div style={{ display: "flex", gap: 22 }}>
           <div><div style={label(8)}>Active</div><div style={{ ...mono(14), marginTop: 4 }}>{sel.time} min</div></div>
