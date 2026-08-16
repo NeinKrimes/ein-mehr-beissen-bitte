@@ -36,8 +36,9 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - `src/hooks/useRecipe.js` — Tiered recipe loader (Supabase `meal_library` → localStorage → API fallback)
 - `src/hooks/useCooked.js` — Progress tracker ("mark as cooked"), persisted in localStorage
 - `src/components/` — Room-based UI ("cookbook after dark" redesign):
-  - `BoardRoom.jsx` (Community plates/photos), `CalendarRoom.jsx` (Dotted leaders, lens toggle, detail rail), `ChainsRoom.jsx` (Anchor & follow-up spreads), `KitchenRoom.jsx` (Month ledger, saved plates, shopping list link)
-  - `RecipePage.jsx` (Recipe detail overlay sheet), `ShoppingList.jsx` (Dotted-leader ingredient list)
+  - `BoardRoom.jsx` (Community plates/photos), `CalendarRoom.jsx` (Dotted leaders, lens toggle, detail rail), `ChainsRoom.jsx` (Anchor & follow-up spreads), `KitchenRoom.jsx` (Month ledger, saved plates, shopping list link), `WebRoom.jsx` (Cuisine web visualization)
+  - `RecipePage.jsx` (Recipe detail overlay sheet), `ShoppingList.jsx` (Dotted-leader ingredient list), `PaletteQuestionnaire.jsx` (Palate onboarding), `ChainFilmstrip.jsx` (Chain meal strip)
+  - *Orphaned pre-rooms components (Nav, *View, RecipePanel, MacroDonut, ValueGauge, DataChip, Gloam) removed.*
 - **Wiring status:** `useRecipe`, `ShoppingList`, `usePalate`, and `PaletteQuestionnaire` are all fully wired to `App.jsx` (T6 landed).
 - **Database & Scripts:** `supabase/migrations/` defines schema. `scripts/seed-recipes.mjs` runs batch seeding. `scripts/export-obsidian.mjs` exports vault.
 - **GitHub Workflows:** `ci.yml` (lint/build), `claude.yml` (agent background), `deploy-pages.yml` (pages deploy), `export-obsidian.yml` (obsidian export), `seed-recipes.yml` (recipe seeding).
