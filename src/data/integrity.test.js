@@ -1,13 +1,13 @@
 import { describe, it, expect } from "vitest";
-import { chains, mealId, enumerateMeals } from "./chains.js";
+import { chains, mealId, enumerateMeals, DAY_COUNT } from "./chains.js";
 import { RAW, MEALS } from "./mealStats.js";
 
 describe("Data Integrity Tests", () => {
-  it("all 30 days 1-30 are covered exactly once across chains", () => {
+  it(`all ${DAY_COUNT} days 1-${DAY_COUNT} are covered exactly once across chains`, () => {
     const days = chains.flatMap(c => c.days.map(d => d.day));
-    expect(days).toHaveLength(30);
+    expect(days).toHaveLength(DAY_COUNT);
     const sortedDays = [...days].sort((a, b) => a - b);
-    expect(sortedDays).toEqual(Array.from({ length: 30 }, (_, i) => i + 1));
+    expect(sortedDays).toEqual(Array.from({ length: DAY_COUNT }, (_, i) => i + 1));
   });
 
   it("every day has a RAW stats entry and vice versa (no orphans)", () => {
@@ -24,9 +24,9 @@ describe("Data Integrity Tests", () => {
       expect(chainDays).toContain(d);
     }
 
-    // Since they are exactly 30 unique days, both sets should be size 30 and identical
-    expect(rawKeys).toHaveLength(30);
-    expect(chainDays).toHaveLength(30);
+    // Since they are contiguous unique days, both sets should be size DAY_COUNT and identical
+    expect(rawKeys).toHaveLength(DAY_COUNT);
+    expect(chainDays).toHaveLength(DAY_COUNT);
   });
 
   it("mealId and enumerateMeals produce the '<chainId>-d<day>' format", () => {
@@ -36,14 +36,14 @@ describe("Data Integrity Tests", () => {
 
     // Test enumerateMeals format
     const meals = enumerateMeals();
-    expect(meals.length).toBe(30);
+    expect(meals.length).toBe(DAY_COUNT);
     for (const meal of meals) {
       expect(meal.mealId).toBe(`${meal.chainId}-d${meal.day}`);
     }
   });
 
   it("every MEALS entry has finite kcal, cost > 0, and cpd === Math.round(kcal / cost)", () => {
-    expect(MEALS).toHaveLength(30);
+    expect(MEALS).toHaveLength(DAY_COUNT);
     for (const meal of MEALS) {
       expect(Number.isFinite(meal.kcal)).toBe(true);
       expect(meal.kcal).toBeGreaterThan(0);

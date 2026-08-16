@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { MEALS, mealByDay, variantMealById } from "./data/mealStats";
-import { variantMealId } from "./data/chains";
+import { variantMealId, DAY_COUNT } from "./data/chains";
 import { useRecipe } from "./hooks/useRecipe";
 import { usePalate } from "./hooks/usePalate";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "./theme";
@@ -44,7 +44,7 @@ function Clock() {
     const t = setInterval(() => setNow(new Date()), 30_000);
     return () => clearInterval(t);
   }, []);
-  const day = ((now.getDate() - 1) % 30) + 1;
+  const day = ((now.getDate() - 1) % DAY_COUNT) + 1;
   let h = now.getHours();
   const ampm = h >= 12 ? "pm" : "am";
   h = h % 12 || 12;

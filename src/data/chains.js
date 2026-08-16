@@ -59,6 +59,8 @@ export const chains = [
   ]},
 ];
 
+export const DAY_COUNT = chains.reduce((sum, c) => sum + c.days.length, 0);
+
 // Stable key for a meal across the app + DB + scripts. Format: "<chainId>-d<day>" e.g. "c1-d2".
 export function mealId(chainId, day) {
   return `${chainId}-d${day}`;

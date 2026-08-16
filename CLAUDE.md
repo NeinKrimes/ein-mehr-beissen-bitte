@@ -58,6 +58,8 @@ Fonts (Google, loaded in `index.html`): Instrument Serif (display), Newsreader (
 
 ## Data Shape
 
+Calendar length is derived from `chains.js` (`DAY_COUNT`).
+
 Each "chain" looks like:
 ```js
 {

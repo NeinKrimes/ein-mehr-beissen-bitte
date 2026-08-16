@@ -1,10 +1,12 @@
 import { useState, memo } from "react";
 import { MEALS, mealByDay, mealsByChain } from "../data/mealStats";
-import { chains } from "../data/chains";
+import { chains, DAY_COUNT } from "../data/chains";
 import { COLORS, FONTS, EASE, label, mono, display, parch, rgba, hairline } from "../theme";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const WEEKS = Array.from({ length: 35 }, (_, i) => i < 30 ? mealByDay(i + 1) : null);
+const NUM_WEEKS = Math.ceil(DAY_COUNT / 7);
+const GRID_SIZE = NUM_WEEKS * 7;
+const WEEKS = Array.from({ length: GRID_SIZE }, (_, i) => i < DAY_COUNT ? mealByDay(i + 1) : null);
 
 function chainColor(chainId) {
   const first = mealsByChain(chainId)[0];
@@ -14,7 +16,7 @@ function chainColor(chainId) {
 // Memoize to prevent re-rendering when parent CalendarRoom state changes (e.g. day selection)
 const ChainConnectors = memo(function ChainConnectors() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 700 500" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
+    <svg aria-hidden="true" viewBox={`0 0 700 ${NUM_WEEKS * 100}`} preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
       {chains.flatMap((chain) => chain.days.slice(1).map((day, index) => {
         const from = chain.days[index].day - 1;
         const to = day.day - 1;
@@ -84,7 +86,7 @@ export default function CalendarRoom({ onOpenRecipe }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", background: COLORS.masthead }}>
           {WEEKDAYS.map((day) => <div key={day} style={{ ...label(9, parch(.42), ".18em"), textAlign: "center", padding: "10px 4px", borderRight: hairline }}>{day}</div>)}
         </div>
-        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", gridTemplateRows: "repeat(5, minmax(122px, 1fr))", gap: 7, padding: 7 }}>
+        <div style={{ position: "relative", display: "grid", gridTemplateColumns: "repeat(7, minmax(100px, 1fr))", gridTemplateRows: `repeat(${NUM_WEEKS}, minmax(122px, 1fr))`, gap: 7, padding: 7 }}>
           <ChainConnectors />
           {WEEKS.map((meal, i) => <MealCard key={meal?.day ?? `empty-${i}`} meal={meal} selected={meal?.day === selDay} onSelect={setSelDay} />)}
         </div>
