@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { MEALS, mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, label, mono, display, rgba } from "../theme";
 
@@ -14,7 +15,10 @@ function PantryStat({ labelText, value, color }) {
 }
 
 export default function KitchenRoom({ saved, onToggleSave, onOpenRecipe, onOpenShopping }) {
-  const savedMeals = [...saved].map(mealByDay).filter(Boolean).sort((a, b) => a.day - b.day);
+  // Memoize mapping, filtering and sorting to only run when the 'saved' set changes
+  const savedMeals = useMemo(() => {
+    return [...saved].map(mealByDay).filter(Boolean).sort((a, b) => a.day - b.day);
+  }, [saved]);
 
   return (
     <div style={{ flex: 1, minHeight: 0, overflowY: "auto", color: "#eadfce", background: "radial-gradient(circle at 80% 5%, rgba(218,139,49,.10), transparent 32%), linear-gradient(110deg, #17120f, #0d0d10 62%)" }}>
