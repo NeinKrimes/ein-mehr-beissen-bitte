@@ -27,10 +27,13 @@ ein-mehr-beissen-bitte/
 ├── CLAUDE.md                  ← Claude Code briefing file
 ├── src/
 │   ├── components/
-│   │   ├── RecipeCalendar.jsx  ← Main AI-powered calendar
-│   │   ├── ChainCard.jsx       ← Anchor + chain meal group
-│   │   ├── RecipePanel.jsx     ← Full recipe display
-│   │   └── CuisineFilter.jsx   ← Filter by cuisine
+│   │   ├── BoardRoom.jsx       ← Community plates/photos
+│   │   ├── CalendarRoom.jsx    ← Interactive calendar room
+│   │   ├── ChainsRoom.jsx      ← Anchor & follow-up spreads
+│   │   ├── KitchenRoom.jsx     ← Saved plates & shopping list link
+│   │   ├── WebRoom.jsx         ← Cuisine web visualization
+│   │   ├── RecipePage.jsx      ← Recipe detail overlay
+│   │   └── ShoppingList.jsx    ← Ingredient aggregator
 │   ├── data/
 │   │   └── chains.js           ← All 10 meal chains + 30 days
 │   ├── hooks/
