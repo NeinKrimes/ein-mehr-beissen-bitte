@@ -2,7 +2,7 @@
 // like items and summing amounts where units match, with an estimated total cost.
 // Reads from the preloaded recipe cache (getRecipe) — no network, no AI calls.
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { sendToRetailer } from "../lib/shoppingCart";
 import { COLORS, FONTS, hairline } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -99,12 +99,19 @@ function RetailerButton({ retailer, items }) {
 export default function ShoppingList({ flatDays, getRecipe, onClose }) {
   const isMobile = useIsMobile();
   // Group days into 7-day spans (week 1 = days 1–7, …).
-  const weeks = new Map();
-  for (const d of flatDays) {
-    const w = Math.ceil(d.day / 7);
-    if (!weeks.has(w)) weeks.set(w, []);
-    weeks.get(w).push(d);
-  }
+  // ⚡ Bolt: Memoize the grouping of days into weeks to prevent O(N) map allocations on every render
+  const weeks = useMemo(() => {
+    const wMap = new Map();
+    for (const d of flatDays) {
+      const w = Math.ceil(d.day / 7);
+      if (!wMap.has(w)) wMap.set(w, []);
+      wMap.get(w).push(d);
+    }
+    return wMap;
+  }, [flatDays]);
+
+  // ⚡ Bolt: Memoize the sorting of week keys to avoid re-sorting on every render
+  const sortedWeekKeys = useMemo(() => [...weeks.keys()].sort((a, b) => a - b), [weeks]);
 
   return (
     <div
@@ -134,7 +141,7 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
           >✕</button>
         </div>
 
-        {[...weeks.keys()].sort((a, b) => a - b).map((w) => {
+        {sortedWeekKeys.map((w) => {
           const days = weeks.get(w);
           const recipes = days
             .map((d) => getRecipe(d.mealId))
