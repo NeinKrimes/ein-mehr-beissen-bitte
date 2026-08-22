@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,9 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+// ⚡ Bolt: Wrapped Spread with React.memo to prevent unnecessary O(N) re-renders
+// of all 10 heavy chain chapter spreads whenever the selectedMealId changes.
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +107,7 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
