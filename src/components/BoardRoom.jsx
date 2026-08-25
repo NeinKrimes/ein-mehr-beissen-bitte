@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, EASE, label, mono, display, parch, rgba } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -27,7 +27,15 @@ const FILTERS = [
 export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("all");
-  const shown = PLATES.filter((p) => FILTERS.find((f) => f.key === filter).test(p.meal));
+
+  // ⚡ Bolt Optimization:
+  // 1. Hoisted the active filter lookup out of the .filter() loop (O(N*M) -> O(N+M)).
+  // 2. Memoized the result so it doesn't recalculate when `saved` prop changes
+  //    (which happens every time a user saves/unsaves a plate, triggering a re-render).
+  const shown = useMemo(() => {
+    const activeFilter = FILTERS.find((f) => f.key === filter);
+    return PLATES.filter((p) => activeFilter.test(p.meal));
+  }, [filter]);
 
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px 24px" : "30px 40px 24px", background: COLORS.page, overflowY: "auto" }}>
