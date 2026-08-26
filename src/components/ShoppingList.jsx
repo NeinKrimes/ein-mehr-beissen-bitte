@@ -2,7 +2,7 @@
 // like items and summing amounts where units match, with an estimated total cost.
 // Reads from the preloaded recipe cache (getRecipe) — no network, no AI calls.
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { sendToRetailer } from "../lib/shoppingCart";
 import { COLORS, FONTS, hairline } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -98,13 +98,19 @@ function RetailerButton({ retailer, items }) {
 
 export default function ShoppingList({ flatDays, getRecipe, onClose }) {
   const isMobile = useIsMobile();
-  // Group days into 7-day spans (week 1 = days 1–7, …).
-  const weeks = new Map();
-  for (const d of flatDays) {
-    const w = Math.ceil(d.day / 7);
-    if (!weeks.has(w)) weeks.set(w, []);
-    weeks.get(w).push(d);
-  }
+
+  // ⚡ Bolt: Memoized the grouping of days into 7-day spans.
+  // Impact: Prevents O(N) redundant iteration and Map allocations on every re-render.
+  // Avoids recreating the structure during component updates when 'flatDays' remains constant.
+  const weeks = useMemo(() => {
+    const wks = new Map();
+    for (const d of flatDays) {
+      const w = Math.ceil(d.day / 7);
+      if (!wks.has(w)) wks.set(w, []);
+      wks.get(w).push(d);
+    }
+    return wks;
+  }, [flatDays]);
 
   return (
     <div
