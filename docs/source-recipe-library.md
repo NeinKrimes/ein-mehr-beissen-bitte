@@ -98,9 +98,13 @@ Pork Phở down as Mexican and Jamaican Jerk Pork as Mexican).
 Technical facts inside a step — temperatures, times, pan sizes, quantities —
 are facts and stay accurate. The phrasing is ours.
 
-**Status: 45 of 506 authored.** The pipeline is complete and the remaining 461
+**Status: 61 of 506 authored.** The pipeline is complete and the remaining 445
 are extracted and waiting; each new tranche is a matter of adding ids to
 `authored-steps.json` and re-running `npm run build:recipes`.
+
+A recipe the extractor mangled beyond repair — steps out of order, or a method
+that defers to a crust recipe on a page we never scanned — goes under
+`_skipped` with a reason, so it stops resurfacing at the top of the ranking.
 
 Recipes were prioritised by fit with the project's thesis — passive cooking,
 frugal cuts, world cuisines — which is what surfaced pot roasts, bean soups,
@@ -129,7 +133,7 @@ needs to answer *is this meal in the library?*. The ingredients and steps live i
 `await import(...)` inside `loadSourceRecipe()`, so Vite gives it its own chunk
 and a tier-3 **miss** downloads nothing at all.
 
-At 45 recipes: 417 kB entry (121 kB gzip) + a 112 kB corpus chunk (26 kB gzip)
+At 61 recipes: 420 kB entry (122 kB gzip) + a 149 kB corpus chunk (34 kB gzip)
 that most sessions never fetch.
 
 ## Known follow-ups

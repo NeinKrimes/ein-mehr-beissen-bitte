@@ -1257,5 +1257,457 @@
     "text": "Finish each bowl with pepitas, crispy cumin shallots, cilantro, lime and queso fresco."
    }
   ]
+ },
+ "_skipped": {
+  "chicken-little-pot-pies-with-cauliflower-peas": "extract has the bake instructions ahead of the filling and duplicates them",
+  "italian-sausage-quiche": "method defers the crust and custard to another page we did not extract"
+ },
+ "ricotta-stuffed-shells": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Par-cook the shells",
+    "text": "Boil the shells in well-salted water just until they bend without tearing, 8–9 minutes. Drain, rinse cold to stop them, and drain again."
+   },
+   {
+    "title": "Mince the soffritto",
+    "text": "Mince the pancetta in a food processor and tip it into a bowl. Pulse the onions, carrot, celery and garlic in the same bowl of the processor until finely minced."
+   },
+   {
+    "title": "Render the pancetta",
+    "text": "Cook the pancetta in a saucepan over medium until crisp, 8–9 minutes, and lift it onto paper towel. Raise the heat to medium-high."
+   },
+   {
+    "title": "Build the sauce",
+    "text": "Cook the soffritto in the rendered fat until it softens and goes dry, about 5 minutes, then add the tomato paste and rosemary for a minute."
+   },
+   {
+    "title": "Wine, then tomatoes",
+    "text": "Deglaze with the wine and cook it almost away, 3 minutes. Add the crushed tomatoes and simmer on medium-low for 10 minutes, then stir in the vinegar and season."
+   },
+   {
+    "title": "Line the dish",
+    "text": "Oven to 400°. Spray a 9×13-inch dish and spread half the sauce across the bottom."
+   },
+   {
+    "title": "Fill, bake, rest",
+    "text": "Beat the ricotta, grated Parmesan, parsley, grated garlic and egg together with a hand mixer and season. Stuff each shell with a rounded tablespoon and set them cheese-side up in the dish, then pour the rest of the sauce over. Bake 25 minutes, until it bubbles at the edges. Rest 10 minutes and finish with the pancetta and shaved Parmesan."
+   }
+  ]
+ },
+ "nutty-chicken-with-almonds-pine-nuts": {
+  "cuisine": "Spanish",
+  "steps": [
+   {
+    "title": "Grind the picada",
+    "text": "Pulse the bread crumbs, 2 Tbsp almonds, pine nuts, garlic, cumin, paprika, chili powder and pepper flakes in a food processor until minced — this is the thickener, so it should be sandy, not paste. Scrape it into a 4–6 qt slow cooker and stir in the onion, broth and sherry."
+   },
+   {
+    "title": "Brown, then walk away",
+    "text": "Heat the oil in a large sauté pan over medium-high. Season the chicken and brown it on all sides, 5 minutes, then move it to the cooker. Cover and cook 2–3 hours on high or 4–5 on low. Lift the chicken out and keep it warm."
+   },
+   {
+    "title": "Finish the sauce",
+    "text": "Stir the cream and vinegar into the cooker until the sauce comes together."
+   },
+   {
+    "title": "Serve",
+    "text": "Almonds, lime wedges and cilantro over each plate."
+   }
+  ]
+ },
+ "smoked-turkey-gumbo-with-andouille-sausage": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Brown the sausage",
+    "text": "Brown the sausage in 2 Tbsp oil in a sauté pan over medium-high, 5 minutes, and move it to a 4–6 qt slow cooker. Pour off the drippings and wipe the pan."
+   },
+   {
+    "title": "Peanut-butter roux",
+    "text": "Cook the flour and ½ cup oil in that pan over medium-high, stirring the whole time, until it is the colour of peanut butter, 7–10 minutes — stop stirring and it burns. Add the onion, bell pepper, celery, garlic, cayenne, black pepper and pepper flakes and cook until soft, about 5 minutes. Stir in the broth and tip the lot into the cooker."
+   },
+   {
+    "title": "Three and a half hours",
+    "text": "Stir in the turkey and tomatoes, cover, and cook 3½ hours on high or 5½ on low."
+   },
+   {
+    "title": "Okra last",
+    "text": "Add the okra, parsley and thyme and give it 30 minutes more."
+   },
+   {
+    "title": "Serve",
+    "text": "Season and spoon over white rice, with scallion and red bell pepper on top."
+   }
+  ]
+ },
+ "bbq-pulled-chicken-sandwich": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Whisk the sauce",
+    "text": "Whisk the ketchup, vinegar, ¼ cup brown sugar, mustard, lemon juice, Worcestershire and soy sauce together, season, and set it aside."
+   },
+   {
+    "title": "Mix the rub",
+    "text": "Combine the garlic powder, 1 Tbsp brown sugar, chili powder, 1 tsp salt and thyme."
+   },
+   {
+    "title": "Rub and slow cook",
+    "text": "Pat the rub all over the chicken and put it in a 4–6 qt slow cooker. Scatter the onions over and pour 1 cup of the sauce on top. Cover and cook until tender, 3½ hours on high or 5 on low."
+   },
+   {
+    "title": "Ditch the liquid",
+    "text": "Move the chicken and onions to a bowl and throw out what is left in the cooker — it is thin and greasy, and the reserved sauce is better."
+   },
+   {
+    "title": "Shred hot",
+    "text": "Pull the chicken apart while it is still hot, discarding the bones, and return it with the onions to the cooker on warm. Toss with the last ½ cup of sauce."
+   },
+   {
+    "title": "Serve",
+    "text": "Pile onto rolls and top with quick coleslaw."
+   }
+  ]
+ },
+ "thyme-gruyere-potatoes": {
+  "cuisine": "French",
+  "steps": [
+   {
+    "title": "Heat the oven",
+    "text": "Oven to 375° and spray a 2-cup baking dish."
+   },
+   {
+    "title": "Infuse the cream",
+    "text": "Bring the cream, milk and garlic to a boil in a saucepan over medium and season it."
+   },
+   {
+    "title": "Layer",
+    "text": "Lay a layer of potatoes in the dish, season, and add ½ tsp thyme; repeat. Pour over half the cream and add ¼ cup Gruyère and 1 Tbsp Parmesan. Do two more rounds of potato, seasoning and thyme, then finish with the last of the cream, Gruyère and Parmesan. Cover with foil."
+   },
+   {
+    "title": "Bake",
+    "text": "45 minutes covered, then 15 more uncovered until the cheese browns. Rest 5 minutes."
+   }
+  ]
+ },
+ "red-wine-cola-braised-short-ribs": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Low oven",
+    "text": "Oven to 300° — low and slow is the whole point with short ribs."
+   },
+   {
+    "title": "Brown the ribs",
+    "text": "Heat ¼ cup oil in a Dutch oven over medium-high, brown the ribs on all sides, 8–10 minutes, and set them on a plate. Drop the heat to medium-low."
+   },
+   {
+    "title": "Sweat the base",
+    "text": "Sweat the onions, carrot and celery in the drippings until soft, 6–7 minutes, then add the garlic, paprika, tomato paste, anchovy paste and bay leaf for 2 minutes more."
+   },
+   {
+    "title": "Sherry",
+    "text": "Deglaze with the sherry and cook it nearly dry, 5 minutes."
+   },
+   {
+    "title": "Cola and wine",
+    "text": "Stir in the cola, wine and the zest of one orange, return the ribs, bring it to a boil over high, then lid it tightly and move it to the oven."
+   },
+   {
+    "title": "Three and a half hours",
+    "text": "Braise until the meat gives to a fork, about 3½ hours, turning the ribs each hour. Tent them under foil."
+   },
+   {
+    "title": "Strain and skim",
+    "text": "Strain the braising liquid and discard the solids. Skim the fat off the top, pour it into a sauté pan, and bring it to a simmer over medium."
+   },
+   {
+    "title": "Thicken",
+    "text": "Whisk the cornstarch with 2 tsp oil, whisk that into the liquid, and cook 2 minutes."
+   },
+   {
+    "title": "Finish",
+    "text": "Off the heat, stir in the vinegar, thyme and minced zest, then warm the ribs through in the sauce, 5 minutes."
+   }
+  ]
+ },
+ "baked-ziti": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Heat the oven",
+    "text": "Oven to 400° and spray a 4-qt baking dish."
+   },
+   {
+    "title": "Crumble the sausage",
+    "text": "Cook the sausage in oil in a saucepan over medium, crushing it with a potato masher until fine and cooked through, 5–7 minutes, then set it aside."
+   },
+   {
+    "title": "Sweat the onions",
+    "text": "Sweat the onions, garlic, Italian seasoning and pepper flakes in the drippings over medium, covered and stirred now and then, until the onions soften, 10 minutes."
+   },
+   {
+    "title": "Simmer and enrich",
+    "text": "Add the tomatoes and the sausage, simmer 15 minutes, then cool 15. Stir the mascarpone through and season — it goes in off the boil so it does not split."
+   },
+   {
+    "title": "Undercook the pasta",
+    "text": "Boil the ziti in salted water for 8 minutes only; it finishes in the oven. Drain."
+   },
+   {
+    "title": "Combine",
+    "text": "Toss the sauce, ziti and provolone together, tip it into the dish, and dust with Parmesan."
+   },
+   {
+    "title": "Bake and rest",
+    "text": "About 30 minutes, until it bubbles at the edges. Rest 20 minutes before cutting."
+   }
+  ]
+ },
+ "pad-thai-with-shrimp-or-pork": {
+  "cuisine": "Thai",
+  "steps": [
+   {
+    "title": "Sauce first",
+    "text": "Simmer the tamarind, brown sugar, fish sauce and sambal in a small saucepan over low for 5 minutes and set it aside."
+   },
+   {
+    "title": "Soften the noodles",
+    "text": "Soak the noodles in very hot water just until pliable — not soft — and drain."
+   },
+   {
+    "title": "Scramble the eggs",
+    "text": "Heat 1 Tbsp oil in a large nonstick skillet over medium-high. Cook the scallion whites and garlic until they start to colour, 2–3 minutes, then stir in the eggs and cook until lightly scrambled, 1–2 minutes. Set them aside and wipe the pan."
+   },
+   {
+    "title": "Shrimp, then noodles",
+    "text": "Heat 1 Tbsp oil in the same pan and cook the shrimp until pink and curling, 2–3 minutes; set aside. Heat the last spoon of oil, add the noodles, stir the sauce through, and cook until the noodles drink it up, 3–5 minutes."
+   },
+   {
+    "title": "Toss and serve",
+    "text": "Toss the scallion greens, carrot, bean sprouts, egg and shrimp through the noodles. Peanuts, cilantro and lime wedges over each bowl."
+   }
+  ]
+ },
+ "provencal-chicken-dumplings": {
+  "cuisine": "French",
+  "steps": [
+   {
+    "title": "Brown the mushrooms",
+    "text": "Sauté the mushrooms in melted butter over medium-high until browned, 8–10 minutes, then add the garlic for 2–3 minutes more."
+   },
+   {
+    "title": "Flour and wine",
+    "text": "Stir in the all-purpose flour and herbes de Provence and cook 1–2 minutes, then deglaze with the wine and season."
+   },
+   {
+    "title": "Slow cook",
+    "text": "Add the mushroom mixture, carrots, leeks, celery, broth and applesauce to a 4–6 qt slow cooker and stir. Cover and cook 3 hours on high or 4–5 on low, then stir in the chicken and peas."
+   },
+   {
+    "title": "Warm the milk",
+    "text": "Heat the milk with 2 Tbsp butter in a small pan until the butter melts."
+   },
+   {
+    "title": "Mix the dumplings",
+    "text": "Whisk the cake flour, baking powder, 1 tsp salt, dry mustard and thyme together, then stir the milk in just until no flour shows — overworking it makes them tough."
+   },
+   {
+    "title": "Drop and steam",
+    "text": "Drop rounded tablespoons of the dough into the cooker, cover, and cook 35 minutes, until the centres are no longer doughy."
+   },
+   {
+    "title": "Serve",
+    "text": "Parsley and celery leaves over each bowl."
+   }
+  ]
+ },
+ "chicken-noodle-stew": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Brown the mushrooms",
+    "text": "Melt 3 Tbsp butter in a sauté pan over medium. Season the mushrooms and cook until browned and nearly dry, 7–8 minutes, then set them aside."
+   },
+   {
+    "title": "Sweat the base",
+    "text": "Sweat the onion, carrot, celery and garlic in the last 2 Tbsp butter, covered, over low until soft, 3–5 minutes."
+   },
+   {
+    "title": "Cook the noodles in the broth",
+    "text": "Add the broth, bring it to a boil over medium-high, stir in the noodles, and simmer on medium about 20 minutes until tender."
+   },
+   {
+    "title": "Thicken and finish",
+    "text": "Shake the half-and-half and flour smooth in a screw-top jar — that is the reliable way to avoid lumps — and stir it in. Add the chicken, peas and mushrooms and cook until the stew thickens and bubbles, about 5 minutes. Stir in the thyme and chives and season."
+   }
+  ]
+ },
+ "red-beans-rice": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Cook the rice",
+    "text": "Boil the broth in a saucepan over high, stir in the rice, cover, drop to low, and cook 15 minutes. Stand it 5 minutes, then fork it through with the parsley and scallions."
+   },
+   {
+    "title": "Bloom the spices",
+    "text": "Sauté the onion in oil in a saucepan over medium-high until soft, 3 minutes, then add the garlic, oregano, cumin, ¼ tsp salt and pepper flakes for 30 seconds."
+   },
+   {
+    "title": "Simmer the beans",
+    "text": "Stir in the beans, tomato sauce and vinegar, bring to a boil, and simmer 3 minutes until thick. Season and spoon over the rice."
+   }
+  ]
+ },
+ "breakfast-panini": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Make the chowchow",
+    "text": "Simmer the mustard, ketchup, barbecue sauce and maple syrup in a saucepan over medium-low for a minute, then stir in the onion, relish and bell pepper and set it aside."
+   },
+   {
+    "title": "Butter and toast",
+    "text": "Butter both sides of the bread and toast it on both sides in a large nonstick skillet over medium."
+   },
+   {
+    "title": "Fry the sausage",
+    "text": "Press the sausage into a ¼-inch patty and fry it over medium-high until cooked through, 4–5 minutes a side. Keep it warm."
+   },
+   {
+    "title": "Eggs in the drippings",
+    "text": "Crack the eggs into the same pan, season, and cook over medium until the whites are nearly set. Flip, cook until the yolks just start to set, lay the cheese over, and cover until it melts."
+   },
+   {
+    "title": "Assemble",
+    "text": "Halve the sausage, divide it and the eggs over two slices of toast, spoon the chowchow on, close the sandwiches and cut them in half."
+   }
+  ]
+ },
+ "kielbasa-pretzel-breakfast-bake": {
+  "cuisine": "German",
+  "steps": [
+   {
+    "title": "Dry the bread",
+    "text": "Spread the bread on a baking sheet and leave it until completely dry — fresh bread turns to mush in a strata."
+   },
+   {
+    "title": "Heat the oven",
+    "text": "Oven to 375° and spray a 9×13-inch dish."
+   },
+   {
+    "title": "Brown the kielbasa",
+    "text": "Brown the kielbasa in oil in a large skillet over high, 3–5 minutes, and drain it on paper towel, keeping the drippings. Drop to medium and cook the onions and garlic in the fat 1–2 minutes."
+   },
+   {
+    "title": "Soak overnight",
+    "text": "Whisk the eggs, cream, broth, mustard, chives, thyme, salt and pepper together, add the bread and toss it to coat. Fold in the kielbasa, onions and half the Gruyère, transfer to the dish, cover, and refrigerate overnight. The overnight soak is the recipe — it cannot be rushed."
+   },
+   {
+    "title": "Bake",
+    "text": "Scatter the remaining Gruyère over and bake about 45 minutes, to 160° in the centre. Rest 15 minutes."
+   }
+  ]
+ },
+ "turkey-noodle-casserole": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Heat the oven",
+    "text": "Oven to 350° and spray a 3-qt baking dish."
+   },
+   {
+    "title": "Blanch the noodles",
+    "text": "Blanch the noodles in boiling salted water for one minute only, drain, and rinse cold to stop them cooking. They finish in the oven."
+   },
+   {
+    "title": "Sweat the vegetables",
+    "text": "Melt the butter in the same pot over medium, add the onions, carrots, celery and thyme, and sweat covered until soft, 5 minutes."
+   },
+   {
+    "title": "Roux and wine",
+    "text": "Stir in the flour and cook 2 minutes, then add the wine and cook it away, 1–2 minutes."
+   },
+   {
+    "title": "Make the sauce",
+    "text": "Stir in the broth and cream, bring to a boil, then simmer until thick, 2–3 minutes."
+   },
+   {
+    "title": "Combine",
+    "text": "Fold in the noodles, turkey, Cheddar, peas, parsley and lemon juice and season with salt, pepper and nutmeg. Tip it into the dish."
+   },
+   {
+    "title": "Crumb and bake",
+    "text": "Mix the Parmesan, panko, melted butter, parsley and zest, season, and scatter it over. Bake 25–30 minutes until bubbling and brown, then rest 5–10 minutes on a rack."
+   }
+  ]
+ },
+ "grilled-sausage-pepper-panzanella": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Two-zone grill",
+    "text": "Set the grill up with one side medium-high and the other medium-low, and oil the grate. Everything here needs one heat or the other."
+   },
+   {
+    "title": "Vinaigrette",
+    "text": "Purée the vinegar, ¼ cup oil, capers, garlic, anchovy paste, Dijon and oregano in a mini food processor and season."
+   },
+   {
+    "title": "Oil everything",
+    "text": "Brush the baguette slices, sausages, bell peppers and onion slices with ¼ cup oil."
+   },
+   {
+    "title": "Char the peppers",
+    "text": "Grill the peppers over medium-high, covered, until soft and blackened all over, about 15 minutes. Bowl them under plastic wrap for 10–15 minutes, then peel, seed and chop."
+   },
+   {
+    "title": "Sausages on the cool side",
+    "text": "Meanwhile grill the sausages over medium-low until charred and 155° in the centre, 10–15 minutes. Rest 5–10 minutes and cut into 1-inch pieces."
+   },
+   {
+    "title": "Onions and bread",
+    "text": "Grill the onions over medium-high until soft, 4–6 minutes a side, and the baguette about 2 minutes a side. Rub the cut garlic over both sides of the bread, then cube it and chop the onions."
+   },
+   {
+    "title": "Toss",
+    "text": "Toss the romaine, tomatoes, fontina, bread, sausages, peppers and onions with the vinaigrette."
+   }
+  ]
+ },
+ "mister-crunch-croque-monsieur-strata-with-dijon-bechamel": {
+  "cuisine": "French",
+  "steps": [
+   {
+    "title": "Butter the dish",
+    "text": "Lightly butter a 9×13-inch baking dish."
+   },
+   {
+    "title": "Roux",
+    "text": "Melt 4 Tbsp butter in a saucepan over medium until it foams, whisk the flour in, and cook it 1–2 minutes."
+   },
+   {
+    "title": "Dijon béchamel",
+    "text": "Whisk 2 cups milk in slowly until smooth, then the Dijon and nutmeg, and season with salt and cayenne. Drop to medium-low and cook until it coats a spoon and a finger drawn through leaves a trail, 4–6 minutes."
+   },
+   {
+    "title": "Layer",
+    "text": "Spread about ½ cup of béchamel across the bottom of the dish, then a third of the bread, half the ham, and another ½ cup of béchamel. Repeat, then finish with the last of the bread and the last ½ cup of béchamel."
+   },
+   {
+    "title": "Custard and chill",
+    "text": "Whisk the eggs with the remaining 1½ cups milk and the black pepper, pour it over, and scatter the remaining cheese on top. Cover, weigh it down so the bread soaks evenly, and chill at least 4 hours or overnight."
+   },
+   {
+    "title": "Take the chill off",
+    "text": "Oven to 375°. Let the strata sit out about 30 minutes and pull the wrap off."
+   },
+   {
+    "title": "Bake",
+    "text": "60–75 minutes, until browned and bubbling and 160° in the centre, tenting with foil if it colours too fast. Stand 10–15 minutes, then parsley over the top."
+   }
+  ]
  }
 }

@@ -177,6 +177,263 @@ export default [
   "cal_per_dollar": 94
  },
  {
+  "id": "baked-ziti",
+  "title": "Baked Ziti",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "12 servings",
+  "totalTime": "11/2 hours + resting",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "bulk Italian sausage",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "olive oil",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "diced onions",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh garlic",
+    "group": "Sauce"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "dried Italian seasoning",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "red pepper flakes",
+    "group": "Sauce"
+   },
+   {
+    "amount": "2",
+    "unit": "cans",
+    "item": "whole tomatoes in purée (28 oz. each), such as Cento, crushed",
+    "group": "Stir in"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "mascarpone cheese",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "ziti",
+    "group": "Pasta"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "provolone, cut into",
+    "group": "Combine"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "1/2-inch cubes",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "grated Parmesan",
+    "group": "Combine"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Heat the oven",
+    "text": "Oven to 400° and spray a 4-qt baking dish."
+   },
+   {
+    "n": 2,
+    "title": "Crumble the sausage",
+    "text": "Cook the sausage in oil in a saucepan over medium, crushing it with a potato masher until fine and cooked through, 5–7 minutes, then set it aside."
+   },
+   {
+    "n": 3,
+    "title": "Sweat the onions",
+    "text": "Sweat the onions, garlic, Italian seasoning and pepper flakes in the drippings over medium, covered and stirred now and then, until the onions soften, 10 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Simmer and enrich",
+    "text": "Add the tomatoes and the sausage, simmer 15 minutes, then cool 15. Stir the mascarpone through and season — it goes in off the boil so it does not split."
+   },
+   {
+    "n": 5,
+    "title": "Undercook the pasta",
+    "text": "Boil the ziti in salted water for 8 minutes only; it finishes in the oven. Drain."
+   },
+   {
+    "n": 6,
+    "title": "Combine",
+    "text": "Toss the sauce, ziti and provolone together, tip it into the dish, and dust with Parmesan."
+   },
+   {
+    "n": 7,
+    "title": "Bake and rest",
+    "text": "About 30 minutes, until it bubbles at the edges. Rest 20 minutes before cutting."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 610,
+  "protein_g": 27,
+  "carbs_g": 37,
+  "fat_g": 38,
+  "fiber_g": 3,
+  "sodium_mg": 1019,
+  "est_cost_usd": 2.41,
+  "cal_per_dollar": 253
+ },
+ {
+  "id": "bbq-pulled-chicken-sandwich",
+  "title": "BBQ Pulled Chicken Sandwich",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 sandwiches",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "ketchup",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "cider vinegar",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "light brown sugar",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each prepared yellow mustard and fresh lemon juice",
+    "group": "Sauce"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "each Worcestershire sauce and low-sodium soy sauce",
+    "group": "Sauce"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each garlic powder, light brown sugar, and chili powder",
+    "group": "Rub"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each kosher salt and dried thyme",
+    "group": "Rub"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "bone-in, chicken leg quarters, skin removed",
+    "group": "Chicken"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced onion",
+    "group": "Chicken"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "Kaiser rolls, split",
+    "group": "Chicken"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "recipe Quick Coleslaw",
+    "group": "Chicken"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Whisk the sauce",
+    "text": "Whisk the ketchup, vinegar, ¼ cup brown sugar, mustard, lemon juice, Worcestershire and soy sauce together, season, and set it aside."
+   },
+   {
+    "n": 2,
+    "title": "Mix the rub",
+    "text": "Combine the garlic powder, 1 Tbsp brown sugar, chili powder, 1 tsp salt and thyme."
+   },
+   {
+    "n": 3,
+    "title": "Rub and slow cook",
+    "text": "Pat the rub all over the chicken and put it in a 4–6 qt slow cooker. Scatter the onions over and pour 1 cup of the sauce on top. Cover and cook until tender, 3½ hours on high or 5 on low."
+   },
+   {
+    "n": 4,
+    "title": "Ditch the liquid",
+    "text": "Move the chicken and onions to a bowl and throw out what is left in the cooker — it is thin and greasy, and the reserved sauce is better."
+   },
+   {
+    "n": 5,
+    "title": "Shred hot",
+    "text": "Pull the chicken apart while it is still hot, discarding the bones, and return it with the onions to the cooker on warm. Toss with the last ½ cup of sauce."
+   },
+   {
+    "n": 6,
+    "title": "Serve",
+    "text": "Pile onto rolls and top with quick coleslaw."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 312,
+  "protein_g": 24,
+  "carbs_g": 39,
+  "fat_g": 6,
+  "fiber_g": 2,
+  "sodium_mg": 520,
+  "est_cost_usd": 2.24,
+  "cal_per_dollar": 139
+ },
+ {
   "id": "beef-daube",
   "title": "Beef Daube",
   "subtitle": "",
@@ -796,6 +1053,130 @@ export default [
   "cal_per_dollar": 143
  },
  {
+  "id": "breakfast-panini",
+  "title": "Breakfast Panini",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "4 servings (2 sandwiches)",
+  "totalTime": "40 minutes",
+  "ingredients": [
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "prepared yellow mustard",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "ketchup",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "barbecue sauce",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "pure maple syrup",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "minced red onion",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "sweet pickle relish",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped jarred roasted red bell pepper",
+    "group": "Chowchow"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, softened",
+    "group": "Sandwich"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "center-cut slices of a round loaf of bread (1⁄2-inch thick)",
+    "group": "Sandwich"
+   },
+   {
+    "amount": "12",
+    "unit": "oz.",
+    "item": "bulk Italian sausage",
+    "group": "Fry"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "eggs",
+    "group": "Cook"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper",
+    "group": "Cook"
+   },
+   {
+    "amount": "4",
+    "unit": "slices",
+    "item": "Cheddar cheese",
+    "group": "Cook"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Make the chowchow",
+    "text": "Simmer the mustard, ketchup, barbecue sauce and maple syrup in a saucepan over medium-low for a minute, then stir in the onion, relish and bell pepper and set it aside."
+   },
+   {
+    "n": 2,
+    "title": "Butter and toast",
+    "text": "Butter both sides of the bread and toast it on both sides in a large nonstick skillet over medium."
+   },
+   {
+    "n": 3,
+    "title": "Fry the sausage",
+    "text": "Press the sausage into a ¼-inch patty and fry it over medium-high until cooked through, 4–5 minutes a side. Keep it warm."
+   },
+   {
+    "n": 4,
+    "title": "Eggs in the drippings",
+    "text": "Crack the eggs into the same pan, season, and cook over medium until the whites are nearly set. Flip, cook until the yolks just start to set, lay the cheese over, and cover until it melts."
+   },
+   {
+    "n": 5,
+    "title": "Assemble",
+    "text": "Halve the sausage, divide it and the eggs over two slices of toast, spoon the chowchow on, close the sandwiches and cut them in half."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 568,
+  "protein_g": 28,
+  "carbs_g": 25,
+  "fat_g": 39,
+  "fiber_g": 1,
+  "sodium_mg": 1193,
+  "est_cost_usd": 2.44,
+  "cal_per_dollar": 233
+ },
+ {
   "id": "caesar-salad-with-roasted-tofu",
   "title": "Caesar Salad",
   "subtitle": "with roasted tofu",
@@ -1167,6 +1548,125 @@ export default [
   "sodium_mg": 1278,
   "est_cost_usd": 3,
   "cal_per_dollar": 172
+ },
+ {
+  "id": "chicken-noodle-stew",
+  "title": "Chicken & Noodle Stew",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "2 servings",
+  "totalTime": "about 1 hour",
+  "ingredients": [
+   {
+    "amount": "5",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, divided",
+    "group": "Melt"
+   },
+   {
+    "amount": "4",
+    "unit": "oz.",
+    "item": "cremini or button mushrooms, quartered",
+    "group": "Melt"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "each diced onion, carrot, and celery",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced fresh garlic",
+    "group": "Sweat"
+   },
+   {
+    "amount": "3",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Add"
+   },
+   {
+    "amount": "6",
+    "unit": "oz.",
+    "item": "frozen egg noodles",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(such as Reames)",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "half-and-half",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "all-purpose flour",
+    "group": "Combine"
+   },
+   {
+    "amount": "6",
+    "unit": "oz.",
+    "item": "shredded rotisserie chicken (about 11/2 cups)",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "frozen green peas",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "each minced fresh thyme and chives",
+    "group": "Combine"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the mushrooms",
+    "text": "Melt 3 Tbsp butter in a sauté pan over medium. Season the mushrooms and cook until browned and nearly dry, 7–8 minutes, then set them aside."
+   },
+   {
+    "n": 2,
+    "title": "Sweat the base",
+    "text": "Sweat the onion, carrot, celery and garlic in the last 2 Tbsp butter, covered, over low until soft, 3–5 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Cook the noodles in the broth",
+    "text": "Add the broth, bring it to a boil over medium-high, stir in the noodles, and simmer on medium about 20 minutes until tender."
+   },
+   {
+    "n": 4,
+    "title": "Thicken and finish",
+    "text": "Shake the half-and-half and flour smooth in a screw-top jar — that is the reliable way to avoid lumps — and stir it in. Add the chicken, peas and mushrooms and cook until the stew thickens and bubbles, about 5 minutes. Stir in the thyme and chives and season."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 812,
+  "protein_g": 43,
+  "carbs_g": 64,
+  "fat_g": 42,
+  "fiber_g": 4,
+  "sodium_mg": 244,
+  "est_cost_usd": 2.86,
+  "cal_per_dollar": 284
  },
  {
   "id": "chicken-soup",
@@ -2281,6 +2781,158 @@ export default [
   "cal_per_dollar": 264
  },
  {
+  "id": "grilled-sausage-pepper-panzanella",
+  "title": "Grilled Sausage & Pepper Panzanella",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "6 servings (about 15 cups)",
+  "totalTime": "1 hour",
+  "ingredients": [
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "each red wine vinegar and olive oil",
+    "group": "Vinaigrette, purée"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "capers, drained",
+    "group": "Vinaigrette, purée"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Vinaigrette, purée"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each anchovy paste and Dijon mustard",
+    "group": "Vinaigrette, purée"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "dried oregano",
+    "group": "Vinaigrette, purée"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Vinaigrette, purée"
+   },
+   {
+    "amount": "8",
+    "unit": "slices",
+    "item": "Italian baguette, 1-inch thick",
+    "group": "Salad"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "lb.",
+    "item": "sweet Italian sausage links",
+    "group": "Salad"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "bell peppers",
+    "group": "Salad"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "large red onion, cut into",
+    "group": "Salad"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "1/2-inch-thick slices",
+    "group": "Salad"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "olive oil",
+    "group": "Salad"
+   },
+   {
+    "amount": "2",
+    "unit": "cloves",
+    "item": "garlic, halved lengthwise",
+    "group": "Salad"
+   },
+   {
+    "amount": "6",
+    "unit": "cups",
+    "item": "chopped romaine lettuce",
+    "group": "Toss"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "medium tomatoes, seeded and diced",
+    "group": "Toss"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "cubed fontina cheese",
+    "group": "Toss"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Two-zone grill",
+    "text": "Set the grill up with one side medium-high and the other medium-low, and oil the grate. Everything here needs one heat or the other."
+   },
+   {
+    "n": 2,
+    "title": "Vinaigrette",
+    "text": "Purée the vinegar, ¼ cup oil, capers, garlic, anchovy paste, Dijon and oregano in a mini food processor and season."
+   },
+   {
+    "n": 3,
+    "title": "Oil everything",
+    "text": "Brush the baguette slices, sausages, bell peppers and onion slices with ¼ cup oil."
+   },
+   {
+    "n": 4,
+    "title": "Char the peppers",
+    "text": "Grill the peppers over medium-high, covered, until soft and blackened all over, about 15 minutes. Bowl them under plastic wrap for 10–15 minutes, then peel, seed and chop."
+   },
+   {
+    "n": 5,
+    "title": "Sausages on the cool side",
+    "text": "Meanwhile grill the sausages over medium-low until charred and 155° in the centre, 10–15 minutes. Rest 5–10 minutes and cut into 1-inch pieces."
+   },
+   {
+    "n": 6,
+    "title": "Onions and bread",
+    "text": "Grill the onions over medium-high until soft, 4–6 minutes a side, and the baguette about 2 minutes a side. Rub the cut garlic over both sides of the bread, then cube it and chop the onions."
+   },
+   {
+    "n": 7,
+    "title": "Toss",
+    "text": "Toss the romaine, tomatoes, fontina, bread, sausages, peppers and onions with the vinaigrette."
+   }
+  ],
+  "attribution": "Cuisine at Home-105",
+  "calories": 596,
+  "protein_g": 33,
+  "carbs_g": 41,
+  "fat_g": 35,
+  "fiber_g": 5,
+  "sodium_mg": 1269,
+  "est_cost_usd": 2.83,
+  "cal_per_dollar": 211
+ },
+ {
   "id": "hot-beef-sandwiches",
   "title": "Hot Beef Sandwiches",
   "subtitle": "",
@@ -3071,6 +3723,136 @@ export default [
   "cal_per_dollar": 167
  },
  {
+  "id": "kielbasa-pretzel-breakfast-bake",
+  "title": "Kielbasa & Pretzel Breakfast Bake",
+  "subtitle": "",
+  "cuisine": "German",
+  "servings": "8 servings",
+  "totalTime": "11/2 hours + staling",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "pretzel bread, cubed",
+    "group": "Stale"
+   },
+   {
+    "amount": "1",
+    "unit": "pkg.",
+    "item": "kielbasa, halved lengthwise and sliced (14 oz.)",
+    "group": "Brown"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "canola oil",
+    "group": "Brown"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "sliced onions",
+    "group": "Brown"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Brown"
+   },
+   {
+    "amount": "10",
+    "unit": "",
+    "item": "eggs",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "heavy cream",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "low-sodium beef broth",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "spicy brown mustard",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "chopped fresh chives",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "chopped fresh thyme",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "kosher salt",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "black pepper",
+    "group": "Whisk"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "shredded Gruyère, divided",
+    "group": "Whisk"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Dry the bread",
+    "text": "Spread the bread on a baking sheet and leave it until completely dry — fresh bread turns to mush in a strata."
+   },
+   {
+    "n": 2,
+    "title": "Heat the oven",
+    "text": "Oven to 375° and spray a 9×13-inch dish."
+   },
+   {
+    "n": 3,
+    "title": "Brown the kielbasa",
+    "text": "Brown the kielbasa in oil in a large skillet over high, 3–5 minutes, and drain it on paper towel, keeping the drippings. Drop to medium and cook the onions and garlic in the fat 1–2 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Soak overnight",
+    "text": "Whisk the eggs, cream, broth, mustard, chives, thyme, salt and pepper together, add the bread and toss it to coat. Fold in the kielbasa, onions and half the Gruyère, transfer to the dish, cover, and refrigerate overnight. The overnight soak is the recipe — it cannot be rushed."
+   },
+   {
+    "n": 5,
+    "title": "Bake",
+    "text": "Scatter the remaining Gruyère over and bake about 45 minutes, to 160° in the centre. Rest 15 minutes."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 675,
+  "protein_g": 30,
+  "carbs_g": 38,
+  "fat_g": 45,
+  "fiber_g": 2,
+  "sodium_mg": 1402,
+  "est_cost_usd": 2.58,
+  "cal_per_dollar": 262
+ },
+ {
   "id": "seoulful-sides-korean-rice-beans",
   "title": "Korean Rice & Beans",
   "subtitle": "",
@@ -3718,6 +4500,146 @@ export default [
   "cal_per_dollar": 105
  },
  {
+  "id": "mister-crunch-croque-monsieur-strata-with-dijon-bechamel",
+  "title": "Mister Crunch Croque Monsieur Strata",
+  "subtitle": "with dijon béchamel",
+  "cuisine": "French",
+  "servings": "12 servings",
+  "totalTime": "about 2 hours + chilling",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter + more for coating",
+    "group": "Lightly coat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "all-purpose flour",
+    "group": "Lightly coat"
+   },
+   {
+    "amount": "3 1/2",
+    "unit": "cups",
+    "item": "whole milk, divided",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "Dijon mustard",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "freshly grated nutmeg",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and cayenne pepper to taste",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "sliced artisan-style white",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(12–18 slices, about 1/2-inch thick), staled",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "lb.",
+    "item": "deli-sliced Virginia ham",
+    "group": "Whisk"
+   },
+   {
+    "amount": "12",
+    "unit": "oz.",
+    "item": "Gruyère, shredded",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(about 4 cups)",
+    "group": "Whisk"
+   },
+   {
+    "amount": "8",
+    "unit": "",
+    "item": "eggs",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "black pepper",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped fresh parsley",
+    "group": "Whisk"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Butter the dish",
+    "text": "Lightly butter a 9×13-inch baking dish."
+   },
+   {
+    "n": 2,
+    "title": "Roux",
+    "text": "Melt 4 Tbsp butter in a saucepan over medium until it foams, whisk the flour in, and cook it 1–2 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Dijon béchamel",
+    "text": "Whisk 2 cups milk in slowly until smooth, then the Dijon and nutmeg, and season with salt and cayenne. Drop to medium-low and cook until it coats a spoon and a finger drawn through leaves a trail, 4–6 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Layer",
+    "text": "Spread about ½ cup of béchamel across the bottom of the dish, then a third of the bread, half the ham, and another ½ cup of béchamel. Repeat, then finish with the last of the bread and the last ½ cup of béchamel."
+   },
+   {
+    "n": 5,
+    "title": "Custard and chill",
+    "text": "Whisk the eggs with the remaining 1½ cups milk and the black pepper, pour it over, and scatter the remaining cheese on top. Cover, weigh it down so the bread soaks evenly, and chill at least 4 hours or overnight."
+   },
+   {
+    "n": 6,
+    "title": "Take the chill off",
+    "text": "Oven to 375°. Let the strata sit out about 30 minutes and pull the wrap off."
+   },
+   {
+    "n": 7,
+    "title": "Bake",
+    "text": "60–75 minutes, until browned and bubbling and 160° in the centre, tenting with foil if it colours too fast. Stand 10–15 minutes, then parsley over the top."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 408,
+  "protein_g": 28,
+  "carbs_g": 26,
+  "fat_g": 21,
+  "fiber_g": 1,
+  "sodium_mg": 1063,
+  "est_cost_usd": 2.52,
+  "cal_per_dollar": 162
+ },
+ {
   "id": "northwoods-beef-stew-with-root-vegetables",
   "title": "Northwoods Beef Stew",
   "subtitle": "with root vegetables",
@@ -3870,6 +4792,267 @@ export default [
   "fiber_g": 9,
   "sodium_mg": 151,
   "est_cost_usd": 3.4,
+  "cal_per_dollar": 162
+ },
+ {
+  "id": "nutty-chicken-with-almonds-pine-nuts",
+  "title": "Nutty Chicken",
+  "subtitle": "with almonds & pine nuts",
+  "cuisine": "Spanish",
+  "servings": "4 servings",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "dry bread crumbs",
+    "group": "Pulse"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "each slivered almonds and pine nuts, toasted",
+    "group": "Pulse"
+   },
+   {
+    "amount": "3",
+    "unit": "cloves",
+    "item": "garlic",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each ground cumin, smoked paprika, and chili powder",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "red pepper flakes",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped onion",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "each low-sodium chicken broth and dry sherry",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "chicken drumsticks, skin removed",
+    "group": "Heat"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "bone-in chicken thighs, skin removed",
+    "group": "Heat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper",
+    "group": "Heat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "heavy cream",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "sherry vinegar or cider vinegar",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Toasted slivered almonds, lime wedges, and cilantro",
+    "group": "Garnish"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Grind the picada",
+    "text": "Pulse the bread crumbs, 2 Tbsp almonds, pine nuts, garlic, cumin, paprika, chili powder and pepper flakes in a food processor until minced — this is the thickener, so it should be sandy, not paste. Scrape it into a 4–6 qt slow cooker and stir in the onion, broth and sherry."
+   },
+   {
+    "n": 2,
+    "title": "Brown, then walk away",
+    "text": "Heat the oil in a large sauté pan over medium-high. Season the chicken and brown it on all sides, 5 minutes, then move it to the cooker. Cover and cook 2–3 hours on high or 4–5 on low. Lift the chicken out and keep it warm."
+   },
+   {
+    "n": 3,
+    "title": "Finish the sauce",
+    "text": "Stir the cream and vinegar into the cooker until the sauce comes together."
+   },
+   {
+    "n": 4,
+    "title": "Serve",
+    "text": "Almonds, lime wedges and cilantro over each plate."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 323,
+  "protein_g": 30,
+  "carbs_g": 10,
+  "fat_g": 16,
+  "fiber_g": 1,
+  "sodium_mg": 191,
+  "est_cost_usd": 2.58,
+  "cal_per_dollar": 125
+ },
+ {
+  "id": "pad-thai-with-shrimp-or-pork",
+  "title": "Pad Thai",
+  "subtitle": "with shrimp or pork",
+  "cuisine": "Thai",
+  "servings": "6 servings (8 cups)",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "pure tamarind concentrate or paste",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "packed brown sugar",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "fish sauce",
+    "group": "Sauce"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "sambal oelek or chili garlic sauce",
+    "group": "Sauce"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "rice stick noodles",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "canola oil, divided",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "6",
+    "unit": "",
+    "item": "scallions, thinly sliced, white and green parts separated",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced garlic",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "3",
+    "unit": "",
+    "item": "eggs, beaten",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "large shrimp, peeled and deveined, tails left on",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "shredded carrot",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "fresh mung bean sprouts",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped dry-roasted peanuts",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped fresh cilantro",
+    "group": "Pad thai"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Lime wedges",
+    "group": "Pad thai"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sauce first",
+    "text": "Simmer the tamarind, brown sugar, fish sauce and sambal in a small saucepan over low for 5 minutes and set it aside."
+   },
+   {
+    "n": 2,
+    "title": "Soften the noodles",
+    "text": "Soak the noodles in very hot water just until pliable — not soft — and drain."
+   },
+   {
+    "n": 3,
+    "title": "Scramble the eggs",
+    "text": "Heat 1 Tbsp oil in a large nonstick skillet over medium-high. Cook the scallion whites and garlic until they start to colour, 2–3 minutes, then stir in the eggs and cook until lightly scrambled, 1–2 minutes. Set them aside and wipe the pan."
+   },
+   {
+    "n": 4,
+    "title": "Shrimp, then noodles",
+    "text": "Heat 1 Tbsp oil in the same pan and cook the shrimp until pink and curling, 2–3 minutes; set aside. Heat the last spoon of oil, add the noodles, stir the sauce through, and cook until the noodles drink it up, 3–5 minutes."
+   },
+   {
+    "n": 5,
+    "title": "Toss and serve",
+    "text": "Toss the scallion greens, carrot, bean sprouts, egg and shrimp through the noodles. Peanuts, cilantro and lime wedges over each bowl."
+   }
+  ],
+  "attribution": "Cuisine at Home-91",
+  "calories": 372,
+  "protein_g": 17,
+  "carbs_g": 53,
+  "fat_g": 10,
+  "fiber_g": 2,
+  "sodium_mg": 1548,
+  "est_cost_usd": 2.3,
   "cal_per_dollar": 162
  },
  {
@@ -4868,6 +6051,621 @@ export default [
   "cal_per_dollar": 160
  },
  {
+  "id": "provencal-chicken-dumplings",
+  "title": "Provençal Chicken & Dumplings",
+  "subtitle": "",
+  "cuisine": "French",
+  "servings": "6 servings",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "cremini mushrooms, sliced",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, melted",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "6–8",
+    "unit": "cloves",
+    "item": "garlic, minced",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "all-purpose flour",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "herbes de Provence",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "dry white wine, such as French Chardonnay",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Chicken, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "sliced carrots",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "each sliced leeks and diced celery",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "unsweetened applesauce",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "shredded rotisserie chicken",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "frozen peas, thawed",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "whole milk",
+    "group": "Dumplings"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Dumplings"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "cake flour",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "tsp.",
+    "item": "baking powder",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "kosher salt",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each dry mustard and fresh thyme",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped fresh parsley",
+    "group": "Whisk"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the mushrooms",
+    "text": "Sauté the mushrooms in melted butter over medium-high until browned, 8–10 minutes, then add the garlic for 2–3 minutes more."
+   },
+   {
+    "n": 2,
+    "title": "Flour and wine",
+    "text": "Stir in the all-purpose flour and herbes de Provence and cook 1–2 minutes, then deglaze with the wine and season."
+   },
+   {
+    "n": 3,
+    "title": "Slow cook",
+    "text": "Add the mushroom mixture, carrots, leeks, celery, broth and applesauce to a 4–6 qt slow cooker and stir. Cover and cook 3 hours on high or 4–5 on low, then stir in the chicken and peas."
+   },
+   {
+    "n": 4,
+    "title": "Warm the milk",
+    "text": "Heat the milk with 2 Tbsp butter in a small pan until the butter melts."
+   },
+   {
+    "n": 5,
+    "title": "Mix the dumplings",
+    "text": "Whisk the cake flour, baking powder, 1 tsp salt, dry mustard and thyme together, then stir the milk in just until no flour shows — overworking it makes them tough."
+   },
+   {
+    "n": 6,
+    "title": "Drop and steam",
+    "text": "Drop rounded tablespoons of the dough into the cooker, cover, and cook 35 minutes, until the centres are no longer doughy."
+   },
+   {
+    "n": 7,
+    "title": "Serve",
+    "text": "Parsley and celery leaves over each bowl."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 374,
+  "protein_g": 30,
+  "carbs_g": 33,
+  "fat_g": 9,
+  "fiber_g": 5,
+  "sodium_mg": 866,
+  "est_cost_usd": 3.09,
+  "cal_per_dollar": 121
+ },
+ {
+  "id": "red-beans-rice",
+  "title": "Red Beans & Rice",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "2 servings; Total time: 30 minutes",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "low-sodium chicken broth"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry long-grain white rice"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each chopped fresh parsley and scallions"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt to taste"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp",
+    "item": "minced fresh garlic"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each dried oregano and ground cumin"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "each kosher salt and red pepper flakes"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "red beans (16 oz.), drained and rinsed"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "tomato sauce (8 oz.)"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "cider vinegar"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Cook the rice",
+    "text": "Boil the broth in a saucepan over high, stir in the rice, cover, drop to low, and cook 15 minutes. Stand it 5 minutes, then fork it through with the parsley and scallions."
+   },
+   {
+    "n": 2,
+    "title": "Bloom the spices",
+    "text": "Sauté the onion in oil in a saucepan over medium-high until soft, 3 minutes, then add the garlic, oregano, cumin, ¼ tsp salt and pepper flakes for 30 seconds."
+   },
+   {
+    "n": 3,
+    "title": "Simmer the beans",
+    "text": "Stir in the beans, tomato sauce and vinegar, bring to a boil, and simmer 3 minutes until thick. Season and spoon over the rice."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 559,
+  "protein_g": 26,
+  "carbs_g": 96,
+  "fat_g": 9,
+  "fiber_g": 20,
+  "sodium_mg": 1523,
+  "est_cost_usd": 2.38,
+  "cal_per_dollar": 235
+ },
+ {
+  "id": "red-wine-cola-braised-short-ribs",
+  "title": "Red Wine & Cola Braised Short Ribs",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 servings",
+  "totalTime": "41/2 hours",
+  "ingredients": [
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "4",
+    "unit": "lb.",
+    "item": "beef short ribs, seasoned with salt and black pepper",
+    "group": "Heat"
+   },
+   {
+    "amount": "1 1/4",
+    "unit": "cups",
+    "item": "diced onions",
+    "group": "Sweat"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "each diced carrot and celery",
+    "group": "Sweat"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Sweat"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "each sweet paprika and tomato paste",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "anchovy paste",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "fresh or dried bay leaf",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry sherry",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "each cola and dry red wine (such as Tempranillo)",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Zest of 1 orange",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "cornstarch",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "olive oil",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "sherry vinegar",
+    "group": "Off heat"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced fresh thyme",
+    "group": "Off heat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "minced orange zest",
+    "group": "Off heat"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Low oven",
+    "text": "Oven to 300° — low and slow is the whole point with short ribs."
+   },
+   {
+    "n": 2,
+    "title": "Brown the ribs",
+    "text": "Heat ¼ cup oil in a Dutch oven over medium-high, brown the ribs on all sides, 8–10 minutes, and set them on a plate. Drop the heat to medium-low."
+   },
+   {
+    "n": 3,
+    "title": "Sweat the base",
+    "text": "Sweat the onions, carrot and celery in the drippings until soft, 6–7 minutes, then add the garlic, paprika, tomato paste, anchovy paste and bay leaf for 2 minutes more."
+   },
+   {
+    "n": 4,
+    "title": "Sherry",
+    "text": "Deglaze with the sherry and cook it nearly dry, 5 minutes."
+   },
+   {
+    "n": 5,
+    "title": "Cola and wine",
+    "text": "Stir in the cola, wine and the zest of one orange, return the ribs, bring it to a boil over high, then lid it tightly and move it to the oven."
+   },
+   {
+    "n": 6,
+    "title": "Three and a half hours",
+    "text": "Braise until the meat gives to a fork, about 3½ hours, turning the ribs each hour. Tent them under foil."
+   },
+   {
+    "n": 7,
+    "title": "Strain and skim",
+    "text": "Strain the braising liquid and discard the solids. Skim the fat off the top, pour it into a sauté pan, and bring it to a simmer over medium."
+   },
+   {
+    "n": 8,
+    "title": "Thicken",
+    "text": "Whisk the cornstarch with 2 tsp oil, whisk that into the liquid, and cook 2 minutes."
+   },
+   {
+    "n": 9,
+    "title": "Finish",
+    "text": "Off the heat, stir in the vinegar, thyme and minced zest, then warm the ribs through in the sauce, 5 minutes."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 809,
+  "protein_g": 59,
+  "carbs_g": 20,
+  "fat_g": 43,
+  "fiber_g": 1,
+  "sodium_mg": 405,
+  "est_cost_usd": 3.56,
+  "cal_per_dollar": 227
+ },
+ {
+  "id": "ricotta-stuffed-shells",
+  "title": "Ricotta-Stuffed Shells",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "4 servings",
+  "totalTime": "11/2 hours + cooling",
+  "ingredients": [
+   {
+    "amount": "20",
+    "unit": "",
+    "item": "dry jumbo pasta shells",
+    "group": "Cook"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(6 oz.)",
+    "group": "Cook"
+   },
+   {
+    "amount": "4",
+    "unit": "oz.",
+    "item": "chunk pancetta, chopped",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "chopped onions",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped carrot",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped celery",
+    "group": "Sauce"
+   },
+   {
+    "amount": "5",
+    "unit": "cloves",
+    "item": "garlic",
+    "group": "Sauce"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "tomato paste",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced fresh rosemary",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry red wine",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2",
+    "unit": "cans",
+    "item": "crushed tomatoes",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(15 oz. each)",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "red wine vinegar",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "homemade or purchased whole milk ricotta",
+    "group": "Filling"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "grated Parmesan",
+    "group": "Filling"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh parsley",
+    "group": "Filling"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "grated fresh garlic",
+    "group": "Filling"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "egg",
+    "group": "Filling"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Shaved Parmesan",
+    "group": "Filling"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Par-cook the shells",
+    "text": "Boil the shells in well-salted water just until they bend without tearing, 8–9 minutes. Drain, rinse cold to stop them, and drain again."
+   },
+   {
+    "n": 2,
+    "title": "Mince the soffritto",
+    "text": "Mince the pancetta in a food processor and tip it into a bowl. Pulse the onions, carrot, celery and garlic in the same bowl of the processor until finely minced."
+   },
+   {
+    "n": 3,
+    "title": "Render the pancetta",
+    "text": "Cook the pancetta in a saucepan over medium until crisp, 8–9 minutes, and lift it onto paper towel. Raise the heat to medium-high."
+   },
+   {
+    "n": 4,
+    "title": "Build the sauce",
+    "text": "Cook the soffritto in the rendered fat until it softens and goes dry, about 5 minutes, then add the tomato paste and rosemary for a minute."
+   },
+   {
+    "n": 5,
+    "title": "Wine, then tomatoes",
+    "text": "Deglaze with the wine and cook it almost away, 3 minutes. Add the crushed tomatoes and simmer on medium-low for 10 minutes, then stir in the vinegar and season."
+   },
+   {
+    "n": 6,
+    "title": "Line the dish",
+    "text": "Oven to 400°. Spray a 9×13-inch dish and spread half the sauce across the bottom."
+   },
+   {
+    "n": 7,
+    "title": "Fill, bake, rest",
+    "text": "Beat the ricotta, grated Parmesan, parsley, grated garlic and egg together with a hand mixer and season. Stuff each shell with a rounded tablespoon and set them cheese-side up in the dish, then pour the rest of the sauce over. Bake 25 minutes, until it bubbles at the edges. Rest 10 minutes and finish with the pancetta and shaved Parmesan."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 715,
+  "protein_g": 40,
+  "carbs_g": 59,
+  "fat_g": 34,
+  "fiber_g": 7,
+  "sodium_mg": 1394,
+  "est_cost_usd": 3.37,
+  "cal_per_dollar": 212
+ },
+ {
   "id": "sausage-peppers-sandwich-with-marinara",
   "title": "Sausage & Peppers Sandwich",
   "subtitle": "with marinara",
@@ -5102,6 +6900,160 @@ export default [
   "sodium_mg": 451,
   "est_cost_usd": 2.27,
   "cal_per_dollar": 136
+ },
+ {
+  "id": "smoked-turkey-gumbo-with-andouille-sausage",
+  "title": "Smoked Turkey Gumbo",
+  "subtitle": "with andouille sausage",
+  "cuisine": "American",
+  "servings": "8 servings (about 8 cups)",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "andouille sausage, cut into 1/4-inch-thick slices",
+    "group": "Brown"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Brown"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "all-purpose flour",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "olive oil",
+    "group": "Combine"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "each diced onion, green bell pepper, and celery",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced garlic",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each cayenne pepper, black pepper, and red pepper flakes",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "smoked turkey leg, meat removed and shredded",
+    "group": "Stir"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(2 cups)",
+    "group": "Stir"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "diced tomatoes, drained",
+    "group": "Stir"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(14.5 oz.)",
+    "group": "Stir"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "fresh or frozen sliced okra (thawed if frozen)",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh parsley",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh thyme",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Cooked white rice",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped scallions",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Diced red bell pepper",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the sausage",
+    "text": "Brown the sausage in 2 Tbsp oil in a sauté pan over medium-high, 5 minutes, and move it to a 4–6 qt slow cooker. Pour off the drippings and wipe the pan."
+   },
+   {
+    "n": 2,
+    "title": "Peanut-butter roux",
+    "text": "Cook the flour and ½ cup oil in that pan over medium-high, stirring the whole time, until it is the colour of peanut butter, 7–10 minutes — stop stirring and it burns. Add the onion, bell pepper, celery, garlic, cayenne, black pepper and pepper flakes and cook until soft, about 5 minutes. Stir in the broth and tip the lot into the cooker."
+   },
+   {
+    "n": 3,
+    "title": "Three and a half hours",
+    "text": "Stir in the turkey and tomatoes, cover, and cook 3½ hours on high or 5½ on low."
+   },
+   {
+    "n": 4,
+    "title": "Okra last",
+    "text": "Add the okra, parsley and thyme and give it 30 minutes more."
+   },
+   {
+    "n": 5,
+    "title": "Serve",
+    "text": "Season and spoon over white rice, with scallion and red bell pepper on top."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 391,
+  "protein_g": 23,
+  "carbs_g": 16,
+  "fat_g": 26,
+  "fiber_g": 2,
+  "sodium_mg": 1092,
+  "est_cost_usd": 2.72,
+  "cal_per_dollar": 144
  },
  {
   "id": "smoky-texas-chili-with-sweet-pickled-onions",
@@ -6355,6 +8307,87 @@ export default [
   "cal_per_dollar": 132
  },
  {
+  "id": "thyme-gruyere-potatoes",
+  "title": "Thyme-Gruyère Potatoes",
+  "subtitle": "",
+  "cuisine": "French",
+  "servings": "2 servings",
+  "totalTime": "11/4 hours",
+  "ingredients": [
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "heavy cream"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "whole milk"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "russet potatoes, peeled and thinly sliced (6 oz. each)"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "chopped fresh thyme"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "shredded Gruyère"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "grated Parmesan"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Heat the oven",
+    "text": "Oven to 375° and spray a 2-cup baking dish."
+   },
+   {
+    "n": 2,
+    "title": "Infuse the cream",
+    "text": "Bring the cream, milk and garlic to a boil in a saucepan over medium and season it."
+   },
+   {
+    "n": 3,
+    "title": "Layer",
+    "text": "Lay a layer of potatoes in the dish, season, and add ½ tsp thyme; repeat. Pour over half the cream and add ¼ cup Gruyère and 1 Tbsp Parmesan. Do two more rounds of potato, seasoning and thyme, then finish with the last of the cream, Gruyère and Parmesan. Cover with foil."
+   },
+   {
+    "n": 4,
+    "title": "Bake",
+    "text": "45 minutes covered, then 15 more uncovered until the cheese browns. Rest 5 minutes."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 673,
+  "protein_g": 21,
+  "carbs_g": 72,
+  "fat_g": 35,
+  "fiber_g": 5,
+  "sodium_mg": 266,
+  "est_cost_usd": 1.82,
+  "cal_per_dollar": 370
+ },
+ {
   "id": "tomato-braised-chicken",
   "title": "Tomato Braised Chicken",
   "subtitle": "",
@@ -6483,6 +8516,182 @@ export default [
   "sodium_mg": 1468,
   "est_cost_usd": 3.31,
   "cal_per_dollar": 192
+ },
+ {
+  "id": "turkey-noodle-casserole",
+  "title": "Turkey Noodle Casserole",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "12 servings",
+  "totalTime": "1 hour",
+  "ingredients": [
+   {
+    "amount": "12",
+    "unit": "oz.",
+    "item": "wide egg noodles",
+    "group": "Casserole"
+   },
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Melt"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "each diced onions, small baby carrots, and sliced celery",
+    "group": "Melt"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "dried thyme",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "all-purpose flour",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry white wine or dry vermouth",
+    "group": "Stir in"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "heavy cream",
+    "group": "Stir in"
+   },
+   {
+    "amount": "3",
+    "unit": "cups",
+    "item": "chopped cooked turkey",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "shredded sharp white",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Cheddar",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "frozen green peas",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "chopped fresh parsley",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "fresh lemon juice",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt, black pepper, and freshly grated nutmeg to taste",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "shredded Parmesan",
+    "group": "Topping"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "panko",
+    "group": "Topping"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, melted",
+    "group": "Topping"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh parsley",
+    "group": "Topping"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Minced zest of 1 lemon",
+    "group": "Topping"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Heat the oven",
+    "text": "Oven to 350° and spray a 3-qt baking dish."
+   },
+   {
+    "n": 2,
+    "title": "Blanch the noodles",
+    "text": "Blanch the noodles in boiling salted water for one minute only, drain, and rinse cold to stop them cooking. They finish in the oven."
+   },
+   {
+    "n": 3,
+    "title": "Sweat the vegetables",
+    "text": "Melt the butter in the same pot over medium, add the onions, carrots, celery and thyme, and sweat covered until soft, 5 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Roux and wine",
+    "text": "Stir in the flour and cook 2 minutes, then add the wine and cook it away, 1–2 minutes."
+   },
+   {
+    "n": 5,
+    "title": "Make the sauce",
+    "text": "Stir in the broth and cream, bring to a boil, then simmer until thick, 2–3 minutes."
+   },
+   {
+    "n": 6,
+    "title": "Combine",
+    "text": "Fold in the noodles, turkey, Cheddar, peas, parsley and lemon juice and season with salt, pepper and nutmeg. Tip it into the dish."
+   },
+   {
+    "n": 7,
+    "title": "Crumb and bake",
+    "text": "Mix the Parmesan, panko, melted butter, parsley and zest, season, and scatter it over. Bake 25–30 minutes until bubbling and brown, then rest 5–10 minutes on a rack."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 475,
+  "protein_g": 27,
+  "carbs_g": 34,
+  "fat_g": 26,
+  "fiber_g": 2,
+  "sodium_mg": 371,
+  "est_cost_usd": 3.01,
+  "cal_per_dollar": 158
  },
  {
   "id": "twice-baked-potatoes-with-tofu",
