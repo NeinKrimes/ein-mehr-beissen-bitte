@@ -6,6 +6,146 @@
 
 export default [
  {
+  "id": "40-clove-garlic-turkey-with-apple-garlic-spread",
+  "title": "40-Clove Garlic Turkey",
+  "subtitle": "with apple-garlic spread",
+  "cuisine": "French",
+  "servings": "4 servings",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "dried apples",
+    "group": "Turkey"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "brandy or apple juice",
+    "group": "Turkey"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "purchased apple butter",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "each low-sodium chicken broth and dry white wine",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "cider vinegar",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Melt"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "bone-in turkey breast half, trimmed, seasoned with salt and black pepper (3–4 lb.)",
+    "group": "Melt"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "large onion, chopped",
+    "group": "Sauté"
+   },
+   {
+    "amount": "40",
+    "unit": "cloves",
+    "item": "garlic",
+    "group": "Sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh sage",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "ancho chile, stemmed and seeded",
+    "group": "Sauté"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Zest and juice of 1 small lemon",
+    "group": "Spread, purée"
+   },
+   {
+    "amount": "",
+    "unit": "slices",
+    "item": "of baguette, toasted",
+    "group": "Spread, purée"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Minced fresh sage (optional)",
+    "group": "Spread, purée"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Soften the apples",
+    "text": "Microwave the apples with the brandy until softened, about 2 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Mix the braising liquid",
+    "text": "Whisk the apple butter, broth, wine and vinegar together and set it aside."
+   },
+   {
+    "n": 3,
+    "title": "Brown the turkey",
+    "text": "Melt the butter in a large sauté pan over medium-high and brown the turkey skin-side down, 8–10 minutes. Set it aside."
+   },
+   {
+    "n": 4,
+    "title": "Forty cloves",
+    "text": "Sauté the onion and garlic in the same pan until soft, about 5 minutes, then add the sage and season."
+   },
+   {
+    "n": 5,
+    "title": "Layer and cook",
+    "text": "Drain the apples, keeping the brandy for something else. Layer the apples, onions and garlic into a 4–6 qt slow cooker, then the apple butter mixture, the chile and the turkey. Cover and cook on high 3–4 hours, to 165° at the thickest part."
+   },
+   {
+    "n": 6,
+    "title": "Strain",
+    "text": "Tent the turkey under foil. Strain the garlic mixture and discard the liquid — the solids are the spread."
+   },
+   {
+    "n": 7,
+    "title": "Blend the spread",
+    "text": "Purée the garlic mixture with the zest and lemon juice until smooth and season. Serve with baguette and minced sage."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 780,
+  "protein_g": 88,
+  "carbs_g": 62,
+  "fat_g": 15,
+  "fiber_g": 6,
+  "sodium_mg": 853,
+  "est_cost_usd": 4.2,
+  "cal_per_dollar": 186
+ },
+ {
   "id": "african-chili-with-black-eyed-peas",
   "title": "African Chili",
   "subtitle": "with black-eyed peas",
@@ -175,6 +315,236 @@ export default [
   "sodium_mg": 226,
   "est_cost_usd": 2.67,
   "cal_per_dollar": 94
+ },
+ {
+  "id": "ground-beef-labeling-american-goulash",
+  "title": "American Goulash",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 servings (12 cups)",
+  "totalTime": "11/2 hours",
+  "ingredients": [
+   {
+    "amount": "12",
+    "unit": "oz.",
+    "item": "dry elbow macaroni",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "ground chuck",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "yellow onion, diced",
+    "group": "Cook"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "carrots, diced",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each sweet Hungarian paprika and tomato paste",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each caraway seeds and dried marjoram",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "crushed tomatoes (28 oz.)",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "diced tomatoes in juice",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(14.5 oz.)",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "jar sliced pimentos (4 oz.)",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "red wine vinegar",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Add"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "cubed Velveeta cheese",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Cook the macaroni",
+    "text": "Oven to 350°. Boil the macaroni in salted water as the packet directs, then drain."
+   },
+   {
+    "n": 2,
+    "title": "Brown the beef",
+    "text": "Cook the ground chuck, onion, carrots and garlic in a large saucepan over medium, stirring now and then, until the beef browns. Drain the fat and return it to the pan."
+   },
+   {
+    "n": 3,
+    "title": "Bloom the paprika",
+    "text": "Stir in the paprika, tomato paste, caraway seeds and marjoram, cover, and cook 5 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Simmer, then bake",
+    "text": "Add the crushed and diced tomatoes, pimentos and vinegar, bring it to a simmer, and cook 20 minutes until the carrots give to a fork. Season, then stir in the Velveeta and macaroni. Tip it into a 9×13-inch dish and bake about 30 minutes, until the cheese melts through."
+   }
+  ],
+  "attribution": "Cuisine at Home-103",
+  "calories": 602,
+  "protein_g": 31,
+  "carbs_g": 64,
+  "fat_g": 25,
+  "fiber_g": 7,
+  "sodium_mg": 1006,
+  "est_cost_usd": 2.61,
+  "cal_per_dollar": 231
+ },
+ {
+  "id": "autumn-pork-chops-with-butternut-squash-mash",
+  "title": "Autumn Pork Chops",
+  "subtitle": "with butternut squash mash",
+  "cuisine": "American",
+  "servings": "4 servings",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1 1/2",
+    "unit": "lb.",
+    "item": "butternut squash, peeled, seeded, and cut into 1/2-inch cubes",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "low-sodium chicken broth",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "honey",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "bone-in, thick-cut pork chops, seasoned with salt and black pepper (about 18 oz. each)",
+    "group": "Heat"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "sliced onion",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced garlic",
+    "group": "Add"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "apple cider",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh sage",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Squash first",
+    "text": "Put the squash, broth and honey in a 4–6 qt slow cooker, cover, and cook on high for 1½ hours — it needs a head start on the chops."
+   },
+   {
+    "n": 2,
+    "title": "Sear the chops",
+    "text": "Heat the oil in a sauté pan over medium-high until it shimmers and sear the chops 3–4 minutes a side. Set them aside."
+   },
+   {
+    "n": 3,
+    "title": "Cider onions",
+    "text": "Sauté the onion and garlic in the same pan for 3 minutes, deglaze with the cider, scraping the pan clean, and cook it nearly dry, 5 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Finish in the cooker",
+    "text": "Spread the onions over the squash, lay the chops on top, cover, and cook on low about 1¼ hours, to 145° at the thickest point. Keep the chops warm."
+   },
+   {
+    "n": 5,
+    "title": "Mash",
+    "text": "Drain the squash through a sieve, tip it into a bowl, and mash it as coarse or smooth as you like. Stir in the sage and season."
+   },
+   {
+    "n": 6,
+    "title": "Serve",
+    "text": "Chops over the squash, with apple-cherry sauce alongside."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 595,
+  "protein_g": 44,
+  "carbs_g": 41,
+  "fat_g": 28,
+  "fiber_g": 4,
+  "sodium_mg": 134,
+  "est_cost_usd": 2.55,
+  "cal_per_dollar": 233
  },
  {
   "id": "baked-ziti",
@@ -755,6 +1125,112 @@ export default [
   "cal_per_dollar": 186
  },
  {
+  "id": "beef-sopes",
+  "title": "Beef Sopes",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "4 servings (12 sopes)",
+  "totalTime": "45 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "masa harina",
+    "group": "Whisk"
+   },
+   {
+    "amount": "3/4",
+    "unit": "tsp.",
+    "item": "each kosher salt and baking powder",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "hot water",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Vegetable oil",
+    "group": "Whisk"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "ground chuck",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "minced onion",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each chili powder, ground cumin, kosher salt, and minced fresh garlic",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "ground coriander",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1 1/4",
+    "unit": "cups",
+    "item": "canned refried beans",
+    "group": "Heat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Shredded iceberg lettuce, sliced black olives, seeded and diced tomatoes, diced pickled jalapeños, and crumbled queso fresco",
+    "group": "Heat"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Mix and rest the masa",
+    "text": "Whisk the masa harina, ¾ tsp salt and baking powder together, then stir the water in. Cover the dough with a towel and let it rest 15 minutes so the masa hydrates."
+   },
+   {
+    "n": 2,
+    "title": "Shape the shells",
+    "text": "Divide the dough into 12 balls. Press each between two sheets of plastic wrap into a ¼-inch disc, then pinch a lip around the edge — that rim is what holds the filling."
+   },
+   {
+    "n": 3,
+    "title": "Fry",
+    "text": "Heat 1½ inches of oil in a cast-iron skillet to 350°. Fry the discs in batches, turning once, until golden and crisp, about 4 minutes. Drain on paper towel and keep them under a towel."
+   },
+   {
+    "n": 4,
+    "title": "Cook the beef",
+    "text": "Sauté the chuck and onion in another skillet over medium-high until the beef is cooked through, 5 minutes. Add the chili powder, cumin, ½ tsp salt, garlic and coriander and cook one minute more, until it smells right."
+   },
+   {
+    "n": 5,
+    "title": "Build",
+    "text": "Warm the beans over low. Layer beans then beef into the shells and top with lettuce, olives, tomatoes, jalapeños and queso fresco."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 499,
+  "protein_g": 25,
+  "carbs_g": 63,
+  "fat_g": 18,
+  "fiber_g": 11,
+  "sodium_mg": 1346,
+  "est_cost_usd": 2.1,
+  "cal_per_dollar": 238
+ },
+ {
   "id": "black-bean-tacos-with-tomato-radish-relish",
   "title": "Black Bean Tacos",
   "subtitle": "with tomato-radish relish",
@@ -1177,6 +1653,117 @@ export default [
   "cal_per_dollar": 233
  },
  {
+  "id": "breakfast-strudel",
+  "title": "Breakfast Strudel",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "8 servings (2 strudels)",
+  "totalTime": "about 1 hour",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "purchased frozen cubed hash brown potatoes"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced red bell pepper"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced smoked ham"
+   },
+   {
+    "amount": "12",
+    "unit": "",
+    "item": "eggs, divided"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh chives"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper"
+   },
+   {
+    "amount": "4",
+    "unit": "oz.",
+    "item": "cream cheese, softened"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "orange juice"
+   },
+   {
+    "amount": "1",
+    "unit": "box",
+    "item": "frozen puff pastry, thawed (17.3 oz.)"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "water"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "shredded Parmesan"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Fry the potatoes",
+    "text": "Oven to 400°. Sauté the potatoes in butter in a large nonstick skillet over medium-high for 5 minutes, add the bell pepper and onion for 3 more, then stir in the ham."
+   },
+   {
+    "n": 2,
+    "title": "Scramble and chill",
+    "text": "Whisk 11 eggs with the chives, add them to the skillet, and scramble constantly until nearly set; season. Off the heat, stir in the cream cheese and orange juice until smooth, then chill the filling while you handle the pastry — warm filling will melt it."
+   },
+   {
+    "n": 3,
+    "title": "Fill and braid",
+    "text": "Unfold one pastry sheet on a floured surface and roll it to 10×12 inches. Move it onto a sheet of parchment, trim it, spoon half the filling down the centre, and braid the sides over. Repeat with the second sheet, then lift both on their parchment onto baking sheets."
+   },
+   {
+    "n": 4,
+    "title": "Egg wash",
+    "text": "Beat the last egg with the water and brush it over the tops."
+   },
+   {
+    "n": 5,
+    "title": "Bake",
+    "text": "Parmesan over the top, then 20–30 minutes until golden. Cool 5 minutes."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 487,
+  "protein_g": 19,
+  "carbs_g": 27,
+  "fat_g": 33,
+  "fiber_g": 2,
+  "sodium_mg": 674,
+  "est_cost_usd": 2.19,
+  "cal_per_dollar": 222
+ },
+ {
   "id": "caesar-salad-with-roasted-tofu",
   "title": "Caesar Salad",
   "subtitle": "with roasted tofu",
@@ -1550,6 +2137,113 @@ export default [
   "cal_per_dollar": 172
  },
  {
+  "id": "cheesy-scrambled-egg-bake",
+  "title": "Cheesy Scrambled Egg Bake",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "8 servings",
+  "totalTime": "45 minutes",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, divided",
+    "group": "Coat"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced red bell peppers",
+    "group": "Coat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "minced scallion whites",
+    "group": "Coat"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced jalapeño",
+    "group": "Coat"
+   },
+   {
+    "amount": "16",
+    "unit": "",
+    "item": "eggs",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "heavy cream",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "tsp.",
+    "item": "kosher salt",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "black pepper",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "shredded pepper",
+    "group": "Whisk"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Jack cheese",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "thinly sliced scallion greens",
+    "group": "Whisk"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Butter the dish",
+    "text": "Oven to 350°. Brush a 9×13-inch baking dish with 2 Tbsp melted butter."
+   },
+   {
+    "n": 2,
+    "title": "Soften the peppers",
+    "text": "Melt the other 2 Tbsp butter in a nonstick skillet over medium and cook the bell peppers, scallion whites and jalapeño until soft, about 5 minutes. Let them cool to room temperature before they meet the eggs."
+   },
+   {
+    "n": 3,
+    "title": "Combine",
+    "text": "Whisk the eggs, cream, salt and black pepper together, fold in the peppers, cheese and scallion greens, and pour it into the dish."
+   },
+   {
+    "n": 4,
+    "title": "Bake and stir",
+    "text": "10 minutes, then stir and bake 10–20 minutes more, until the eggs are set the way you like them. Serve out of a bowl."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 388,
+  "protein_g": 18,
+  "carbs_g": 4,
+  "fat_g": 33,
+  "fiber_g": 1,
+  "sodium_mg": 659,
+  "est_cost_usd": 1.99,
+  "cal_per_dollar": 195
+ },
+ {
   "id": "chicken-noodle-stew",
   "title": "Chicken & Noodle Stew",
   "subtitle": "",
@@ -1667,6 +2361,454 @@ export default [
   "sodium_mg": 244,
   "est_cost_usd": 2.86,
   "cal_per_dollar": 284
+ },
+ {
+  "id": "chicken-noodles",
+  "title": "Chicken & Noodles",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "4 servings (8 cups)",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "sliced cremini mushrooms",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced carrot",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced celery",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Sweat"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Sweat"
+   },
+   {
+    "amount": "6",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "frozen egg noodles",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(such as Reames)",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "shredded cooked chicken",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh tarragon",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh chives",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sweat the vegetables",
+    "text": "Sweat the mushrooms, carrot, celery, onion and garlic in oil in a pot over medium until slightly softened, 3 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Noodles in the broth",
+    "text": "Add the broth, bring it to a simmer over medium-high, stir the noodles in, and cook them as the packet directs. Stir in the chicken, tarragon and chives and season."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 549,
+  "protein_g": 37,
+  "carbs_g": 67,
+  "fat_g": 13,
+  "fiber_g": 3,
+  "sodium_mg": 313,
+  "est_cost_usd": 2.69,
+  "cal_per_dollar": 204
+ },
+ {
+  "id": "chicken-blt-soup",
+  "title": "Chicken BLT Soup",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "13 cups",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "thick-sliced bacon, diced",
+    "group": "Cook"
+   },
+   {
+    "amount": "6",
+    "unit": "",
+    "item": "boneless, skinless chicken thighs, seasoned with salt and black pepper (11/2 lb.)",
+    "group": "Cook"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "diced onion",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "each diced celery and carrot",
+    "group": "Pulse"
+   },
+   {
+    "amount": "8",
+    "unit": "cloves",
+    "item": "garlic, chopped",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry white wine",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "6",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "diced tomatoes in juice",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(14.5 oz.)",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "8",
+    "unit": "cups",
+    "item": "chopped romaine lettuce (1 head)",
+    "group": "Deglaze"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Bacon, then chicken",
+    "text": "Cook the bacon in a large sauté pan over medium until crisp, about 15 minutes, and drain it. Pour off all but 2 Tbsp of the drippings, then sear the chicken over high until browned on both sides, about 4 minutes, and move it to a 4–6 qt slow cooker."
+   },
+   {
+    "n": 2,
+    "title": "Mince and dry the base",
+    "text": "Pulse the onion, celery, carrot and garlic to a mince in a food processor, then sauté it in the drippings over medium-high until the liquid cooks off, 6–8 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Deglaze and slow cook",
+    "text": "Deglaze with the wine and cook it nearly dry, 2 minutes. Add the broth, bring it to a boil, and tip it into the cooker. Cover and cook on high 1½ hours, until the chicken is fork-tender. Lift the chicken out, chop it, return it, and stir in the tomatoes and romaine — the lettuce goes in at the end so it only just wilts."
+   },
+   {
+    "n": 4,
+    "title": "Serve",
+    "text": "Bacon, croutons and Parmesan aioli on each bowl."
+   }
+  ],
+  "attribution": "Cuisine at Home-91",
+  "calories": 303,
+  "protein_g": 25,
+  "carbs_g": 8,
+  "fat_g": 19,
+  "fiber_g": 2,
+  "sodium_mg": 914,
+  "est_cost_usd": 2.1,
+  "cal_per_dollar": 144
+ },
+ {
+  "id": "chicken-meatball-sub-casserole",
+  "title": "Chicken Meatball Sub Casserole",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "2 servings (18–20 meatballs)",
+  "totalTime": "11/4 hours",
+  "ingredients": [
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "ground chicken",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "grated onion",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "dried bread crumbs",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "grated Parmesan",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each minced fresh parsley and basil",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "egg, beaten",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper",
+    "group": "Meatballs"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "grated onion",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "tomato paste",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "crushed tomatoes",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(14.5 oz.)",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "slices",
+    "item": "Italian baguette, 1/2-inch thick",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Sauce, sauté"
+   },
+   {
+    "amount": "4",
+    "unit": "slices",
+    "item": "provolone cheese",
+    "group": "Sauce, sauté"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Heat the oven",
+    "text": "Oven to 400°. Spray two 1½-cup baking dishes, or one 3-cup dish."
+   },
+   {
+    "n": 2,
+    "title": "Mix and chill the meatballs",
+    "text": "Combine the chicken, ¼ cup onion, bread crumbs, Parmesan, parsley, basil and egg and season. Scoop into 18–20 tablespoon-sized meatballs and freeze them 10 minutes — ground chicken is slack, and the chill is what lets them hold together in the pan."
+   },
+   {
+    "n": 3,
+    "title": "Brown",
+    "text": "Heat 2 Tbsp oil in a sauté pan over medium until it shimmers and brown the meatballs in two batches, 2 minutes a side. Move them to a plate."
+   },
+   {
+    "n": 4,
+    "title": "Sauce and assemble",
+    "text": "Sauté ½ cup onion, the garlic and tomato paste in the same pan over medium-high for a minute, then stir in the crushed tomatoes and season. Divide the sauce and meatballs between the dishes and set them on a baking sheet. Brush the baguette slices with 1 Tbsp oil, add them to the sheet, and bake 7 minutes; flip the bread and bake 8 more. Lay a slice of baguette on each casserole and two slices of provolone over that."
+   },
+   {
+    "n": 5,
+    "title": "Broil",
+    "text": "Broiler to high, and broil just until the cheese melts."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 870,
+  "protein_g": 52,
+  "carbs_g": 45,
+  "fat_g": 54,
+  "fiber_g": 6,
+  "sodium_mg": 1369,
+  "est_cost_usd": 3.37,
+  "cal_per_dollar": 258
+ },
+ {
+  "id": "chicken-noodle-soup-with-scallions-lemon",
+  "title": "Chicken Noodle Soup",
+  "subtitle": "with scallions & lemon",
+  "cuisine": "American",
+  "servings": "8 servings (12–14 cups)",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "bone-in, skin-on chicken breasts, seasoned with salt and black pepper (11/2 lb.)",
+    "group": "Heat"
+   },
+   {
+    "amount": "8",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Combine"
+   },
+   {
+    "amount": "2 1/2",
+    "unit": "cups",
+    "item": "sliced celery",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "each sliced carrots and diced onion",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "fresh thyme leaves",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "dried bay leaves",
+    "group": "Combine"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "dry, curly, wide egg or kluski noodles",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped scallions",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Minced lemon zest",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the skin",
+    "text": "Heat the oil in a skillet over medium-high and cook the chicken skin-side down until browned, 3–4 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Four hours",
+    "text": "Put the broth, celery, carrots, onion, thyme and bay leaves in a 4–6 qt slow cooker and lay the chicken on top, skin up. Cover and cook on high 4 hours, until tender, then move the chicken to a board to cool a little."
+   },
+   {
+    "n": 3,
+    "title": "Noodles last",
+    "text": "Add the noodles to the cooker, cover, and cook 10 minutes until tender. Strip the skin, fat and bones off the chicken, shred the meat back into the soup, and season. Scallions and lemon zest over each bowl."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 273,
+  "protein_g": 29,
+  "carbs_g": 29,
+  "fat_g": 4,
+  "fiber_g": 3,
+  "sodium_mg": 255,
+  "est_cost_usd": 2.21,
+  "cal_per_dollar": 124
  },
  {
   "id": "chicken-soup",
@@ -2087,6 +3229,295 @@ export default [
   "sodium_mg": 524,
   "est_cost_usd": 2.44,
   "cal_per_dollar": 146
+ },
+ {
+  "id": "corn-mushroom-chowder-with-smoked-paprika",
+  "title": "Corn & Mushroom Chowder",
+  "subtitle": "with smoked paprika",
+  "cuisine": "American",
+  "servings": "8 servings (14 cups)",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "fresh cremini mushrooms, sliced",
+    "group": "Sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "large white onion, chopped",
+    "group": "Sauté"
+   },
+   {
+    "amount": "4",
+    "unit": "cloves",
+    "item": "garlic, minced",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "smoked paprika",
+    "group": "Sauté"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt, black pepper, and red pepper flakes to taste",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "jar roasted red peppers, drained and chopped (16 oz.)",
+    "group": "Sauté"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium vegetable broth, divided",
+    "group": "Sauté"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "ground tapioca pearls",
+    "group": "Sauté"
+   },
+   {
+    "amount": "12",
+    "unit": "ears",
+    "item": "fresh sweet corn, shucked, (6–7 cups kernels), reserve 3 cobs",
+    "group": "Layer"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "green bell pepper, diced",
+    "group": "Layer"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "fresh cilantro leaves",
+    "group": "Purée"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "fat-free plain Greek-style yogurt (6 oz.)",
+    "group": "Purée"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "buttermilk",
+    "group": "Purée"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Juice of 1/2 lime",
+    "group": "Purée"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped scallions",
+    "group": "Garnish"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Lime wedges",
+    "group": "Garnish"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the mushrooms",
+    "text": "Sauté the mushrooms in butter over medium-high until browned, 6–8 minutes, then add the onion and garlic for 1–2 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Paprika and tapioca",
+    "text": "Stir in the paprika, season with salt, black pepper and pepper flakes, and cook 2 minutes, stirring often. Add the roasted red peppers and 2 cups broth and bring it to a simmer, then whisk in the tapioca and cook 2 minutes more."
+   },
+   {
+    "n": 3,
+    "title": "Layer, do not stir",
+    "text": "Lay the reserved cobs in the bottom of the slow cooker — they give up more corn flavour than the kernels do. Add the mushroom mixture, then the corn kernels and bell pepper, then the last 2 cups of broth. Leave it unstirred."
+   },
+   {
+    "n": 4,
+    "title": "Slow cook",
+    "text": "Cover and cook 2½–3 hours on high or 4–5 on low. Pull the cobs out and stir."
+   },
+   {
+    "n": 5,
+    "title": "Blend the finish",
+    "text": "Purée the cilantro with the yogurt, buttermilk, lime juice and 2 cups of the cooked chowder until thick and creamy, then stir it back into the cooker."
+   },
+   {
+    "n": 6,
+    "title": "Serve",
+    "text": "Scallions, lime wedges and a dusting of paprika on each bowl."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 299,
+  "protein_g": 12,
+  "carbs_g": 53,
+  "fat_g": 5,
+  "fiber_g": 5,
+  "sodium_mg": 1268,
+  "est_cost_usd": 2.33,
+  "cal_per_dollar": 128
+ },
+ {
+  "id": "corned-beef-sandwich-with-red-onion-slaw",
+  "title": "Corned Beef Sandwich",
+  "subtitle": "with red onion slaw",
+  "cuisine": "American",
+  "servings": "8 sandwiches",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "water",
+    "group": "Brisket"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "bottle lager beer (12 oz.)",
+    "group": "Brisket"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "pickling spice",
+    "group": "Brisket"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(if needed)",
+    "group": "Brisket"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "corned beef brisket (3–4 lb.)",
+    "group": "Brisket"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "distilled white or cider vinegar",
+    "group": "Slaw"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "sugar",
+    "group": "Slaw"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "thinly sliced red onion",
+    "group": "Slaw"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "shredded carrot",
+    "group": "Slaw"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "jarred hot pepper rings, drained",
+    "group": "Slaw"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Slaw"
+   },
+   {
+    "amount": "16",
+    "unit": "slices",
+    "item": "pumpernickel, marble, or seeded rye bread",
+    "group": "Sandwich"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Softened unsalted butter",
+    "group": "Sandwich"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "1000 Island or Russian salad dressing",
+    "group": "Sandwich"
+   },
+   {
+    "amount": "8",
+    "unit": "slices",
+    "item": "Swiss cheese",
+    "group": "Sandwich"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Slow cook the brisket",
+    "text": "Stir the water, beer and pickling spice into a 4–6 qt slow cooker — use your own spice if the corned beef came without a packet. Cover and cook until fork-tender, 3 hours on high or up to 6 on low. Rest the brisket 5 minutes before slicing."
+   },
+   {
+    "n": 2,
+    "title": "Quick slaw",
+    "text": "Whisk the vinegar and sugar together, toss the onion, carrot and pepper rings through it, and season. Leave it 5 minutes, until slightly wilted."
+   },
+   {
+    "n": 3,
+    "title": "Build",
+    "text": "Butter one side of each bread slice and spread ½ Tbsp dressing on the other. Lay 3 oz of corned beef on the dressed side of eight slices."
+   },
+   {
+    "n": 4,
+    "title": "Close",
+    "text": "Slaw, then a slice of cheese, then the remaining bread dressing-side down."
+   },
+   {
+    "n": 5,
+    "title": "Griddle",
+    "text": "Heat a griddle or panini press to medium and grill about 5 minutes total, until the bread is crisp and the cheese has melted."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 597,
+  "protein_g": 49,
+  "carbs_g": 46,
+  "fat_g": 23,
+  "fiber_g": 5,
+  "sodium_mg": 960,
+  "est_cost_usd": 3.2,
+  "cal_per_dollar": 187
  },
  {
   "id": "country-captain-chicken",
@@ -5418,6 +6849,221 @@ export default [
   "cal_per_dollar": 144
  },
  {
+  "id": "pork-posole",
+  "title": "Pork Posole",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "8 servings (about 16 cups)",
+  "totalTime": "21/2–3 hours",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "canola oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "4",
+    "unit": "lb.",
+    "item": "pork shoulder, trimmed, cut into 1-inch chunks, and seasoned with salt and black pepper (21/2 lb. trimmed)",
+    "group": "Heat"
+   },
+   {
+    "amount": "3",
+    "unit": "cups",
+    "item": "diced white onions",
+    "group": "Heat"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Heat"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "each ground cumin and dried oregano",
+    "group": "Heat"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "ground coriander",
+    "group": "Heat"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "dried bay leaf",
+    "group": "Heat"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "tomato sauce (15 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "diced tomatoes in juice, (14.5 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "chipotle in adobo sauce, minced",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "adobo sauce",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "cans",
+    "item": "white hominy, drained and rinsed (15 oz. each)",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped fresh cilantro",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "fresh lime juice",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Sliced radishes and avocado",
+    "group": "Garnish"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown in two batches",
+    "text": "Heat the oil in a large pot over medium-high and brown the pork on all sides in two batches; set it aside. Drop to medium, add the onions, and sweat them covered until soft, 5 minutes. Stir in the garlic, cumin, oregano, coriander and bay leaf for a minute."
+   },
+   {
+    "n": 2,
+    "title": "Two hours",
+    "text": "Stir in the broth, tomato sauce, diced tomatoes, chipotle, adobo sauce and the pork and bring it to a boil. Cover, drop to low, and simmer about 2 hours until the pork is tender."
+   },
+   {
+    "n": 3,
+    "title": "Hominy last",
+    "text": "Add the hominy, cilantro and lime juice and season."
+   },
+   {
+    "n": 4,
+    "title": "Serve",
+    "text": "Radishes and avocado over the top."
+   }
+  ],
+  "attribution": "Cuisine at Home-103",
+  "calories": 345,
+  "protein_g": 34,
+  "carbs_g": 28,
+  "fat_g": 10,
+  "fiber_g": 5,
+  "sodium_mg": 775,
+  "est_cost_usd": 2.86,
+  "cal_per_dollar": 121
+ },
+ {
+  "id": "pork-ragu-with-fennel",
+  "title": "Pork Ragu",
+  "subtitle": "with fennel",
+  "cuisine": "Italian",
+  "servings": "8 servings (5 cups pork)",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil, divided",
+    "group": "Pork"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "bone-in pork shoulder, trimmed, seasoned with salt and black pepper (3–4 lb.)",
+    "group": "Pork"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "medium onion, cut into chunks",
+    "group": "Broth, sauté"
+   },
+   {
+    "amount": "4",
+    "unit": "ribs",
+    "item": "celery, cut into chunks",
+    "group": "Broth, sauté"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "small fennel bulbs, cored and cut into chunks",
+    "group": "Broth, sauté"
+   },
+   {
+    "amount": "3",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Add"
+   },
+   {
+    "amount": "3",
+    "unit": "sprigs",
+    "item": "fresh thyme",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sear the pork",
+    "text": "Heat 1 Tbsp oil in a sauté pan over medium-high and sear the pork on all sides, 2–3 minutes a side. Move it to a 4–6 qt slow cooker."
+   },
+   {
+    "n": 2,
+    "title": "Soften the vegetables",
+    "text": "Sauté the onion, celery and fennel in the last spoon of oil in the same pan over medium-high until softened, 5–7 minutes, and add them to the cooker."
+   },
+   {
+    "n": 3,
+    "title": "Long cook, then shred",
+    "text": "Add the broth and thyme, cover, and cook 4–5 hours on high or 8–9 on low. Lift the pork out, shred it once it is cool enough to handle, and discard the bone. Strain the cooking liquid — it is worth keeping, and boiling pasta in it is the best use for it."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 168,
+  "protein_g": 19,
+  "carbs_g": 0,
+  "fat_g": 9,
+  "fiber_g": 0,
+  "sodium_mg": 96,
+  "est_cost_usd": 1.68,
+  "cal_per_dollar": 100
+ },
+ {
   "id": "pot-roast",
   "title": "Pot Roast",
   "subtitle": "",
@@ -6666,6 +8312,301 @@ export default [
   "cal_per_dollar": 212
  },
  {
+  "id": "salmon-chowder-skillet",
+  "title": "Salmon Chowder Skillet",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 servings",
+  "totalTime": "about 1 hour",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "strips",
+    "item": "thick-sliced bacon, diced",
+    "group": "Chowder"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Chowder"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "halved and sliced leeks",
+    "group": "Chowder"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced carrot",
+    "group": "Chowder"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced celery",
+    "group": "Chowder"
+   },
+   {
+    "amount": "1/8",
+    "unit": "tsp.",
+    "item": "cayenne pepper",
+    "group": "Chowder"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "all-purpose flour",
+    "group": "Chowder"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry white wine",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2 1/4",
+    "unit": "cups",
+    "item": "seafood stock",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "heavy cream",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "fresh lemon juice",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced fresh thyme",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "frozen hash browns, thawed",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "salmon fillet, skinned, cut into 2-inch chunks, and seasoned with salt and black pepper",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "panko bread crumbs",
+    "group": "Crumbs"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, melted",
+    "group": "Crumbs"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Minced zest of 1/2 a lemon",
+    "group": "Crumbs"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped fresh parsley",
+    "group": "Crumbs"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Crisp the bacon",
+    "text": "Oven to 350°. Cook the bacon in a 12-inch cast-iron skillet until crisp, drain it, and mince it once cool."
+   },
+   {
+    "n": 2,
+    "title": "Sweat and flour",
+    "text": "Melt 3 Tbsp butter into the drippings over medium-low. Add the leeks, carrot, celery and cayenne, season, and sweat until the leeks soften, about 8 minutes. Sprinkle the flour over and stir it for a minute, then raise the heat to medium-high."
+   },
+   {
+    "n": 3,
+    "title": "Build the chowder",
+    "text": "Deglaze with the wine, scraping the pan, and cook a minute. Stir in the stock, cream, lemon juice and thyme and bring it to a simmer."
+   },
+   {
+    "n": 4,
+    "title": "Bake",
+    "text": "Stir in the hash browns and salmon and bring it back to a simmer. Set the skillet on a baking sheet and bake about 20 minutes, until it bubbles at the edges."
+   },
+   {
+    "n": 5,
+    "title": "Bacon crumbs",
+    "text": "Combine the panko, 1 Tbsp melted butter, the zest and the minced bacon."
+   },
+   {
+    "n": 6,
+    "title": "Broiler",
+    "text": "Broiler to high with the rack 6 inches from the element."
+   },
+   {
+    "n": 7,
+    "title": "Finish",
+    "text": "Scatter the crumbs over and broil about 2 minutes until golden, then parsley over the skillet."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 428,
+  "protein_g": 22,
+  "carbs_g": 25,
+  "fat_g": 25,
+  "fiber_g": 1,
+  "sodium_mg": 404,
+  "est_cost_usd": 2.7,
+  "cal_per_dollar": 159
+ },
+ {
+  "id": "sausage-butternut-squash-stew",
+  "title": "Sausage & Butternut Squash Stew",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "8 servings (12 cups)",
+  "totalTime": "45 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "ground pork sausage",
+    "group": "Heat"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "each diced onions and green bell peppers",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "tomato paste",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each chili powder and ground cumin",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "dried oregano",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium chicken broth",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2 1/2",
+    "unit": "cups",
+    "item": "diced butternut squash",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "diced tomatoes in juice (28 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "red kidney beans",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(16 oz.), drained and rinsed",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "black beans (15 oz.), drained and rinsed",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped fresh cilantro",
+    "group": "Off heat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Off heat"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the sausage",
+    "text": "Heat the oil in a large pot over medium and cook the sausage until browned and cooked through, about 10 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Sweat and spice",
+    "text": "Add the onions and bell peppers and sweat until they start to soften, about 5 minutes, then the tomato paste, garlic, chili powder, cumin and oregano for one minute."
+   },
+   {
+    "n": 3,
+    "title": "Simmer",
+    "text": "Stir in the broth, squash, tomatoes, kidney beans and black beans. Bring it to a boil, cover, drop to medium-low, and simmer about 15 minutes, stirring now and then, until the squash gives to a fork."
+   },
+   {
+    "n": 4,
+    "title": "Finish",
+    "text": "Off the heat, stir in the cilantro and season."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 358,
+  "protein_g": 18,
+  "carbs_g": 32,
+  "fat_g": 18,
+  "fiber_g": 10,
+  "sodium_mg": 945,
+  "est_cost_usd": 2.33,
+  "cal_per_dollar": 154
+ },
+ {
   "id": "sausage-peppers-sandwich-with-marinara",
   "title": "Sausage & Peppers Sandwich",
   "subtitle": "with marinara",
@@ -7216,6 +9157,198 @@ export default [
   "cal_per_dollar": 155
  },
  {
+  "id": "south-of-the-border-meatloaves",
+  "title": "South-of-the-Border Meatloaves",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "6 servings (21/2 cups gravy)",
+  "totalTime": "about 1 hour",
+  "ingredients": [
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "whole milk",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "eggs",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "kosher salt",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "chili powder",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "each black pepper and dried oregano",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "each ground cumin and coriander",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "3",
+    "unit": "slices",
+    "item": "white sandwich bread, torn",
+    "group": "Meatloaves"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced white onions",
+    "group": "Mince"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced poblanos",
+    "group": "Mince"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "large cloves garlic",
+    "group": "Mince"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "ground chuck",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "ground pork",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped fresh cilantro",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Gravy"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "all-purpose flour",
+    "group": "Gravy"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "whole milk",
+    "group": "Slowly whisk in"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "shredded",
+    "group": "Slowly whisk in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Monterey Jack",
+    "group": "Slowly whisk in"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "fresh lime juice",
+    "group": "Slowly whisk in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Minced zest of 1/2 a lime",
+    "group": "Slowly whisk in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and cayenne pepper to taste",
+    "group": "Slowly whisk in"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Heat the oven",
+    "text": "Oven to 400° and line a baking sheet with foil."
+   },
+   {
+    "n": 2,
+    "title": "Soak the bread",
+    "text": "Whisk the milk, eggs, salt, chili powder, pepper, oregano, cumin and coriander together, add the bread, and mash it to a paste with a fork. This panade is what keeps the loaves tender."
+   },
+   {
+    "n": 3,
+    "title": "Mince the vegetables",
+    "text": "Mince the onions, poblanos and garlic in a food processor."
+   },
+   {
+    "n": 4,
+    "title": "Combine",
+    "text": "Mix the ground chuck, ground pork, cilantro, minced vegetables and the bread mixture together."
+   },
+   {
+    "n": 5,
+    "title": "Shape and bake",
+    "text": "Divide into six portions of about 9 oz, shape them into mini loaves on the sheet, and bake to 165° in the centre, about 35 minutes. Rest them 10 minutes while the gravy comes together."
+   },
+   {
+    "n": 6,
+    "title": "Roux",
+    "text": "Melt the butter in a saucepan over medium, whisk the flour in, and cook it 2 minutes."
+   },
+   {
+    "n": 7,
+    "title": "Milk gravy",
+    "text": "Whisk the milk in slowly until smooth, bring it to a boil, then simmer 5 minutes."
+   },
+   {
+    "n": 8,
+    "title": "Cheese off the heat",
+    "text": "Off the heat, whisk in the cheese, lime juice and zest until the cheese melts, then season with salt and cayenne. Keeping it off the burner stops it going grainy."
+   },
+   {
+    "n": 9,
+    "title": "Serve",
+    "text": "Gravy over the loaves."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 619,
+  "protein_g": 44,
+  "carbs_g": 19,
+  "fat_g": 41,
+  "fiber_g": 2,
+  "sodium_mg": 1388,
+  "est_cost_usd": 3.57,
+  "cal_per_dollar": 173
+ },
+ {
   "id": "spaghetti-meatballs",
   "title": "Spaghetti & Meatballs",
   "subtitle": "",
@@ -7490,6 +9623,158 @@ export default [
   "sodium_mg": 790,
   "est_cost_usd": 2.89,
   "cal_per_dollar": 201
+ },
+ {
+  "id": "spiced-orange-baked-french-toast",
+  "title": "Spiced Orange Baked French Toast",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 servings (12 pieces)",
+  "totalTime": "30 minutes + soaking",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, melted",
+    "group": "Coat"
+   },
+   {
+    "amount": "6",
+    "unit": "",
+    "item": "eggs, beaten",
+    "group": "French toast"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "each whole milk and heavy cream",
+    "group": "French toast"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "granulated sugar",
+    "group": "French toast"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "orange liqueur",
+    "group": "French toast"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(such as Grand Marnier)",
+    "group": "French toast"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "ground mace",
+    "group": "French toast"
+   },
+   {
+    "amount": "12",
+    "unit": "slices",
+    "item": "challah bread, 1- to 11/4-inches thick",
+    "group": "French toast"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(about 1 loaf)",
+    "group": "French toast"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "pure maple syrup",
+    "group": "Syrup"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "fresh orange juice",
+    "group": "Syrup"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Syrup"
+   },
+   {
+    "amount": "",
+    "unit": "pinch",
+    "item": "of salt",
+    "group": "Syrup"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "pure vanilla extract",
+    "group": "Syrup"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Toasted sliced almonds",
+    "group": "Syrup"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Powdered sugar",
+    "group": "Syrup"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Butter the sheet",
+    "text": "Brush a large baking sheet with melted butter."
+   },
+   {
+    "n": 2,
+    "title": "Mix the custard",
+    "text": "Combine the eggs, milk, cream, granulated sugar, orange liqueur and mace."
+   },
+   {
+    "n": 3,
+    "title": "Soak overnight",
+    "text": "Dip the bread to coat both sides and lay the slices out in a single layer. Pour the rest of the custard over, cover, and refrigerate 2 hours or overnight."
+   },
+   {
+    "n": 4,
+    "title": "Hot oven, room-temperature bread",
+    "text": "Oven to 475°, and let the chilled slices come back to room temperature first or the centres stay wet."
+   },
+   {
+    "n": 5,
+    "title": "Bake, then broil",
+    "text": "7–8 minutes, flip, then 7–8 more until puffed and golden. Finish under a high broiler with the rack 6 inches down, about 3 minutes."
+   },
+   {
+    "n": 6,
+    "title": "Orange syrup",
+    "text": "Simmer the maple syrup, juice, butter and salt in a saucepan, then whisk the vanilla in off the heat."
+   },
+   {
+    "n": 7,
+    "title": "Serve",
+    "text": "Syrup over the toast, with almonds and powdered sugar."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 670,
+  "protein_g": 15,
+  "carbs_g": 63,
+  "fat_g": 39,
+  "fiber_g": 1,
+  "sodium_mg": 314,
+  "est_cost_usd": 2.33,
+  "cal_per_dollar": 288
  },
  {
   "id": "steak-chili-with-fajita-seasoning",

@@ -98,7 +98,7 @@ Pork Phở down as Mexican and Jamaican Jerk Pork as Mexican).
 Technical facts inside a step — temperatures, times, pan sizes, quantities —
 are facts and stay accurate. The phrasing is ours.
 
-**Status: 61 of 506 authored.** The pipeline is complete and the remaining 445
+**Status: 79 of 506 authored.** The pipeline is complete and the remaining 427
 are extracted and waiting; each new tranche is a matter of adding ids to
 `authored-steps.json` and re-running `npm run build:recipes`.
 
