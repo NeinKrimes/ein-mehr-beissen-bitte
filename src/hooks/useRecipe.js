@@ -2,6 +2,7 @@ import { useState, useCallback, useRef, useMemo } from "react";
 import { supabase } from "../lib/supabase";
 import { callClaude } from "../lib/claude";
 import { usePalate } from "./usePalate";
+import { findSourceRecipe } from "../data/sourceRecipes";
 
 // POLICY: Palate-keyed caching.
 // - All recipe caching tiers (in-memory, localStorage) honor the user's palate preferences consistently.
@@ -12,9 +13,10 @@ import { usePalate } from "./usePalate";
 // - This ensures that a cache hit/miss behaves identically and honors the palate consistently.
 
 // Tiered recipe loader keyed by a stable meal_id ("<chainId>-d<day>"):
-//   1. Supabase `meal_library` table (primary — hits for all 30 seeded core meals)
+//   1. Supabase `meal_library` table (primary — hits for every seeded core meal)
 //   2. in-memory / localStorage cache
-//   3. on-demand Edge Function generation (fallback ONLY — meals not in the DB)
+//   3. the adapted source library in src/data/sourceRecipes.js, matched on meal name
+//   4. on-demand Edge Function generation (fallback ONLY — meals in none of the above)
 // Once the DB is seeded, tier 1 answers every core meal with zero Anthropic calls.
 //
 // NOTE: the table is `meal_library`, not `recipes` — EBBM2 already has an unrelated
@@ -92,6 +94,34 @@ export function fromSupabaseRow(row) {
     cal_per_dollar: row.cal_per_dollar ?? null,
     cost_tier: row.cost_tier ?? null,
     _source: "library",
+  };
+}
+
+// Adapt a src/data/sourceRecipes.js entry to the shape the UI expects.
+// These are real, tested recipes, so they beat spending an API call on a guess.
+export function fromSourceRecipe(r) {
+  if (!r) return null;
+  return {
+    description: [r.subtitle, r.attribution && `Adapted from ${r.attribution}.`]
+      .filter(Boolean)
+      .join(" — "),
+    servings: r.servings ?? "",
+    prepTime: "",
+    cookTime: r.totalTime ?? "",
+    passiveTip: "",
+    ingredients: r.ingredients ?? [],
+    steps: r.steps ?? [],
+    frugalTips: [],
+    leftoversUse: "",
+    calories: r.calories ?? null,
+    protein_g: r.protein_g ?? null,
+    carbs_g: r.carbs_g ?? null,
+    fat_g: r.fat_g ?? null,
+    est_cost_usd: r.est_cost_usd ?? null,
+    cal_per_dollar: r.cal_per_dollar ?? null,
+    cost_tier: null,
+    _source: "sourceLibrary",
+    _sourceId: r.id,
   };
 }
 
@@ -205,7 +235,13 @@ export function useRecipe() {
         if (recipe) recipe._source = "localStorage";
       }
 
-      // Tier 3 — Edge Function generation (fallback only)
+      // Tier 3 — the adapted source library. Canonical (palate-independent), so
+      // it is skipped when the user has active palate preferences, same as tier 1.
+      if (!recipe && pKey === "canonical") {
+        recipe = fromSourceRecipe(findSourceRecipe(meal));
+      }
+
+      // Tier 4 — Edge Function generation (fallback only)
       if (!recipe) {
         recipe = await fetchFromAPI(mealId, meal, cuisine, palate);
         writeToLocalStorage(mealId, pKey, recipe);

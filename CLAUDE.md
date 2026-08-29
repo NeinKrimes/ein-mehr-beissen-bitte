@@ -17,6 +17,7 @@ npm run build        # Production build to /dist
 npm run preview      # Preview production build
 npm run lint         # ESLint
 npm run seed         # Idempotent batch recipe seeder via Message Batches API
+npm run build:recipes # Rebuild src/data/sourceRecipes.js from the adapted recipe library
 npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 ```
 
@@ -33,6 +34,7 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - `src/App.jsx` — Entry shell and room navigator; preloads/primes the recipe library
 - `src/data/chains.js` — Single source of truth for calendar structure (exports `chains`, `DAY_COUNT`, `mealId`, `enumerateMeals`). Never hard-code the day count anywhere — import `DAY_COUNT`.
 - `src/data/mealStats.js` — Baseline derived nutrition/cost stats (exports `MEALS`, `LENSES`, `mealByDay`)
+- `src/data/sourceRecipes.js` — **Generated, do not hand-edit.** A library of real recipes adapted from the Cuisine at Home source shelf; ingredients verbatim, method rewritten. Built from `data/authored-steps.json` by `npm run build:recipes`. See `docs/source-recipe-library.md`. It is a reference pool, NOT the calendar.
 - `src/hooks/useRecipe.js` — Tiered recipe loader (Supabase `meal_library` → localStorage → API fallback)
 - `src/hooks/useCooked.js` — Progress tracker ("mark as cooked"), persisted in localStorage
 - `src/components/` — Room-based UI ("cookbook after dark" redesign):
@@ -111,6 +113,9 @@ The Anthropic API is prompted to return JSON:
 - [ ] Community board backend (T7) — Codex handoff: `docs/codex-handoff-t7-community-board.md`
 - [x] More cuisine chains, Month 2 days 31–46 (T8) — done: c11 Vietnamese (31–34), c12 Ethiopian (35–38), c13 Japanese (39–42), c14 Greek (43–46), plus the #45 length-agnostic infra. Closes #45, #47–#50.
 - [ ] Seed Month 2 recipes into `meal_library` (`npm run seed` picks up days 31–46 automatically via `enumerateMeals()`)
+- [ ] Author the remaining source-library tranches (31 of 506 done — add ids to `data/authored-steps.json`, then `npm run build:recipes`)
+- [ ] Move the source library out of the client bundle before it outgrows ~100 recipes (see `docs/source-recipe-library.md`)
+- [ ] A room for browsing the source library (nothing surfaces it yet)
 - [ ] Mobile responsive layout improvements (T3)
 
 ## Notes
