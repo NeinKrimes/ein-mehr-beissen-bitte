@@ -98,9 +98,23 @@ Pork Phở down as Mexican and Jamaican Jerk Pork as Mexican).
 Technical facts inside a step — temperatures, times, pan sizes, quantities —
 are facts and stay accurate. The phrasing is ours.
 
-**Status: 79 of 506 authored.** The pipeline is complete and the remaining 427
+**Status: 113 of 506 authored.** The pipeline is complete and the remaining 393
 are extracted and waiting; each new tranche is a matter of adding ids to
 `authored-steps.json` and re-running `npm run build:recipes`.
+
+### Checking a tranche
+
+`scripts/check-authored-steps.py` compares each authored step against the source
+method for the same recipe and reports the longest run of consecutive words they
+share. Ingredient names and standard technique vocabulary are stripped first —
+"in a large sauté pan over medium-high" is the only way to say that, and an
+ingredient list is a fact — so what it measures is shared *sentence structure*,
+which is the thing that must not survive the rewrite. A run of six or more is
+worth looking at; a run of ten is a copied clause.
+
+It is a review aid, not a gate: a handful of six-word technique sequences
+survive in the corpus because rewriting them further would only make the
+instruction worse.
 
 A recipe the extractor mangled beyond repair — steps out of order, or a method
 that defers to a crust recipe on a page we never scanned — goes under
@@ -133,7 +147,7 @@ needs to answer *is this meal in the library?*. The ingredients and steps live i
 `await import(...)` inside `loadSourceRecipe()`, so Vite gives it its own chunk
 and a tier-3 **miss** downloads nothing at all.
 
-At 61 recipes: 420 kB entry (122 kB gzip) + a 149 kB corpus chunk (34 kB gzip)
+At 113 recipes: 428 kB entry (124 kB gzip) + a 262 kB corpus chunk (60 kB gzip)
 that most sessions never fetch.
 
 ## Known follow-ups
