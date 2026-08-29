@@ -1,377 +1,1261 @@
 {
  "_README": "Method steps rewritten in the app's voice, keyed by the recipe id emitted by scripts/extract-source-recipes.py. Ingredient lists come from the extractor verbatim (a list of ingredients carries no copyright); the method prose here is our own. `cuisine` overrides the extractor's keyword guess. Only ids present in this file are built into src/data/sourceRecipes.js — add a tranche, re-run `npm run build:recipes`.",
-
  "spanish-pot-roast-with-anchovies-sherry": {
   "cuisine": "Spanish",
   "steps": [
-   { "title": "Rub and load", "text": "Mix the granulated garlic, pepper, dried thyme and salt, then pat it over every face of the roast. Put the carrots, onions and thyme sprigs in the bottom of a 4–6 qt slow cooker." },
-   { "title": "Brown the roast", "text": "Get the oil hot in a sauté pan over medium-high and colour the roast on all sides — about 10 minutes in total. Set it on top of the vegetables." },
-   { "title": "Build the sherry base", "text": "Drop the anchovies and garlic into the same pan and cook a minute or two, until they smell like something. Pour in the sherry to lift the fond, bring it to a simmer, and tip the whole lot over the roast." },
-   { "title": "Walk away", "text": "Lid on. High for 4–5 hours, or low for 7–8 — it is done when a fork goes in without argument. Lift the roast and vegetables onto a plate, strain the liquid, and warm it in a small saucepan." },
-   { "title": "Thicken and serve", "text": "Whisk the cornstarch into cold water until there are no lumps, stir it into the hot liquid, and simmer until the sauce just coats a spoon. Pour over the roast and vegetables." }
+   {
+    "title": "Rub and load",
+    "text": "Mix the granulated garlic, pepper, dried thyme and salt, then pat it over every face of the roast. Put the carrots, onions and thyme sprigs in the bottom of a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Brown the roast",
+    "text": "Get the oil hot in a sauté pan over medium-high and colour the roast on all sides — about 10 minutes in total. Set it on top of the vegetables."
+   },
+   {
+    "title": "Build the sherry base",
+    "text": "Drop the anchovies and garlic into the same pan and cook a minute or two, until they smell like something. Pour in the sherry to lift the fond, bring it to a simmer, and tip the whole lot over the roast."
+   },
+   {
+    "title": "Walk away",
+    "text": "Lid on. High for 4–5 hours, or low for 7–8 — it is done when a fork goes in without argument. Lift the roast and vegetables onto a plate, strain the liquid, and warm it in a small saucepan."
+   },
+   {
+    "title": "Thicken and serve",
+    "text": "Whisk the cornstarch into cold water until there are no lumps, stir it into the hot liquid, and simmer until the sauce just coats a spoon. Pour over the roast and vegetables."
+   }
   ]
  },
-
  "senate-bean-soup": {
   "cuisine": "American",
   "steps": [
-   { "title": "Soak overnight", "text": "Cover the beans with 6 cups of water in a pot, lid it, and leave it in the fridge overnight — 8 hours minimum." },
-   { "title": "Parboil and skim", "text": "Add the baking soda, bring the beans to a boil and hold a simmer for 10 minutes, lifting off any foam that rises. Drain, rinse, and move them to a 5–6 qt slow cooker with a fresh 6 cups of water." },
-   { "title": "Sweat the aromatics", "text": "Melt the butter in a sauté pan over medium-high and cook the onion, carrot and celery until they slump, about 5 minutes. Add the garlic for a final minute, then scrape it all into the cooker." },
-   { "title": "The long part", "text": "Bury the ham hock and bay leaf in the beans. Cover and cook until the beans give completely — 3½–4½ hours on high, 4½–5½ on low. Fish out the hock, strip the meat off the bone, discard the fat, and chop the meat." },
-   { "title": "Finish thick", "text": "Return the ham, season with salt and pepper, and stir in the potato flakes and parsley. Another 30 minutes covered and the soup will have body." }
+   {
+    "title": "Soak overnight",
+    "text": "Cover the beans with 6 cups of water in a pot, lid it, and leave it in the fridge overnight — 8 hours minimum."
+   },
+   {
+    "title": "Parboil and skim",
+    "text": "Add the baking soda, bring the beans to a boil and hold a simmer for 10 minutes, lifting off any foam that rises. Drain, rinse, and move them to a 5–6 qt slow cooker with a fresh 6 cups of water."
+   },
+   {
+    "title": "Sweat the aromatics",
+    "text": "Melt the butter in a sauté pan over medium-high and cook the onion, carrot and celery until they slump, about 5 minutes. Add the garlic for a final minute, then scrape it all into the cooker."
+   },
+   {
+    "title": "The long part",
+    "text": "Bury the ham hock and bay leaf in the beans. Cover and cook until the beans give completely — 3½–4½ hours on high, 4½–5½ on low. Fish out the hock, strip the meat off the bone, discard the fat, and chop the meat."
+   },
+   {
+    "title": "Finish thick",
+    "text": "Return the ham, season with salt and pepper, and stir in the potato flakes and parsley. Another 30 minutes covered and the soup will have body."
+   }
   ]
  },
-
  "pot-roast": {
   "cuisine": "American",
   "steps": [
-   { "title": "Oven to 325°", "text": "Heat the oven to 325°." },
-   { "title": "Sear hard", "text": "Sear the roast in oil in a Dutch oven over high heat until each side is deeply browned, roughly 5 minutes a face. Move it to a plate." },
-   { "title": "Sweat the base", "text": "Turn the heat to medium and cook the onion, diced carrot and celery in the drippings with the lid on until soft, 10–12 minutes. Stir the garlic through for the last 30 seconds." },
-   { "title": "Bloom the paste", "text": "Cook the tomato paste and Dijon for 2 minutes, then stir in the flour, cocoa and espresso powder and give it one more minute." },
-   { "title": "Deglaze and return", "text": "Pour in the wine and scrape the pan clean. Add the broth, rosemary and bay, bring it to a boil, settle the roast back in, cover, and move the pot to the oven." },
-   { "title": "Three hours", "text": "Braise 3 hours. Lift the roast out, strain the sauce and discard the spent vegetables and herbs, then return both sauce and roast to the pot." },
-   { "title": "Add the roots", "text": "Add the carrot pieces, shallots, parsnips and beets, cover, and braise another 1½ hours or so, until the meat gives to a fork. Transfer everything to a platter." },
-   { "title": "Sharpen it", "text": "Whisk the vinegar into the sauce and season with salt. (Hold back ½ cup of sauce and 8 oz of meat if you want beef sandwiches out of it later.)" }
+   {
+    "title": "Oven to 325°",
+    "text": "Heat the oven to 325°."
+   },
+   {
+    "title": "Sear hard",
+    "text": "Sear the roast in oil in a Dutch oven over high heat until each side is deeply browned, roughly 5 minutes a face. Move it to a plate."
+   },
+   {
+    "title": "Sweat the base",
+    "text": "Turn the heat to medium and cook the onion, diced carrot and celery in the drippings with the lid on until soft, 10–12 minutes. Stir the garlic through for the last 30 seconds."
+   },
+   {
+    "title": "Bloom the paste",
+    "text": "Cook the tomato paste and Dijon for 2 minutes, then stir in the flour, cocoa and espresso powder and give it one more minute."
+   },
+   {
+    "title": "Deglaze and return",
+    "text": "Pour in the wine and scrape the pan clean. Add the broth, rosemary and bay, bring it to a boil, settle the roast back in, cover, and move the pot to the oven."
+   },
+   {
+    "title": "Three hours",
+    "text": "Braise 3 hours. Lift the roast out, strain the sauce and discard the spent vegetables and herbs, then return both sauce and roast to the pot."
+   },
+   {
+    "title": "Add the roots",
+    "text": "Add the carrot pieces, shallots, parsnips and beets, cover, and braise another 1½ hours or so, until the meat gives to a fork. Transfer everything to a platter."
+   },
+   {
+    "title": "Sharpen it",
+    "text": "Whisk the vinegar into the sauce and season with salt. (Hold back ½ cup of sauce and 8 oz of meat if you want beef sandwiches out of it later.)"
+   }
   ]
  },
-
  "beef-daube": {
   "cuisine": "French",
   "steps": [
-   { "title": "Marinate overnight", "text": "Put the chuck, quartered onion, salt, garlic and peppercorns in a bowl, pour a whole bottle of wine over, cover, and chill 8 hours or overnight." },
-   { "title": "Oven to 325°", "text": "Heat the oven to 325°." },
-   { "title": "Dry the meat", "text": "Lift the chuck onto a paper-towel-lined tray, pat it properly dry, season with pepper, and throw the marinade away." },
-   { "title": "Tie the sachet", "text": "Bundle the thyme, rosemary and bay leaves into a square of cheesecloth and tie it shut." },
-   { "title": "Bacon, then beef", "text": "Crisp the bacon in a Dutch oven and lift it out. Brown the chuck in the drippings over medium-high for 10 minutes, then stir in the flour and cook another minute or two, moving it often." },
-   { "title": "Deglaze with brandy", "text": "Pour in the brandy and scrape up everything stuck to the base." },
-   { "title": "Bring to a boil", "text": "Add the broth, a cup of wine, the carrots and the herb sachet. Cover and bring the stew up to a boil." },
-   { "title": "Into the oven", "text": "Cook in the oven until the chuck is fork-tender, about 1½ hours. Stir in the green beans, pearl onions and tomatoes and give it 30 minutes more, until the beans are just short of soft. Rest 5 minutes before serving." }
+   {
+    "title": "Marinate overnight",
+    "text": "Put the chuck, quartered onion, salt, garlic and peppercorns in a bowl, pour a whole bottle of wine over, cover, and chill 8 hours or overnight."
+   },
+   {
+    "title": "Oven to 325°",
+    "text": "Heat the oven to 325°."
+   },
+   {
+    "title": "Dry the meat",
+    "text": "Lift the chuck onto a paper-towel-lined tray, pat it properly dry, season with pepper, and throw the marinade away."
+   },
+   {
+    "title": "Tie the sachet",
+    "text": "Bundle the thyme, rosemary and bay leaves into a square of cheesecloth and tie it shut."
+   },
+   {
+    "title": "Bacon, then beef",
+    "text": "Crisp the bacon in a Dutch oven and lift it out. Brown the chuck in the drippings over medium-high for 10 minutes, then stir in the flour and cook another minute or two, moving it often."
+   },
+   {
+    "title": "Deglaze with brandy",
+    "text": "Pour in the brandy and scrape up everything stuck to the base."
+   },
+   {
+    "title": "Bring to a boil",
+    "text": "Add the broth, a cup of wine, the carrots and the herb sachet. Cover and bring the stew up to a boil."
+   },
+   {
+    "title": "Into the oven",
+    "text": "Cook in the oven until the chuck is fork-tender, about 1½ hours. Stir in the green beans, pearl onions and tomatoes and give it 30 minutes more, until the beans are just short of soft. Rest 5 minutes before serving."
+   }
   ]
  },
-
  "pork-pho": {
   "cuisine": "Vietnamese",
   "steps": [
-   { "title": "Bag the spices", "text": "Tie the coriander, cloves, star anise and cinnamon stick into a small mesh bag or a knot of cheesecloth, and drop it into a 6–8 qt slow cooker." },
-   { "title": "Soften the aromatics", "text": "Cook the onion, garlic and ginger in oil over medium heat until soft and sweet, 7–9 minutes, then add them to the cooker." },
-   { "title": "Fill the pot", "text": "Add the pork with its bone, the broths, fish sauce, sugar and lemongrass. Top up with water until the liquid is nearly at the rim." },
-   { "title": "Chill, then go long", "text": "Leave it in the fridge overnight. When you're ready, lay the whole bunch of cilantro on top, cover, and cook until the pork falls apart — 8–10 hours high, 10–12 low." },
-   { "title": "Strain", "text": "Pour everything through a fine sieve into a large bowl. Bin the spice bag, cilantro and lemongrass; keep the pork." },
-   { "title": "Season the broth", "text": "Return the broth to the cooker on low and correct it with more fish sauce and sugar until it tastes finished." },
-   { "title": "Build the bowls", "text": "Divide the pork and rice noodles between bowls, ladle the hot broth over, and pile on the herbs and vegetables at the table." }
+   {
+    "title": "Bag the spices",
+    "text": "Tie the coriander, cloves, star anise and cinnamon stick into a small mesh bag or a knot of cheesecloth, and drop it into a 6–8 qt slow cooker."
+   },
+   {
+    "title": "Soften the aromatics",
+    "text": "Cook the onion, garlic and ginger in oil over medium heat until soft and sweet, 7–9 minutes, then add them to the cooker."
+   },
+   {
+    "title": "Fill the pot",
+    "text": "Add the pork with its bone, the broths, fish sauce, sugar and lemongrass. Top up with water until the liquid is nearly at the rim."
+   },
+   {
+    "title": "Chill, then go long",
+    "text": "Leave it in the fridge overnight. When you're ready, lay the whole bunch of cilantro on top, cover, and cook until the pork falls apart — 8–10 hours high, 10–12 low."
+   },
+   {
+    "title": "Strain",
+    "text": "Pour everything through a fine sieve into a large bowl. Bin the spice bag, cilantro and lemongrass; keep the pork."
+   },
+   {
+    "title": "Season the broth",
+    "text": "Return the broth to the cooker on low and correct it with more fish sauce and sugar until it tastes finished."
+   },
+   {
+    "title": "Build the bowls",
+    "text": "Divide the pork and rice noodles between bowls, ladle the hot broth over, and pile on the herbs and vegetables at the table."
+   }
   ]
  },
-
  "northwoods-beef-stew-with-root-vegetables": {
   "cuisine": "American",
   "steps": [
-   { "title": "Dredge and sear", "text": "Heat 1 Tbsp oil in a skillet over medium-high. Toss the beef in flour and sear it in two batches — another spoon of oil for the second — 3–5 minutes a batch, until properly browned." },
-   { "title": "Mushrooms and paste", "text": "Cook the mushrooms in the last spoon of oil in the same pan. Add the garlic for a minute, then the tomato paste, and let it darken for 3 minutes. Deglaze with 1 cup of the stock, scraping the pan clean." },
-   { "title": "Layer, don't stir", "text": "Layer the rutabaga, potatoes, carrots, parsnip, onions, bay and rosemary into a 4–6 qt slow cooker, then the beef and mushrooms on top. Pour the remaining 3 cups of stock in and leave it alone — no stirring. Cook 1 hour on high, then 3 hours on low." },
-   { "title": "Beans and body", "text": "Stir in the green beans and cook 30–40 minutes more, until tender. Pull out the rosemary and bay, stir in the potato flakes to thicken, and season." }
+   {
+    "title": "Dredge and sear",
+    "text": "Heat 1 Tbsp oil in a skillet over medium-high. Toss the beef in flour and sear it in two batches — another spoon of oil for the second — 3–5 minutes a batch, until properly browned."
+   },
+   {
+    "title": "Mushrooms and paste",
+    "text": "Cook the mushrooms in the last spoon of oil in the same pan. Add the garlic for a minute, then the tomato paste, and let it darken for 3 minutes. Deglaze with 1 cup of the stock, scraping the pan clean."
+   },
+   {
+    "title": "Layer, don't stir",
+    "text": "Layer the rutabaga, potatoes, carrots, parsnip, onions, bay and rosemary into a 4–6 qt slow cooker, then the beef and mushrooms on top. Pour the remaining 3 cups of stock in and leave it alone — no stirring. Cook 1 hour on high, then 3 hours on low."
+   },
+   {
+    "title": "Beans and body",
+    "text": "Stir in the green beans and cook 30–40 minutes more, until tender. Pull out the rosemary and bay, stir in the potato flakes to thicken, and season."
+   }
   ]
  },
-
  "twice-baked-potatoes-with-tofu": {
   "cuisine": "American",
   "steps": [
-   { "title": "Oven to 450°", "text": "Heat the oven to 450°." },
-   { "title": "Bake the shells", "text": "Rub the potato skins with oil, season them, and bake until a fork slides in easily, 45–60 minutes. Let them cool enough to handle." },
-   { "title": "Bacon base", "text": "Crisp the bacon in a large sauté pan, lift it out, and keep the drippings. Cook the scallion whites and garlic in that fat over medium heat for 2 minutes." },
-   { "title": "Rice the filling", "text": "Halve the potatoes lengthways and scoop out the flesh, leaving about ¼ inch behind so the skins hold. Push the flesh and the tofu through a ricer into a big bowl and add the bacon-fat mixture." },
-   { "title": "Fill and brown", "text": "Stir in 1 cup of the Parmesan, the sour cream and the milk, and season. Heap the filling back into the skins, set them in a baking dish, scatter the last ½ cup of Parmesan over, and bake 20 minutes until golden." },
-   { "title": "Finish", "text": "Chop the bacon, toss it with the scallion greens, and scatter over the top." }
+   {
+    "title": "Oven to 450°",
+    "text": "Heat the oven to 450°."
+   },
+   {
+    "title": "Bake the shells",
+    "text": "Rub the potato skins with oil, season them, and bake until a fork slides in easily, 45–60 minutes. Let them cool enough to handle."
+   },
+   {
+    "title": "Bacon base",
+    "text": "Crisp the bacon in a large sauté pan, lift it out, and keep the drippings. Cook the scallion whites and garlic in that fat over medium heat for 2 minutes."
+   },
+   {
+    "title": "Rice the filling",
+    "text": "Halve the potatoes lengthways and scoop out the flesh, leaving about ¼ inch behind so the skins hold. Push the flesh and the tofu through a ricer into a big bowl and add the bacon-fat mixture."
+   },
+   {
+    "title": "Fill and brown",
+    "text": "Stir in 1 cup of the Parmesan, the sour cream and the milk, and season. Heap the filling back into the skins, set them in a baking dish, scatter the last ½ cup of Parmesan over, and bake 20 minutes until golden."
+   },
+   {
+    "title": "Finish",
+    "text": "Chop the bacon, toss it with the scallion greens, and scatter over the top."
+   }
   ]
  },
-
  "jamaican-jerk-pork-with-mashed-sweet-potatoes": {
   "cuisine": "Jamaican",
   "steps": [
-   { "title": "Mix the rub", "text": "Stir all the rub ingredients together in a bowl." },
-   { "title": "Coat and sear", "text": "Press the rub all over the pork, then sear it in oil in a large pan over medium-high until browned on every side, 8–10 minutes. Move it to a 4–6 qt slow cooker." },
-   { "title": "Mix the sauce", "text": "Stir the first five sauce ingredients together." },
-   { "title": "Deglaze", "text": "Pour the jerk sauce into the hot pan over medium-high and scrape up everything stuck to the bottom. Stir in the tapioca, then pour it over the pork." },
-   { "title": "Three hours", "text": "Tuck the sweet potatoes around the roast, cover, and cook 3 hours on high. Lift the pork onto a board and the potatoes into a bowl; keep the sauce." },
-   { "title": "Mash", "text": "Add the milk, orange juice, butter, 1 Tbsp brown sugar, ¼ tsp allspice and ¼ tsp ginger to the potatoes and mash to a mostly-smooth mash. Salt to taste." },
-   { "title": "Serve", "text": "Slice the pork and serve it with the sauce and the mash." }
+   {
+    "title": "Mix the rub",
+    "text": "Stir all the rub ingredients together in a bowl."
+   },
+   {
+    "title": "Coat and sear",
+    "text": "Press the rub all over the pork, then sear it in oil in a large pan over medium-high until browned on every side, 8–10 minutes. Move it to a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Mix the sauce",
+    "text": "Stir the first five sauce ingredients together."
+   },
+   {
+    "title": "Deglaze",
+    "text": "Pour the jerk sauce into the hot pan over medium-high and scrape up everything stuck to the bottom. Stir in the tapioca, then pour it over the pork."
+   },
+   {
+    "title": "Three hours",
+    "text": "Tuck the sweet potatoes around the roast, cover, and cook 3 hours on high. Lift the pork onto a board and the potatoes into a bowl; keep the sauce."
+   },
+   {
+    "title": "Mash",
+    "text": "Add the milk, orange juice, butter, 1 Tbsp brown sugar, ¼ tsp allspice and ¼ tsp ginger to the potatoes and mash to a mostly-smooth mash. Salt to taste."
+   },
+   {
+    "title": "Serve",
+    "text": "Slice the pork and serve it with the sauce and the mash."
+   }
   ]
  },
-
  "caldo-verde-with-white-beans": {
   "cuisine": "Portuguese",
   "steps": [
-   { "title": "Soak and load", "text": "Soak the beans as the packet directs, drain them, and put them in a 4–6 qt slow cooker with 6 cups of the broth." },
-   { "title": "Render the pepperoni", "text": "Brown the pepperoni in a large nonstick skillet over medium-high for 5 minutes, then drain it on paper towel and pour off the fat." },
-   { "title": "Onion and heat", "text": "Heat the oil in the same pan and cook the onion until it starts to colour, 5 minutes. Add the garlic and pepper flakes for a minute more. Scrape into the cooker along with the pepperoni and potatoes. Cover and cook until beans and potatoes are tender — 4 hours high, 6½ low." },
-   { "title": "Wilt the kale", "text": "Lay the kale over the top, pour in the last 2 cups of broth, cover, and give it 30 minutes more. Season with salt and more pepper flakes." }
+   {
+    "title": "Soak and load",
+    "text": "Soak the beans as the packet directs, drain them, and put them in a 4–6 qt slow cooker with 6 cups of the broth."
+   },
+   {
+    "title": "Render the pepperoni",
+    "text": "Brown the pepperoni in a large nonstick skillet over medium-high for 5 minutes, then drain it on paper towel and pour off the fat."
+   },
+   {
+    "title": "Onion and heat",
+    "text": "Heat the oil in the same pan and cook the onion until it starts to colour, 5 minutes. Add the garlic and pepper flakes for a minute more. Scrape into the cooker along with the pepperoni and potatoes. Cover and cook until beans and potatoes are tender — 4 hours high, 6½ low."
+   },
+   {
+    "title": "Wilt the kale",
+    "text": "Lay the kale over the top, pour in the last 2 cups of broth, cover, and give it 30 minutes more. Season with salt and more pepper flakes."
+   }
   ]
  },
-
  "potato-onion-rostis-with-roasted-romesco-sauce": {
   "cuisine": "Spanish",
   "steps": [
-   { "title": "Oven to 450°", "text": "Heat the oven to 450° with a rack at the very bottom, and line a baking sheet with parchment." },
-   { "title": "Roast for romesco", "text": "Roast the tomatoes, bell pepper and yellow onion on the lined sheet for 12 minutes." },
-   { "title": "Finish the sauce", "text": "Add the garlic and bread and roast 5 minutes; add the almonds and roast 4–5 minutes more, until golden. Slip the skins off the tomatoes, pepper and garlic. Blitz everything with the oil and vinegar until smooth, then season." },
-   { "title": "Dry the potatoes", "text": "Toss the potatoes and minced onion with 1 Tbsp salt and let them drain in a colander for 10 minutes. Spin them dry, then wring them out hard in kitchen towels — this is the step that decides whether they crisp." },
-   { "title": "First side", "text": "Melt 1 Tbsp butter in each of two 6½-inch cast-iron skillets over high heat. Split the potatoes between them, tamp them flat with a fork, and cook 1 minute. Drop to medium-low for 5 minutes, then turn each rösti out onto a plate." },
-   { "title": "Second side, then oven", "text": "Melt the last Tbsp of butter in each pan and slide the röstis back in cooked-side up. Two minutes on the hob, then 10 minutes in the oven; flip out onto plates, return upside down, and give them 10 minutes more." },
-   { "title": "Serve", "text": "Serve with the romesco, eggs, ham, goat cheese and parsley." }
+   {
+    "title": "Oven to 450°",
+    "text": "Heat the oven to 450° with a rack at the very bottom, and line a baking sheet with parchment."
+   },
+   {
+    "title": "Roast for romesco",
+    "text": "Roast the tomatoes, bell pepper and yellow onion on the lined sheet for 12 minutes."
+   },
+   {
+    "title": "Finish the sauce",
+    "text": "Add the garlic and bread and roast 5 minutes; add the almonds and roast 4–5 minutes more, until golden. Slip the skins off the tomatoes, pepper and garlic. Blitz everything with the oil and vinegar until smooth, then season."
+   },
+   {
+    "title": "Dry the potatoes",
+    "text": "Toss the potatoes and minced onion with 1 Tbsp salt and let them drain in a colander for 10 minutes. Spin them dry, then wring them out hard in kitchen towels — this is the step that decides whether they crisp."
+   },
+   {
+    "title": "First side",
+    "text": "Melt 1 Tbsp butter in each of two 6½-inch cast-iron skillets over high heat. Split the potatoes between them, tamp them flat with a fork, and cook 1 minute. Drop to medium-low for 5 minutes, then turn each rösti out onto a plate."
+   },
+   {
+    "title": "Second side, then oven",
+    "text": "Melt the last Tbsp of butter in each pan and slide the röstis back in cooked-side up. Two minutes on the hob, then 10 minutes in the oven; flip out onto plates, return upside down, and give them 10 minutes more."
+   },
+   {
+    "title": "Serve",
+    "text": "Serve with the romesco, eggs, ham, goat cheese and parsley."
+   }
   ]
  },
-
  "pork-chops-braised-cabbage-with-applesauce-dumplings": {
   "cuisine": "German",
   "steps": [
-   { "title": "Oven to 200°", "text": "Heat the oven to 200° — it is only there to keep things warm later." },
-   { "title": "Brown the chops", "text": "Heat the oil in a 10-inch cast-iron skillet over high, brown the chops on both sides, and set them aside on a plate." },
-   { "title": "Butter the pan", "text": "Melt 2 Tbsp butter in the same skillet over low heat." },
-   { "title": "In with the cabbage", "text": "Stir in the cabbage, onion, fennel, cinnamon, kosher salt and bay leaf." },
-   { "title": "Braise 20 minutes", "text": "Whisk the wine, ½ cup apple juice, brown sugar and vinegar together and pour it in. Bring it to a simmer over low heat, sit the chops on the cabbage, clamp on a tight lid, and cook 20 minutes. Make the dumplings while it goes." },
-   { "title": "Cut the dumpling dough", "text": "Whisk the flour, chives, baking powder and table salt together, then cut the cubed butter in until the pieces are pea-sized." },
-   { "title": "Bring it together", "text": "Stir the applesauce, 2 Tbsp apple juice and egg together, then fork it into the flour just until it comes together — no further." },
-   { "title": "Hold the chops", "text": "Move the chops to a plate and park them in the warm oven. Stir the cherries into the cabbage and pull out the cinnamon stick and bay." },
-   { "title": "Steam the dumplings", "text": "Drop the batter onto the simmering cabbage in 2 Tbsp scoops, cover, and steam 15–18 minutes, until a toothpick comes out of a dumpling clean." }
+   {
+    "title": "Oven to 200°",
+    "text": "Heat the oven to 200° — it is only there to keep things warm later."
+   },
+   {
+    "title": "Brown the chops",
+    "text": "Heat the oil in a 10-inch cast-iron skillet over high, brown the chops on both sides, and set them aside on a plate."
+   },
+   {
+    "title": "Butter the pan",
+    "text": "Melt 2 Tbsp butter in the same skillet over low heat."
+   },
+   {
+    "title": "In with the cabbage",
+    "text": "Stir in the cabbage, onion, fennel, cinnamon, kosher salt and bay leaf."
+   },
+   {
+    "title": "Braise 20 minutes",
+    "text": "Whisk the wine, ½ cup apple juice, brown sugar and vinegar together and pour it in. Bring it to a simmer over low heat, sit the chops on the cabbage, clamp on a tight lid, and cook 20 minutes. Make the dumplings while it goes."
+   },
+   {
+    "title": "Cut the dumpling dough",
+    "text": "Whisk the flour, chives, baking powder and table salt together, then cut the cubed butter in until the pieces are pea-sized."
+   },
+   {
+    "title": "Bring it together",
+    "text": "Stir the applesauce, 2 Tbsp apple juice and egg together, then fork it into the flour just until it comes together — no further."
+   },
+   {
+    "title": "Hold the chops",
+    "text": "Move the chops to a plate and park them in the warm oven. Stir the cherries into the cabbage and pull out the cinnamon stick and bay."
+   },
+   {
+    "title": "Steam the dumplings",
+    "text": "Drop the batter onto the simmering cabbage in 2 Tbsp scoops, cover, and steam 15–18 minutes, until a toothpick comes out of a dumpling clean."
+   }
   ]
  },
-
  "individual-beef-pot-pies-with-puff-pastry": {
   "cuisine": "American",
   "steps": [
-   { "title": "Oven to 400°", "text": "Heat the oven to 400° and line a baking sheet with foil." },
-   { "title": "Brown the beef", "text": "Heat the oil in a sauté pan over medium-high, brown the beef on all sides in 3–5 minutes, and set it aside." },
-   { "title": "Mushrooms and roux", "text": "Melt the butter in the same pan over medium heat, season the mushrooms, and cook them until browned, 7–8 minutes. Stir in the tomato paste, rosemary and garlic for a minute, then the flour for one more." },
-   { "title": "Deglaze", "text": "Pour in the brandy and scrape the pan clean, then whisk in the broth until it's smooth." },
-   { "title": "Simmer the filling", "text": "Add the potatoes and beef, bring it to a boil, then drop to medium and simmer covered for about 20 minutes, until beef and potato are nearly tender. Stir through the mixed vegetables, onions, parsley and red wine vinegar." },
-   { "title": "Cut the lids", "text": "Meanwhile cut the puff pastry to fit two 2-cup ovenproof bowls with a ¼-inch overhang — cut shapes from the offcuts if you like — and chill until needed." },
-   { "title": "Cap the pies", "text": "Ladle the stew into the bowls, lay the pastry over, and stretch and press the edges down over the lip. Egg-wash, add any cut-outs, egg-wash again, and cut a few vents. Set them on the foiled sheet." },
-   { "title": "Bake", "text": "Bake 30–40 minutes, until the filling bubbles and the crust is golden; tent with foil if it colours too fast. Rest 10 minutes before serving." }
+   {
+    "title": "Oven to 400°",
+    "text": "Heat the oven to 400° and line a baking sheet with foil."
+   },
+   {
+    "title": "Brown the beef",
+    "text": "Heat the oil in a sauté pan over medium-high, brown the beef on all sides in 3–5 minutes, and set it aside."
+   },
+   {
+    "title": "Mushrooms and roux",
+    "text": "Melt the butter in the same pan over medium heat, season the mushrooms, and cook them until browned, 7–8 minutes. Stir in the tomato paste, rosemary and garlic for a minute, then the flour for one more."
+   },
+   {
+    "title": "Deglaze",
+    "text": "Pour in the brandy and scrape the pan clean, then whisk in the broth until it's smooth."
+   },
+   {
+    "title": "Simmer the filling",
+    "text": "Add the potatoes and beef, bring it to a boil, then drop to medium and simmer covered for about 20 minutes, until beef and potato are nearly tender. Stir through the mixed vegetables, onions, parsley and red wine vinegar."
+   },
+   {
+    "title": "Cut the lids",
+    "text": "Meanwhile cut the puff pastry to fit two 2-cup ovenproof bowls with a ¼-inch overhang — cut shapes from the offcuts if you like — and chill until needed."
+   },
+   {
+    "title": "Cap the pies",
+    "text": "Ladle the stew into the bowls, lay the pastry over, and stretch and press the edges down over the lip. Egg-wash, add any cut-outs, egg-wash again, and cut a few vents. Set them on the foiled sheet."
+   },
+   {
+    "title": "Bake",
+    "text": "Bake 30–40 minutes, until the filling bubbles and the crust is golden; tent with foil if it colours too fast. Rest 10 minutes before serving."
+   }
   ]
  },
-
  "caesar-salad-with-roasted-tofu": {
   "cuisine": "Italian",
   "steps": [
-   { "title": "Press the tofu", "text": "Set the tofu on a towel-covered rack in a baking sheet, lay another towel on top, and weigh it down with a 9×13 dish. Press 1 hour — longer is fine in the fridge — then cut it into 1-inch cubes." },
-   { "title": "Oven to 450°", "text": "Heat the oven to 450° with a baking sheet inside it." },
-   { "title": "Whisk the dressing", "text": "Whisk the oil, zest, lemon juice, mayonnaise, garlic, anchovy paste and Dijon together, then season." },
-   { "title": "Roast tofu and bread", "text": "Toss the tofu with ¼ cup of the dressing and the grated Parmesan, spread it on the hot sheet, and bake 10 minutes. Flip and give it 10 more, until golden. Brush both sides of the baguette slices with dressing and toast them on a separate sheet, about 7 minutes." },
-   { "title": "Toss", "text": "Toss the romaine, shaved Parmesan and roasted tofu with the rest of the dressing and serve with the toasts." }
+   {
+    "title": "Press the tofu",
+    "text": "Set the tofu on a towel-covered rack in a baking sheet, lay another towel on top, and weigh it down with a 9×13 dish. Press 1 hour — longer is fine in the fridge — then cut it into 1-inch cubes."
+   },
+   {
+    "title": "Oven to 450°",
+    "text": "Heat the oven to 450° with a baking sheet inside it."
+   },
+   {
+    "title": "Whisk the dressing",
+    "text": "Whisk the oil, zest, lemon juice, mayonnaise, garlic, anchovy paste and Dijon together, then season."
+   },
+   {
+    "title": "Roast tofu and bread",
+    "text": "Toss the tofu with ¼ cup of the dressing and the grated Parmesan, spread it on the hot sheet, and bake 10 minutes. Flip and give it 10 more, until golden. Brush both sides of the baguette slices with dressing and toast them on a separate sheet, about 7 minutes."
+   },
+   {
+    "title": "Toss",
+    "text": "Toss the romaine, shaved Parmesan and roasted tofu with the rest of the dressing and serve with the toasts."
+   }
   ]
  },
-
  "mexican-style-chicken-dumplings": {
   "cuisine": "Mexican",
   "steps": [
-   { "title": "Oven to 375°", "text": "Heat the oven to 375° with a rack in the middle." },
-   { "title": "Season the dredge", "text": "Mix the flour, salt, cumin, chili powder and pepper in a shallow dish, then coat the chicken and shake off the excess. Keep the leftover flour." },
-   { "title": "Brown in batches", "text": "Brown the chicken on both sides in two batches, a spoon of oil per batch, in a Dutch oven over medium-high — about 8 minutes. Set it aside." },
-   { "title": "Sweat the base", "text": "Cook the onion, celery, carrot, garlic, bay and chipotle in the last spoon of oil over medium heat until softened, 5 minutes." },
-   { "title": "Deglaze and oven", "text": "Deglaze with the wine and let it cook almost dry, then stir in the reserved dredging flour. Work in the broth and tomatoes gradually, cover, and cook in the oven for 20 minutes." },
-   { "title": "Return the chicken", "text": "Add the chicken, beans, corn, oregano and lime juice, and bring it back to a simmer on the hob." },
-   { "title": "Mix the dumplings", "text": "Combine the flour, masa harina, green chiles, Parmesan, baking powder, salt and cayenne." },
-   { "title": "Scoop and steam", "text": "Warm the milk and butter until the butter melts and stir it into the dry mix. Roll into 2 Tbsp balls, sit them on the stew, cover, and return to the oven for about 20 minutes — a toothpick should come out of a dumpling clean." }
+   {
+    "title": "Oven to 375°",
+    "text": "Heat the oven to 375° with a rack in the middle."
+   },
+   {
+    "title": "Season the dredge",
+    "text": "Mix the flour, salt, cumin, chili powder and pepper in a shallow dish, then coat the chicken and shake off the excess. Keep the leftover flour."
+   },
+   {
+    "title": "Brown in batches",
+    "text": "Brown the chicken on both sides in two batches, a spoon of oil per batch, in a Dutch oven over medium-high — about 8 minutes. Set it aside."
+   },
+   {
+    "title": "Sweat the base",
+    "text": "Cook the onion, celery, carrot, garlic, bay and chipotle in the last spoon of oil over medium heat until softened, 5 minutes."
+   },
+   {
+    "title": "Deglaze and oven",
+    "text": "Deglaze with the wine and let it cook almost dry, then stir in the reserved dredging flour. Work in the broth and tomatoes gradually, cover, and cook in the oven for 20 minutes."
+   },
+   {
+    "title": "Return the chicken",
+    "text": "Add the chicken, beans, corn, oregano and lime juice, and bring it back to a simmer on the hob."
+   },
+   {
+    "title": "Mix the dumplings",
+    "text": "Combine the flour, masa harina, green chiles, Parmesan, baking powder, salt and cayenne."
+   },
+   {
+    "title": "Scoop and steam",
+    "text": "Warm the milk and butter until the butter melts and stir it into the dry mix. Roll into 2 Tbsp balls, sit them on the stew, cover, and return to the oven for about 20 minutes — a toothpick should come out of a dumpling clean."
+   }
   ]
  },
-
  "brazilian-beef-stew-feijoada": {
   "cuisine": "Brazilian",
   "steps": [
-   { "title": "Brown the meats", "text": "Brown the stew meat in oil in batches in a large skillet over medium-high, 5 minutes a batch, draining each onto paper towel. Do the kielbasa the same way, 3 minutes a batch." },
-   { "title": "Deglaze with orange", "text": "Pour the orange juice into the hot pan and scrape up every brown bit. Keep it." },
-   { "title": "Four hours", "text": "Put the onion, tomatoes, beans, garlic and chili powder in a 4–6 qt slow cooker, then stir in the browned meats and the orange deglaze. Cover and cook on high about 4 hours, until the beef gives to a fork." },
-   { "title": "Sharpen and garnish", "text": "Stir in the vinegar and season. Finish each bowl with sliced jalapeño, orange wedges and zest." }
+   {
+    "title": "Brown the meats",
+    "text": "Brown the stew meat in oil in batches in a large skillet over medium-high, 5 minutes a batch, draining each onto paper towel. Do the kielbasa the same way, 3 minutes a batch."
+   },
+   {
+    "title": "Deglaze with orange",
+    "text": "Pour the orange juice into the hot pan and scrape up every brown bit. Keep it."
+   },
+   {
+    "title": "Four hours",
+    "text": "Put the onion, tomatoes, beans, garlic and chili powder in a 4–6 qt slow cooker, then stir in the browned meats and the orange deglaze. Cover and cook on high about 4 hours, until the beef gives to a fork."
+   },
+   {
+    "title": "Sharpen and garnish",
+    "text": "Stir in the vinegar and season. Finish each bowl with sliced jalapeño, orange wedges and zest."
+   }
   ]
  },
-
  "african-chili-with-black-eyed-peas": {
   "cuisine": "Ethiopian",
   "steps": [
-   { "title": "Soak overnight", "text": "Cover the peas with an inch of water and leave them in the fridge overnight. Drain and tip them into a 6–8 qt slow cooker." },
-   { "title": "Sear the chicken", "text": "Sear the chicken in oil in a large skillet over high heat until browned on both sides, about 7 minutes, and move it to the cooker. Drop the heat to medium-low." },
-   { "title": "Bloom the spices", "text": "Soften the bell pepper and onion in the drippings for a minute, then the garlic and ginger for another. Add the tomato paste, fenugreek, cayenne, paprika, cumin, coriander, basil, cardamom, cloves, allspice and cinnamon and cook 1–2 minutes — this is where the whole dish gets its character." },
-   { "title": "Deglaze", "text": "Pour in the wine and cook it almost away, about a minute." },
-   { "title": "Six hours", "text": "Stir in the broth and tomatoes, bring to a boil, and pour it over everything in the cooker. Cover and cook 6 hours on either setting, until the peas are tender." },
-   { "title": "Shred and finish", "text": "Add the sweet potatoes and cook 15–30 minutes until tender. Pull the chicken out, strip the skin and bones, shred the meat and return it. Stir in the vinegar, season, and finish with cilantro." }
+   {
+    "title": "Soak overnight",
+    "text": "Cover the peas with an inch of water and leave them in the fridge overnight. Drain and tip them into a 6–8 qt slow cooker."
+   },
+   {
+    "title": "Sear the chicken",
+    "text": "Sear the chicken in oil in a large skillet over high heat until browned on both sides, about 7 minutes, and move it to the cooker. Drop the heat to medium-low."
+   },
+   {
+    "title": "Bloom the spices",
+    "text": "Soften the bell pepper and onion in the drippings for a minute, then the garlic and ginger for another. Add the tomato paste, fenugreek, cayenne, paprika, cumin, coriander, basil, cardamom, cloves, allspice and cinnamon and cook 1–2 minutes — this is where the whole dish gets its character."
+   },
+   {
+    "title": "Deglaze",
+    "text": "Pour in the wine and cook it almost away, about a minute."
+   },
+   {
+    "title": "Six hours",
+    "text": "Stir in the broth and tomatoes, bring to a boil, and pour it over everything in the cooker. Cover and cook 6 hours on either setting, until the peas are tender."
+   },
+   {
+    "title": "Shred and finish",
+    "text": "Add the sweet potatoes and cook 15–30 minutes until tender. Pull the chicken out, strip the skin and bones, shred the meat and return it. Stir in the vinegar, season, and finish with cilantro."
+   }
   ]
  },
-
  "spaghetti-meatballs": {
   "cuisine": "Italian",
   "steps": [
-   { "title": "Oven to 425°", "text": "Heat the oven to 425° with a baking sheet inside." },
-   { "title": "Mix the meatballs", "text": "Combine the chuck, pork, Parmesan, bread crumbs, yogurt, 3 Tbsp garlic, dried basil, 1 tsp salt and 1 tsp black pepper." },
-   { "title": "Roll and roast", "text": "Roll 22 meatballs at about 1½ oz each and set them carefully on the hot sheet. Bake 20 minutes, turning them at the halfway mark." },
-   { "title": "Start the sauce", "text": "Heat the oil in a large skillet over medium-high and cook the onion, carrots, 3 Tbsp garlic, tomato paste, oregano and pepper flakes until lightly browned, 8–10 minutes. Move it to a 6–8 qt slow cooker." },
-   { "title": "Add the tomatoes", "text": "Stir the tomatoes, tomato sauce and wine into the cooker." },
-   { "title": "Nestle and go", "text": "Settle the meatballs into the sauce, leaving their drippings behind. Cover and cook 3–4 hours on high or 5–6 on low. Skim the fat off the top and season with salt, pepper and a little sugar." },
-   { "title": "Boil the pasta", "text": "Cook the spaghetti in plenty of salted water as the packet says, drain, and serve under the meatballs and sauce with basil and Parmesan." }
+   {
+    "title": "Oven to 425°",
+    "text": "Heat the oven to 425° with a baking sheet inside."
+   },
+   {
+    "title": "Mix the meatballs",
+    "text": "Combine the chuck, pork, Parmesan, bread crumbs, yogurt, 3 Tbsp garlic, dried basil, 1 tsp salt and 1 tsp black pepper."
+   },
+   {
+    "title": "Roll and roast",
+    "text": "Roll 22 meatballs at about 1½ oz each and set them carefully on the hot sheet. Bake 20 minutes, turning them at the halfway mark."
+   },
+   {
+    "title": "Start the sauce",
+    "text": "Heat the oil in a large skillet over medium-high and cook the onion, carrots, 3 Tbsp garlic, tomato paste, oregano and pepper flakes until lightly browned, 8–10 minutes. Move it to a 6–8 qt slow cooker."
+   },
+   {
+    "title": "Add the tomatoes",
+    "text": "Stir the tomatoes, tomato sauce and wine into the cooker."
+   },
+   {
+    "title": "Nestle and go",
+    "text": "Settle the meatballs into the sauce, leaving their drippings behind. Cover and cook 3–4 hours on high or 5–6 on low. Skim the fat off the top and season with salt, pepper and a little sugar."
+   },
+   {
+    "title": "Boil the pasta",
+    "text": "Cook the spaghetti in plenty of salted water as the packet says, drain, and serve under the meatballs and sauce with basil and Parmesan."
+   }
   ]
  },
-
  "smoky-texas-chili-with-sweet-pickled-onions": {
   "cuisine": "American",
   "steps": [
-   { "title": "Boil the pickle", "text": "Boil the vinegar, water, maple syrup, cinnamon stick and black pepper together for 10 minutes." },
-   { "title": "Pickle the onions", "text": "Pour it over the onions, leave it to cool at room temperature for 20 minutes, then cover and chill. Give them at least 2 hours — they keep for months sealed in jars." },
-   { "title": "Bacon, then beef", "text": "Cook the bacon in a large sauté pan over medium-high and drain it, keeping 2 Tbsp of the fat. Brown the beef in the same pan, drain it in a sieve, and move it to a 4–6 qt slow cooker." },
-   { "title": "Toast the spices", "text": "Cook the garlic, jalapeños, chili powder, mustard seed, oregano, cumin, cinnamon and cayenne in the bacon fat over medium heat for 3–4 minutes, until the spices smell toasted. Add that to the cooker with the salsa, beer, corn, tomatoes, barbecue sauce and bacon, stir once, and cook on low 4–5 hours." },
-   { "title": "Serve", "text": "Top each bowl with the pickled onions." }
+   {
+    "title": "Boil the pickle",
+    "text": "Boil the vinegar, water, maple syrup, cinnamon stick and black pepper together for 10 minutes."
+   },
+   {
+    "title": "Pickle the onions",
+    "text": "Pour it over the onions, leave it to cool at room temperature for 20 minutes, then cover and chill. Give them at least 2 hours — they keep for months sealed in jars."
+   },
+   {
+    "title": "Bacon, then beef",
+    "text": "Cook the bacon in a large sauté pan over medium-high and drain it, keeping 2 Tbsp of the fat. Brown the beef in the same pan, drain it in a sieve, and move it to a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Toast the spices",
+    "text": "Cook the garlic, jalapeños, chili powder, mustard seed, oregano, cumin, cinnamon and cayenne in the bacon fat over medium heat for 3–4 minutes, until the spices smell toasted. Add that to the cooker with the salsa, beer, corn, tomatoes, barbecue sauce and bacon, stir once, and cook on low 4–5 hours."
+   },
+   {
+    "title": "Serve",
+    "text": "Top each bowl with the pickled onions."
+   }
   ]
  },
-
  "chicken-soup": {
   "cuisine": "American",
   "steps": [
-   { "title": "Cook the chicken", "text": "Poach the chicken and make the base, then dice 2 cups of the meat once it is cool enough to handle." },
-   { "title": "Save the schmaltz", "text": "Scrape the schmaltz-butter off the top of the chilled chicken base and keep it separate — it is the fat for everything that follows." },
-   { "title": "Wet mix", "text": "Whisk the eggs, club soda, shredded onion and 2 Tbsp of the schmaltz-butter together." },
-   { "title": "Chill the dumplings", "text": "Mix the matzo meal, dill, salt and baking powder, stir the egg mixture in just to combine, then cover and chill 30 minutes. Scoop 12 dumplings without compacting them, set them on a greased sheet, cover and chill until needed." },
-   { "title": "Sweat the vegetables", "text": "Cook the diced onion, carrot and celery in the last 2 Tbsp of schmaltz-butter over medium-low, covered, stirring now and then, until soft — about 10 minutes." },
-   { "title": "Build the soup", "text": "Stir in the reserved chicken base and the broth, bring it to a boil, then back down to a bare simmer and season." },
-   { "title": "Poach and assemble", "text": "Add the dumplings, cover, and simmer about 25 minutes until cooked through; lift them out. Warm the diced chicken through in the soup, stir in the parsley, and return the dumplings before serving." }
+   {
+    "title": "Cook the chicken",
+    "text": "Poach the chicken and make the base, then dice 2 cups of the meat once it is cool enough to handle."
+   },
+   {
+    "title": "Save the schmaltz",
+    "text": "Scrape the schmaltz-butter off the top of the chilled chicken base and keep it separate — it is the fat for everything that follows."
+   },
+   {
+    "title": "Wet mix",
+    "text": "Whisk the eggs, club soda, shredded onion and 2 Tbsp of the schmaltz-butter together."
+   },
+   {
+    "title": "Chill the dumplings",
+    "text": "Mix the matzo meal, dill, salt and baking powder, stir the egg mixture in just to combine, then cover and chill 30 minutes. Scoop 12 dumplings without compacting them, set them on a greased sheet, cover and chill until needed."
+   },
+   {
+    "title": "Sweat the vegetables",
+    "text": "Cook the diced onion, carrot and celery in the last 2 Tbsp of schmaltz-butter over medium-low, covered, stirring now and then, until soft — about 10 minutes."
+   },
+   {
+    "title": "Build the soup",
+    "text": "Stir in the reserved chicken base and the broth, bring it to a boil, then back down to a bare simmer and season."
+   },
+   {
+    "title": "Poach and assemble",
+    "text": "Add the dumplings, cover, and simmer about 25 minutes until cooked through; lift them out. Warm the diced chicken through in the soup, stir in the parsley, and return the dumplings before serving."
+   }
   ]
  },
-
  "curry-roasted-drumsticks-with-cauliflower-potatoes": {
   "cuisine": "Indian",
   "steps": [
-   { "title": "Oven to 475°", "text": "Heat the oven to 475° with racks in the top and bottom thirds and two baking sheets heating inside." },
-   { "title": "Spice the drumsticks", "text": "Shake the curry powder together with 1 tsp each cumin, coriander, salt and pepper in a large resealable bag, add the drumsticks, and toss until coated." },
-   { "title": "Spice the vegetables", "text": "Toss the potatoes and cauliflower with the oil, 2 tsp each coriander, cumin and pepper, 1½ tsp salt and the turmeric." },
-   { "title": "Roast on two sheets", "text": "Drumsticks onto one hot sheet, vegetables onto the other. Roast 10 minutes, turn or stir, then 10–15 minutes more — the drumsticks want 175° at the bone and the vegetables want to be fork-tender. Finish with cilantro." }
+   {
+    "title": "Oven to 475°",
+    "text": "Heat the oven to 475° with racks in the top and bottom thirds and two baking sheets heating inside."
+   },
+   {
+    "title": "Spice the drumsticks",
+    "text": "Shake the curry powder together with 1 tsp each cumin, coriander, salt and pepper in a large resealable bag, add the drumsticks, and toss until coated."
+   },
+   {
+    "title": "Spice the vegetables",
+    "text": "Toss the potatoes and cauliflower with the oil, 2 tsp each coriander, cumin and pepper, 1½ tsp salt and the turmeric."
+   },
+   {
+    "title": "Roast on two sheets",
+    "text": "Drumsticks onto one hot sheet, vegetables onto the other. Roast 10 minutes, turn or stir, then 10–15 minutes more — the drumsticks want 175° at the bone and the vegetables want to be fork-tender. Finish with cilantro."
+   }
   ]
  },
-
  "german-beef-roast-with-gingersnap-sauce": {
   "cuisine": "German",
   "steps": [
-   { "title": "Brown in batches", "text": "Heat the oil in a large skillet over medium-high and brown the beef in two batches, about 5 minutes each. Move it to a 4–6 qt slow cooker." },
-   { "title": "Build the sauce", "text": "Cook the tomato paste and ginger in the pan for a minute, deglaze with the wine and reduce it by half, scraping as you go. Whisk in the broth, vinegar, gin, tapioca and salt and simmer 5 minutes. Pour it over the beef and submerge the spice sachet. Cover and cook on high until tender, 2½–3 hours." },
-   { "title": "Vegetables and gingersnaps", "text": "Add the carrots, celery and onion, then stir in the crushed gingersnaps — they are the thickener. Cover and cook about an hour more, stirring once halfway, until the sauce coats and the vegetables are tender." },
-   { "title": "Serve", "text": "Lift the beef and vegetables onto a dish, discard the sachet, and spoon the sauce over." }
+   {
+    "title": "Brown in batches",
+    "text": "Heat the oil in a large skillet over medium-high and brown the beef in two batches, about 5 minutes each. Move it to a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Build the sauce",
+    "text": "Cook the tomato paste and ginger in the pan for a minute, deglaze with the wine and reduce it by half, scraping as you go. Whisk in the broth, vinegar, gin, tapioca and salt and simmer 5 minutes. Pour it over the beef and submerge the spice sachet. Cover and cook on high until tender, 2½–3 hours."
+   },
+   {
+    "title": "Vegetables and gingersnaps",
+    "text": "Add the carrots, celery and onion, then stir in the crushed gingersnaps — they are the thickener. Cover and cook about an hour more, stirring once halfway, until the sauce coats and the vegetables are tender."
+   },
+   {
+    "title": "Serve",
+    "text": "Lift the beef and vegetables onto a dish, discard the sachet, and spoon the sauce over."
+   }
   ]
  },
-
  "swedish-meatballs-with-lemon-dill-noodles": {
   "cuisine": "Swedish",
   "steps": [
-   { "title": "Soak the bread", "text": "Whisk ¼ cup cream with the egg in a large bowl, add the bread, and let it soak until saturated. Add the chuck, pork, onion, 1 tsp zest, ½ tsp salt, ¼ tsp pepper, nutmeg and allspice, and mix lightly — overworking it makes them tough." },
-   { "title": "Hide the cheese", "text": "Scoop 12 scant ¼-cup portions, press a piece of cheese into each, and close the meat around it." },
-   { "title": "Brown", "text": "Heat the oil in a large sauté pan over medium-high and brown the meatballs for about 5 minutes, then drain them on paper towel." },
-   { "title": "Slow cook", "text": "Put the broth, Worcestershire and bay leaves in a 4–6 qt slow cooker and settle the meatballs in. Cover and cook 2–3 hours on high or 4–6 on low." },
-   { "title": "Defat the liquid", "text": "Lift the meatballs out and keep them warm. Pour the liquid into a fat separator, let it settle 5 minutes, and discard the fat." },
-   { "title": "Make the sauce", "text": "Melt the butter in a saucepan over medium-high, whisk in the flour and cook 1–2 minutes until it thickens. Work in the defatted liquid gradually, add ¼ cup cream, bring to a boil and simmer about 5 minutes. Finish with lemon juice and season." },
-   { "title": "Dress the noodles", "text": "Toss the hot noodles with 1 Tbsp butter, the dill and 1 tsp zest, then season." }
+   {
+    "title": "Soak the bread",
+    "text": "Whisk ¼ cup cream with the egg in a large bowl, add the bread, and let it soak until saturated. Add the chuck, pork, onion, 1 tsp zest, ½ tsp salt, ¼ tsp pepper, nutmeg and allspice, and mix lightly — overworking it makes them tough."
+   },
+   {
+    "title": "Hide the cheese",
+    "text": "Scoop 12 scant ¼-cup portions, press a piece of cheese into each, and close the meat around it."
+   },
+   {
+    "title": "Brown",
+    "text": "Heat the oil in a large sauté pan over medium-high and brown the meatballs for about 5 minutes, then drain them on paper towel."
+   },
+   {
+    "title": "Slow cook",
+    "text": "Put the broth, Worcestershire and bay leaves in a 4–6 qt slow cooker and settle the meatballs in. Cover and cook 2–3 hours on high or 4–6 on low."
+   },
+   {
+    "title": "Defat the liquid",
+    "text": "Lift the meatballs out and keep them warm. Pour the liquid into a fat separator, let it settle 5 minutes, and discard the fat."
+   },
+   {
+    "title": "Make the sauce",
+    "text": "Melt the butter in a saucepan over medium-high, whisk in the flour and cook 1–2 minutes until it thickens. Work in the defatted liquid gradually, add ¼ cup cream, bring to a boil and simmer about 5 minutes. Finish with lemon juice and season."
+   },
+   {
+    "title": "Dress the noodles",
+    "text": "Toss the hot noodles with 1 Tbsp butter, the dill and 1 tsp zest, then season."
+   }
   ]
  },
-
  "sunday-sauce": {
   "cuisine": "Italian",
   "steps": [
-   { "title": "Mince the base", "text": "Blitz the onions, carrots and garlic to a mince in a food processor and set it aside." },
-   { "title": "Sear the ribs", "text": "Sear the ribs in 2 Tbsp oil in a large Dutch oven over medium-high until browned on both sides, 7–10 minutes, then move them to a platter." },
-   { "title": "Soften", "text": "Add the minced vegetables, tomato paste, Italian seasoning and pepper flakes, season, and cook about 3 minutes until the onion softens." },
-   { "title": "Three hours", "text": "Deglaze with ¼ cup wine and cook it almost dry, 2 minutes. Stir in the crushed tomatoes, tomato purée, bay leaf and Parmesan rind. Bring to a boil, return the ribs, cover, and simmer on low for 3 hours." },
-   { "title": "Mix the meatballs", "text": "Whisk the bread crumbs, grated Parmesan, milk, eggs, minced garlic, Italian seasoning, salt, black pepper and pepper flakes together, then fold in the chuck and pork gently. Shape about ten 3-oz meatballs, cover, and chill." },
-   { "title": "Sear sausage and meatballs", "text": "Brown the sausages in 2 Tbsp oil in a large nonstick skillet over medium-high, about 5 minutes, and set aside. Brown the meatballs in the drippings for 5 minutes and add them to the plate." },
-   { "title": "Everything in", "text": "Deglaze the skillet with the last ¼ cup wine, cooking it almost away, then add the sausages, meatballs and that wine to the Dutch oven." },
-   { "title": "One hour more", "text": "Simmer about an hour more, until the rib meat falls off the bone and the sausages and meatballs read 165°. Serve over spaghetti." }
+   {
+    "title": "Mince the base",
+    "text": "Blitz the onions, carrots and garlic to a mince in a food processor and set it aside."
+   },
+   {
+    "title": "Sear the ribs",
+    "text": "Sear the ribs in 2 Tbsp oil in a large Dutch oven over medium-high until browned on both sides, 7–10 minutes, then move them to a platter."
+   },
+   {
+    "title": "Soften",
+    "text": "Add the minced vegetables, tomato paste, Italian seasoning and pepper flakes, season, and cook about 3 minutes until the onion softens."
+   },
+   {
+    "title": "Three hours",
+    "text": "Deglaze with ¼ cup wine and cook it almost dry, 2 minutes. Stir in the crushed tomatoes, tomato purée, bay leaf and Parmesan rind. Bring to a boil, return the ribs, cover, and simmer on low for 3 hours."
+   },
+   {
+    "title": "Mix the meatballs",
+    "text": "Whisk the bread crumbs, grated Parmesan, milk, eggs, minced garlic, Italian seasoning, salt, black pepper and pepper flakes together, then fold in the chuck and pork gently. Shape about ten 3-oz meatballs, cover, and chill."
+   },
+   {
+    "title": "Sear sausage and meatballs",
+    "text": "Brown the sausages in 2 Tbsp oil in a large nonstick skillet over medium-high, about 5 minutes, and set aside. Brown the meatballs in the drippings for 5 minutes and add them to the plate."
+   },
+   {
+    "title": "Everything in",
+    "text": "Deglaze the skillet with the last ¼ cup wine, cooking it almost away, then add the sausages, meatballs and that wine to the Dutch oven."
+   },
+   {
+    "title": "One hour more",
+    "text": "Simmer about an hour more, until the rib meat falls off the bone and the sausages and meatballs read 165°. Serve over spaghetti."
+   }
   ]
  },
-
  "beef-in-italian-red-wine": {
   "cuisine": "Italian",
   "steps": [
-   { "title": "Brown the roast", "text": "Heat the oil in a sauté pan over medium-high and brown the roast on all sides, about 10 minutes. Move it to a 6–8 qt slow cooker." },
-   { "title": "Colour the vegetables", "text": "Cook the carrots, celery, onions, garlic, rosemary, nutmeg, salt and pepper in the same pan until they start to brown, about 5 minutes. Add them to the cooker with the porcini sachet." },
-   { "title": "Flour and paste", "text": "Stir the flour and tomato paste into the pan and cook 1–2 minutes." },
-   { "title": "Six hours on low", "text": "Deglaze with the stock, scraping up the browned bits, add the wine and bring it to a boil. Pour it into the cooker, cover, and cook on low 6 hours, until the meat is fork-tender. Lift the roast out, cover, and rest it 15–20 minutes." },
-   { "title": "Chop the porcini", "text": "Take the porcini out of the sachet, chop them, and set them aside." },
-   { "title": "Strain and press", "text": "Strain the braising liquid into a large bowl, pressing the vegetables against the sieve to get everything out of them." },
-   { "title": "Reduce and serve", "text": "Add the chopped porcini, transfer to a saucepan, skim the fat, and boil 10–15 minutes to reduce slightly. Slice the meat against the grain and serve with the sauce and cheesy sage polenta." }
+   {
+    "title": "Brown the roast",
+    "text": "Heat the oil in a sauté pan over medium-high and brown the roast on all sides, about 10 minutes. Move it to a 6–8 qt slow cooker."
+   },
+   {
+    "title": "Colour the vegetables",
+    "text": "Cook the carrots, celery, onions, garlic, rosemary, nutmeg, salt and pepper in the same pan until they start to brown, about 5 minutes. Add them to the cooker with the porcini sachet."
+   },
+   {
+    "title": "Flour and paste",
+    "text": "Stir the flour and tomato paste into the pan and cook 1–2 minutes."
+   },
+   {
+    "title": "Six hours on low",
+    "text": "Deglaze with the stock, scraping up the browned bits, add the wine and bring it to a boil. Pour it into the cooker, cover, and cook on low 6 hours, until the meat is fork-tender. Lift the roast out, cover, and rest it 15–20 minutes."
+   },
+   {
+    "title": "Chop the porcini",
+    "text": "Take the porcini out of the sachet, chop them, and set them aside."
+   },
+   {
+    "title": "Strain and press",
+    "text": "Strain the braising liquid into a large bowl, pressing the vegetables against the sieve to get everything out of them."
+   },
+   {
+    "title": "Reduce and serve",
+    "text": "Add the chopped porcini, transfer to a saucepan, skim the fat, and boil 10–15 minutes to reduce slightly. Slice the meat against the grain and serve with the sauce and cheesy sage polenta."
+   }
   ]
  },
-
  "coq-au-vin-stew": {
   "cuisine": "French",
   "steps": [
-   { "title": "Shake and brown", "text": "Shake the flour, salt and pepper together in a paper bag, add the chicken and coat it. Heat the oil in a skillet over medium-high, brown the chicken meat-side down 2–3 minutes, flip for 1–2 more, and set it aside." },
-   { "title": "Leeks and mushrooms", "text": "Sweat the leeks and mushrooms in the same pan over medium heat until the leeks go soft, 3–4 minutes, adding oil if it looks dry. Stir in the garlic and tomato paste and cook 2 minutes." },
-   { "title": "Into the cooker", "text": "Deglaze with ½ cup wine and let it cook away, then add the remaining cup of wine and the broth. Bring it to a simmer and pour it into a 4–6 qt slow cooker. Stir in the carrots, potatoes and 6 thyme sprigs, lay the chicken on top meat-side up, cover, and cook on low 4–5 hours." },
-   { "title": "Pull the meat", "text": "Lift the chicken out to cool and discard the thyme. Once you can handle it, take the meat off the bones, stir it back in, and season." },
-   { "title": "Serve", "text": "Finish each bowl with bacon and a sprig of thyme." }
+   {
+    "title": "Shake and brown",
+    "text": "Shake the flour, salt and pepper together in a paper bag, add the chicken and coat it. Heat the oil in a skillet over medium-high, brown the chicken meat-side down 2–3 minutes, flip for 1–2 more, and set it aside."
+   },
+   {
+    "title": "Leeks and mushrooms",
+    "text": "Sweat the leeks and mushrooms in the same pan over medium heat until the leeks go soft, 3–4 minutes, adding oil if it looks dry. Stir in the garlic and tomato paste and cook 2 minutes."
+   },
+   {
+    "title": "Into the cooker",
+    "text": "Deglaze with ½ cup wine and let it cook away, then add the remaining cup of wine and the broth. Bring it to a simmer and pour it into a 4–6 qt slow cooker. Stir in the carrots, potatoes and 6 thyme sprigs, lay the chicken on top meat-side up, cover, and cook on low 4–5 hours."
+   },
+   {
+    "title": "Pull the meat",
+    "text": "Lift the chicken out to cool and discard the thyme. Once you can handle it, take the meat off the bones, stir it back in, and season."
+   },
+   {
+    "title": "Serve",
+    "text": "Finish each bowl with bacon and a sprig of thyme."
+   }
   ]
  },
-
  "mexican-strata": {
   "cuisine": "Mexican",
   "steps": [
-   { "title": "Tomatillo purée", "text": "Blitz the tomatillos, chiles, onion and jalapeño smooth, then let it drain in a sieve until you need it and season with salt." },
-   { "title": "Chorizo and beans", "text": "Brown the chorizo in a nonstick skillet over medium-high for 5 minutes, stir the refried beans through, and set it aside." },
-   { "title": "Custard", "text": "Whisk the eggs, evaporated milk, corn and ½ cup of the cheese together and season." },
-   { "title": "First layer", "text": "Coat a round 2 qt slow cooker with nonstick spray and lay 2 tortillas in the bottom. Spread the chorizo mixture over them and add ½ cup cheese." },
-   { "title": "Build up", "text": "Layer on 2 more tortillas, the tomatillo mixture, and the last 2 tortillas, then pour the egg mixture over the lot." },
-   { "title": "Cook until set", "text": "Cover and cook on high 2½–3 hours, until the egg is firm. If liquid sits on top, leave it covered on warm for at least 15 minutes and it will reabsorb." },
-   { "title": "Melt and finish", "text": "Scatter the chips and the last cup of cheese over, cover, and let the cheese melt. Garnish with olives." }
+   {
+    "title": "Tomatillo purée",
+    "text": "Blitz the tomatillos, chiles, onion and jalapeño smooth, then let it drain in a sieve until you need it and season with salt."
+   },
+   {
+    "title": "Chorizo and beans",
+    "text": "Brown the chorizo in a nonstick skillet over medium-high for 5 minutes, stir the refried beans through, and set it aside."
+   },
+   {
+    "title": "Custard",
+    "text": "Whisk the eggs, evaporated milk, corn and ½ cup of the cheese together and season."
+   },
+   {
+    "title": "First layer",
+    "text": "Coat a round 2 qt slow cooker with nonstick spray and lay 2 tortillas in the bottom. Spread the chorizo mixture over them and add ½ cup cheese."
+   },
+   {
+    "title": "Build up",
+    "text": "Layer on 2 more tortillas, the tomatillo mixture, and the last 2 tortillas, then pour the egg mixture over the lot."
+   },
+   {
+    "title": "Cook until set",
+    "text": "Cover and cook on high 2½–3 hours, until the egg is firm. If liquid sits on top, leave it covered on warm for at least 15 minutes and it will reabsorb."
+   },
+   {
+    "title": "Melt and finish",
+    "text": "Scatter the chips and the last cup of cheese over, cover, and let the cheese melt. Garnish with olives."
+   }
   ]
  },
-
  "mediterranean-lamb-shanks": {
   "cuisine": "Greek",
   "steps": [
-   { "title": "Brown two at a time", "text": "Heat the oil in a sauté pan over high and brown the shanks on both sides, two at a time, about 5 minutes. Move them to a 6–8 qt slow cooker." },
-   { "title": "Colour the vegetables", "text": "Cook the onions, carrots, celery, garlic, rosemary, 1 Tbsp thyme, ½ tsp salt and ½ tsp pepper in the same pan until they begin to brown, about 5 minutes, then add them to the cooker." },
-   { "title": "Flour and paste", "text": "Stir the flour and tomato paste into the pan and cook 1–2 minutes." },
-   { "title": "Five hours", "text": "Deglaze with the stock, scraping up the browned bits, add the wine and bring it to a boil, then stir in the tomatoes and pour it all into the cooker. Cover and cook on high about 5 hours, until the meat gives completely. Rest the shanks 15–20 minutes." },
-   { "title": "Strain and skim", "text": "Strain the braising liquid, pressing the vegetables against the sieve, skim off the fat, then bring the liquid to a boil in the sauté pan over medium-high." },
-   { "title": "Finish the sauce", "text": "Add the vinegar and reduce a little, then stir in 2 tsp thyme and season." }
+   {
+    "title": "Brown two at a time",
+    "text": "Heat the oil in a sauté pan over high and brown the shanks on both sides, two at a time, about 5 minutes. Move them to a 6–8 qt slow cooker."
+   },
+   {
+    "title": "Colour the vegetables",
+    "text": "Cook the onions, carrots, celery, garlic, rosemary, 1 Tbsp thyme, ½ tsp salt and ½ tsp pepper in the same pan until they begin to brown, about 5 minutes, then add them to the cooker."
+   },
+   {
+    "title": "Flour and paste",
+    "text": "Stir the flour and tomato paste into the pan and cook 1–2 minutes."
+   },
+   {
+    "title": "Five hours",
+    "text": "Deglaze with the stock, scraping up the browned bits, add the wine and bring it to a boil, then stir in the tomatoes and pour it all into the cooker. Cover and cook on high about 5 hours, until the meat gives completely. Rest the shanks 15–20 minutes."
+   },
+   {
+    "title": "Strain and skim",
+    "text": "Strain the braising liquid, pressing the vegetables against the sieve, skim off the fat, then bring the liquid to a boil in the sauté pan over medium-high."
+   },
+   {
+    "title": "Finish the sauce",
+    "text": "Add the vinegar and reduce a little, then stir in 2 tsp thyme and season."
+   }
   ]
  },
-
  "chili-con-carne": {
   "cuisine": "Mexican",
   "steps": [
-   { "title": "Brown and spice", "text": "Cook the chuck in oil in a pot over medium heat until it is cooked through, drain the fat, and return it with the onions, garlic, chili powder, cumin, oregano, coriander and cayenne. Drop to medium-low and cook partially covered for about 10 minutes, stirring now and then, until the onions are soft." },
-   { "title": "Simmer", "text": "Stir in the broth, crushed tomatoes and vinegar, bring it to a boil, then simmer on medium-low for 10 minutes. Add the beans, diced tomatoes, cilantro and jalapeño and cook about 5 minutes more, until hot through. Season with salt." },
-   { "title": "Serve", "text": "Top with cheese and red onion." }
+   {
+    "title": "Brown and spice",
+    "text": "Cook the chuck in oil in a pot over medium heat until it is cooked through, drain the fat, and return it with the onions, garlic, chili powder, cumin, oregano, coriander and cayenne. Drop to medium-low and cook partially covered for about 10 minutes, stirring now and then, until the onions are soft."
+   },
+   {
+    "title": "Simmer",
+    "text": "Stir in the broth, crushed tomatoes and vinegar, bring it to a boil, then simmer on medium-low for 10 minutes. Add the beans, diced tomatoes, cilantro and jalapeño and cook about 5 minutes more, until hot through. Season with salt."
+   },
+   {
+    "title": "Serve",
+    "text": "Top with cheese and red onion."
+   }
   ]
  },
-
  "potato-stuffed-poblanos-with-monterey-jack-cheese": {
   "cuisine": "Mexican",
   "steps": [
-   { "title": "Oven to 425°", "text": "Heat the oven to 425° and spray a baking sheet." },
-   { "title": "Blacken the poblanos", "text": "Char the poblanos over a gas burner, or under the broiler 6 inches from the element, until the skins blacken. Put them in a bowl, cover with plastic wrap, and let them steam 10 minutes — then the skin peels off in sheets." },
-   { "title": "Open them up", "text": "Cut a slit down one side of each and scrape out the seeds. Set them aside." },
-   { "title": "Boil the potatoes", "text": "Boil the potatoes and onion in salted water until tender, about 7 minutes. Drain, return them to the pot, and stir over high heat for 30 seconds to drive off the water." },
-   { "title": "Mash the filling", "text": "Mash them with ¾ cup of the Jack, the scallions, cream cheese, green chiles, jalapeño, sour cream, garlic powder and cumin. Stir in the lime juice and season." },
-   { "title": "Stuff", "text": "Divide the filling between the poblanos and top each with some of the remaining ¼ cup of Jack." },
-   { "title": "Bake", "text": "Bake on the prepared sheet 20–25 minutes, until the cheese is golden." }
+   {
+    "title": "Oven to 425°",
+    "text": "Heat the oven to 425° and spray a baking sheet."
+   },
+   {
+    "title": "Blacken the poblanos",
+    "text": "Char the poblanos over a gas burner, or under the broiler 6 inches from the element, until the skins blacken. Put them in a bowl, cover with plastic wrap, and let them steam 10 minutes — then the skin peels off in sheets."
+   },
+   {
+    "title": "Open them up",
+    "text": "Cut a slit down one side of each and scrape out the seeds. Set them aside."
+   },
+   {
+    "title": "Boil the potatoes",
+    "text": "Boil the potatoes and onion in salted water until tender, about 7 minutes. Drain, return them to the pot, and stir over high heat for 30 seconds to drive off the water."
+   },
+   {
+    "title": "Mash the filling",
+    "text": "Mash them with ¾ cup of the Jack, the scallions, cream cheese, green chiles, jalapeño, sour cream, garlic powder and cumin. Stir in the lime juice and season."
+   },
+   {
+    "title": "Stuff",
+    "text": "Divide the filling between the poblanos and top each with some of the remaining ¼ cup of Jack."
+   },
+   {
+    "title": "Bake",
+    "text": "Bake on the prepared sheet 20–25 minutes, until the cheese is golden."
+   }
   ]
  },
-
  "country-captain-chicken": {
   "cuisine": "Indian",
   "steps": [
-   { "title": "Brown in batches", "text": "Brown the chicken in oil in batches in a sauté pan over medium-high, about 10 minutes, then move it to a 4–6 qt slow cooker." },
-   { "title": "Onion, pepper, apple", "text": "Cook the onion, bell pepper and apple in the same pan until they start to colour, about 5 minutes, and add them to the cooker." },
-   { "title": "Bloom the spices", "text": "Cook the garlic, ginger, tomato paste, curry powder, garam masala, salt, black pepper and cayenne in the pan until fragrant, 1–2 minutes." },
-   { "title": "Deglaze and cook", "text": "Deglaze with the broth, scraping the base clean, then stir in the tomatoes and raisins and pour it over the chicken. Cover and cook until tender — 2 hours on high, 3 on low." },
-   { "title": "Serve", "text": "Scatter almonds over each serving." }
+   {
+    "title": "Brown in batches",
+    "text": "Brown the chicken in oil in batches in a sauté pan over medium-high, about 10 minutes, then move it to a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Onion, pepper, apple",
+    "text": "Cook the onion, bell pepper and apple in the same pan until they start to colour, about 5 minutes, and add them to the cooker."
+   },
+   {
+    "title": "Bloom the spices",
+    "text": "Cook the garlic, ginger, tomato paste, curry powder, garam masala, salt, black pepper and cayenne in the pan until fragrant, 1–2 minutes."
+   },
+   {
+    "title": "Deglaze and cook",
+    "text": "Deglaze with the broth, scraping the base clean, then stir in the tomatoes and raisins and pour it over the chicken. Cover and cook until tender — 2 hours on high, 3 on low."
+   },
+   {
+    "title": "Serve",
+    "text": "Scatter almonds over each serving."
+   }
   ]
  },
-
  "caribbean-chicken-with-sweet-piquante-peppers": {
   "cuisine": "Jamaican",
   "steps": [
-   { "title": "Brown the chicken", "text": "Cook the chicken in oil in a large sauté pan over medium-high until browned, 4–5 minutes, then move it to a 4–6 qt slow cooker." },
-   { "title": "Soften the peppers", "text": "Cook the onion, bell pepper, piquanté peppers, garlic and ginger in the same pan until softened, about 5 minutes, and lay them over the chicken." },
-   { "title": "Sweet-sour glaze", "text": "Whisk the jelly, orange juice, lime juice, soy sauce, vinegar and 1 tsp agave together and add it to the pan. Bring it to a simmer, whisk in the tapioca, and pour it into the cooker." },
-   { "title": "Spice bag on top", "text": "Put the pickling spices in a large spice bag, sit it on top, and season. Cover and cook 2 hours on high or 3–4 on low." },
-   { "title": "Adjust the heat", "text": "If it comes out hotter than you want, stir in the chicken broth and another tsp of agave to soften it." }
+   {
+    "title": "Brown the chicken",
+    "text": "Cook the chicken in oil in a large sauté pan over medium-high until browned, 4–5 minutes, then move it to a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Soften the peppers",
+    "text": "Cook the onion, bell pepper, piquanté peppers, garlic and ginger in the same pan until softened, about 5 minutes, and lay them over the chicken."
+   },
+   {
+    "title": "Sweet-sour glaze",
+    "text": "Whisk the jelly, orange juice, lime juice, soy sauce, vinegar and 1 tsp agave together and add it to the pan. Bring it to a simmer, whisk in the tapioca, and pour it into the cooker."
+   },
+   {
+    "title": "Spice bag on top",
+    "text": "Put the pickling spices in a large spice bag, sit it on top, and season. Cover and cook 2 hours on high or 3–4 on low."
+   },
+   {
+    "title": "Adjust the heat",
+    "text": "If it comes out hotter than you want, stir in the chicken broth and another tsp of agave to soften it."
+   }
+  ]
+ },
+ "italian-milk-braised-pork-roast-with-porcini-mushrooms": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Sear the roast",
+    "text": "Melt the butter with the oil in a large skillet over medium-high. Put the pork in fat-side down and leave it to brown, 3–4 minutes, then colour the remaining sides — about 5 minutes more. Move it to the slow cooker."
+   },
+   {
+    "title": "Milk, then two hours",
+    "text": "Deglaze the skillet with the wine, scraping it clean. Add the milk, cream, porcini, anchovy paste, pepper flakes and zest and simmer 3 minutes — the milk will look curdled and that is correct. Pour it around the pork, push the rosemary and sage under, cover, and cook on low about 2 hours, to 145° at the thickest point. Rest the pork under foil and fish out the herbs."
+   },
+   {
+    "title": "Blend the sauce",
+    "text": "Blitz the sauce smooth in the cooker with a stick blender — that is what turns the split milk into a sauce — then season."
+   },
+   {
+    "title": "Serve",
+    "text": "Slice the pork and spoon the sauce over."
+   }
+  ]
+ },
+ "thai-green-curry-chicken": {
+  "cuisine": "Thai",
+  "steps": [
+   {
+    "title": "Make the paste",
+    "text": "Strip the reedy tops and root end off the lemongrass, then slice and mince about 4 inches up from the root. Blitz it with the onion, cilantro, ginger, fish sauce, jalapeño, garlic, coriander, sugar and zest to a paste. Scrape it into a 4–6 qt slow cooker and stir the coconut milk through."
+   },
+   {
+    "title": "Brown and braise",
+    "text": "Brown the chicken in oil in a sauté pan, six pieces at a time, and add it to the cooker. Cover and cook 1½–2 hours on high or about 3 on low. Stir in the bell pepper and give it 15 minutes more on high."
+   },
+   {
+    "title": "Serve",
+    "text": "Scatter basil and peanuts over each bowl."
+   }
+  ]
+ },
+ "steak-chili-with-fajita-seasoning": {
+  "cuisine": "Mexican",
+  "steps": [
+   {
+    "title": "Mix the seasoning",
+    "text": "Stir the cumin, paprika, onion powder, oregano, salt, coriander, garlic powder, black pepper, pepper flakes, ginger and cayenne together and set it aside."
+   },
+   {
+    "title": "Brown in two batches",
+    "text": "Heat 1 Tbsp oil in a Dutch oven over medium-high and brown half the meat; move it to a 4–6 qt slow cooker. Brown the rest in another spoon of oil and add that too. Deglaze the pot with the tequila, scraping up everything on the bottom, and pour that in as well."
+   },
+   {
+    "title": "Four hours",
+    "text": "Add the tomatoes, bell peppers, diced onion, garlic and the fajita seasoning. Stir in the broth and flour, cover, and cook 4 hours on high."
+   },
+   {
+    "title": "Finish",
+    "text": "Stir the beans and lime juice through just before serving. Sour cream, cilantro, avocado and sliced jalapeños on top if you want them."
+   }
+  ]
+ },
+ "hot-beef-sandwiches": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Mash the potatoes",
+    "text": "Boil the potatoes in salted water until a fork goes in, 12–15 minutes. Drain, return them to the dry pot, and stir over low heat for a minute to drive off the water. Mash with the sour cream, butter and milk until smooth, salt, and keep warm."
+   },
+   {
+    "title": "Slurry the gravy",
+    "text": "Whisk the broth and flour together so there are no lumps before anything hot is involved."
+   },
+   {
+    "title": "Build the gravy",
+    "text": "Melt 1 Tbsp butter in a saucepan over medium until it foams, cook the rosemary in it for a minute, then take the rosemary out. Whisk in the broth mixture and the reserved pot-roast sauce and simmer 5–7 minutes until it thickens. Stir in the vinegar and the reserved pot roast, heat it through, season, and keep it warm."
+   },
+   {
+    "title": "Heat the broiler",
+    "text": "Broiler to high with a rack 6 inches from the element, and line a baking sheet with parchment."
+   },
+   {
+    "title": "Garlic butter",
+    "text": "Mash a stick of butter with the garlic and season it. Spread a tablespoon on each side of the toast slices and lay them on the sheet."
+   },
+   {
+    "title": "Toast",
+    "text": "Broil until golden, about 2 minutes a side."
+   },
+   {
+    "title": "Assemble",
+    "text": "Pile the mashed potato onto the toast, ladle the beef gravy over, and finish with parsley."
+   }
+  ]
+ },
+ "tomato-braised-chicken": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Load the cooker",
+    "text": "Put the tomatoes, onions, garlic, olives, Italian seasoning, pepper, fennel seeds, salt and bay leaf in a 4–6 qt slow cooker and stir."
+   },
+   {
+    "title": "Nestle and go",
+    "text": "Settle the chicken down into the tomatoes, cover, and cook until it is cooked through and gives to a fork — 3 hours high, 6 low."
+   },
+   {
+    "title": "Reduce the sauce",
+    "text": "Lift the chicken out and keep it warm; discard the bay. Tip the tomato mixture into a pot and bring it to a boil."
+   },
+   {
+    "title": "Cook the tortellini in it",
+    "text": "Stir in the tomato paste and the tortellini and boil 7–9 minutes, until the pasta is al dente — it cooks in the sauce, so the sauce thickens as it goes."
+   },
+   {
+    "title": "Serve",
+    "text": "Spoon the sauce over the chicken and finish with parsley and Parmesan."
+   }
+  ]
+ },
+ "swiss-steak-with-tomato-bell-pepper-gravy": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Bed of vegetables",
+    "text": "Layer the onion, bell pepper and carrot into a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Pound the steak",
+    "text": "Working one piece at a time between two sheets of plastic wrap, pound the steak out to ½ inch."
+   },
+   {
+    "title": "Dredge",
+    "text": "Season ½ cup flour in a shallow dish and turn the beef through it, shaking off what doesn't stick."
+   },
+   {
+    "title": "Sear in batches",
+    "text": "Heat 1 Tbsp oil in a large pan over medium-high and sear the beef in two batches, 3 minutes a side, adding the second spoon of oil as needed."
+   },
+   {
+    "title": "Four hours",
+    "text": "Lay the beef on the vegetables, pour in the broth and tomatoes, cover, and cook 4–4½ hours on high until fork-tender. Tent the beef under foil, lift the vegetables out with a slotted spoon, and take ⅓ cup of the liquid."
+   },
+   {
+    "title": "Thicken",
+    "text": "Whisk 1 Tbsp flour into that reserved liquid, then whisk it back into the cooker to make the gravy."
+   }
+  ]
+ },
+ "black-bean-tacos-with-tomato-radish-relish": {
+  "cuisine": "Mexican",
+  "steps": [
+   {
+    "title": "Crisp the bacon",
+    "text": "Cook the bacon in a saucepan until crisp, drain it on paper towel, and pour off all but 1 Tbsp of the fat."
+   },
+   {
+    "title": "Simmer the beans",
+    "text": "Cook the diced red onion, adobo sauce, garlic, ½ tsp cumin and the chili powder in that fat over medium-high until the onion softens, 3–5 minutes. Add the beans with their liquid, drop to medium-low, and simmer about 10 minutes until thick. Stir in 2 Tbsp lime juice and the bacon, then season."
+   },
+   {
+    "title": "Mix the relish",
+    "text": "Combine the tomatoes, radishes, sliced red onion, jalapeño, minced cilantro, 1 Tbsp lime juice, oil and a pinch of cumin, and season."
+   },
+   {
+    "title": "Build",
+    "text": "Spoon the beans into the tortillas and top with the relish, sliced avocado, queso fresco and cilantro leaves. Lime wedges at the table."
+   }
+  ]
+ },
+ "seoulful-sides-korean-rice-beans": {
+  "title": "Korean Rice & Beans",
+  "cuisine": "Korean",
+  "steps": [
+   {
+    "title": "Cook the rice",
+    "text": "Cook the rice as the packet directs, then leave it covered off the heat for 10 minutes."
+   },
+   {
+    "title": "Season it",
+    "text": "Stir the vinegar and mirin through the rice, salt it, and keep it warm."
+   },
+   {
+    "title": "Bloom the aromatics",
+    "text": "Heat the oil in a skillet over medium and cook the garlic, ginger and chili powder for a minute."
+   },
+   {
+    "title": "Glaze the beans",
+    "text": "Deglaze with the soy sauce and let it reduce by half, 2–3 minutes. Add the beans and heat them through, 2–3 minutes. Stir in the cilantro and fold the lot into the rice."
+   }
+  ]
+ },
+ "greek-pork-spinach-stew-with-beans-and-olives": {
+  "cuisine": "Greek",
+  "steps": [
+   {
+    "title": "Sweat, then brown",
+    "text": "Heat the oil in a pot over medium and sweat the onions until soft, 3–4 minutes. Add the garlic for a minute, then the pork, and cook until browned, 3–4 minutes."
+   },
+   {
+    "title": "Deglaze and simmer",
+    "text": "Pour in the wine, scrape the pot clean, and cook it until nearly dry. Stir in the broth, tomato sauce, Roma tomato and olives, bring it to a boil over medium-high, then drop to medium-low and simmer 10 minutes."
+   },
+   {
+    "title": "Wilt and finish",
+    "text": "Stir in the spinach and beans until the spinach collapses, then season."
+   }
+  ]
+ },
+ "sausage-peppers-sandwich-with-marinara": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Brown the sausages",
+    "text": "Heat 1 Tbsp oil in a large sauté pan over medium-high and brown the sausages, 5 minutes a side. Set them aside to cool a little."
+   },
+   {
+    "title": "Peppers, then onion",
+    "text": "Heat 2 Tbsp oil in the same pan and cook the peppers until softened, 4–5 minutes; move them to a 4–6 qt slow cooker. Heat the last spoon of oil and cook the onion and mushrooms 3–4 minutes, add the garlic for one more, and add those too."
+   },
+   {
+    "title": "Sauce and slow cook",
+    "text": "Mix the marinara, tomato paste, thyme, rosemary and oregano and pour it in. Cover and cook 2–3 hours on high or 4–6 on low."
+   },
+   {
+    "title": "Assemble",
+    "text": "Put the sausages in the buns with about ½ cup of the pepper mixture and a slice of cheese over the top."
+   }
+  ]
+ },
+ "green-chicken-chili": {
+  "cuisine": "Mexican",
+  "steps": [
+   {
+    "title": "Soak the beans",
+    "text": "Soak the beans as the packet directs, drain them, and put them in a 5–6 qt slow cooker."
+   },
+   {
+    "title": "Four and a half hours",
+    "text": "Add the broth, tomatillos, Anaheims, onions, jalapeños, garlic, cumin, oregano and coriander. Cover and cook about 4½ hours on high, until the beans are properly tender — dried beans will not soften once anything acidic is doing the work, so give them the full time."
+   },
+   {
+    "title": "Chicken and masa",
+    "text": "Stir the chicken and masa harina in and cook 30 minutes more; the masa is the thickener and it needs that time to lose its raw edge. Finish with lime juice and season."
+   },
+   {
+    "title": "Serve",
+    "text": "Lime wedges, sour cream and cilantro on top."
+   }
+  ]
+ },
+ "indian-chicken-curry-tikka-masala": {
+  "cuisine": "Indian",
+  "steps": [
+   {
+    "title": "Mix the marinade",
+    "text": "Combine the yogurt, lemon juice, 1 Tbsp garlic, 1 Tbsp ginger, ½ tsp salt, ½ tsp garam masala, the cumin, coriander and cayenne."
+   },
+   {
+    "title": "Marinate",
+    "text": "Stab the chicken all over so the marinade gets in, put it in a large bowl, pour the marinade over and turn it to coat. Cover and chill at least an hour, overnight if you can."
+   },
+   {
+    "title": "Heat the broiler",
+    "text": "Broiler on, rack 6–8 inches from the element."
+   },
+   {
+    "title": "Char the chicken",
+    "text": "Lift the chicken out and throw the marinade away. Broil it flesh-side up for 8 minutes — you want colour, not doneness — then move it to a 4–6 qt slow cooker."
+   },
+   {
+    "title": "Start the sauce",
+    "text": "Heat 1 Tbsp oil in a large skillet over medium-high."
+   },
+   {
+    "title": "Onion and spice",
+    "text": "Cook the onion until it just starts to colour, 5 minutes. Add 2 tsp garam masala, 1½ tsp garlic, 1½ tsp ginger and the serrano and cook a minute, then the tomato paste for one more."
+   },
+   {
+    "title": "Deglaze with tomatoes",
+    "text": "Pour the tomatoes in and scrape up everything stuck to the pan, then tip it into the cooker and stir to coat the chicken."
+   },
+   {
+    "title": "Three hours",
+    "text": "Cover and cook on low 3 hours, until tender. Lift the chicken onto a platter."
+   },
+   {
+    "title": "Cream and serve",
+    "text": "Whisk the cream into the sauce and season, then pour it over the chicken and finish with cilantro."
+   }
+  ]
+ },
+ "green-gumbo-gumbo-z-herbes-with-trinity-rice": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Render the bacon",
+    "text": "Cook the bacon in a large pot until crisp, about 8 minutes, and lift it out with a slotted spoon. Keep ¼ cup of the drippings."
+   },
+   {
+    "title": "Sear the chicken",
+    "text": "Sear the chicken on both sides in 2 Tbsp of the drippings over medium-high, 2 minutes a side, and set it aside. Warm the other 2 Tbsp in the pot."
+   },
+   {
+    "title": "Onion and roux",
+    "text": "Cook 2 cups of onion until softened, 4 minutes, then the garlic for a minute. Stir the flour in and cook it out for 2 minutes so it loses its raw taste."
+   },
+   {
+    "title": "Build the pot",
+    "text": "Add 8 cups broth, the thyme, ½ tsp salt, cayenne, bay leaves and the seared chicken with everything it leaked, and bring it to a boil."
+   },
+   {
+    "title": "Two hours of greens",
+    "text": "Stir in the greens, drop the heat to low, and simmer about 2 hours until they are completely tender. This is the whole dish — the greens are the point, not a garnish."
+   },
+   {
+    "title": "Finish and thicken",
+    "text": "Stir in the parsley, lemon juice, Tabasco and filé, season, and simmer 5 minutes to thicken. Pull out the bay leaves."
+   },
+   {
+    "title": "Trinity rice",
+    "text": "Heat the oil in a saucepan over medium-high and cook ½ cup onion, the celery and bell pepper 2–3 minutes, then stir the rice in. Add the water, 1 cup broth and 1 tsp salt, bring to a boil, cover, and cook on low 20 minutes. Rest it off the heat 5 minutes and fork it through."
+   },
+   {
+    "title": "Serve",
+    "text": "Gumbo over rice, with tomatoes, scallions and the reserved bacon on top."
+   }
+  ]
+ },
+ "pozole-verde": {
+  "cuisine": "Mexican",
+  "steps": [
+   {
+    "title": "Blitz the green base",
+    "text": "Blend the tomatillos, poblanos, serranos, garlic, onion, oregano, anise seed, cumin and lime juice until the tomatillos and onion are finely chopped. Pour it into a 4–6 qt slow cooker with the broth and stir."
+   },
+   {
+    "title": "Add the bulk",
+    "text": "Add the fennel, hominy, garbanzo beans and sugar."
+   },
+   {
+    "title": "Long and low",
+    "text": "Cover and cook 4–5 hours on high or 6–8 on low."
+   },
+   {
+    "title": "Greens last",
+    "text": "Stir in the spinach and black beans and give it 2–3 minutes, just until the spinach wilts. Season."
+   },
+   {
+    "title": "Serve",
+    "text": "Finish each bowl with pepitas, crispy cumin shallots, cilantro, lime and queso fresco."
+   }
   ]
  }
 }

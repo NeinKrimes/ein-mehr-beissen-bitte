@@ -18,8 +18,11 @@ data/source-recipes.raw.json        ← GITIGNORED. holds the publisher's prose.
   │
   │  stage 2 — npm run build:recipes
   ▼
-src/data/sourceRecipes.js           ← COMMITTED, generated. never hand-edit.
+src/data/sourceRecipes.js           ← COMMITTED, generated. the index.
+src/data/sourceRecipes.data.js      ← COMMITTED, generated. the full records.
 ```
+
+Both generated files are written by the same build — never hand-edit either.
 
 ### Why it splits that way
 
@@ -95,7 +98,7 @@ Pork Phở down as Mexican and Jamaican Jerk Pork as Mexican).
 Technical facts inside a step — temperatures, times, pan sizes, quantities —
 are facts and stay accurate. The phrasing is ours.
 
-**Status: 31 of 506 authored.** The pipeline is complete and the remaining 475
+**Status: 45 of 506 authored.** The pipeline is complete and the remaining 461
 are extracted and waiting; each new tranche is a matter of adding ids to
 `authored-steps.json` and re-running `npm run build:recipes`.
 
@@ -117,12 +120,24 @@ user has active palate preferences. `findSourceRecipe` needs a 60% word overlap
 before it will claim a match — a false positive would serve the wrong recipe for
 a calendar night, so it returns `null` rather than guess.
 
+### Why it is split in two
+
+`sourceRecipes.js` holds only an index — id, title, subtitle, cuisine, calories,
+cost. It is small enough to import eagerly, and it is all `findSourceRecipe`
+needs to answer *is this meal in the library?*. The ingredients and steps live in
+`sourceRecipes.data.js`, which is only ever reached through
+`await import(...)` inside `loadSourceRecipe()`, so Vite gives it its own chunk
+and a tier-3 **miss** downloads nothing at all.
+
+At 45 recipes: 417 kB entry (121 kB gzip) + a 112 kB corpus chunk (26 kB gzip)
+that most sessions never fetch.
+
 ## Known follow-ups
 
-- **Bundle size.** 31 recipes add ~82 KB raw / ~19 KB gzip. All 506 would add
-  roughly 1.3 MB, which does not belong in the client bundle — before the
-  library grows much past ~100 recipes it should move to Supabase, or be split
-  out and lazy-loaded on the room that browses it.
+- **Index size.** The corpus itself is now a lazy chunk, but the index still
+  grows linearly — roughly 0.2 KB per recipe, so all 506 would put ~100 KB back
+  in the entry bundle. If the library gets that far, the index belongs in
+  Supabase with a search endpoint rather than in the client.
 - **No UI yet.** Nothing browses the library; it is only reachable as the
   `useRecipe` fallback. A library room is the natural next step.
 - **`est_cost_usd` is derived**, not printed in the source — it is estimated

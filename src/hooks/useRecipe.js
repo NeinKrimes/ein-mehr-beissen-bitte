@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useMemo } from "react";
 import { supabase } from "../lib/supabase";
 import { callClaude } from "../lib/claude";
 import { usePalate } from "./usePalate";
-import { findSourceRecipe } from "../data/sourceRecipes";
+import { findSourceRecipe, loadSourceRecipe } from "../data/sourceRecipes";
 
 // POLICY: Palate-keyed caching.
 // - All recipe caching tiers (in-memory, localStorage) honor the user's palate preferences consistently.
@@ -237,8 +237,11 @@ export function useRecipe() {
 
       // Tier 3 — the adapted source library. Canonical (palate-independent), so
       // it is skipped when the user has active palate preferences, same as tier 1.
+      // The name match runs against the static index; only on a hit do we pull
+      // the corpus chunk down, so a miss costs nothing.
       if (!recipe && pKey === "canonical") {
-        recipe = fromSourceRecipe(findSourceRecipe(meal));
+        const hit = findSourceRecipe(meal);
+        if (hit) recipe = fromSourceRecipe(await loadSourceRecipe(hit.id));
       }
 
       // Tier 4 — Edge Function generation (fallback only)
