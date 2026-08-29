@@ -34,6 +34,9 @@ export const COLORS = {
 export const CUISINE_COLORS = {
   Mexican: "#963D34", Italian: "#35647A", Indian: "#865122", French: "#68527A",
   Jamaican: "#3F684D", Thai: "#884765", Chinese: "#735A16", American: "#596166",
+  // Month 2 cuisines — hues chosen for the gaps left in the wheel above
+  // (teal, deep rust, indigo, azure) so no two dots read as the same colour.
+  Vietnamese: "#2F6F6A", Ethiopian: "#7B3428", Japanese: "#4C4A86", Greek: "#3A79A8",
 };
 
 // rgba() over the primary ink — hairlines, dotted leaders, and dimmed details.

@@ -1,11 +1,13 @@
 import { useState, memo } from "react";
 import { MEALS, mealByDay, mealsByChain } from "../data/mealStats";
-import { chains } from "../data/chains";
+import { chains, DAY_COUNT } from "../data/chains";
 import { COLORS, FONTS, EASE, label, mono, display, rgba, hairline } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const WEEKS = Array.from({ length: 35 }, (_, i) => i < 30 ? mealByDay(i + 1) : null);
+// The grid always runs in whole weeks; trailing cells past the last day are blanks.
+const GRID_ROWS = Math.ceil(DAY_COUNT / 7);
+const WEEKS = Array.from({ length: GRID_ROWS * 7 }, (_, i) => i < DAY_COUNT ? mealByDay(i + 1) : null);
 
 function chainColor(chainId) {
   const first = mealsByChain(chainId)[0];
@@ -15,7 +17,7 @@ function chainColor(chainId) {
 // Memoize to prevent re-rendering when parent CalendarRoom state changes (e.g. day selection)
 const ChainConnectors = memo(function ChainConnectors() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 700 500" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
+    <svg aria-hidden="true" viewBox={`0 0 700 ${GRID_ROWS * 100}`} preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", overflow: "visible" }}>
       {chains.flatMap((chain) => chain.days.slice(1).map((day, index) => {
         const from = chain.days[index].day - 1;
         const to = day.day - 1;
@@ -33,7 +35,7 @@ const ChainConnectors = memo(function ChainConnectors() {
   );
 });
 
-// Memoize to prevent all 35 cards from re-rendering when only one changes its selected state
+// Memoize to prevent every grid card from re-rendering when only one changes its selected state
 const MealCard = memo(function MealCard({ meal, selected, onSelect }) {
   if (!meal) return <div style={{ minHeight: 122, border: hairline, background: COLORS.pageAlt }} />;
   const color = chainColor(meal.chainId);

@@ -1,4 +1,4 @@
-// Static per-day nutrition/cost estimates for the 30-day calendar, from the
+// Static per-day nutrition/cost estimates for the whole calendar, from the
 // UI design's data table. These are design-time baselines: the recipe library
 // (Supabase) still owns the authoritative per-recipe numbers once generated.
 // Shape merged onto chains.js days: kcal, cost ($/serving), p (protein g),
@@ -39,6 +39,24 @@ export const RAW = {
   28: [350, 0.72, 18, 12, "Khao Tom", "The congee loosened into soup: fish sauce, white pepper."],
   29: [290, 0.45, 10, 35, "Homemade Bagels", "Proofed overnight, boiled at dawn."],
   30: [380, 1.05, 14, 30, "French Onion Soup", "Onions cooked past patience, a stale bagel as the raft."],
+
+  // ── Month 2 (days 31–46) ──
+  31: [520, 2.40, 38, 30, "Phở Bò",             "Eight hours of shank and bone; twenty minutes of assembly."],
+  32: [480, 1.70, 30, 20, "Bún Bò Nam Bộ",      "Yesterday's shank, shredded cold over noodles and every herb in the drawer."],
+  33: [430, 1.45, 28, 20, "Beef & Barley Broth","The broth's third act: barley swells, kale wilts, lemon zest at the end."],
+  34: [560, 1.55, 26, 15, "Bánh Mì",            "Pickled carrot, cold braised shank, more cilantro than seems wise."],
+  35: [610, 2.55, 44, 45, "Doro Wat",           "Onions cooked dry for two hours before anything else is allowed in."],
+  36: [390, 0.70, 20, 15, "Misir Wat",          "Red lentils dropped into yesterday's base — seventy cents and no notes."],
+  37: [280, 0.85, 9,  25, "Gomen & Atkilt",     "Collards, cabbage, carrot; turmeric doing the quiet work."],
+  38: [470, 1.25, 26, 20, "Berbere Chickpeas",  "The last of the wat's chicken, stretched with a tin of chickpeas."],
+  39: [540, 2.15, 30, 30, "Nikujaga",           "The potatoes take the dashi; the beef is almost a seasoning."],
+  40: [310, 0.65, 14, 15, "Miso & Onigiri",     "Dashi, a spoon of miso off the heat, rice pressed into triangles."],
+  41: [590, 1.60, 34, 20, "Oyakodon",           "Parent and child in one pan, the egg barely set."],
+  42: [520, 1.10, 22, 18, "Dashi Fried Rice",   "Day-old rice, the last of the nikujaga, dashi where the stock would go."],
+  43: [660, 2.90, 46, 25, "Kleftiko",           "Sealed in parchment for four hours; the oven does all of it."],
+  44: [610, 1.75, 34, 25, "Youvetsi",           "Orzo cooked in the roasting juices until it stops being pasta."],
+  45: [360, 1.20, 24, 20, "Avgolemono",         "Eggs and lemon whisked into hot stock — the only tense minute of the month."],
+  46: [580, 1.65, 30, 22, "Lemon-Pork Ragù",    "The shoulder's last shreds, loosened with pan juices, over wide noodles."],
 };
 
 // Pilot cuisine-swap alternates — one alternate cuisine option on a handful

@@ -4,7 +4,7 @@ This file briefs Claude Code on the project so it can hit the ground running.
 
 ## What This Project Is
 
-A React web app — a 30-day world cuisine meal calendar built around "anchor ingredients."
+A React web app — a 46-night world cuisine meal calendar built around "anchor ingredients."
 Each anchor (whole chicken, pork shoulder, dried beans, etc.) chains into 3–4 follow-up
 meals across different world cuisines. All slow cooks are passive/WFH-friendly.
 Recipes are generated on demand via the Anthropic API.
@@ -31,7 +31,7 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 ## Architecture
 
 - `src/App.jsx` — Entry shell and room navigator; preloads/primes the recipe library
-- `src/data/chains.js` — Single source of truth for 30-day calendar structure (exports `chains`, `mealId`, `enumerateMeals`)
+- `src/data/chains.js` — Single source of truth for calendar structure (exports `chains`, `DAY_COUNT`, `mealId`, `enumerateMeals`). Never hard-code the day count anywhere — import `DAY_COUNT`.
 - `src/data/mealStats.js` — Baseline derived nutrition/cost stats (exports `MEALS`, `LENSES`, `mealByDay`)
 - `src/hooks/useRecipe.js` — Tiered recipe loader (Supabase `meal_library` → localStorage → API fallback)
 - `src/hooks/useCooked.js` — Progress tracker ("mark as cooked"), persisted in localStorage
@@ -109,7 +109,8 @@ The Anthropic API is prompted to return JSON:
 
 - [x] Wire palate preferences (`usePalate` and `PaletteQuestionnaire`) into generation + My Kitchen (T6) — done
 - [ ] Community board backend (T7) — Codex handoff: `docs/codex-handoff-t7-community-board.md`
-- [ ] More cuisine chains, Month 2 days 31–46 (T8) — issues #45 (infra prereq), #47–#50
+- [x] More cuisine chains, Month 2 days 31–46 (T8) — done: c11 Vietnamese (31–34), c12 Ethiopian (35–38), c13 Japanese (39–42), c14 Greek (43–46), plus the #45 length-agnostic infra. Closes #45, #47–#50.
+- [ ] Seed Month 2 recipes into `meal_library` (`npm run seed` picks up days 31–46 automatically via `enumerateMeals()`)
 - [ ] Mobile responsive layout improvements (T3)
 
 ## Notes
