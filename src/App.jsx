@@ -3,6 +3,7 @@ import { MEALS, mealByDay, variantMealById } from "./data/mealStats";
 import { variantMealId, DAY_COUNT } from "./data/chains";
 import { useRecipe } from "./hooks/useRecipe";
 import { usePalate } from "./hooks/usePalate";
+import { useLibraryBasket } from "./hooks/useLibraryBasket";
 import { useViewport } from "./hooks/useViewport";
 import { COLORS, FONTS, EASE, label, mono, display, parch, hairline } from "./theme";
 import GlobalStyle from "./components/GlobalStyle";
@@ -64,6 +65,7 @@ export default function App() {
   const { getRecipe, loadRecipe, preloadLibrary } = useRecipe();
 
   const { palate, savePalate, syncing } = usePalate();
+  const basket = useLibraryBasket();
   const [showQuestionnaire, setShowQuestionnaire] = useState(false);
 
   // Show questionnaire on first visit if no palate has been saved yet
@@ -176,7 +178,7 @@ export default function App() {
         {room === "Calendar" && <CalendarRoom onOpenRecipe={openRecipe} />}
         {room === "Chains" && <ChainsRoom onOpenRecipe={openRecipe} />}
         {room === "Web" && <WebRoom onOpenRecipe={openRecipe} />}
-        {room === "Library" && <LibraryRoom />}
+        {room === "Library" && <LibraryRoom basket={basket} onOpenShopping={() => setShowShopping(true)} />}
         {room === "My Kitchen" && <KitchenRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
       </div>
 
@@ -196,6 +198,8 @@ export default function App() {
         <ShoppingList
           flatDays={MEALS}
           getRecipe={getRecipe}
+          basket={basket.recipes}
+          onRemoveFromBasket={basket.remove}
           onClose={() => setShowShopping(false)}
         />
       )}

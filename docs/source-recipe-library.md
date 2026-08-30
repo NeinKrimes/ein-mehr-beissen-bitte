@@ -172,6 +172,19 @@ The four lenses sink a recipe with no printed nutrition to the bottom rather
 than floating it, so a gap in the source never reads as the best value on the
 shelf.
 
+### Onto the shopping list
+
+A library recipe can be added to the weekly shopping list from its detail panel.
+`useLibraryBasket` persists **ids only** and re-resolves them through
+`loadSourceRecipe()` on mount, so a rebuilt corpus is picked up rather than a
+stale copy of the recipe replayed from storage; an id that no longer exists is
+dropped rather than left as a hole.
+
+`ShoppingList` renders the basket through the same `ListSection` as a calendar
+week — same aggregation, same retailer buttons, same per-item unit summing — so
+the two halves cannot drift apart as either changes. The basket sits above the
+weeks, because you put it there deliberately.
+
 ## Known follow-ups
 
 - **Index size.** The corpus itself is now a lazy chunk, but the index still

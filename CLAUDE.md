@@ -37,9 +37,10 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - `src/data/sourceRecipes.js` / `sourceRecipes.data.js` — **Generated, do not hand-edit.** A library of real recipes adapted from the Cuisine at Home source shelf; ingredients verbatim, method rewritten. Built from `data/authored-steps.json` by `npm run build:recipes`. The `.js` file is a small eager index; the `.data.js` payload is only ever reached via `await loadSourceRecipe(id)` so it stays a separate chunk. See `docs/source-recipe-library.md`. It is a reference pool, NOT the calendar.
 - `src/hooks/useRecipe.js` — Tiered recipe loader (Supabase `meal_library` → localStorage → source library → API fallback)
 - `src/hooks/useCooked.js` — Progress tracker ("mark as cooked"), persisted in localStorage
+- `src/hooks/useLibraryBasket.js` — Library recipes chosen for the shopping list. Stores ids only in localStorage and re-resolves them through `loadSourceRecipe`, so a rebuilt corpus is picked up rather than a stale copy replayed.
 - `src/components/` — Room-based UI ("cookbook after dark" redesign):
   - `BoardRoom.jsx` (Community plates/photos), `CalendarRoom.jsx` (Dotted leaders, lens toggle, detail rail), `ChainsRoom.jsx` (Anchor & follow-up spreads), `KitchenRoom.jsx` (Month ledger, saved plates, shopping list link)
-  - `LibraryRoom.jsx` (Browses the adapted source library — search, cuisine filter, four sort lenses; opens a recipe into a rail on desktop, a sheet on mobile)
+  - `LibraryRoom.jsx` (Browses the adapted source library — search, cuisine filter, four sort lenses; opens a recipe into a rail on desktop, a sheet on mobile; adds recipes to the shopping list)
   - `RecipePage.jsx` (Recipe detail overlay sheet), `ShoppingList.jsx` (Dotted-leader ingredient list)
 - **Wiring status:** `useRecipe`, `ShoppingList`, `usePalate`, and `PaletteQuestionnaire` are all fully wired to `App.jsx` (T6 landed).
 - **Database & Scripts:** `supabase/migrations/` defines schema. `scripts/seed-recipes.mjs` runs batch seeding. `scripts/export-obsidian.mjs` exports vault.
