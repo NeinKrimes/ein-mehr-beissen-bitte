@@ -37,7 +37,15 @@ export const CUISINE_COLORS = {
   // Month 2 cuisines — hues chosen for the gaps left in the wheel above
   // (teal, deep rust, indigo, azure) so no two dots read as the same colour.
   Vietnamese: "#2F6F6A", Ethiopian: "#7B3428", Japanese: "#4C4A86", Greek: "#3A79A8",
+  // Source-library cuisines. These never appear on the calendar, only in the
+  // Library room, but every swatch has to resolve or the dot renders blank.
+  German: "#6B5540", Spanish: "#8A4A24", Korean: "#7A3F52", Portuguese: "#2F5F52",
+  Brazilian: "#4A6B33", Swedish: "#456A85", Cuban: "#8A6A22",
 };
+
+// Every cuisine resolves to a swatch; unknown ones fall back to the accent
+// rather than rendering an invisible dot.
+export const cuisineColor = (cuisine) => CUISINE_COLORS[cuisine] ?? COLORS.gold;
 
 // rgba() over the primary ink — hairlines, dotted leaders, and dimmed details.
 export const parch = (a) => `rgba(43,41,37,${a})`;

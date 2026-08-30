@@ -39,6 +39,7 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - `src/hooks/useCooked.js` — Progress tracker ("mark as cooked"), persisted in localStorage
 - `src/components/` — Room-based UI ("cookbook after dark" redesign):
   - `BoardRoom.jsx` (Community plates/photos), `CalendarRoom.jsx` (Dotted leaders, lens toggle, detail rail), `ChainsRoom.jsx` (Anchor & follow-up spreads), `KitchenRoom.jsx` (Month ledger, saved plates, shopping list link)
+  - `LibraryRoom.jsx` (Browses the adapted source library — search, cuisine filter, four sort lenses; opens a recipe into a rail on desktop, a sheet on mobile)
   - `RecipePage.jsx` (Recipe detail overlay sheet), `ShoppingList.jsx` (Dotted-leader ingredient list)
 - **Wiring status:** `useRecipe`, `ShoppingList`, `usePalate`, and `PaletteQuestionnaire` are all fully wired to `App.jsx` (T6 landed).
 - **Database & Scripts:** `supabase/migrations/` defines schema. `scripts/seed-recipes.mjs` runs batch seeding. `scripts/export-obsidian.mjs` exports vault.
@@ -114,7 +115,7 @@ The Anthropic API is prompted to return JSON:
 - [x] More cuisine chains, Month 2 days 31–46 (T8) — done: c11 Vietnamese (31–34), c12 Ethiopian (35–38), c13 Japanese (39–42), c14 Greek (43–46), plus the #45 length-agnostic infra. Closes #45, #47–#50.
 - [ ] Seed Month 2 recipes into `meal_library` (`npm run seed` picks up days 31–46 automatically via `enumerateMeals()`)
 - [ ] Author the remaining source-library tranches (148 of 506 done — add ids to `data/authored-steps.json`, then `npm run build:recipes`)
-- [ ] A room for browsing the source library (nothing surfaces it yet)
+- [x] A room for browsing the source library — done (`LibraryRoom.jsx`)
 - [ ] Mobile responsive layout improvements (T3)
 
 ## Notes
