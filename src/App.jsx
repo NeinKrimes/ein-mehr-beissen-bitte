@@ -11,6 +11,7 @@ import CalendarRoom from "./components/CalendarRoom";
 import ChainsRoom from "./components/ChainsRoom";
 import WebRoom from "./components/WebRoom";
 import KitchenRoom from "./components/KitchenRoom";
+import LibraryRoom from "./components/LibraryRoom";
 import RecipePage from "./components/RecipePage";
 import ShoppingList from "./components/ShoppingList";
 import PaletteQuestionnaire from "./components/PaletteQuestionnaire";
@@ -20,7 +21,7 @@ import PaletteQuestionnaire from "./components/PaletteQuestionnaire";
 // My Kitchen (mine). From the claude.ai/design project
 // "Ein Mehr Beissen Bitte UI Design".
 
-const ROOMS = ["Board", "Calendar", "Chains", "Web", "My Kitchen"];
+const ROOMS = ["Board", "Calendar", "Chains", "Web", "Library", "My Kitchen"];
 const SAVED_KEY = "embb_saved_recipes";
 
 function readSavedRecipes() {
@@ -175,6 +176,7 @@ export default function App() {
         {room === "Calendar" && <CalendarRoom onOpenRecipe={openRecipe} />}
         {room === "Chains" && <ChainsRoom onOpenRecipe={openRecipe} />}
         {room === "Web" && <WebRoom onOpenRecipe={openRecipe} />}
+        {room === "Library" && <LibraryRoom />}
         {room === "My Kitchen" && <KitchenRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
       </div>
 

@@ -155,14 +155,29 @@ and a tier-3 **miss** downloads nothing at all.
 At 148 recipes: 434 kB entry (125 kB gzip) + a 339 kB corpus chunk (78 kB gzip)
 that most sessions never fetch.
 
+## The Library room
+
+`src/components/LibraryRoom.jsx` is the only screen that browses the library.
+It renders entirely from `SOURCE_INDEX` — search, the cuisine chips with their
+counts, and all four sort lenses run on the index, so scrolling the whole shelf
+fetches nothing. Opening a row is what triggers `loadSourceRecipe()` and pulls
+the corpus chunk down.
+
+Its filter and sort are exported as `filterAndSort()` and unit-tested against
+the real index; the room itself has a jsdom render test that proves a row opens
+and its ingredients arrive, which is the only direct proof the lazy import is
+wired up correctly.
+
+The four lenses sink a recipe with no printed nutrition to the bottom rather
+than floating it, so a gap in the source never reads as the best value on the
+shelf.
+
 ## Known follow-ups
 
 - **Index size.** The corpus itself is now a lazy chunk, but the index still
   grows linearly — roughly 0.2 KB per recipe, so all 506 would put ~100 KB back
   in the entry bundle. If the library gets that far, the index belongs in
   Supabase with a search endpoint rather than in the client.
-- **No UI yet.** Nothing browses the library; it is only reachable as the
-  `useRecipe` fallback. A library room is the natural next step.
 - **`est_cost_usd` is derived**, not printed in the source — it is estimated
   from ingredient count and protein load, and is good enough to sort and filter
   by, not to promise a price.
