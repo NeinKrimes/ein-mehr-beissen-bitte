@@ -180,11 +180,20 @@ export function findSourceRecipe(mealName) {
   if (exact) return exact;
   const words = target.split(" ").filter((w) => w.length > 3);
   if (!words.length) return null;
+  // Overlap has to hold in BOTH directions. Scoring only the query's words
+  // against the title lets a short query match a much longer title on its
+  // opening words — "Peanut Butter Sandwich" scored 0.67 against "Peanut
+  // Butter-Oatmeal Energy Bars" and would have served it for a calendar night.
+  // Requiring the title's own words to be accounted for too rejects that.
   let best = null;
   let bestScore = 0;
   for (const r of SOURCE_INDEX) {
     const hay = norm(\`\${r.title} \${r.subtitle}\`);
-    const score = words.filter((w) => hay.includes(w)).length / words.length;
+    const hayWords = hay.split(" ").filter((w) => w.length > 3);
+    if (!hayWords.length) continue;
+    const forward = words.filter((w) => hay.includes(w)).length / words.length;
+    const back = hayWords.filter((w) => target.includes(w)).length / hayWords.length;
+    const score = Math.min(forward, back);
     if (score > bestScore) {
       best = r;
       bestScore = score;
