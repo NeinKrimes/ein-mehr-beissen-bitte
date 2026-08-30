@@ -3,3 +3,6 @@
 ## 2026-08-02 - [Memoize list rendering in App Rooms]
 **Learning:** React re-renders components frequently during state updates or navigation. Large list rendering (e.g. 35 `MealCard` instances in `CalendarRoom`) or heavy mapping/filtering of data (e.g. `MEALS.filter` in `ChainsRoom` and `KitchenRoom`) causes unnecessary garbage collection and main thread blockages when parent components re-render without the underlying data actually changing.
 **Action:** Applied `React.memo` to complex stateless list items (`MealCard`, `ChainConnectors`) and `useMemo` for derived dataset computations in heavy view components to avoid O(N) redundant calculations on simple state changes. Next time, preemptively memoize expensive derivations based on global constants that are manipulated locally.
+## 2026-08-30 - [Memoize Spread component in ChainsView]
+**Learning:** `Spread` component inside `ChainsView` is repeatedly mapping over derivations every render when parent parameters change (`selectedMealId` which changes based on user selection). This causes redundant operations and performance issues, especially when rendering lists.
+**Action:** Applied `React.memo` to `Spread` and used `MemoizedSpread` in the list map to prevent O(N) redundant calculations on simple state changes.
