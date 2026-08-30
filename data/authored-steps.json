@@ -1267,7 +1267,13 @@
     "potato-rosemary-topping": "Method defers to 'Puglia-Style Focaccia directions, page 41' we never scanned; incomplete without baking instructions",
     "vegetable-topping-with-spinach-pesto": "incomplete method - refers to pizza/flatbread dough base not in recipe",
     "pico-de-gallo": "Only one real step: combine ingredients. Cannot split to 3+ genuine cooking steps.",
-    "salami-prosciutto-topping": "Just a pizza topping component; method defers to 'Puglia-Style Focaccia directions, page 41' which we never scanned"
+    "salami-prosciutto-topping": "Just a pizza topping component; method defers to 'Puglia-Style Focaccia directions, page 41' which we never scanned",
+    "fried-wontons-with-cream-cheese-dip": "Damaged extract: method incomplete, dip preparation cut off mid-sentence.",
+    "pineapple-freeze-with-jalapeno": "Only 1 step provided (blend and serve). Cannot reasonably expand to meet 3-step minimum.",
+    "pecan-sticky-rolls-sticky-rolls": "Step 3 defers to 'prepare one recipe Cinnamon Rolls' — method unusable without that recipe",
+    "sour-cream-old-fashioned-doughnuts": "Step 4 references 'Prepare glaze according to directions, page 18' — page not scanned",
+    "sausage-peppers-rigatoni": "Recipe defers to 'Sausage & Peppers, left' (not in extract); cannot be authored without that source method",
+    "spinach-artichoke-filling": "Method defers to omelet recipe on page 47 which is not in our corpus"
   },
   "ricotta-stuffed-shells": {
     "cuisine": "Italian",
@@ -4985,6 +4991,628 @@
       {
         "title": "Grill until fork-tender",
         "text": "Set the wedges on the grate and let them char slightly while they soften inside, 5–7 minutes per side. Pour the reserved lime vinaigrette over them and serve."
+      }
+    ]
+  },
+  "everything-bagel-cauliflower-with-herbed-cream-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Spice blend",
+        "text": "Mix dried garlic, dried onion, poppy seeds, sesame seeds, and 1 tsp salt in a small bowl."
+      },
+      {
+        "title": "Coat the cauliflower",
+        "text": "Whisk yogurt, oil, lemon juice, salt, and minced fresh garlic in a bowl. Season with pepper. Toss cauliflower to coat, then lay it on a foil-lined baking sheet. Sprinkle 1 Tbsp spice blend over the top."
+      },
+      {
+        "title": "Roast",
+        "text": "Roast at 400° until golden and fork-tender, about 1 hour. Rest 10 minutes before serving."
+      },
+      {
+        "title": "Herbed cheese sauce",
+        "text": "Purée cream cheese, goat cheese, buttermilk, lemon juice, and minced garlic in a food processor. Add parsley, chives, and dill; pulse until combined. Season with salt and pepper."
+      }
+    ]
+  },
+  "quick-creamy-tomato-soup": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Sweat aromatics",
+        "text": "Melt butter in a pot over medium heat. Add onions and celery, cover, and cook gently until soft, 10 minutes. Add garlic, tomato paste, and celery seeds; cook until fragrant, 1 minute."
+      },
+      {
+        "title": "Simmer",
+        "text": "Tip in the whole tomatoes with their juice and broth. Bring to a boil, then reduce heat to low and simmer gently 10 minutes."
+      },
+      {
+        "title": "Blend and finish",
+        "text": "Work through the soup in a handheld blender, or use a standard blender in batches if you prefer. Once smooth, stir the cream through. Taste, then add salt and pepper as needed. Pour into bowls and top each with a few celery leaves and a pinch of celery seeds."
+      }
+    ]
+  },
+  "crouton-grilled-cheese-with-gruyere-and-fontina": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Build sandwiches",
+        "text": "Brush one side of each bread slice with melted butter. Lay them buttered-side down. Mix the cheeses, then divide between 4 slices; season with salt and pepper. Top each with a second slice, buttered-side up."
+      },
+      {
+        "title": "Cook first side",
+        "text": "Heat a nonstick skillet over medium heat. Lightly coat with nonstick spray. Set sandwiches in the pan and cook until golden on one side, 2 minutes."
+      },
+      {
+        "title": "Finish",
+        "text": "Flip, cover, and cook another 2 minutes until the cheese melts and the bread is golden. Serve hot."
+      }
+    ]
+  },
+  "pecorino-toastie": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Herb butter",
+        "text": "Combine oil, butter, lemon zest, and oregano in a small bowl. Spread the mixture over the cut sides of the baguette halves."
+      },
+      {
+        "title": "Top and broil",
+        "text": "Set the baguette on a foil-lined baking sheet. Scatter pecorino over both halves. Broil at high, 6 inches from the element, until golden, 2 minutes."
+      },
+      {
+        "title": "Garnish",
+        "text": "Scatter fresh parsley over the warm toasts before serving."
+      }
+    ]
+  },
+  "broccoli-peanut-crunch": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Blanch and dry",
+        "text": "Blanch broccoli florets and stems in boiling salted water until crisp-tender, 2 minutes. Drain, plunge into ice water to stop the cooking, then drain again. Spin dry in a salad spinner; transfer to a bowl."
+      },
+      {
+        "title": "Make dressing",
+        "text": "Whisk vinegar, soy sauce, chili garlic sauce, sesame oil, and minced shallots together in a small bowl."
+      },
+      {
+        "title": "Finish",
+        "text": "Pour the dressing over the broccoli and toss to coat. Stir in peanuts just before serving, so they stay crisp."
+      }
+    ]
+  },
+  "broccoli-slaw-with-jicama-beets": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk oil, vinegar, ginger, Dijon, and sugar together. Season with salt and pepper to taste."
+      },
+      {
+        "title": "Prepare slaw",
+        "text": "Toss slaw mix, jicama, beets, carrots, radishes, and scallions together in a large bowl."
+      },
+      {
+        "title": "Dress",
+        "text": "Pour the vinaigrette over the slaw and toss to coat evenly."
+      }
+    ]
+  },
+  "rocket-pasta": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Cook pasta",
+        "text": "Boil the pappardelle in salted water (or leftover pork cooking liquid if you have it) according to package directions. Drain well."
+      },
+      {
+        "title": "Toss with butter",
+        "text": "Return the pasta to the pot. Add butter and toss gently until the pasta is coated and glossy."
+      },
+      {
+        "title": "Add arugula and cheese",
+        "text": "Add the arugula and Parmesan, toss gently to combine, then transfer to a serving bowl. Serve alongside the Pork Ragu."
+      }
+    ]
+  },
+  "toasted-oat-granola": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Toast grains",
+        "text": "Toast oats, almonds, cinnamon, and salt in a large skillet over medium heat, stirring occasionally, until fragrant, 7–8 minutes. Transfer to a large bowl."
+      },
+      {
+        "title": "Add dried fruit",
+        "text": "Toss the toasted oat mixture with cherries, coconut, and brown sugar."
+      },
+      {
+        "title": "Bind with syrup",
+        "text": "Pour maple syrup over the mixture and stir to coat evenly."
+      },
+      {
+        "title": "Bake",
+        "text": "Spread the granola on a lined baking sheet. Bake at 375° for 18 minutes, stirring halfway through, until golden and crispy."
+      }
+    ]
+  },
+  "shrimp-penne-with-watercress-lemon-ginger": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook pasta",
+        "text": "Boil penne in salted water following package time. Reserve 1/2 cup cooking water before draining."
+      },
+      {
+        "title": "Sear shrimp",
+        "text": "Dust shrimp in flour, then sear in hot oil over high heat until golden and opaque, 4–5 minutes. Transfer to a plate and lower the heat to medium."
+      },
+      {
+        "title": "Build sauce",
+        "text": "Stir in garlic and ginger for 30 seconds until fragrant. Add reserved pasta water, lemon zest and juice, and the cooked penne. Simmer until the sauce coats the pasta."
+      },
+      {
+        "title": "Finish",
+        "text": "Off heat, toss in the watercress and shrimp until the greens wilt."
+      }
+    ]
+  },
+  "green-chile-cornbread": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Heat skillet",
+        "text": "Preheat the oven to 425° with an 8-inch cast-iron skillet inside."
+      },
+      {
+        "title": "Mix cheese",
+        "text": "Combine Cheddar and pepper Jack in a small bowl."
+      },
+      {
+        "title": "Make batter",
+        "text": "Whisk cornmeal, flour, salt and baking powder together. In a separate bowl, whisk 1/2 cup of the cheese mixture with buttermilk, egg and chiles. Fold wet into dry until just combined."
+      },
+      {
+        "title": "Bake",
+        "text": "Pour batter into the hot skillet, smooth the top, then bake until a skewer comes out clean, about 20 minutes. Top with remaining cheese, cover and let it melt for 3 minutes. Garnish with chives."
+      }
+    ]
+  },
+  "honey-cornbread": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make honey butter",
+        "text": "Process 1½ sticks of butter with 1/3 cup honey in a food processor until smooth. Season with salt, wrap in plastic and roll into a log. Chill for 1 hour or until firm."
+      },
+      {
+        "title": "Prepare skillet",
+        "text": "Preheat oven to 425° and coat an 8-inch cast-iron skillet with nonstick spray."
+      },
+      {
+        "title": "Mix batter",
+        "text": "Whisk together cornmeal, flour, baking powder and salt. In a separate bowl, combine eggs, buttermilk, 1/4 cup honey and melted butter; stir into dry ingredients until just combined."
+      },
+      {
+        "title": "Bake",
+        "text": "Pour batter into the prepared skillet and bake until lightly browned and the top springs back when touched, 15–20 minutes."
+      }
+    ]
+  },
+  "cheesy-sage-polenta": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Heat broth",
+        "text": "Bring broth and milk to a boil in a large saucepan."
+      },
+      {
+        "title": "Add cornmeal",
+        "text": "Whisk in cornmeal slowly to avoid lumps, then reduce heat to low and continue whisking for 5 minutes."
+      },
+      {
+        "title": "Finish",
+        "text": "Remove from heat, then stir in Parmesan, mascarpone and sage. Season with salt and pepper."
+      }
+    ]
+  },
+  "sauteed-greens-with-banana-peppers": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Soften aromatics",
+        "text": "Sauté onion and garlic in oil over medium-high heat until the onion begins to soften, about 3 minutes."
+      },
+      {
+        "title": "Wilt greens",
+        "text": "Add spinach and arugula, tossing with tongs until wilted."
+      },
+      {
+        "title": "Add peppers",
+        "text": "Stir in banana peppers and raisins, then season with salt and black pepper."
+      }
+    ]
+  },
+  "chayote-saute-with-bacon": {
+    "cuisine": "Mexican",
+    "steps": [
+      {
+        "title": "Render bacon",
+        "text": "Cook bacon in a sauté pan until crisp; transfer to a paper-towel-lined plate and keep 2 Tbsp. drippings in the pan."
+      },
+      {
+        "title": "Sauté squash",
+        "text": "Sauté the chayote in the drippings over medium-high heat until tender, 15–20 minutes. Add onions and chile, cooking until softened, 3–4 minutes more."
+      },
+      {
+        "title": "Finish",
+        "text": "Stir in lime juice, cilantro and crumbled bacon. Season with salt and pepper."
+      }
+    ]
+  },
+  "lemon-bruschetta": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Prepare bread",
+        "text": "Preheat the broiler to high with the rack 6 inches from the element. Brush both sides of each bread slice with oil and season one side with salt and pepper."
+      },
+      {
+        "title": "Broil",
+        "text": "Broil until golden on both sides, flipping halfway through, about 4 minutes total."
+      },
+      {
+        "title": "Finish",
+        "text": "While still hot, rub the toasts with a lemon half, gently squeezing as you rub. Top with lemon zest and serve immediately."
+      }
+    ]
+  },
+  "mixed-greens-with-honey-sage-vinaigrette": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk together vinegar, oil, shallots, sage and honey in a small bowl. Season with salt and pepper."
+      },
+      {
+        "title": "Prep salad",
+        "text": "Cut cucumber into chunks and place in a large bowl with salad greens, raisins and pumpkin seeds."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Pour vinaigrette over the salad greens and toss well to coat."
+      }
+    ]
+  },
+  "bacon-scallion-hash-brown-casserole": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook bacon",
+        "text": "In a skillet over medium-high heat, cook the bacon until crisp and dark, then transfer to paper towels. When cool enough to handle, crumble it into bite-sized pieces."
+      },
+      {
+        "title": "Build the base",
+        "text": "Pour off most of the bacon fat, leaving 1 Tbsp in the pan. Add the scallion whites and cook over medium heat for about 1 minute until they yield. Move to a large bowl and add the onion dip, Cheddar, milk, scallion greens, and cream cheese. Stir in the hash browns and crumbled bacon; taste and season with salt and pepper."
+      },
+      {
+        "title": "Prep dish",
+        "text": "Coat a 9×13-inch baking dish with nonstick spray and pour in the hash brown mixture. Toss the corn flakes with melted butter, season with salt and pepper, and scatter over the top."
+      },
+      {
+        "title": "Bake",
+        "text": "Bake at 350° until the surface is golden and bubbling at the edges, about 45 minutes."
+      }
+    ]
+  },
+  "grilled-pitas-with-feta-yogurt-dip": {
+    "cuisine": "Greek",
+    "steps": [
+      {
+        "title": "Make feta dip",
+        "text": "Pulse the yogurt, feta, 2 tsp oil, and minced garlic in a food processor until the mixture turns creamy and smooth. Taste and adjust with salt and pepper."
+      },
+      {
+        "title": "Prepare and grill",
+        "text": "Heat the grill to medium and brush the grate with oil. Brush the pitas on both sides with 2 Tbsp oil and season with salt and pepper. Grill for 1–2 minutes per side until marked and warm."
+      },
+      {
+        "title": "Finish and serve",
+        "text": "Rub the grilled pitas with the cut side of a raw garlic clove to infuse them. Cut each into four wedges and scatter chopped parsley over both the pitas and the dip."
+      }
+    ]
+  },
+  "parmesan-scallion-bread": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Make compound butter",
+        "text": "In a bowl, beat together the butter, oil, grated Parmesan, and minced garlic until well mixed. Season with salt, black pepper, and a pinch of pepper flakes."
+      },
+      {
+        "title": "Spread and broil",
+        "text": "Spread the butter mixture generously on the cut sides of the bread and lay the slices on a foil-lined baking sheet. Broil 6 inches from the element on high until lightly toasted, 1–2 minutes."
+      },
+      {
+        "title": "Garnish",
+        "text": "Scatter chopped scallions over the hot bread. Cut into single servings and serve at once."
+      }
+    ]
+  },
+  "margherita-crostini-with-garlic-vinaigrette": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Toast baguette",
+        "text": "Brush both sides of the baguette slices with 2 tsp oil and season with salt and pepper. Arrange on a baking sheet and broil 6 inches from the element on high until golden, about 1 minute per side."
+      },
+      {
+        "title": "Make dressing",
+        "text": "Whisk together 1 Tbsp oil, vinegar, and minced garlic in a small bowl; season with salt and pepper. Pour over the mozzarella, tomatoes, and torn basil and toss gently."
+      },
+      {
+        "title": "Top and finish",
+        "text": "Divide the tomato mixture among the toasted slices and return to the broiler just long enough for the cheese to soften and start bubbling, about 1 minute."
+      }
+    ]
+  },
+  "parmesan-boursin-crostini": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Toast base",
+        "text": "Brush both sides of the baguette slices with oil and season with salt and pepper. Lay on a baking sheet and broil 6 inches from the element on high until golden, about 1 minute per side."
+      },
+      {
+        "title": "Top slices",
+        "text": "Spread 1 tsp of Boursin onto each toasted slice and sprinkle 2 tsp of grated Parmesan over the top."
+      },
+      {
+        "title": "Broil until melted",
+        "text": "Return to the broiler until the cheese bubbles and begins to brown at the edges, 1–2 minutes."
+      }
+    ]
+  },
+  "pretzel-dogs-with-kraut-relish": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare relish",
+        "text": "Mix the sauerkraut, sliced scallions, grated carrot, vinegar, and caraway seeds in a bowl and let sit while you grill."
+      },
+      {
+        "title": "Grill",
+        "text": "Heat the grill to medium and brush the grate with oil. Grill the hot dogs to your preferred doneness, then toast the buns for about 1 minute until warmed and marked."
+      },
+      {
+        "title": "Assemble and serve",
+        "text": "Nestle each hot dog into a bun and top with the relish, pickle spears, and a good squirt of mustard."
+      }
+    ]
+  },
+  "korean-barbecued-beef-bulgogi": {
+    "cuisine": "Korean",
+    "steps": [
+      {
+        "title": "Marinate beef",
+        "text": "In a large bowl, combine the vinegar, soy sauce, brown sugar, ginger, minced garlic, sesame oil, and cornstarch. Add the thinly sliced steak and toss to coat evenly. Let rest for 20 minutes, stirring often, so the flavors penetrate."
+      },
+      {
+        "title": "Cook bulgogi",
+        "text": "Heat canola oil in a nonstick skillet over high heat until shimmering. Working in 2 or 3 batches, add the beef and shake the pan often for 2–3 minutes per batch until browned and caramelized. Return all the meat to the skillet briefly to warm through."
+      },
+      {
+        "title": "Serve",
+        "text": "Transfer to a serving plate and scatter sesame seeds over the top. Serve with Korean Rice Bowl and Korean Chili Sauce."
+      }
+    ]
+  },
+  "double-fry-french-fries": {
+    "cuisine": "French",
+    "steps": [
+      {
+        "title": "Prep potatoes",
+        "text": "Rinse the potatoes under cold running water, rubbing them between your hands until the water runs clear. Pat dry thoroughly on a clean towel and cut into fries."
+      },
+      {
+        "title": "First fry",
+        "text": "Heat oil in a large pot to 325° (about one-third full). Line one baking sheet with paper towels. Fry the potatoes until tender and just starting to crisp, 5–6 minutes. Spread on the towel-lined sheet to drain, let sit in one layer for 10 minutes, then raise the oil temperature to 375°."
+      },
+      {
+        "title": "Second fry and finish",
+        "text": "Return the fries to the hot oil and fry until crisp and golden all over, 2 minutes. Drain on a fresh paper-towel-lined sheet and finish generously with salt."
+      }
+    ]
+  },
+  "homemade-breakfast-sausage-patties": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix spice blend",
+        "text": "In a large bowl, combine the ground pork, brown sugar, minced garlic, sage, salt, fennel seeds, pepper flakes, and nutmeg. Mix until the spices are evenly distributed but do not overwork the meat."
+      },
+      {
+        "title": "Shape and chill",
+        "text": "Split the mixture evenly and hand-form each portion into a compact log. Wrap each one tightly in plastic film and set in the fridge to firm up—at least 1 hour, or overnight for best results."
+      },
+      {
+        "title": "Cook patties",
+        "text": "Slice each log into six patties, reshaping gently with your hands if needed. Coat a nonstick skillet with nonstick spray and fry the patties over medium-high heat for 5–7 minutes per side until cooked through. Transfer to paper towels to cool."
+      }
+    ]
+  },
+  "vegetarian-tom-yum-with-tofu-shiitake-mushrooms": {
+    "cuisine": "Thai",
+    "steps": [
+      {
+        "title": "Cook rice",
+        "text": "Boil the rice according to package directions, then fold in vinegar and sesame seeds while hot."
+      },
+      {
+        "title": "Make the broth",
+        "text": "Combine stock, tamarind paste, garlic, lemongrass, and ginger in a pot. Bring to a boil, then drop the heat to medium and simmer for 20 minutes. Fish out the lemongrass and ginger."
+      },
+      {
+        "title": "Add tofu and vegetables",
+        "text": "Stir in tofu, tomatoes, and mushrooms, cook 2 minutes, then add coconut milk, basil, cilantro, scallions, chili garlic sauce, and soy sauce. Heat through gently."
+      },
+      {
+        "title": "Serve",
+        "text": "Divide the rice among bowls and ladle the soup over. Pass lime wedges at table."
+      }
+    ]
+  },
+  "angel-hair-pasta-with-spinach": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Cook pasta",
+        "text": "Boil the angel hair in salted water following the package time. Reserve ¼ cup pasta water before draining."
+      },
+      {
+        "title": "Make the sauce",
+        "text": "Whisk together cream, Parmesan, butter, and zest in a large bowl. Season with salt, black pepper, and pepper flakes, then add spinach."
+      },
+      {
+        "title": "Toss",
+        "text": "Add the drained pasta and reserved water to the bowl, tossing gently until the spinach wilts. Garnish with walnuts."
+      }
+    ]
+  },
+  "mushroom-swiss-quesadillas": {
+    "cuisine": "Mexican",
+    "steps": [
+      {
+        "title": "Cook mushrooms",
+        "text": "Heat oil in a 10–12 inch nonstick skillet over medium-high. Add mushrooms and garlic; cook 3–4 minutes until the mushrooms give up their liquid. Stir in tomatoes, cook 2 minutes more, then season and transfer to a bowl. Wipe the skillet clean."
+      },
+      {
+        "title": "Assemble",
+        "text": "On each tortilla, layer ½ cup cheese, ½ cup mushroom mixture, and 1 Tbsp. scallions. Fold in half. Coat the skillet with nonstick spray."
+      },
+      {
+        "title": "Cook and cut",
+        "text": "Arrange 2 quesadillas in the skillet and cook over medium-high heat until the cheese melts and the tortillas brown. Flip and cook the other side. Transfer to a board, cut into fourths, then repeat with the remaining quesadillas."
+      }
+    ]
+  },
+  "spaghetti-al-pomodoro-with-scallops": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Cook pasta",
+        "text": "Get the spaghetti going in a large pot of salted boiling water, following the package timing. Before draining, set aside ½ cup of the cooking water."
+      },
+      {
+        "title": "Sear scallops",
+        "text": "In a sauté pan with 2 Tbsp. oil over medium-high, get the scallops golden on both sides—3–4 minutes per side. Move them to a plate and tent with foil."
+      },
+      {
+        "title": "Build sauce",
+        "text": "Keeping the same pan, warm the remaining 2 Tbsp. oil and flash-cook garlic, thyme, and pepper flakes until fragrant, about 30 seconds. Tip the tomatoes, wine, lemon juice, and any scallop juices into the pan. Bring to a simmer."
+      },
+      {
+        "title": "Finish",
+        "text": "Put the spaghetti in to warm through, loosening it with the reserved pasta water to reach the consistency you want. Finish with parsley and serve with the scallops on top."
+      }
+    ]
+  },
+  "shrimp-louie-sandwich": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make the sauce",
+        "text": "Whisk together mayonnaise, ketchup, lemon juice, scallions, horseradish, relish, and Worcestershire sauce."
+      },
+      {
+        "title": "Add shrimp",
+        "text": "Fold the shrimp, bell pepper, and celery into the sauce. Season with salt and a pinch of cayenne."
+      },
+      {
+        "title": "Build sandwiches",
+        "text": "Layer lettuce, the shrimp mixture, and avocado slices on rolls."
+      }
+    ]
+  },
+  "hawaiian-dogs-with-pineapple-mustard-relish": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare grill",
+        "text": "Heat the grill to medium and brush the grate with oil."
+      },
+      {
+        "title": "Make the mustard",
+        "text": "Stir together mustard and preserves."
+      },
+      {
+        "title": "Make the relish",
+        "text": "Combine fresh pineapple, onion, tomato, and cilantro in a bowl."
+      },
+      {
+        "title": "Grill",
+        "text": "Grill the hot dogs to your preferred doneness. Toast the buns for 1 minute until lightly golden."
+      },
+      {
+        "title": "Serve",
+        "text": "Put each hot dog in a bun and top with the mustard, relish, and avocado."
+      }
+    ]
+  },
+  "tamale-pie": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare beans",
+        "text": "Soak beans in 3 cups water overnight. Next day, add ¼ tsp. baking soda and bring to a boil over high heat. Reduce heat and simmer 5 minutes, skimming any foam from the top. Drain, reserving 1¼ cups liquid. Transfer beans and liquid to a 4–6 qt. slow cooker."
+      },
+      {
+        "title": "Brown the meat",
+        "text": "In a large skillet, brown the chuck with all the spices—onion, garlic, cumin, paprika, chili powder, salt, oregano, and cayenne—in oil over medium-high heat, 8–10 minutes. Pour off the fat, slide the mixture into the slow cooker without stirring, cover, and let it go on high for 3 hours until the beans turn creamy and tender."
+      },
+      {
+        "title": "Add toppings",
+        "text": "Stir in tomatoes and corn, then stir in tomato paste. Top the filling with cornbread batter. Cover and cook on low until a toothpick comes out clean from the center of the cornbread, 1 hour. Top with cheese and chives; cover until the cheese melts, about 5 minutes."
+      }
+    ]
+  },
+  "steak-salads-with-apples-blue-cheese-walnuts": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prep",
+        "text": "Turn the oven on to 450°. Run the mini food processor with 2 Tbsp. oil, 2 Tbsp. walnuts, shallots, vinegar, Dijon, and honey until the walnuts break down fine. Season your vinaigrette with salt and pepper."
+      },
+      {
+        "title": "Sear and roast",
+        "text": "Heat remaining 1 Tbsp. oil in an ovenproof skillet over high heat. Sear the steak until browned on one side, 2 minutes. Flip it, transfer the skillet to the oven, and roast to medium-rare, 3 minutes. Let it rest 5 minutes, then slice."
+      },
+      {
+        "title": "Assemble",
+        "text": "Toss romaine with blue cheese, apple, the remaining 4 Tbsp. walnuts, and the vinaigrette. Serve with the sliced steak."
+      }
+    ]
+  },
+  "granola": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Toast oats and nuts",
+        "text": "Heat the oven to 350°. Spread oats on one baking sheet and walnuts on another. Toast both until golden and fragrant, about 15 minutes. Line a third sheet with parchment paper."
+      },
+      {
+        "title": "Make the glaze",
+        "text": "In a skillet over medium heat, combine brown sugar, marmalade, cinnamon, ginger, nutmeg, zest, orange juice, and salt. Stir until the sugar dissolves, 3–4 minutes."
+      },
+      {
+        "title": "Coat",
+        "text": "Toss the toasted oats and walnuts with cranberries and coconut flakes, then pour the glaze over and toss until everything is coated. Spread on the prepared sheet in a single layer."
+      },
+      {
+        "title": "Bake and cool",
+        "text": "Bake until golden brown, 30 minutes, stirring halfway through. Press into clumps if you like, then let cool on the sheet. Store in an airtight container."
       }
     ]
   }
