@@ -115,7 +115,7 @@ The Anthropic API is prompted to return JSON:
 - [ ] Community board backend (T7) — Codex handoff: `docs/codex-handoff-t7-community-board.md`
 - [x] More cuisine chains, Month 2 days 31–46 (T8) — done: c11 Vietnamese (31–34), c12 Ethiopian (35–38), c13 Japanese (39–42), c14 Greek (43–46), plus the #45 length-agnostic infra. Closes #45, #47–#50.
 - [ ] Seed Month 2 recipes into `meal_library` (`npm run seed` picks up days 31–46 automatically via `enumerateMeals()`)
-- [ ] Author the remaining source-library tranches (148 of 506 done — add ids to `data/authored-steps.json`, then `npm run build:recipes`)
+- [ ] Author the remaining source-library tranches (183 of 506 done — add ids to `data/authored-steps.json`, then `npm run build:recipes`)
 - [x] A room for browsing the source library — done (`LibraryRoom.jsx`)
 - [ ] Mobile responsive layout improvements (T3)
 
