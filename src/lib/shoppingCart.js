@@ -7,6 +7,8 @@ import { supabase } from "./supabase";
 // including the expected "not configured" error when a retailer's secret
 // hasn't been set yet.
 export async function sendToRetailer(retailer, items) {
+  if (!supabase) throw new Error("Sending to a retailer needs a Supabase project; none is configured.");
+
   const { data, error } = await supabase.functions.invoke("shopping-cart", {
     body: { retailer, items },
   });

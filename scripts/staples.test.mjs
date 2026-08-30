@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { cleanItem, staplesIn, analyseStaples, STAPLES } from "./staples.mjs";
-import { SOURCE_STAPLES, STAPLE_COVERAGE, SOURCE_INDEX } from "../src/data/sourceRecipes.js";
+import { SOURCE_STAPLES, STAPLE_COVERAGE, SOURCE_RECIPE_COUNT } from "../src/data/sourceSummary.js";
 
 describe("cleanItem", () => {
   it("strips prep words so one shopping item is one entry", () => {
@@ -127,7 +127,7 @@ describe("the generated pantry summary", () => {
       const s = SOURCE_STAPLES[i];
       expect(s.group, s.name).toBeTruthy();
       expect(s.recipes, s.name).toBeGreaterThan(0);
-      expect(s.share).toBeCloseTo(s.recipes / SOURCE_INDEX.length, 6);
+      expect(s.share).toBeCloseTo(s.recipes / SOURCE_RECIPE_COUNT, 6);
       if (i) expect(SOURCE_STAPLES[i - 1].recipes).toBeGreaterThanOrEqual(s.recipes);
     }
   });
@@ -140,9 +140,9 @@ describe("the generated pantry summary", () => {
   });
 
   it("never claims more recipes than the library has", () => {
-    for (const s of SOURCE_STAPLES) expect(s.recipes).toBeLessThanOrEqual(SOURCE_INDEX.length);
+    for (const s of SOURCE_STAPLES) expect(s.recipes).toBeLessThanOrEqual(SOURCE_RECIPE_COUNT);
     for (const c of STAPLE_COVERAGE) {
-      expect(c.recipesWithinFourExtras).toBeLessThanOrEqual(SOURCE_INDEX.length);
+      expect(c.recipesWithinFourExtras).toBeLessThanOrEqual(SOURCE_RECIPE_COUNT);
       expect(c.linesCovered).toBeLessThanOrEqual(1);
     }
   });

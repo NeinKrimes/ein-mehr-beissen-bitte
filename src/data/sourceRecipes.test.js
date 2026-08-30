@@ -1,16 +1,21 @@
 import { describe, it, expect } from "vitest";
 import {
-  SOURCE_INDEX,
   SOURCE_CUISINES,
+  SOURCE_RECIPE_COUNT,
   sourceRecipeById,
   findSourceRecipe,
+  matchInIndex,
+  loadSourceIndex,
   loadSourceRecipe,
   loadSourceRecipes,
 } from "./sourceRecipes.js";
 import { chains } from "./chains.js";
 
-// The corpus is a lazy chunk in the app; here we just await it once up front.
+// Both are fetched in the app — from Supabase when it answers, from the bundled
+// chunks otherwise. The suite runs with the client unavailable (see vite.config),
+// so these resolve from the chunks, and we await them once up front.
 const SOURCE_RECIPES = await loadSourceRecipes();
+const SOURCE_INDEX = await loadSourceIndex();
 
 describe("source recipe index", () => {
   it("is non-empty and every id is unique", () => {
@@ -35,10 +40,17 @@ describe("source recipe index", () => {
     expect(SOURCE_CUISINES).toContain("Italian");
   });
 
-  it("sourceRecipeById round-trips, and misses return null", () => {
+  it("sourceRecipeById round-trips, and misses return null", async () => {
     const first = SOURCE_INDEX[0];
-    expect(sourceRecipeById(first.id)).toBe(first);
-    expect(sourceRecipeById("no-such-recipe")).toBeNull();
+    expect(await sourceRecipeById(first.id)).toBe(first);
+    expect(await sourceRecipeById("no-such-recipe")).toBeNull();
+  });
+
+  it("the eager summary agrees with the index it summarises", () => {
+    // The count is shipped separately so a page can print it before the index
+    // arrives; if the two drift, the room shows one number and lists another.
+    expect(SOURCE_RECIPE_COUNT).toBe(SOURCE_INDEX.length);
+    expect([...new Set(SOURCE_INDEX.map((r) => r.cuisine))].sort()).toEqual(SOURCE_CUISINES);
   });
 });
 
@@ -107,15 +119,19 @@ describe("source recipe corpus", () => {
   });
 });
 
-describe("findSourceRecipe", () => {
+describe("matchInIndex", () => {
+  // The matcher is pure and takes the index it searches, so these run against a
+  // fixed list rather than through the loader.
+  const find = (name) => matchInIndex(SOURCE_INDEX, name);
+
   it("matches an exact title regardless of case and punctuation", () => {
     const r = SOURCE_INDEX[0];
-    expect(findSourceRecipe(r.title)).toBe(r);
-    expect(findSourceRecipe(r.title.toUpperCase())).toBe(r);
+    expect(find(r.title)).toBe(r);
+    expect(find(r.title.toUpperCase())).toBe(r);
   });
 
   it("matches on a strong partial overlap", () => {
-    expect(findSourceRecipe("Coq au Vin Stew")?.id).toBe("coq-au-vin-stew");
+    expect(find("Coq au Vin Stew")?.id).toBe("coq-au-vin-stew");
   });
 
   it("will not match a short query against a much longer title", () => {
@@ -123,31 +139,38 @@ describe("findSourceRecipe", () => {
     // against the title let "Peanut Butter Sandwich" hit "Peanut Butter-Oatmeal
     // Energy Bars" at 0.67 once the corpus grew large enough to contain it —
     // tier 3 of useRecipe would then have served energy bars for that night.
-    expect(findSourceRecipe("Peanut Butter Sandwich")).toBeNull();
-    expect(findSourceRecipe("Garlic Bread")?.id).not.toBe("pepperoncini-garlic-bread");
+    expect(find("Peanut Butter Sandwich")).toBeNull();
+    expect(find("Garlic Bread")?.id).not.toBe("pepperoncini-garlic-bread");
   });
 
   it("returns null for a weak match rather than guessing", () => {
-    expect(findSourceRecipe("Peanut Butter Sandwich")).toBeNull();
-    expect(findSourceRecipe("")).toBeNull();
-    expect(findSourceRecipe(null)).toBeNull();
+    expect(find("")).toBeNull();
+    expect(find(null)).toBeNull();
   });
 
   it("does not collide with unrelated calendar meals", () => {
     // The library is a fallback, so a false positive would serve the wrong
     // recipe for a calendar night. Spot-check a name with no library entry.
-    expect(findSourceRecipe("Fresh Homemade Bagels")).toBeNull();
+    expect(find("Fresh Homemade Bagels")).toBeNull();
   });
 
   it("any calendar meal it does match is matched to a plausible recipe", () => {
     const days = chains.flatMap((c) => c.days);
     for (const d of days) {
-      const hit = findSourceRecipe(d.meal);
+      const hit = find(d.meal);
       if (!hit) continue;
       const words = d.meal.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 3);
       const hay = `${hit.title} ${hit.subtitle}`.toLowerCase();
       const overlap = words.filter((w) => hay.includes(w)).length;
       expect(overlap, `${d.meal} -> ${hit.title}`).toBeGreaterThan(0);
     }
+  });
+});
+
+describe("findSourceRecipe", () => {
+  it("runs the matcher against the loaded index", async () => {
+    expect((await findSourceRecipe("Coq au Vin Stew"))?.id).toBe("coq-au-vin-stew");
+    expect(await findSourceRecipe("Peanut Butter Sandwich")).toBeNull();
+    expect(await findSourceRecipe(null)).toBeNull();
   });
 });

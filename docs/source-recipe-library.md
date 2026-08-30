@@ -18,11 +18,19 @@ data/source-recipes.raw.json        ← GITIGNORED. holds the publisher's prose.
   │
   │  stage 2 — npm run build:recipes
   ▼
-src/data/sourceRecipes.js           ← COMMITTED, generated. the index.
+src/data/sourceSummary.js           ← COMMITTED, generated. counts, cuisines, staples.
+src/data/sourceRecipes.index.js     ← COMMITTED, generated. the index.
 src/data/sourceRecipes.data.js      ← COMMITTED, generated. the full records.
+
+  │  stage 3 — npm run seed:library
+  ▼
+Supabase public.source_library      ← the same rows, served per-request.
 ```
 
-Both generated files are written by the same build — never hand-edit either.
+All three generated files are written by the same build — never hand-edit them.
+`src/data/sourceRecipes.js` sits beside them and is **hand-written**: it holds the
+loaders and the matcher, so the logic stays reviewable and the generated files
+stay pure data.
 
 ### Why it splits that way
 
@@ -149,25 +157,36 @@ user has active palate preferences. `findSourceRecipe` needs a 60% word overlap
 before it will claim a match — a false positive would serve the wrong recipe for
 a calendar night, so it returns `null` rather than guess.
 
-### Why it is split in two
+### Why it is split in three
 
-`sourceRecipes.js` holds only an index — id, title, subtitle, cuisine, calories,
-cost. It is small enough to import eagerly, and it is all `findSourceRecipe`
-needs to answer *is this meal in the library?*. The ingredients and steps live in
-`sourceRecipes.data.js`, which is only ever reached through
-`await import(...)` inside `loadSourceRecipe()`, so Vite gives it its own chunk
-and a tier-3 **miss** downloads nothing at all.
+Split by what it costs to ship each part.
 
-At 183 recipes: 451 kB entry (130 kB gzip) + a 404 kB corpus chunk (94 kB gzip)
-that most sessions never fetch.
+- **`sourceSummary.js`** — counts, cuisines and the pantry ranking. ~9 kB, and
+  the only part imported eagerly. It is what lets the Library room print
+  "466 recipes" and My Kitchen draw the staples panel before anything is fetched.
+- **`sourceRecipes.index.js`** — id, title, subtitle, cuisine, calories, cost for
+  every recipe. Enough to search, filter and sort, and all `findSourceRecipe`
+  needs to answer *is this meal in the library?*.
+- **`sourceRecipes.data.js`** — ingredients and steps. Only ever reached for a
+  recipe someone actually opened.
+
+The last two are **fetched, not imported**: `loadSourceIndex()` and
+`loadSourceRecipe()` ask Supabase `source_library` first and fall back to the
+bundled chunks when it is unconfigured, erroring, empty, or slower than 2.5s. So
+a configured deploy downloads neither chunk, and an offline one still works.
+
+At 466 recipes: 435 kB entry (126 kB gzip), down from 504 kB when the index was
+eager — plus a 72 kB index chunk and an 895 kB corpus chunk that a configured
+deploy never fetches at all.
 
 ## The Library room
 
 `src/components/LibraryRoom.jsx` is the only screen that browses the library.
-It renders entirely from `SOURCE_INDEX` — search, the cuisine chips with their
-counts, and all four sort lenses run on the index, so scrolling the whole shelf
-fetches nothing. Opening a row is what triggers `loadSourceRecipe()` and pulls
-the corpus chunk down.
+It awaits `loadSourceIndex()` once on mount and then works from that in memory —
+search, the cuisine chips with their counts, and all four sort lenses, so
+scrolling the whole shelf fetches nothing further. The headline count comes from
+the eager summary so the room is never blank while the index is in flight.
+Opening a row is what triggers `loadSourceRecipe()`.
 
 Its filter and sort are exported as `filterAndSort()` and unit-tested against
 the real index; the room itself has a jsdom render test that proves a row opens

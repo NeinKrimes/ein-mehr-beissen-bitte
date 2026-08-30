@@ -17,7 +17,8 @@ npm run build        # Production build to /dist
 npm run preview      # Preview production build
 npm run lint         # ESLint
 npm run seed         # Idempotent batch recipe seeder via Message Batches API
-npm run build:recipes # Rebuild the adapted source recipe library (index + payload)
+npm run build:recipes # Rebuild the adapted source recipe library (summary + index + payload)
+npm run seed:library # Push that library into Supabase `source_library` (needs SUPABASE_SERVICE_ROLE_KEY)
 npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 ```
 
@@ -34,7 +35,7 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - `src/App.jsx` — Entry shell and room navigator; preloads/primes the recipe library
 - `src/data/chains.js` — Single source of truth for calendar structure (exports `chains`, `DAY_COUNT`, `mealId`, `enumerateMeals`). Never hard-code the day count anywhere — import `DAY_COUNT`.
 - `src/data/mealStats.js` — Baseline derived nutrition/cost stats (exports `MEALS`, `LENSES`, `mealByDay`)
-- `src/data/sourceRecipes.js` / `sourceRecipes.data.js` — **Generated, do not hand-edit.** A library of real recipes adapted from the Cuisine at Home source shelf; ingredients verbatim, method rewritten. Built from `data/authored-steps.json` by `npm run build:recipes`. The `.js` file is a small eager index; the `.data.js` payload is only ever reached via `await loadSourceRecipe(id)` so it stays a separate chunk. See `docs/source-recipe-library.md`. It is a reference pool, NOT the calendar.
+- `src/data/sourceSummary.js` / `sourceRecipes.index.js` / `sourceRecipes.data.js` — **Generated, do not hand-edit.** A library of real recipes adapted from the Cuisine at Home source shelf; ingredients verbatim, method rewritten. Built from `data/authored-steps.json` by `npm run build:recipes`. Only `sourceSummary.js` (counts, cuisines, pantry ranking) is eager; the index and payload are fetched from Supabase `source_library`, falling back to their lazy chunks when it cannot answer. `src/data/sourceRecipes.js` is **hand-written** and holds that logic — the generated files hold data only. See `docs/source-recipe-library.md`. It is a reference pool, NOT the calendar.
 - `src/hooks/useRecipe.js` — Tiered recipe loader (Supabase `meal_library` → localStorage → source library → API fallback)
 - `src/hooks/useCooked.js` — Progress tracker ("mark as cooked"), persisted in localStorage
 - `src/hooks/useLibraryBasket.js` — Library recipes chosen for the shopping list. Stores ids only in localStorage and re-resolves them through `loadSourceRecipe`, so a rebuilt corpus is picked up rather than a stale copy replayed.
@@ -46,7 +47,7 @@ npm run export:vault # Export recipes from Supabase to vault/ as Obsidian notes
 - **Database & Scripts:** `supabase/migrations/` defines schema. `scripts/seed-recipes.mjs` runs batch seeding. `scripts/export-obsidian.mjs` exports vault.
 - **GitHub Workflows:** `ci.yml` (lint/build), `claude.yml` (agent background), `deploy-pages.yml` (pages deploy), `export-obsidian.yml` (obsidian export), `seed-recipes.yml` (recipe seeding).
 
-> ⚠️ **NAMING TRAP:** The DB table is **`meal_library`**, NOT `recipes`. The project database has an unrelated, normalized `recipes` table. DB operations must only read/write `meal_library` (all core 30 recipes are pre-seeded here).
+> ⚠️ **NAMING TRAP:** The calendar's DB table is **`meal_library`**, NOT `recipes`. The browsable reference library is a third table, **`source_library`**. The project database has an unrelated, normalized `recipes` table. DB operations must only read/write `meal_library` (all core 30 recipes are pre-seeded here) and `source_library`.
 
 ## Design System
 

@@ -1,5 +1,7 @@
 import { useState, useMemo } from "react";
-import { SOURCE_STAPLES, STAPLE_COVERAGE, SOURCE_INDEX } from "../data/sourceRecipes";
+// Straight from the eager summary: this panel is a headline on a room the user
+// opens often, so it must not wait on the network or pull the index chunk.
+import { SOURCE_STAPLES, STAPLE_COVERAGE, SOURCE_RECIPE_COUNT } from "../data/sourceSummary";
 import { COLORS, FONTS, EASE, label, mono, display, rgba, hairline } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
 
@@ -59,7 +61,7 @@ export default function PantryStaples({ onOpenLibrary }) {
       <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
         <span style={{ ...label(10, COLORS.muted, ".2em"), whiteSpace: "nowrap" }}>Pantry staples</span>
         <span style={{ height: 1, background: COLORS.border, flex: 1 }} />
-        <span style={mono(10, COLORS.faint)}>across {SOURCE_INDEX.length} library recipes</span>
+        <span style={mono(10, COLORS.faint)}>across {SOURCE_RECIPE_COUNT} library recipes</span>
       </div>
 
       <div style={{ padding: isMobile ? "16px" : "18px 20px", background: COLORS.page, border: hairline, borderRadius: 3 }}>
@@ -68,7 +70,7 @@ export default function PantryStaples({ onOpenLibrary }) {
           <span style={{ color: COLORS.gold }}>{Math.round(coverage.linesCovered * 100)}%</span> of the shopping is already done.
         </div>
         <div style={{ fontFamily: FONTS.body, fontStyle: "italic", color: COLORS.muted, fontSize: 13.5, lineHeight: 1.55, marginTop: 8 }}>
-          {coverage.recipesWithinFourExtras} of {SOURCE_INDEX.length} recipes then need four fresh items or fewer.
+          {coverage.recipesWithinFourExtras} of {SOURCE_RECIPE_COUNT} recipes then need four fresh items or fewer.
           Almost nothing cooks from the pantry alone — this is about how short the list gets, not about cooking for free.
         </div>
 

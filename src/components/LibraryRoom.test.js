@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { filterAndSort, SORTS } from "./LibraryRoom.jsx";
-import { SOURCE_INDEX, SOURCE_CUISINES } from "../data/sourceRecipes.js";
+import SOURCE_INDEX from "../data/sourceRecipes.index.js";
+import { SOURCE_CUISINES } from "../data/sourceSummary.js";
 import { CUISINE_COLORS, cuisineColor, COLORS } from "../theme.js";
 
 const rows = [

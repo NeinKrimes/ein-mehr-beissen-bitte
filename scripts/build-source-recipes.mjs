@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * Stage 2: build src/data/sourceRecipes.js (index) and sourceRecipes.data.js from
+ * Stage 2: build src/data/sourceSummary.js, sourceRecipes.index.js and
+ * sourceRecipes.data.js from
  *   data/source-recipes.raw.json  (gitignored — extractor output, holds source prose)
  *   data/authored-steps.json      (committed — our own rewritten method)
  *
@@ -19,8 +20,12 @@ import { analyseStaples } from "./staples.mjs";
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const RAW = join(ROOT, "data", "source-recipes.raw.json");
 const AUTHORED = join(ROOT, "data", "authored-steps.json");
-const OUT = join(ROOT, "src", "data", "sourceRecipes.js");
-const DATA_OUT = join(ROOT, "src", "data", "sourceRecipes.data.js");
+// Three generated files, split by what it costs to ship them. The loaders and
+// the matcher live in the hand-written src/data/sourceRecipes.js, which imports
+// these — generated files hold data only, so the logic stays reviewable.
+const SUMMARY_OUT = join(ROOT, "src", "data", "sourceSummary.js");   // eager, ~6 kB
+const INDEX_OUT = join(ROOT, "src", "data", "sourceRecipes.index.js"); // lazy, ~100 kB
+const DATA_OUT = join(ROOT, "src", "data", "sourceRecipes.data.js");  // lazy, ~1.2 MB
 
 if (!existsSync(RAW)) {
   console.error(
@@ -86,14 +91,17 @@ if (missing.length) {
 
 out.sort((a, b) => a.title.localeCompare(b.title));
 
-// The corpus is emitted as two files so it stays out of the main bundle:
+// The corpus is emitted as three files, split by what it costs to ship them:
 //
-//   sourceRecipes.data.js  every full record. Only ever dynamically imported,
-//                          so Vite splits it into its own chunk.
-//   sourceRecipes.js       a small static index (id/title/cuisine/nutrition) —
-//                          enough to search, filter and list without pulling
-//                          the ingredients and steps of 500 recipes into the
-//                          bundle a first-paint needs.
+//   sourceSummary.js       counts, cuisines and the pantry ranking. Small enough
+//                          to import eagerly, and the only part that is.
+//   sourceRecipes.index.js id/title/cuisine/nutrition for every recipe — enough
+//                          to search, filter and list. Lazily imported.
+//   sourceRecipes.data.js  every full record, ingredients and steps included.
+//                          Lazily imported.
+//
+// The two lazy files are the OFFLINE FALLBACK. With Supabase configured the same
+// rows come from source_library and neither chunk is ever fetched.
 const INDEX_FIELDS = ["id", "title", "subtitle", "cuisine", "calories", "est_cost_usd", "cal_per_dollar"];
 const index = out.map((r) => Object.fromEntries(INDEX_FIELDS.map((k) => [k, r[k] ?? null])));
 
@@ -112,30 +120,17 @@ const dataBody = `${genBy}
 export default ${JSON.stringify(out, null, 1)};
 `;
 
-const body = `${genBy}
+const summaryBody = `${genBy}
 //
-// A library of ${out.length} recipes adapted from the Cuisine at Home issues in the
-// project's source shelf. Ingredient lists, yields and per-serving nutrition are
-// reproduced as printed (facts, not authorship); every method step is rewritten
-// in this app's own voice — see data/authored-steps.json.
-//
-// This is a reference library, NOT the calendar. The 46-night calendar lives in
-// chains.js and is unaffected; useRecipe consults this library before falling
-// back to the API.
-//
-// This module holds only the index. Ingredients and steps live in
-// ./sourceRecipes.data.js and arrive through loadSourceRecipe().
-//
-// To extend: add ids to data/authored-steps.json, then \`npm run build:recipes\`.
+// The small facts about the library — cheap enough to ship in the entry bundle,
+// and the only part of the corpus that is. The index and the full records are
+// fetched from Supabase, or lazily imported, via ./sourceRecipes.js.
 
-/** Every recipe, without its ingredients or steps. Safe to import eagerly. */
-export const SOURCE_INDEX = ${JSON.stringify(index, null, 1)};
-
-/** Lookup an index entry by the slug id used in data/authored-steps.json. */
-export const sourceRecipeById = (id) => SOURCE_INDEX.find((r) => r.id === id) ?? null;
+/** How many recipes the library holds. */
+export const SOURCE_RECIPE_COUNT = ${out.length};
 
 /** Every cuisine present in the library, sorted. */
-export const SOURCE_CUISINES = [...new Set(SOURCE_INDEX.map((r) => r.cuisine))].sort();
+export const SOURCE_CUISINES = ${JSON.stringify([...new Set(out.map((r) => r.cuisine))].sort())};
 
 /**
  * Staples across the library, ranked by how many recipes call for them —
@@ -150,62 +145,24 @@ export const SOURCE_STAPLES = ${JSON.stringify(staples.ranked, null, 1)};
  * Deliberately not "recipes you can cook for free" — almost none are.
  */
 export const STAPLE_COVERAGE = ${JSON.stringify(staples.coverage, null, 1)};
-
-let loaded = null;
-
-/** The full corpus, fetched once as its own chunk and then memoised. */
-export async function loadSourceRecipes() {
-  loaded ??= import("./sourceRecipes.data.js").then((m) => m.default);
-  return loaded;
-}
-
-/** The one full record for \`id\`, ingredients and steps included. */
-export async function loadSourceRecipe(id) {
-  if (!id) return null;
-  const all = await loadSourceRecipes();
-  return all.find((r) => r.id === id) ?? null;
-}
-
-/**
- * Loose title match against the index, used to see whether a calendar meal
- * already has a real recipe in the library before we spend an API call
- * generating one. Returns an index entry — pass its id to loadSourceRecipe().
- */
-export function findSourceRecipe(mealName) {
-  if (!mealName) return null;
-  const norm = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").replace(/\\s+/g, " ").trim();
-  const target = norm(mealName);
-  if (!target) return null;
-  const exact = SOURCE_INDEX.find((r) => norm(r.title) === target);
-  if (exact) return exact;
-  const words = target.split(" ").filter((w) => w.length > 3);
-  if (!words.length) return null;
-  // Overlap has to hold in BOTH directions. Scoring only the query's words
-  // against the title lets a short query match a much longer title on its
-  // opening words — "Peanut Butter Sandwich" scored 0.67 against "Peanut
-  // Butter-Oatmeal Energy Bars" and would have served it for a calendar night.
-  // Requiring the title's own words to be accounted for too rejects that.
-  let best = null;
-  let bestScore = 0;
-  for (const r of SOURCE_INDEX) {
-    const hay = norm(\`\${r.title} \${r.subtitle}\`);
-    const hayWords = hay.split(" ").filter((w) => w.length > 3);
-    if (!hayWords.length) continue;
-    const forward = words.filter((w) => hay.includes(w)).length / words.length;
-    const back = hayWords.filter((w) => target.includes(w)).length / hayWords.length;
-    const score = Math.min(forward, back);
-    if (score > bestScore) {
-      best = r;
-      bestScore = score;
-    }
-  }
-  return bestScore >= 0.6 ? best : null;
-}
 `;
 
-writeFileSync(OUT, body);
+const indexBody = `${genBy}
+//
+// Every recipe without its ingredients or steps. Import lazily, via
+// loadSourceIndex() in ./sourceRecipes.js — never statically, or 100 kB of
+// reference data lands in the chunk a first paint needs.
+//
+// This is the OFFLINE FALLBACK. When Supabase is configured and reachable the
+// same rows come from source_library and this chunk is never fetched.
+
+export default ${JSON.stringify(index, null, 1)};
+`;
+
+writeFileSync(SUMMARY_OUT, summaryBody);
+writeFileSync(INDEX_OUT, indexBody);
 writeFileSync(DATA_OUT, dataBody);
-console.log(`wrote ${OUT} (index) and ${DATA_OUT} (payload)`);
+console.log(`wrote ${SUMMARY_OUT} (summary), ${INDEX_OUT} (index) and ${DATA_OUT} (payload)`);
 console.log(`  recipes: ${out.length} of ${raw.length} extracted (rest await authored steps)`);
 console.log(`  cuisines: ${[...new Set(out.map((r) => r.cuisine))].sort().join(", ")}`);
 const top = staples.ranked.slice(0, 5).map((s) => `${s.name} ${Math.round(s.share * 100)}%`);

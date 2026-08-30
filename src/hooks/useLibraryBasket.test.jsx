@@ -2,7 +2,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
 import { useLibraryBasket } from "./useLibraryBasket.js";
-import { SOURCE_INDEX } from "../data/sourceRecipes.js";
+import SOURCE_INDEX from "../data/sourceRecipes.index.js";
 
 const LS_KEY = "embb_library_basket";
 const [first, second] = SOURCE_INDEX.map((r) => r.id);

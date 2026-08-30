@@ -11,6 +11,8 @@ export async function callClaude(payload, { maxTokens = 3500, model } = {}) {
     body = { ...payload, max_tokens: maxTokens, ...(model ? { model } : {}) };
   }
 
+  if (!supabase) throw new Error("Recipe generation needs a Supabase project; none is configured.");
+
   const { data, error } = await supabase.functions.invoke("recipe", {
     body,
   });
