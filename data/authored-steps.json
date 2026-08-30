@@ -1280,7 +1280,21 @@
     "shrimp-starters-beer-battered-fried-shrimp-with-honey-mustard-sa": "Extract truncated mid-sentence in step 1; the batter's flour and baking-powder quantities are lost. Reconstructing them would be inventing a recipe.",
     "coconut-oil-slab-pie-dough": "Method corrupted mid-step (step 4); cannot reasonably reconstruct from partial text",
     "pastrami-brining": "Method defers to 'Pastrami recipe continues on page 44' — recipe not in extract",
-    "cacciatore-butter-stuffed-chicken": "Method defers to external reference (page 34) not in the extract"
+    "cacciatore-butter-stuffed-chicken": "Method defers to external reference (page 34) not in the extract",
+    "bananas-foster-syrup": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "broccoli-salad-with-golden-raisins": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "creamy-jalapeno-dressing": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "gingered-tomato-juice": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "korean-chili-sauce": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "lemon-pepper-vinaigrette": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "lemonade-sangria": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "mustard-green-salad": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "orange-ade": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "peach-raspberry-smoothies": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "pepper-salad": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "pineapple-smoothies": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "quick-coleslaw": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting.",
+    "watercress-salad-with-tangerines": "Single-step method — the whole recipe is 'combine'. Splitting it to meet the 3-step minimum would mean inventing technique rather than re-segmenting."
   },
   "ricotta-stuffed-shells": {
     "cuisine": "Italian",
@@ -8773,6 +8787,1401 @@
       {
         "title": "Assemble and serve",
         "text": "Toss the butter lettuce, orange segments and red onion slices with the vinaigrette and serve at once."
+      }
+    ]
+  },
+  "ginger-glazed-carrots": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook carrots",
+        "text": "Bring carrots, water, ginger, and salt to a boil covered in a skillet over high heat. Uncover, turn down to medium, and simmer 5–7 minutes until crisp-tender. Transfer to a plate."
+      },
+      {
+        "title": "Make glaze",
+        "text": "Pour off the cooking water, leaving the empty skillet on the heat. Stir in honey and lemon juice; simmer 2–3 minutes until syrupy and slightly thickened."
+      },
+      {
+        "title": "Finish",
+        "text": "Return carrots to the skillet and coat them with the glaze, about 1 minute. The glaze will cling as it cools."
+      }
+    ]
+  },
+  "ginger-lemon-rice-with-fresh-spinach": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Bloom aromatics",
+        "text": "Melt butter in a sauté pan over medium heat. Add ginger and garlic; cook 1–2 minutes until fragrant."
+      },
+      {
+        "title": "Cook rice",
+        "text": "Stir in rice and cook 1 minute. Add water and lemon zest, bring to a boil, then cover and reduce heat to low. Cook 20 minutes until tender and liquid is absorbed."
+      },
+      {
+        "title": "Wilt spinach",
+        "text": "Add spinach to the pan off heat, cover, and let sit 5 minutes until the spinach softens."
+      },
+      {
+        "title": "Season",
+        "text": "Toss rice and spinach together, stir in lemon juice, and season with salt and pepper to taste."
+      }
+    ]
+  },
+  "fish-cakes-with-herbed-mayo": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix patties",
+        "text": "Pulse cod, butter beans, egg white, dill, parsley, scallion, jalapeño, Dijon, lemon zest, salt, and pepper in a food processor until the mixture just holds together—do not over-blend."
+      },
+      {
+        "title": "Form and coat",
+        "text": "Form the mixture into four patties and coat all sides evenly with panko crumbs, pressing them on gently."
+      },
+      {
+        "title": "Sauté",
+        "text": "Set a nonstick skillet over medium-high and warm the oil. Arrange cakes in the pan and cook 2–3 minutes on each side until they turn golden brown. Remove to a paper-towel-lined plate."
+      },
+      {
+        "title": "Make herbed mayo",
+        "text": "Purée mayonnaise, dill, parsley, lemon juice, and garlic in a food processor; season with salt and pepper. Serve alongside the cakes."
+      }
+    ]
+  },
+  "butter-bean-salad-with-herb-vinaigrette": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Build vinaigrette",
+        "text": "Whisk together lemon zest, lemon juice, dill, parsley, olive oil, garlic, and Dijon mustard in a large bowl. Season with salt and pepper."
+      },
+      {
+        "title": "Assemble salad",
+        "text": "Add butter beans, tomatoes, cucumbers, and red onion to the vinaigrette and toss gently until coated."
+      },
+      {
+        "title": "Rest and serve",
+        "text": "Let the salad sit 15 minutes for flavors to meld, then taste and adjust seasoning. Serve at room temperature or chilled."
+      }
+    ]
+  },
+  "fried-fish-with-malt-vinegar-tartar-sauce": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make tartar sauce",
+        "text": "Whisk together mayonnaise, malt vinegar, mustard, parsley, gherkins, capers, and lemon zest. Season with salt and pepper; set aside."
+      },
+      {
+        "title": "Heat oil",
+        "text": "Pour oil one-third full into a heavy pot and heat to 375°. Line a baking sheet with paper towels and set it nearby."
+      },
+      {
+        "title": "Mix batter",
+        "text": "Whisk together flour, cornstarch, baking powder, salt, and pepper in a bowl, then gently whisk in the chilled lager until just combined—the batter will be lumpy."
+      },
+      {
+        "title": "Fry in batches",
+        "text": "Working with 5 fillets at a time, dip each piece in batter, letting excess drip off, and gently place into the hot oil. Fry 2 minutes per side until golden and crispy, then transfer to the towel-lined sheet. Repeat with remaining fillets."
+      },
+      {
+        "title": "Serve",
+        "text": "Serve the fried fish hot with the tartar sauce on the side."
+      }
+    ]
+  },
+  "linguine-red-clam-sauce": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Cook pasta",
+        "text": "Bring a large pot of salted water to a boil, add linguine, and cook according to package directions. Drain and set aside."
+      },
+      {
+        "title": "Infuse oil",
+        "text": "In a large sauté pan over medium heat, cook sliced garlic and red pepper flakes in olive oil, stirring often, just until the garlic turns golden—about 2 minutes."
+      },
+      {
+        "title": "Steam clams",
+        "text": "Add wine and clams, then cover and cook 8–10 minutes, shaking the pan occasionally, until the clam shells open. Add half the tomatoes."
+      },
+      {
+        "title": "Finish",
+        "text": "Off heat, stir in the remaining tomatoes and butter until the butter melts. Toss with the cooked linguine and finish with chopped parsley."
+      }
+    ]
+  },
+  "cinnamon-roll-coffee-cake": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare pan",
+        "text": "Start your oven at 350° to preheat. Spray a 9×2-inch round cake pan all over with nonstick spray."
+      },
+      {
+        "title": "Caramel and pecans",
+        "text": "Stir together brown sugar, cream, and a pinch of salt. Pour into the prepared pan, spread to coat the bottom, and scatter toasted pecans over it."
+      },
+      {
+        "title": "Make streusel",
+        "text": "Pulse brown sugar, flour, butter, cinnamon, and salt in a food processor until the mixture looks like breadcrumbs. Set aside."
+      },
+      {
+        "title": "Mix cake base",
+        "text": "Whisk together flour, baking powder, baking soda, and salt in a bowl. In another bowl, whisk together buttermilk, yogurt, and eggs."
+      },
+      {
+        "title": "Build batter",
+        "text": "Work softened butter and granulated sugar together with a hand mixer until just mixed through. Fold in the flour mixture and buttermilk mixture in alternating additions, beginning and ending with flour, mixing on low speed only until you no longer see streaks of dry ingredients."
+      },
+      {
+        "title": "Layer",
+        "text": "Spread half the batter over the pecans, sprinkle with half the streusel, then carefully spread the remaining batter on top. Finish with the last of the streusel."
+      },
+      {
+        "title": "Bake",
+        "text": "Slide into the oven for 50–60 minutes—it's done when a toothpick poked in the middle emerges clean. Let it rest 5 minutes, then loosen the sides with a knife and flip onto a serving plate. Serve while still warm."
+      }
+    ]
+  },
+  "bakery-new-york-crumb-cake": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare pan",
+        "text": "Preheat oven to 325° with the rack in the center. Coat an 8×8-inch baking dish with butter and dust with flour."
+      },
+      {
+        "title": "Mix crumb topping",
+        "text": "Combine brown sugar, granulated sugar, cinnamon, and salt. Stir in melted butter, then add flour and stir until the mixture forms moist clumps. Set aside."
+      },
+      {
+        "title": "Mix cake dry goods",
+        "text": "Whisk together flour, baking powder, salt, and baking soda in a bowl."
+      },
+      {
+        "title": "Cream butter and sugar",
+        "text": "Using a hand mixer at medium-high speed, cream together softened butter and granulated sugar for 3–5 minutes until the mixture turns pale and fluffy. Incorporate eggs one at a time, beating only until each one disappears. Stir in vanilla and sour cream, mixing just until smooth."
+      },
+      {
+        "title": "Mix batter",
+        "text": "On low speed, beat the flour mixture into the creamed mixture in three additions, beating just until incorporated each time."
+      },
+      {
+        "title": "Assemble",
+        "text": "Transfer the batter to the prepared dish and smooth the top. Starting at the edges, scatter marble-sized pieces of streusel evenly over the batter, covering it completely."
+      },
+      {
+        "title": "Bake and finish",
+        "text": "Bake 45–50 minutes until the topping is golden and a toothpick inserted in the center comes out clean. Cool completely, then dust with powdered sugar before serving."
+      }
+    ]
+  },
+  "mocha-coffee-cakes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare pans",
+        "text": "Set oven to 350°. Spray three 6-cup popover pans or muffin pans with nonstick spray."
+      },
+      {
+        "title": "Mix topping",
+        "text": "Combine chopped espresso beans and chocolate chips in a bowl."
+      },
+      {
+        "title": "Mix filling",
+        "text": "Combine sugar, espresso beans, cocoa, and chopped chocolate in a food processor and pulse until the mixture becomes fine-grained like sand."
+      },
+      {
+        "title": "Mix dry cake goods",
+        "text": "Whisk together flour, baking powder, salt, and baking soda in a bowl."
+      },
+      {
+        "title": "Cream butter and vanilla",
+        "text": "Beat softened butter and vanilla with a mixer until smooth."
+      },
+      {
+        "title": "Add sugar and eggs",
+        "text": "Turn the mixer on and slowly sprinkle in sugar, beating for about 5 minutes until the mixture is pale and fluffy and the sugar dissolves. Add eggs one at a time, beating just until incorporated."
+      },
+      {
+        "title": "Combine liquids",
+        "text": "Stir together brewed coffee and espresso powder in a measuring cup, then stir into buttermilk."
+      },
+      {
+        "title": "Mix batter",
+        "text": "Working in alternating turns, add flour mixture and buttermilk mixture to the creamed base—begin and finish with flour. Beat on low speed just until the batter is smooth."
+      },
+      {
+        "title": "Bake and cool",
+        "text": "Fill each cup halfway with a #30 scoop (2 Tbsp.) of batter. Add 1 heaping teaspoon of filling to each, then cover with another scoop of batter. Combine the remaining filling with the topping mixture and sprinkle evenly over all the cakes. Bake 17–20 minutes until a toothpick emerges clean. Rest in pans 30 minutes, then run a knife around the edges and tip out."
+      }
+    ]
+  },
+  "variety-pack-donut-muffins": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare pans",
+        "text": "Set oven to 350°. Spray the cups of your mini muffin pans with nonstick spray."
+      },
+      {
+        "title": "Mix dry goods",
+        "text": "Whisk together flour, baking powder, salt, nutmeg, and baking soda. In another bowl, combine milk and sour cream."
+      },
+      {
+        "title": "Cream sugars and butter",
+        "text": "Beat together butter, granulated sugar, and brown sugar until the mixture is light and fluffy."
+      },
+      {
+        "title": "Add eggs",
+        "text": "Add eggs one at a time to the mixture, beating after each addition until it disappears into the batter."
+      },
+      {
+        "title": "Mix batter",
+        "text": "Alternately add flour mixture and milk mixture to the butter mixture, starting and ending with flour, until just combined and smooth."
+      },
+      {
+        "title": "Bake muffins",
+        "text": "Spoon the batter into each prepared cup, using about a heaping tablespoon per muffin. Bake 12–15 minutes—test with a toothpick in the center; it should emerge clean. Cool them in the pans for 5 minutes, then unmold onto a cooling rack while still warm."
+      },
+      {
+        "title": "Cinnamon-sugar coating",
+        "text": "Stir together sugar and cinnamon on a small plate. Dip each warm muffin into melted butter and shake off the excess, then roll it in the cinnamon-sugar coating."
+      },
+      {
+        "title": "Powdered sugar coating",
+        "text": "Roll a portion of the warm muffins in sifted powdered sugar until completely coated."
+      },
+      {
+        "title": "Chocolate glaze",
+        "text": "Heat butter, cream, corn syrup, and vanilla in a saucepan over low heat until the butter melts. Whisk in chopped chocolate until melted, then stir in powdered sugar until smooth. Dip the tops of warm muffins into the glaze."
+      }
+    ]
+  },
+  "cranberry-pecan-scones": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare surfaces",
+        "text": "Set out a baking sheet and line it with parchment paper. Dust a work surface lightly with flour."
+      },
+      {
+        "title": "Mix dry goods",
+        "text": "Combine flour, granulated sugar, baking powder, and salt in a bowl."
+      },
+      {
+        "title": "Cut in butter",
+        "text": "Using a pastry blender, work cold butter into the flour mixture until it looks like coarse sand with pea-sized pieces remaining. Toss in pecans, cranberries, and orange zest."
+      },
+      {
+        "title": "Mix dough",
+        "text": "Whisk together buttermilk and eggs in a small bowl, then stir into the flour mixture just until combined—the dough will be wet and sticky. Do not overmix."
+      },
+      {
+        "title": "Shape dough",
+        "text": "Turn the dough out onto the floured work surface and shape it into an 8-inch round using lightly floured hands. Cut into 8 wedges and transfer to the prepared baking sheet, spacing them at least 1 inch apart."
+      },
+      {
+        "title": "Egg wash and freeze",
+        "text": "Combine sanding sugar and orange zest. Lightly brush the tops of the scones with egg wash, sprinkle with the sugar-zest mixture, and freeze uncovered for 30 minutes."
+      },
+      {
+        "title": "Bake",
+        "text": "Preheat oven to 375°. Bake scones 20–25 minutes until golden and set. Cool briefly on the baking sheet and serve warm or at room temperature."
+      },
+      {
+        "title": "Marmalade sauce",
+        "text": "Combine marmalade, minced jalapeño, and cinnamon. Serve alongside the scones."
+      }
+    ]
+  },
+  "basic-buttermilk-biscuits": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix dry ingredients",
+        "text": "Whisk all-purpose flour, baking powder, salt, and baking soda together in a bowl."
+      },
+      {
+        "title": "Cut in fats",
+        "text": "Pulse cake flour, shortening, and cubed butter in a stand mixer with the paddle until the fats break down to pea-sized pieces. Mix the dry ingredients into this, then add buttermilk and mix just until the dough comes together."
+      },
+      {
+        "title": "Shape and bake",
+        "text": "Turn the dough out onto a floured surface, knead it briefly until it holds together, then pat into a 1-inch circle. Cut 10 biscuits with a 2-inch cutter. Preheat the oven to 450°, place biscuits on a parchment-lined sheet, and bake until golden, 15–18 minutes. Brush tops with melted butter in the last few minutes."
+      }
+    ]
+  },
+  "apricot-pecan-butter": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Stew apricots",
+        "text": "Melt butter in a sauté pan over medium heat, add the apricots, and cook, stirring occasionally, until they soften, about 5 minutes."
+      },
+      {
+        "title": "Build the sauce",
+        "text": "Once the preserves and brown sugar have softened into each other, stir in vanilla and cinnamon. Bring to a boil and leave it there, undisturbed, for 3–5 minutes."
+      },
+      {
+        "title": "Finish off heat",
+        "text": "Pull the pan from the heat, add cream and rum in a stream while whisking—it will sputter and that's fine—then fold in pecans. Serve warm with biscuits. Leftovers keep in an airtight container in the cold for up to a week."
+      }
+    ]
+  },
+  "pancake-syrup": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Toast sugar and butter",
+        "text": "Combine butter and brown sugar in a saucepan over medium heat. Whisk constantly until the mixture is smooth, 2 minutes."
+      },
+      {
+        "title": "Simmer to thicken",
+        "text": "Add cream, allspice, and salt with a whisk, bring to a boil, drop to medium-low, and simmer until thick, 5 minutes."
+      },
+      {
+        "title": "Add pecans and spirit",
+        "text": "Stir in pecans, rum, and vanilla off the heat. Pour over pancakes with pineapple wedges."
+      }
+    ]
+  },
+  "blueberry-agrodolce-pancake-syrup": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Stew and thicken",
+        "text": "Bring 2 cups blueberries, sugar, water, thyme, and cinnamon to a boil in a saucepan over medium-high. Lower the heat to medium-low and simmer, stirring from time to time, for 7–9 minutes until the syrup thickens."
+      },
+      {
+        "title": "Finish with acid",
+        "text": "Take it off heat, stir in butter and vinegar until the butter melts, then fold in the remaining ½ cup blueberries and salt."
+      },
+      {
+        "title": "Serve",
+        "text": "Pour the syrup over pancakes."
+      }
+    ]
+  },
+  "peach-bellini-pancake-syrup": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Reduce peaches and wine",
+        "text": "Bring peaches, Prosecco, ¼ cup peach nectar, and sugar to a boil in a saucepan over medium-high. Turn the heat to medium and simmer, stirring occasionally, 12–15 minutes until the syrup pulls back slightly and the peaches soften."
+      },
+      {
+        "title": "Thicken with cornstarch",
+        "text": "Whisk the remaining ¼ cup peach nectar with cornstarch smooth, then whisk it into the syrup and cook until thick, 2–3 minutes. Stir in lemon juice and salt."
+      },
+      {
+        "title": "Serve",
+        "text": "Spoon the syrup onto pancakes. Top each serving with ricotta and raspberries."
+      }
+    ]
+  },
+  "swedish-pancakes-classic-swedish-pancakes": {
+    "title": "Swedish Pancakes",
+    "cuisine": "Swedish",
+    "steps": [
+      {
+        "title": "Beat egg whites",
+        "text": "Preheat the oven to 200°. Whip egg whites in a bowl on medium speed with a hand mixer until stiff peaks form. Set aside."
+      },
+      {
+        "title": "Mix batter",
+        "text": "Crack egg yolks into a bowl with milk, melted butter, sugar, vanilla, and salt. Whisk until smooth. Fold in the flour carefully, stopping as soon as no dry flour shows."
+      },
+      {
+        "title": "Fold in whites",
+        "text": "Fold the beaten egg whites into the batter gently to keep the air in."
+      },
+      {
+        "title": "Cook pancakes",
+        "text": "Add 1–2 tsp butter to a 10-inch nonstick skillet set to medium-low. Let it foam. Pour in ⅓ to ½ cup batter and tilt so it spreads to the edges and covers the bottom—use a spoon back if it resists. Once the top dries, slip a rubber spatula around the edges, flip, and cook until the second side turns golden, 1–2 minutes."
+      },
+      {
+        "title": "Hold warm",
+        "text": "Transfer the cooked pancake to a baking sheet and keep it in the warm oven while you repeat with the remaining batter."
+      }
+    ]
+  },
+  "sugar-spice-bacon": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Crisp the bacon",
+        "text": "Fry bacon in a nonstick skillet until it is crisp and transfer it to a paper-towel-lined plate. Drain off the drippings."
+      },
+      {
+        "title": "Make the glaze",
+        "text": "Add sugar, vinegar, and cayenne to the skillet and simmer over medium heat for 30 seconds."
+      },
+      {
+        "title": "Coat and finish",
+        "text": "Drop the heat to low, return the bacon to the pan, and toss until the strips are well coated in the glaze."
+      }
+    ]
+  },
+  "fruit-cocktail": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make the dressing",
+        "text": "Whisk together zest, lime juice, chopped mint, and honey in a bowl until the honey dissolves."
+      },
+      {
+        "title": "Dress the fruit",
+        "text": "Toss cantaloupe and grapes with the lime mixture."
+      },
+      {
+        "title": "Add banana last",
+        "text": "Stir in banana just before serving. Garnish each serving with mint sprigs."
+      }
+    ]
+  },
+  "the-griddle-one-potato-golden-hash-browns": {
+    "title": "One-Potato Golden Hash Browns",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare the pan",
+        "text": "Heat oil in a medium skillet over medium-high until it shimmers. Add 1 Tbsp butter and let it melt and foam subside, swirling to keep it from browning."
+      },
+      {
+        "title": "Press into a cake",
+        "text": "Add potatoes and press them into a thin disk with a spatula."
+      },
+      {
+        "title": "Brown the first side",
+        "text": "Cook without stirring until the edges go golden brown, 7–8 minutes."
+      },
+      {
+        "title": "Flip carefully",
+        "text": "Turn the hash browns out onto a large plate, place another plate on top, and flip so the golden side is facing up."
+      },
+      {
+        "title": "Brown the second side",
+        "text": "Melt the remaining 1 Tbsp butter in the skillet over medium-high, slide the hash browns back in browned side up, and cook until the other side turns golden brown, 5–6 minutes. Season with salt and pepper."
+      }
+    ]
+  },
+  "two-potatoes-country-style-hash-browns": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare the pan",
+        "text": "Heat oil in a medium skillet over medium-high until it shimmers. Add butter and let it melt and foam subside, swirling to keep it from browning."
+      },
+      {
+        "title": "Brown the edges",
+        "text": "Add potatoes and cook without stirring until the edges go golden brown, 8–10 minutes."
+      },
+      {
+        "title": "Stir and finish",
+        "text": "Stir the hash browns and cook, stirring occasionally, until all sides are golden brown, 8–10 minutes more. Season with salt and pepper."
+      }
+    ]
+  },
+  "cranberry-sunrise": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Stew cranberries",
+        "text": "Bring 2 cups cranberries, ⅔ cup orange juice, and sugar to a boil in a saucepan over medium heat. Pull the heat down to low and let it simmer gently until the berries soften, 5 minutes."
+      },
+      {
+        "title": "Strain and cool",
+        "text": "Push the mixture through a fine-mesh sieve and let it cool completely."
+      },
+      {
+        "title": "Build the drink base",
+        "text": "Combine 6 cups orange juice and tequila in a large pitcher and chill while the purée cools."
+      },
+      {
+        "title": "Assemble and serve",
+        "text": "Divide the cranberry purée among eight glasses, putting 2 Tbsp in the bottom of each. Pour the orange-tequila mixture slowly into each glass, 1 cup per glass."
+      }
+    ]
+  },
+  "blueberry-shrub-punch": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Peel lemon",
+        "text": "Use a vegetable peeler to remove the zest from the lemon, working carefully to avoid the white pith."
+      },
+      {
+        "title": "Make shrub",
+        "text": "In a glass bowl, combine the blueberries with the lemon peel and sugar; let this macerate for 30 minutes. Once the berries have broken down slightly, add the vinegar, cover, and move to the fridge for at least 2 days. Strain through a fine-mesh sieve, pressing gently on the solids to extract all the liquid."
+      },
+      {
+        "title": "Serve cold",
+        "text": "Combine the shrub, vodka, and club soda over ice in a pitcher or individual glasses. Serve immediately."
+      }
+    ]
+  },
+  "classic-fruit-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Warm juice",
+        "text": "Heat the orange juice in a saucepan over medium until it steams. Add the dried apricots and remove from heat; let them soften for about 10 minutes."
+      },
+      {
+        "title": "Layer fruit",
+        "text": "Arrange the oranges, apple, and banana in a serving bowl. Pour the warm juice and apricots over the top."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Toss the fruit with the mint, sugar, lime juice, and a pinch of salt. Serve while still slightly warm."
+      }
+    ]
+  },
+  "tropical-fruit-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare fruit",
+        "text": "Cut the mango, pineapple, strawberries, and banana into bite-sized pieces and combine in a large bowl."
+      },
+      {
+        "title": "Make dressing",
+        "text": "Whisk together the lime juice, shredded coconut, sugar, rum, and fresh mint leaves."
+      },
+      {
+        "title": "Macerate",
+        "text": "Pour the dressing over the fruit and toss well. Let the salad stand 5 minutes so the fruit soaks up the flavours, then serve."
+      }
+    ]
+  },
+  "sidecar-punch": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Build base",
+        "text": "Pour the brandy, cherry juice, lemonade, lime juice, and Triple Sec into a cocktail shaker filled with ice cubes."
+      },
+      {
+        "title": "Chill and serve",
+        "text": "Cover the shaker and work it hard until the outside is frosty cold. Divide crushed ice among 4 glasses and strain the cocktail over each one."
+      },
+      {
+        "title": "Finish and garnish",
+        "text": "Crown each drink with a lime wheel, orange slice, and a sprig of fresh cherries."
+      }
+    ]
+  },
+  "egg-muffin-sandwiches": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Crisp bacon",
+        "text": "Melt 1 Tbsp. butter in a sauté pan over medium-high; when it foams, lay in the Canadian bacon and let it colour at the edges, turning once or twice, 1–2 minutes per side. Slide onto a plate and cover loosely with foil to keep warm."
+      },
+      {
+        "title": "Build sauce",
+        "text": "In the same hot pan, melt the remaining 1 Tbsp. butter and add the scallion whites; cook 1 minute. Dust in the flour, stir, and cook a minute more. Pour in the milk and Dijon in a slow stream, whisking to prevent lumps; let it bubble gently 2 minutes. Off the heat, work in the cheese until silky; season with salt and a dash of Tabasco."
+      },
+      {
+        "title": "Steam eggs",
+        "text": "Set 4 nonstick-sprayed egg rings into a cast-iron or nonstick skillet that you have also sprayed, then put the pan over medium heat. Break one egg into each ring, pour about 2 Tbsp. water into the pan around them, clap on a lid, and let steam gently until the whites set but the yolks stay soft, 3–4 minutes. Season just before serving."
+      },
+      {
+        "title": "Assemble",
+        "text": "Spread sauce on each muffin base. Layer a slice of bacon, a tomato slice, and an egg on top. Dot with more sauce, scatter scallion greens over, and close with the crown."
+      }
+    ]
+  },
+  "broiled-grapefruit": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Preheat broiler",
+        "text": "Set your broiler to high with the rack positioned 6 inches from the heating element."
+      },
+      {
+        "title": "Top grapefruit",
+        "text": "Place each grapefruit half on a baking sheet and top each with 1 Tbsp. brown sugar and 1 tsp. shredded coconut."
+      },
+      {
+        "title": "Broil until toasted",
+        "text": "Broil the grapefruit until the coconut is golden and toasted, about 3 minutes. Watch closely so the coconut does not burn."
+      }
+    ]
+  },
+  "eggs-benedict-breakfast-bread-pudding": {
+    "title": "Eggs Benedict Breakfast Bread Pudding",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prep muffins",
+        "text": "Set the oven to 350°. Butter the cut sides of the muffins generously and scatter salt and black pepper over them. Cut each half into 9 cubes and spread on two baking sheets. Roast until they turn a deep golden brown, about 30 minutes, swapping the sheets halfway through."
+      },
+      {
+        "title": "Cook vegetables",
+        "text": "In a skillet over medium heat, sweat the onions, garlic, and nutmeg in oil, covered, until the onions are completely soft, 5–6 minutes. Fold in the spinach and cook another minute."
+      },
+      {
+        "title": "Make custard",
+        "text": "Whisk together the half-and-half, eggs, Parmesan, Dijon, 1½ tsp. salt, and cayenne in a large bowl."
+      },
+      {
+        "title": "Build pudding",
+        "text": "Pour the custard into a bowl and work in the ham, muffin cubes, and cooked spinach until everything is soaked through and coated. Transfer this mixture into a 9×13-inch baking dish and press down evenly. Cover tightly with plastic wrap placed directly on the surface and let it sit in the fridge overnight or up to 1 day; the bread will absorb more liquid as it rests."
+      },
+      {
+        "title": "Bake covered",
+        "text": "Return the oven to 350°. Uncover the dish and drape the pudding with foil. Bake 30 minutes."
+      },
+      {
+        "title": "Bake uncovered",
+        "text": "Remove the foil and continue baking until the top is set and golden, 45 minutes more. Let it rest on a cooling rack for 15 minutes."
+      },
+      {
+        "title": "Make hollandaise",
+        "text": "While the pudding finishes baking, prepare a hollandaise: whisk egg yolks with a reduced vinegar mixture over gently simmering water, stirring constantly until it thickens enough to leave a trail."
+      },
+      {
+        "title": "Finish and serve",
+        "text": "Ladle a generous amount of warm hollandaise over each portion of bread pudding."
+      }
+    ]
+  },
+  "hollandaise-sauce": {
+    "cuisine": "French",
+    "steps": [
+      {
+        "title": "Clarify butter",
+        "text": "Melt the butter in a saucepan over low heat; skim off and discard the foam that rises to the surface."
+      },
+      {
+        "title": "Reduce vinegar",
+        "text": "In a separate saucepan over medium heat, reduce the vinegar and wine with the shallots and peppercorns until it measures 3 Tbsp. of strained liquid, about 15–20 minutes. Bring 1 inch of water to a gentle simmer in another saucepan over medium-low heat."
+      },
+      {
+        "title": "Temper yolks",
+        "text": "Whisk the egg yolks and vinegar reduction together in a stainless steel bowl. Place the bowl over the simmering water (ensure it does not touch the water). Whisk vigorously until the yolks thicken and the whisk leaves trails, about 2 minutes. Remove from heat."
+      },
+      {
+        "title": "Mount butter",
+        "text": "Take the yolks off the heat and squeeze in 2 tsp. lemon juice; fold it in carefully. Begin trickling in the butter a bare drop at a time while you whisk—patience here prevents breaking the emulsion. As the sauce thickens and begins to take, you can afford to pour faster, but never more than a thin stream. Should it get cold and start to separate, return to the heat and whisk over the warm water until it comes back together, then resume adding butter. Once all butter is in, add the remaining lemon juice, season with salt and cayenne, and loosen with a touch of warm water if needed."
+      },
+      {
+        "title": "Hold for service",
+        "text": "Scrape the finished hollandaise into a heatproof bowl and nest it in a pan of warm water kept at low heat. Stir it gently and occasionally so it stays smooth and easy to pour."
+      }
+    ]
+  },
+  "black-forest-hot-chocolate": {
+    "cuisine": "German",
+    "steps": [
+      {
+        "title": "Reduce cherry",
+        "text": "Pour the cherry liqueur into a saucepan and reduce it over medium-high heat until it becomes syrupy, 10–12 minutes."
+      },
+      {
+        "title": "Add cream and milk",
+        "text": "Whisk in the cream until the cherry mixture dissolves, then whisk in the milk and sugar. Bring to a simmer."
+      },
+      {
+        "title": "Finish chocolate",
+        "text": "Put the chopped chocolate in a bowl and pour the hot cream mixture over it. Cover and let sit 5 minutes, then whisk until smooth. Pour into mugs and top each with a dollop of whipped cream."
+      }
+    ]
+  },
+  "mint-julep-fruit-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make syrup",
+        "text": "Bring the water, sugar, and salt to a boil in a saucepan. Reduce the heat to medium and simmer 5 minutes."
+      },
+      {
+        "title": "Chill syrup",
+        "text": "Transfer the pan to a bowl of ice water and let the syrup cool completely. Stir in the bourbon."
+      },
+      {
+        "title": "Combine fruit",
+        "text": "Combine the pineapple, watermelon, and honeydew in a large bowl and toss with the bourbon syrup. Chill the salad, covered, for 1 hour or overnight, stirring occasionally."
+      },
+      {
+        "title": "Finish",
+        "text": "Just before serving, stir in the fresh mint leaves."
+      }
+    ]
+  },
+  "granola-bars": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prep pan",
+        "text": "Preheat the oven to 350° and coat an 8×8-inch pan with nonstick spray."
+      },
+      {
+        "title": "Toast oats and nuts",
+        "text": "Spread the oats and cashews on separate baking sheets and toast until golden, about 20 minutes."
+      },
+      {
+        "title": "Process cashews",
+        "text": "Purée 1 cup of the toasted cashews with the oil in a mini food processor until completely smooth. Grind the flax seeds in a spice grinder until fine."
+      },
+      {
+        "title": "Heat binder",
+        "text": "Heat the honey, brown sugar, salt, and cinnamon in a saucepan over medium until the sugar dissolves, 3–4 minutes. Off the heat, stir in the puréed cashews and ground flax."
+      },
+      {
+        "title": "Combine dry",
+        "text": "Toss together the toasted oats, the remaining ½ cup cashews, the currants, and chia seeds. Stir in the honey mixture until everything is evenly coated."
+      },
+      {
+        "title": "Compact and bake",
+        "text": "Scrape the mixture into the prepared pan and use a nonstick-sprayed spatula to compress it firmly and evenly into all corners. Bake 10 minutes; turn the pan out onto a rack to cool completely, then cut into eight pieces."
+      },
+      {
+        "title": "Melt chocolate",
+        "text": "Warm the chocolate in the microwave in 20-second bursts, stirring well between intervals, until it flows smoothly."
+      },
+      {
+        "title": "Coat with chocolate",
+        "text": "Working one bar at a time, dunk the bottom into melted chocolate and let the excess run back into the bowl. Lay each piece chocolate-side-up on parchment paper and leave to set."
+      }
+    ]
+  },
+  "oatmeal-cakes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Render bacon",
+        "text": "Put bacon into a saucepan and render it over medium-high heat until the fat stops frying and the meat turns crisp. Lift it out onto a paper towel to drain and crisp further. Leave 2 Tbsp drippings in the pan and pour the rest away."
+      },
+      {
+        "title": "Toast the grain",
+        "text": "Set heat to medium-low. Soften the scallion whites, cumin, coriander, garlic, and salt in the bacon fat for 3 minutes. Increase the flame and tip in 2 cups oats, stirring constantly to coat them in fat. Add the broth and water and bring everything to a boil, then drop the heat to medium. Stir often and cook until the oatmeal thickens and the liquid vanishes, about 6–7 minutes."
+      },
+      {
+        "title": "Set and chill",
+        "text": "Pour into a bowl and wait for the steam to clear. Fold in Cheddar, jalapeños, the bacon (crumbled), and scallion greens. Coat a loaf pan (8¼×4¼ inches) with nonstick spray, press the mixture in firmly, cover, and refrigerate overnight or until solid, about 5 hours."
+      },
+      {
+        "title": "Coat the slices",
+        "text": "Heat the oven to 350° with a rack positioned with a baking sheet inside. Run a knife between the loaf and pan sides, invert onto a board, and slice cross-wise into 8 pieces using a serrated knife. Dredge each slice in ground oats on both sides, pressing gently so they stick; tap off the surplus."
+      },
+      {
+        "title": "Pan-fry until set",
+        "text": "Put a large cast-iron skillet on the stove over high heat with 3 Tbsp oil until it begins to smoke slightly. Cook the oatmeal slices in two batches until they're golden and crisp all over — about 8–10 minutes per batch. Transfer each batch to the warm oven as it finishes."
+      },
+      {
+        "title": "Finish and plate",
+        "text": "Set oatmeal cakes on a plate and dress with salsa, sliced avocado, and a dollop of sour cream."
+      }
+    ]
+  },
+  "oat-scones-cinnamon-roll-oat-scones": {
+    "title": "Oat Scones with Cinnamon Roll Filling",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Start the dough",
+        "text": "Set your oven to 425°. In a bowl, combine flour, oats, brown sugar, baking powder, cinnamon, and salt. Work cold butter into the mixture with a pastry blender until it looks like coarse breadcrumbs, then scatter pecans through. Slowly pour in cream while folding until the mixture just holds together."
+      },
+      {
+        "title": "Assemble and chill",
+        "text": "Dust a piece of parchment with flour and turn the dough onto it, then dust the dough as well. Set another parchment sheet on top and roll (or pat) gently to a 10-inch square. Mix butter, brown sugar, and cinnamon into a paste; spread this over the dough. Roll the dough into a log like a cinnamon roll and wrap with plastic; freeze 15 minutes."
+      },
+      {
+        "title": "Portion into cups",
+        "text": "Using a sharp knife, slice the log into 8 equal scones. Drop each one into a jumbo muffin cup."
+      },
+      {
+        "title": "Bake",
+        "text": "Bake until the tops are golden and the edges set, 22–25 minutes."
+      },
+      {
+        "title": "Glaze while warm",
+        "text": "Whisk powdered sugar, cream, and vanilla. Once the scones cool enough to handle but are still warm, pull them out of the cups and pour glaze over them."
+      }
+    ]
+  },
+  "chicken-pot-pie-soup": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Build the base",
+        "text": "Melt butter in a pot set to medium-low. Add diced onion, celery, and minced garlic; put a lid on and let them soften without color, 5 minutes. Dust the vegetables with flour and cook that off, 2 minutes. Pour in vermouth and let it cook away. Now add broth, squash, potatoes, thyme, poultry seasoning, and a bay leaf. Turn up the heat to medium-high and bring to a boil, then drop back to medium."
+      },
+      {
+        "title": "Simmer until tender",
+        "text": "Let the soup bubble gently until the squash and potatoes yield to a fork, 10–15 minutes. Fish out the thyme sprigs and bay leaf."
+      },
+      {
+        "title": "Enrich and finish",
+        "text": "Add the chicken, half-and-half, pearl onions, corn, green beans, parsley, and lemon juice. Simmer just long enough to warm everything through, about 2–3 minutes. Taste and adjust with salt and pepper."
+      }
+    ]
+  },
+  "puff-pastry-blt": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Bake the shells",
+        "text": "Set oven to 400° and cover a baking sheet with parchment. Unfold the puff pastry, find the fold lines, and cut it into 3 strips along those creases. Cut each strip in half across the width. Lay them on the sheet and bake until puffed and golden, 15 minutes. Let them rest 5 minutes to cool."
+      },
+      {
+        "title": "Make the spread",
+        "text": "Whisk together mayonnaise, Boursin, and Dijon mustard. Season with a pinch of salt and a grind of pepper. Split each pastry in half horizontally and spread the cut surfaces with this mixture."
+      },
+      {
+        "title": "Layer and serve",
+        "text": "Layer romaine, ripe tomatoes, and crisp bacon onto the bottom half of each pastry. Cap with the top half."
+      }
+    ]
+  },
+  "chive-buttermilk-scones": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix the dry",
+        "text": "Set your oven to 450° and line a sheet with parchment paper. Put all-purpose flour, cake flour, baking powder, salt, pepper, baking soda, and fresh chives into a food processor. Pulse until everything is evenly blended."
+      },
+      {
+        "title": "Cut in fats",
+        "text": "Add cubed cold butter and shortening. Pulse just until the butter breaks into pieces the size of small peas — no smaller. Pour in the buttermilk and pulse gently 2–3 times until the dough barely comes together."
+      },
+      {
+        "title": "Shape and cut",
+        "text": "Shape the dough into a ball on a floured surface. Flatten it gently with your palm into a 6×8-inch rectangle. Divide into 8 equal pieces and arrange them across the prepared sheet."
+      },
+      {
+        "title": "Bake with butter",
+        "text": "Bake for 15–18 minutes, brushing the tops with melted butter for the last few minutes, until the bottoms turn golden."
+      }
+    ]
+  },
+  "classic-stove-top-mac-n-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil the pasta",
+        "text": "Fill a large pot with salted water and bring it to a rolling boil. Add the pasta and cook according to the package time; drain and set aside."
+      },
+      {
+        "title": "Build the sauce",
+        "text": "Cook the bacon in a saucepan over medium-high heat until its fat renders and the meat crisps; move it to paper towels to drain. Leave 2 Tbsp of the drippings in the pan. Set shallots and garlic to soften in that fat over medium heat. Raise the heat to medium-high, dust with flour, and let it cook 1 minute. Slowly pour milk into the roux while whisking to keep lumps from forming. Bring this to a boil, then drop the heat to medium and let it thicken, 3–4 minutes."
+      },
+      {
+        "title": "Fold in the cheese",
+        "text": "Lower the heat to low and add the cheeses a handful at a time, whisking after each addition until every piece melts. Add salt and a pinch of cayenne."
+      },
+      {
+        "title": "Combine and serve",
+        "text": "Stir the drained pasta into the sauce. Divide among serving bowls and top each with crumbled bacon."
+      }
+    ]
+  },
+  "quick-comfort-velvet-mac-n-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook the pasta",
+        "text": "Boil the macaroni in salted water according to the package directions. Drain and reserve."
+      },
+      {
+        "title": "Make the base",
+        "text": "Melt butter in a saucepan over medium-high heat. Whisk in flour and let it cook, 1 minute. Pour in wine and let it bubble away. Whisk in milk, Dijon, onion powder, and garlic powder; bring to a gentle boil."
+      },
+      {
+        "title": "Melt the cheese",
+        "text": "Add the Mexican cheese and cream cheese, whisking gently until both melt into the sauce. Fold in the cooked macaroni."
+      },
+      {
+        "title": "Season and taste",
+        "text": "Add Tabasco, salt, and black pepper to taste. Stir in the chives just before serving."
+      }
+    ]
+  },
+  "tofu-mac-n-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil the pasta",
+        "text": "Boil cavatappi in salted water; drain when it reaches package directions time."
+      },
+      {
+        "title": "Blend the sauce base",
+        "text": "Put tofu, onion, and garlic into a food processor or blender and purée until smooth."
+      },
+      {
+        "title": "Cook and finish",
+        "text": "Melt butter in a saucepan over medium heat. Whisk in the tofu purée, milk, and mustard; warm through without boiling. Stir in Cheddar until it melts. Add the cooked pasta and season with Tabasco, salt, and pepper."
+      }
+    ]
+  },
+  "pan-roasted-pork-chops": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Sear and roast",
+        "text": "Set your oven to 425°. Get oil shimmering in a cast-iron skillet (10 inches) over medium-high heat. Pat the chops dry, dredge them in flour on both sides, and tap off the excess — set this flour aside for the gravy. Sear each chop in the hot oil until the bottom browns, then flip. Slide the skillet into the oven and let the chops finish roasting until an instant-read thermometer pushed into the thickest part (without touching bone) hits 145°, about 8–10 minutes. Move them to a plate, tent with foil, and let them rest."
+      },
+      {
+        "title": "Make the gravy",
+        "text": "Put the skillet on a burner over medium heat. Whisk the reserved flour into the pan drippings and cook 1 minute. Whisk in milk slowly, making sure no lumps form. Let the gravy bubble and thicken, whisking often, for about 3 minutes."
+      },
+      {
+        "title": "Finish",
+        "text": "Stir in sage. Taste and adjust with salt and pepper."
+      }
+    ]
+  },
+  "quick-comfort-ranch-mashed-potatoes": {
+    "title": "Ranch Mashed Potatoes",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil with the garlic",
+        "text": "Potatoes and garlic go into salted water together — the garlic softens as they cook and gets mashed in whole later. Fork-tender takes 10–12 minutes. Save ½ cup of the cooking water before you drain them; it is the only thing that will loosen the mash without thinning the flavour."
+      },
+      {
+        "title": "Dry them out",
+        "text": "Back into the empty pot over medium-low for 1–2 minutes. This is the step people skip, and it is why mash goes gluey — you are driving off the water still clinging to the cubes before any dairy goes near them."
+      },
+      {
+        "title": "Mash and loosen",
+        "text": "Off the heat now. Buttermilk, sour cream, butter, cider vinegar, scallions and dill all go in and get mashed through. Bring it to the consistency you want with the reserved potato water, a tablespoon at a time — it is easy to overshoot. Salt and pepper at the end."
+      }
+    ]
+  },
+  "quick-comfort-skillet-potatoes": {
+    "title": "Skillet Potatoes",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Get the pan hot",
+        "text": "Use cast iron if you have it, 10 inches across. Oil goes in first, and the pan sits on a medium burner until the surface shimmers. That heat is what gives you the crust — a lighter pan will steam the potatoes instead of browning them."
+      },
+      {
+        "title": "Potatoes and onion",
+        "text": "In go the potatoes and onion, seasoned with salt and pepper. Cover the skillet and give them 15–20 minutes, stirring once every 5 minutes — often enough that nothing catches, rarely enough that a crust can form."
+      },
+      {
+        "title": "Apple last",
+        "text": "The diced apple goes in at the end, covered, for a final 5 minutes until the potatoes take a fork cleanly. Any earlier and it collapses into the pan rather than holding its shape."
+      }
+    ]
+  },
+  "dilled-kluski-noodles": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil noodles",
+        "text": "Bring a pot of salted water to a rolling boil and cook the noodles according to package directions until tender."
+      },
+      {
+        "title": "Drain and return",
+        "text": "Drain the noodles and put them back in the pot off the heat."
+      },
+      {
+        "title": "Finish",
+        "text": "Stir in the butter, dill, and paprika, then season with salt to taste."
+      }
+    ]
+  },
+  "sunday-comfort-sour-cream-biscuits": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Heat oven and prep",
+        "text": "Turn on the oven to 450° and get a baking sheet ready with parchment."
+      },
+      {
+        "title": "Mix dry and wet",
+        "text": "Whisk together the flour, baking soda, and salt in a bowl, then stir in the sour cream just until combined into a rough dough."
+      },
+      {
+        "title": "Cut and shape",
+        "text": "Flour your counter lightly and tip the dough out. Work it gently until it just comes together, then pat it flat to 1 inch thick. Cut 10 biscuits with a 2-inch cutter and arrange them on the sheet."
+      },
+      {
+        "title": "Bake",
+        "text": "Bake until golden, 15–18 minutes, brushing with melted butter during the last few minutes."
+      }
+    ]
+  },
+  "creamy-mashed-potatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook potatoes",
+        "text": "Boil the potatoes in salted water until fork-tender, 12–15 minutes, then drain and return them to the pot."
+      },
+      {
+        "title": "Drive off moisture",
+        "text": "Cook over medium-low heat, stirring, for 1–2 minutes to evaporate any excess water in the pot."
+      },
+      {
+        "title": "Finish off heat",
+        "text": "Remove from heat, add the milk and mayonnaise, then blend smooth with a hand mixer. Stir in the Cheddar until it melts, then serve hot or cover to keep warm."
+      }
+    ]
+  },
+  "swiss-steak": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Tenderize and flour",
+        "text": "Using the toothed face of a meat mallet, pound each steak piece hard 6–8 times one way. Flip it and pound the other way just as hard. Keep going until the pieces reach ¼-inch thick. Season with salt and pepper, then dust in flour, shaking off any excess."
+      },
+      {
+        "title": "Brown the steak",
+        "text": "Heat 4 tablespoons vegetable oil in a Dutch oven over medium-high until shimmering. Brown the steak in batches so it colours well, then transfer to a plate. Add the remaining 2 tablespoons oil to the pot."
+      },
+      {
+        "title": "Build the sauce",
+        "text": "Stir in the onions, carrot, celery, and garlic; sauté for 2 minutes. Add the tomato paste and cook 1 minute. Deglaze with the brandy and let it simmer until nearly gone."
+      },
+      {
+        "title": "Braise",
+        "text": "Add the tomatoes, broth, potatoes, pearl onions, Worcestershire, and paprika. Return the steak to the pot, submerge it in the liquid, cover, transfer to a 350° oven, and braise until tender, about 1 hour."
+      },
+      {
+        "title": "Make chowchow",
+        "text": "Meanwhile, sauté the bell pepper, red onion, and garlic in olive oil in a skillet over medium-high until softened, 6–7 minutes."
+      },
+      {
+        "title": "Finish chowchow",
+        "text": "Off the heat, stir in the parsley, honey, lemon juice, and mustard. Season with salt and pepper, then spoon it over the steak before serving."
+      }
+    ]
+  },
+  "garlic-mashed-potatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil potatoes and garlic",
+        "text": "Bring potatoes and garlic to a boil in salted water over high heat. Once boiling, add the kale and cook until the potatoes are fork-tender, 12–15 minutes total. Drain everything, reserving ½ cup of the cooking water."
+      },
+      {
+        "title": "Remove moisture",
+        "text": "Return the potatoes, garlic, and kale to the pot and cook over medium-low heat, stirring, for 1–2 minutes to drive off excess water."
+      },
+      {
+        "title": "Mash and finish",
+        "text": "Add the oil and mash with a potato masher until you reach your preferred texture. Stir in the reserved cooking water to loosen if needed, then season with salt and pepper."
+      }
+    ]
+  },
+  "short-rib-cure": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make cure",
+        "text": "Mix the salt, sugar, garlic, thyme, and zest in a small bowl to make a dry cure."
+      },
+      {
+        "title": "Cure the ribs",
+        "text": "Spread half the cure on the bottom of a 9×13-inch baking dish, lay the ribs on top, then cover them with the remaining cure, pressing it all over and into the sides. Cover and refrigerate for 2 hours."
+      },
+      {
+        "title": "Rinse and dry",
+        "text": "Rinse the ribs under cold water to remove the cure, then pat them dry with paper towels."
+      }
+    ]
+  },
+  "sweet-savory-mashed-potatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil potatoes",
+        "text": "Bring the Yukon golds, sweet potatoes, garlic, and jalapeño to a boil in a large pot of salted water. Reduce heat and simmer until the potatoes are fork-tender, 12–15 minutes. Drain and return to the pot."
+      },
+      {
+        "title": "Drive off moisture",
+        "text": "Cook over medium-low heat, stirring, for 1–2 minutes to evaporate excess water. Discard the jalapeño."
+      },
+      {
+        "title": "Mash and finish",
+        "text": "Add the sour cream and butter, then mash to your preferred consistency. Stir in the cilantro and season with salt and pepper."
+      }
+    ]
+  },
+  "sunday-comfort-mashed-rutabagas-potatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook rutabagas first",
+        "text": "Bring rutabagas to a boil in a large pot of salted water (enough to cover by 2 inches) over medium-high heat and cook for 10 minutes."
+      },
+      {
+        "title": "Add potatoes",
+        "text": "Add the potatoes and cook until both are fork-tender, 15–20 minutes more. Drain and return to the pot, then cook over medium-low heat, stirring, for 1–2 minutes to remove excess moisture."
+      },
+      {
+        "title": "Mash and finish",
+        "text": "Mash the rutabagas and potatoes with a ricer or whip on low speed with a hand mixer. Stir in the half-and-half, cheese, butter, and chives, then season with salt and pepper."
+      }
+    ]
+  },
+  "classic-chicken-pot-pie": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Brown butter for crust",
+        "text": "In a saucepan over medium-low heat, cook the butter slowly until brown bits form on the bottom, about 15 minutes. Pour it into a shallow dish and chill in the freezer until solid, 20–30 minutes."
+      },
+      {
+        "title": "Make crust dough",
+        "text": "Whisk together the flour and salt. Cut in the chilled brown butter with a pastry blender until the pieces are pea-sized. Stir in ¾ cup ice water and test the dough by pinching it — if it's dry, add the remaining water a tablespoon at a time until it holds together without crumbling. Form into a disk, wrap in plastic, and chill at least 30 minutes."
+      },
+      {
+        "title": "Heat oven and prep",
+        "text": "Heat the oven to 425° and line a baking sheet with foil."
+      },
+      {
+        "title": "Cook vegetables",
+        "text": "In a large saucepan or Dutch oven, sweat the carrots, parsnips, mushrooms, onions, thyme, and sage in butter over medium-low heat, covered, stirring now and then, for 15 minutes until soft."
+      },
+      {
+        "title": "Make filling base",
+        "text": "Dust the vegetables with flour and cook for 1 minute. Deglaze with the wine and lemon juice, scraping the bottom of the pan. Add the broth and stir until smooth, then add the chicken and potatoes."
+      },
+      {
+        "title": "Simmer filling",
+        "text": "Raise the heat to medium-high and bring to a boil. Reduce to medium and simmer until thickened, 10–15 minutes. Off the heat, stir in the peas and season with salt and pepper, then pour into a 2-quart baking dish."
+      },
+      {
+        "title": "Top and bake",
+        "text": "Roll the crust to ¼-inch thick and cut it to fit the dish. Lay it over the filling, trim the overhang, crimp the edge, and transfer to the prepared sheet. Brush with egg wash and bake until the crust is golden, 25–30 minutes."
+      },
+      {
+        "title": "Rest and serve",
+        "text": "Let the pie stand for 10 minutes before serving."
+      }
+    ]
+  },
+  "upside-down-chicken-pot-pie": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Heat oven and prep crust",
+        "text": "Heat the oven to 400°. Whisk together the flour, thyme, garlic, baking powder, baking soda, and salt in a bowl."
+      },
+      {
+        "title": "Make crust dough",
+        "text": "Cut in the cubed butter until the pieces are pea-sized. Stir in the buttermilk just until all the flour is wet. Transfer the dough to an 8-inch cast-iron skillet and pat it into the bottom and partway up the sides with damp fingers."
+      },
+      {
+        "title": "Prebake crust",
+        "text": "Bake until set, 12–15 minutes. While still hot, use a spoon to press down into the center and form a shallow well."
+      },
+      {
+        "title": "Cook vegetables",
+        "text": "In a large sauté pan, cook the mushrooms, carrots, and onions in butter over medium-high heat until the mushrooms release their liquid and it evaporates."
+      },
+      {
+        "title": "Add remaining veg",
+        "text": "Add the green beans, thyme, and garlic and cook for 2 minutes."
+      },
+      {
+        "title": "Make sauce",
+        "text": "Dust everything with flour and cook for 2 minutes over medium heat. Whisk in the milk and simmer, stirring, until slightly thickened, 8 minutes."
+      },
+      {
+        "title": "Finish filling",
+        "text": "Stir in the chicken, parsley, and lemon juice, then season with salt and pepper."
+      },
+      {
+        "title": "Bake and rest",
+        "text": "Spoon the filling into the crust and bake for 15–20 minutes. Let stand for 5 minutes before serving."
+      }
+    ]
+  },
+  "alpine-mac-n-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Heat oven and prep",
+        "text": "Heat the oven to 400° and coat a 2-quart baking dish with nonstick spray."
+      },
+      {
+        "title": "Make topping",
+        "text": "Mix the breadcrumbs, parsley, and melted butter in a bowl, then season with salt and pepper."
+      },
+      {
+        "title": "Cook pasta",
+        "text": "Boil the cavatappi in salted water until al dente, then drain."
+      },
+      {
+        "title": "Cook kielbasa",
+        "text": "In a large skillet, brown the kielbasa in oil over medium-high heat for about 5 minutes, then transfer to a paper-towel-lined plate."
+      },
+      {
+        "title": "Toast caraway",
+        "text": "In the same skillet, melt the butter over medium heat. Add the shallots and caraway seeds and cook until the seeds are fragrant, 3 minutes."
+      },
+      {
+        "title": "Make sauce",
+        "text": "Dust the shallots with flour, whisk it in well, and cook for 1 minute. Pour the milk in slowly while whisking, then keep whisking as it simmers and thickens, 5–8 minutes. Drop the heat to low, then add the cheeses one handful at a time, waiting for each to melt before adding the next."
+      },
+      {
+        "title": "Combine",
+        "text": "Stir in the Dijon and Worcestershire, then fold in the cavatappi and kielbasa. Pour into the prepared baking dish."
+      },
+      {
+        "title": "Finish",
+        "text": "Scatter the topping over the casserole and bake until the sauce is bubbly and the crumbs are golden brown, 20–25 minutes. Let rest for 5 minutes before serving."
+      }
+    ]
+  },
+  "pepperoncini-garlic-bread": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Make the butter",
+        "text": "Cream the softened butter with oil, minced pepperoncini, Parmesan, and garlic. Season to taste with salt and pepper."
+      },
+      {
+        "title": "Toast under the broiler",
+        "text": "Spread the pepperoncini butter thickly on both cut sides of the halved baguette. Set the rack 6 inches from the broiler element, set broiler to high, and toast until the butter bubbles and the bread is golden, about 5 minutes."
+      },
+      {
+        "title": "Cut and serve",
+        "text": "Slice each baguette half into 12 pieces across the width. Serve warm."
+      }
+    ]
+  },
+  "tomato-basmati-rice": {
+    "cuisine": "Indian",
+    "steps": [
+      {
+        "title": "Bloom the spices",
+        "text": "Warm the oil in a saucepan over medium-low heat. Add the scallion whites, cumin, and coriander; cook gently until the scallions soften, about 5 minutes. Add the rice and stir until every grain is coated with oil and spice."
+      },
+      {
+        "title": "Simmer",
+        "text": "Pour in the water and bring to a boil over high heat. Cover, drop the heat to low, and simmer until the rice is tender and the liquid is absorbed, 15 minutes. Off heat, let it stand covered for 5 minutes."
+      },
+      {
+        "title": "Fold in tomatoes and finish",
+        "text": "Stir in the drained tomatoes and scallion greens. Taste and season with salt and pepper."
+      }
+    ]
+  },
+  "fennel-orange-salad": {
+    "cuisine": "French",
+    "steps": [
+      {
+        "title": "Whisk the dressing",
+        "text": "Whisk the fresh orange juice, lemon juice, oil, and tarragon together in a small bowl. Season with salt and pepper to taste."
+      },
+      {
+        "title": "Ready the salad",
+        "text": "Shave the fennel bulb thinly. Segment the oranges, slice the red onion, and measure out the mixed greens and pistachios into a large bowl."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Pour the vinaigrette over the greens, fennel, orange segments, onion, and pistachios. Toss gently to coat and serve at once."
+      }
+    ]
+  },
+  "corn-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook and cool the kernels",
+        "text": "Fill a large pot with salted water and set it to boil. Once rolling, slip in the corn kernels and give them 2 minutes. Fish them out, run them under cold water to stop the cooking, then dry them thoroughly in a salad spinner. Turn them into a bowl to cool."
+      },
+      {
+        "title": "Make corn milk",
+        "text": "Scrape the reserved cobs with the bowl of a spoon to extract the corn milk into a bowl. Strain it through a fine-mesh sieve."
+      },
+      {
+        "title": "Build the vinaigrette",
+        "text": "Whisk together ¼ cup of the corn milk, the oil, lime juice, zest, honey, and cayenne in a small bowl."
+      },
+      {
+        "title": "Dress and season",
+        "text": "Add the cilantro, diced onion, and bell pepper to the corn. Pour the vinaigrette over and toss to coat. Season with salt and black pepper."
+      }
+    ]
+  },
+  "slow-cooked-comfort-italian-salad": {
+    "title": "Italian Salad",
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Whisk the vinaigrette",
+        "text": "In a small bowl, whisk together the oil, red wine vinegar, minced garlic, and anchovy paste. Season with salt and pepper."
+      },
+      {
+        "title": "Prepare the vegetables",
+        "text": "Tear the baby romaine into bite-sized pieces. Halve the artichoke hearts if they are large. Slice the roasted peppers into strips and dice the red onion."
+      },
+      {
+        "title": "Combine and dress",
+        "text": "Put the romaine, artichoke hearts, roasted peppers, and onion into a serving bowl. Pour the vinaigrette over and toss to coat evenly. Serve immediately."
+      }
+    ]
+  },
+  "german-beef-roast": {
+    "title": "German Beef Roast",
+    "cuisine": "German",
+    "steps": [
+      {
+        "title": "Brown the beef",
+        "text": "Heat the oil in a large skillet over medium-high heat. Season the beef chunks with salt and pepper. Brown them in two batches, about 5 minutes per batch, without crowding the pan. Transfer to a 4–6 quart slow cooker."
+      },
+      {
+        "title": "Make the braising liquid",
+        "text": "Stir the tomato paste and ginger into the same skillet and cook for 1 minute. Deglaze with the red wine, scraping up the browned bits on the bottom, and let it reduce by half. Whisk in the broth, vinegar, gin, ground tapioca, and kosher salt. Simmer for 5 minutes. Pour the liquid over the beef in the slow cooker and submerge the spice sachet in it."
+      },
+      {
+        "title": "Braise low and slow",
+        "text": "Cover and cook on high until the beef is fork-tender, 2½–3 hours."
+      },
+      {
+        "title": "Finish the braise",
+        "text": "Scatter the halved carrots, celery chunks, and quartered onion pieces into the slow cooker. Crush the gingersnaps and stir them in to thicken the sauce. Re-cover and continue cooking until the vegetables give easily to a fork and the sauce coats the back of a spoon, about 1 hour more—give it a stir halfway through. Lift the beef and vegetables into a serving bowl, remove and discard the spice sachet, and pour the sauce over everything."
+      }
+    ]
+  },
+  "grapefruit-tart-with-oatmeal-brown-sugar-crust": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Build the crust",
+        "text": "Oven to 350°. Oats, flour, ½ cup of the brown sugar, 1 Tbsp. zest, the ginger and salt all go into a food processor, pulsed until the oats are broken down. Then, with the motor still turning, pour the butter in slowly — you are waiting for the moment the mixture stops being sandy and starts clumping."
+      },
+      {
+        "title": "Press and bake",
+        "text": "Push it into the base and up the walls of a 9-inch tart pan with a removable bottom; square or round, either works. Twenty minutes in the oven sets it firm. It has to come back to room temperature before anything else goes on top, so build it early."
+      },
+      {
+        "title": "Whip the filling",
+        "text": "Cream cheese, sour cream, 2 Tbsp. brown sugar and the last tablespoon of zest, beaten on medium until there are no lumps left. Spread it across the cooled crust."
+      },
+      {
+        "title": "Grapefruit and salt",
+        "text": "Lay the grapefruit segments over the filling in rows until none of it shows. A scatter of coarse sea salt over the top before slicing — it is what stops the whole thing reading as dessert-sweet."
+      }
+    ]
+  },
+  "lemony-polenta": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Broth and buttermilk",
+        "text": "Bring the broth and buttermilk up to a boil together in a saucepan over medium. The buttermilk is doing the work here — polenta made on broth alone is flatter than you would expect."
+      },
+      {
+        "title": "Whisk in the cornmeal",
+        "text": "Rain the cornmeal in while whisking, then drop the heat to low. Five minutes of constant whisking after that, no pauses, or it catches on the bottom and turns grainy. Off the heat when the time is up."
+      },
+      {
+        "title": "Finish off the heat",
+        "text": "Parmesan, butter and lemon zest stirred through while it is still hot enough to melt them. Salt and pepper last, once the cheese has gone in — Parmesan brings its own salt and it is easy to overdo."
       }
     ]
   }
