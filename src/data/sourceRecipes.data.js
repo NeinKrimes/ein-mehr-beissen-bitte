@@ -660,6 +660,113 @@ export default [
   "cal_per_dollar": 233
  },
  {
+  "id": "bacon-cheeseburger-casserole",
+  "title": "Bacon Cheeseburger Casserole",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "8 servings",
+  "totalTime": "1 hour",
+  "ingredients": [
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "elbow macaroni",
+    "group": "Cook"
+   },
+   {
+    "amount": "4",
+    "unit": "strips",
+    "item": "thick-sliced bacon, diced",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "lb.",
+    "item": "ground beef",
+    "group": "Cook"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Cook"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "diced tomatoes in juice",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(14.5 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "each ketchup and yellow mustard",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "Worcestershire sauce",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped dill pickle chips",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "shredded Velveeta cheese, divided",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Set up and cook pasta",
+    "text": "Turn the oven to 350° and line a 9×13-inch baking dish with nonstick spray. Boil the elbow macaroni in salted water according to the box and drain."
+   },
+   {
+    "n": 2,
+    "title": "Brown the meat",
+    "text": "Cook the bacon in a large skillet until crisp; transfer to a paper towel. Add beef, diced onion, and garlic to the same skillet; cook until the meat is browned, 5–7 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Build the casserole",
+    "text": "Stir in the diced tomatoes, ketchup, mustard, and Worcestershire; cook until heated through. Add the pickle chips, 1 cup cheese, and the cooked macaroni. Season with salt and pepper."
+   },
+   {
+    "n": 4,
+    "title": "Bake until cheese melts",
+    "text": "Transfer the mixture to the baking dish and top with the remaining 1 cup cheese. Bake until the cheese melts, 15 minutes. Crumble the reserved bacon over the top and serve."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 302,
+  "protein_g": 19,
+  "carbs_g": 8,
+  "fat_g": 21,
+  "fiber_g": 1,
+  "sodium_mg": 908,
+  "est_cost_usd": 2.02,
+  "cal_per_dollar": 150
+ },
+ {
   "id": "baked-ziti",
   "title": "Baked Ziti",
   "subtitle": "",
@@ -792,6 +899,77 @@ export default [
   "sodium_mg": 1019,
   "est_cost_usd": 2.41,
   "cal_per_dollar": 253
+ },
+ {
+  "id": "mastering-french-omelets-basic-omelet",
+  "title": "Basic Omelet",
+  "subtitle": "",
+  "cuisine": "French",
+  "servings": "1 omelet",
+  "totalTime": "10 minutes",
+  "ingredients": [
+   {
+    "amount": "3",
+    "unit": "",
+    "item": "eggs"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "half-and-half, milk,"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "unsalted butter"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "1/4–1/3 cup desired filling"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(pages 48–49)"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Whisk the eggs",
+    "text": "Whisk the eggs and half-and-half together in a bowl."
+   },
+   {
+    "n": 2,
+    "title": "Melt the butter",
+    "text": "Melt the butter in an 8-inch nonstick skillet over medium-high heat until it bubbles."
+   },
+   {
+    "n": 3,
+    "title": "Cook the omelet",
+    "text": "Tip the eggs into the skillet and season with salt and pepper. Start shaking the pan gently back and forth while stirring quickly with a spatula at the same time. When the eggs stop running but still look wet on top, drop the heat to low."
+   },
+   {
+    "n": 4,
+    "title": "Fill and fold",
+    "text": "Spoon the filling in a line at right angles to the pan handle. Fold the edge of the omelet nearest the handle up and over the filling, then tilt the pan over a plate and slide the omelet out, folding the far edge over on top as it lands. Rest it 1 minute before serving."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 338,
+  "protein_g": 20,
+  "carbs_g": 6,
+  "fat_g": 24,
+  "fiber_g": 0,
+  "sodium_mg": 344,
+  "est_cost_usd": 1.62,
+  "cal_per_dollar": 209
  },
  {
   "id": "bbq-pulled-chicken-sandwich",
@@ -1434,6 +1612,108 @@ export default [
   "cal_per_dollar": 238
  },
  {
+  "id": "black-bean-saute",
+  "title": "Black Bean Sauté",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "2 servings (2 cups)",
+  "totalTime": "15 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "canola oil",
+    "group": "Black beans"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion",
+    "group": "Black beans"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "ground cumin",
+    "group": "Black beans"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "dried bay leaf",
+    "group": "Black beans"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "black beans, drained and rinsed (15 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "frozen corn kernels",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "dried epazote",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped scallions",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced garlic",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "fresh lime juice",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Stir in"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sauté the aromatics",
+    "text": "Heat the canola oil in a small sauté pan over medium-high heat. Add the diced onion, ground cumin, and bay leaf; cook until the onion softens, about 5 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Add the beans",
+    "text": "Stir in the drained black beans, frozen corn kernels, dried epazote, chopped scallions, and minced garlic. Heat through, stirring occasionally, until everything is warmed and the flavors blend, about 3–4 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Finish with lime",
+    "text": "Discard the bay leaf. Stir in the fresh lime juice and season the sauté with salt and black pepper to taste. The acid from the lime brightens everything."
+   }
+  ],
+  "attribution": "Cuisine at Home-85",
+  "calories": 247,
+  "protein_g": 13,
+  "carbs_g": 42,
+  "fat_g": 3,
+  "fiber_g": 12,
+  "sodium_mg": 31,
+  "est_cost_usd": 1.85,
+  "cal_per_dollar": 134
+ },
+ {
   "id": "black-bean-tacos-with-tomato-radish-relish",
   "title": "Black Bean Tacos",
   "subtitle": "with tomato-radish relish",
@@ -1599,6 +1879,126 @@ export default [
   "sodium_mg": 1987,
   "est_cost_usd": 3.26,
   "cal_per_dollar": 266
+ },
+ {
+  "id": "bloody-marias",
+  "title": "Bloody Marias",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "6 servings (4 cups)",
+  "totalTime": "15 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "kosher salt",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "ground cumin",
+    "group": "Combine"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Lime wedge",
+    "group": "Combine"
+   },
+   {
+    "amount": "3",
+    "unit": "cups",
+    "item": "tomato juice",
+    "group": "Stir"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "silver tequila",
+    "group": "Stir"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "fresh lime juice",
+    "group": "Stir"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced chipotle in adobo sauce",
+    "group": "Stir"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "Worcestershire sauce",
+    "group": "Stir"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "chopped fresh cilantro",
+    "group": "Stir"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "grated onion",
+    "group": "Stir"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "hot sauce (such as",
+    "group": "Stir"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Tabasco)",
+    "group": "Stir"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Celery salt and black pepper to taste",
+    "group": "Stir"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Whole scallions",
+    "group": "Stir"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Salt the rims",
+    "text": "Combine the kosher salt and ground cumin on a small plate. Rub the rim of each glass with a lime wedge, then dip it into the salt mixture to coat. Set the glasses aside."
+   },
+   {
+    "n": 2,
+    "title": "Mix the cocktail",
+    "text": "Stir together the tomato juice, silver tequila, fresh lime juice, minced chipotle in adobo, Worcestershire sauce, chopped fresh cilantro, grated onion, and hot sauce in a pitcher. Taste and adjust seasoning if needed."
+   },
+   {
+    "n": 3,
+    "title": "Serve and garnish",
+    "text": "Fill each prepared glass with ice and pour in the Bloody Maria mixture. Lay a whole scallion across the top of each glass as a garnish. Serve immediately while cold."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1801",
+  "calories": 98,
+  "protein_g": 1,
+  "carbs_g": 6,
+  "fat_g": 0,
+  "fiber_g": 1,
+  "sodium_mg": 1014,
+  "est_cost_usd": 1.77,
+  "cal_per_dollar": 55
  },
  {
   "id": "brazilian-beef-stew-feijoada",
@@ -2453,6 +2853,191 @@ export default [
   "cal_per_dollar": 337
  },
  {
+  "id": "caesar-salad-nachos-with-rotisserie-chicken",
+  "title": "Caesar Salad Nachos",
+  "subtitle": "with rotisserie chicken",
+  "cuisine": "Mexican",
+  "servings": "8 servings",
+  "totalTime": "45 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "gal.",
+    "item": "peanut or vegetable oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "olive oil",
+    "group": "Dressing"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "grated Parmesan",
+    "group": "Dressing"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "mayonnaise",
+    "group": "Dressing"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "fresh lemon juice",
+    "group": "Dressing"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced garlic",
+    "group": "Dressing"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "each anchovy paste, Dijon mustard, Worcestershire sauce, and Tabasco sauce",
+    "group": "Dressing"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Dressing"
+   },
+   {
+    "amount": "10",
+    "unit": "",
+    "item": "flour tortillas (6-inch)",
+    "group": "Chips"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "chopped rotisserie chicken",
+    "group": "Chips"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "shaved Parmesan, divided",
+    "group": "Chips"
+   },
+   {
+    "amount": "3",
+    "unit": "cups",
+    "item": "shredded romaine lettuce",
+    "group": "Chips"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "diced tomato",
+    "group": "Chips"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Heat the oil",
+    "text": "Pour peanut oil into a 7- to 8-quart pot and position a deep-fry thermometer inside, then place over high heat. Watch it until the temperature climbs to 375°. A piece of tortilla dropped in should sizzle and brown right away."
+   },
+   {
+    "n": 2,
+    "title": "Make the dressing",
+    "text": "Whisk together olive oil, grated Parmesan, mayonnaise, fresh lemon juice, minced garlic, anchovy paste, Dijon mustard, Worcestershire sauce, and Tabasco. Season with salt and pepper. Preheat the broiler with the rack 6–8 inches from the element."
+   },
+   {
+    "n": 3,
+    "title": "Fry the chips",
+    "text": "Slice each tortilla into 6 wedges. Work in six batches, frying each batch for about 1½ minutes until the pieces are light golden and crisp. Lift them out with a slotted spoon, settle them into a bowl, and toss with salt right away so it sticks. Move the seasoned chips to a clean baking sheet, then go back to frying the next batch."
+   },
+   {
+    "n": 4,
+    "title": "Assemble the nachos",
+    "text": "Top the fried tortilla chips with half the shaved Parmesan, some of the remaining dressing, the chopped rotisserie chicken that you have tossed with ⅓ cup dressing, and the rest of the shaved Parmesan."
+   },
+   {
+    "n": 5,
+    "title": "Finish under the broiler",
+    "text": "Broil the nachos until the cheese melts, about 2 minutes. Remove from the heat and top with romaine that you have tossed separately with 3 Tbsp. dressing, and scatter diced tomato over the top. Serve immediately."
+   }
+  ],
+  "attribution": "Cuisine at Home-85",
+  "calories": 618,
+  "protein_g": 22,
+  "carbs_g": 19,
+  "fat_g": 51,
+  "fiber_g": 1,
+  "sodium_mg": 845,
+  "est_cost_usd": 2.27,
+  "cal_per_dollar": 272
+ },
+ {
+  "id": "cajun-oven-fries",
+  "title": "Cajun Oven Fries",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "2 servings",
+  "totalTime": "40 minutes",
+  "ingredients": [
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each kosher salt, garlic powder, dried thyme, and paprika"
+   },
+   {
+    "amount": "1/8",
+    "unit": "tsp.",
+    "item": "each cayenne pepper and black pepper"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "russet potato, cut into"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "1/4-inch sticks (12 oz.)"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Prepare the pan",
+    "text": "Heat the oven to 450°. Coat a baking sheet with nonstick spray."
+   },
+   {
+    "n": 2,
+    "title": "Season and toss",
+    "text": "Mix together the salt, garlic powder, thyme, paprika, cayenne, and black pepper. Toss the potato sticks with oil, then toss with the seasonings."
+   },
+   {
+    "n": 3,
+    "title": "Bake until crisp",
+    "text": "Spread the potatoes in a single layer on the baking sheet and bake 15 minutes. Flip them and continue baking until golden and crisp, 10–15 minutes more."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 199,
+  "protein_g": 4,
+  "carbs_g": 32,
+  "fat_g": 7,
+  "fiber_g": 3,
+  "sodium_mg": 490,
+  "est_cost_usd": 1.09,
+  "cal_per_dollar": 183
+ },
+ {
   "id": "caldo-verde-with-white-beans",
   "title": "Caldo Verde",
   "subtitle": "with white beans",
@@ -2706,6 +3291,106 @@ export default [
   "sodium_mg": 1278,
   "est_cost_usd": 3,
   "cal_per_dollar": 172
+ },
+ {
+  "id": "1-4-cauliflower-risotto",
+  "title": "Cauliflower Risotto",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "4 servings (31/2 cups)",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "head",
+    "item": "cauliflower (2 lb.), trimmed and cut into florets",
+    "group": "Pulse"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "each unsalted butter and olive oil",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "minced shallots",
+    "group": "Melt"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "dry white wine",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "low-sodium chicken or vegetable broth, warmed",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "grated Parmesan",
+    "group": "Off heat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "heavy cream",
+    "group": "Off heat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh parsley",
+    "group": "Off heat"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Rice the cauliflower",
+    "text": "Pulse the cauliflower florets in a food processor until they are the size of rice grains. Do not overprocess; you want texture, not purée."
+   },
+   {
+    "n": 2,
+    "title": "Sweat the shallots",
+    "text": "Combine butter and olive oil in a sauté pan and warm over medium heat. Once the butter has melted, scatter in the minced shallots and let them cook gently for 3–4 minutes, stirring occasionally, until they are translucent and tender but have not taken on any color. Now turn the heat up to medium-high."
+   },
+   {
+    "n": 3,
+    "title": "Toast the cauliflower",
+    "text": "Stir in the riced cauliflower, season with salt and pepper, and cook for 2 minutes to dry it slightly and toast the flavor."
+   },
+   {
+    "n": 4,
+    "title": "Deglaze and build",
+    "text": "Pour in the white wine and let it cook down nearly completely. Then add the broth in ½-cup increments, stirring constantly and letting each addition absorb before adding the next. This takes about 15–20 minutes. The constant stirring and gradual liquid create the creamy texture."
+   },
+   {
+    "n": 5,
+    "title": "Finish off heat",
+    "text": "When the cauliflower is tender and the liquid is absorbed, take the pan off the heat. Stir in the Parmesan and heavy cream. Top with chopped parsley and serve immediately."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 333,
+  "protein_g": 12,
+  "carbs_g": 14,
+  "fat_g": 23,
+  "fiber_g": 5,
+  "sodium_mg": 342,
+  "est_cost_usd": 1.65,
+  "cal_per_dollar": 202
  },
  {
   "id": "spiced-oatmeal-chai-spiced-steel-cut-oatmeal",
@@ -6269,6 +6954,173 @@ export default [
   "cal_per_dollar": 129
  },
  {
+  "id": "crab-artichoke-gratin",
+  "title": "Crab & Artichoke Gratin",
+  "subtitle": "",
+  "cuisine": "French",
+  "servings": "12 servings (about 4 cups)",
+  "totalTime": "45–50 minutes",
+  "ingredients": [
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "panko bread crumbs",
+    "group": "Topping"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "shredded Parmesan",
+    "group": "Topping"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "chopped fresh parsley",
+    "group": "Topping"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Topping"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "chopped scallions",
+    "group": "Gratin, sauté"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "diced red bell pepper",
+    "group": "Gratin, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Gratin, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced fresh garlic",
+    "group": "Gratin, sauté"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "dry sherry",
+    "group": "Gratin, sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "artichoke hearts, drained, chopped (14 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "heavy cream or half-and-half",
+    "group": "Stir in"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "neufchatel, cubed",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "shredded Parmesan",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced lemon zest",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "fresh lemon juice",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "Dijon mustard",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced fresh tarragon",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1–2",
+    "unit": "tsp.",
+    "item": "Tabasco sauce",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "Worcestershire sauce",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "cans",
+    "item": "pasteurized crabmeat, drained (6.5 oz. each)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Crostini",
+    "group": "Stir in"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Preheat and prepare",
+    "text": "Spray a 1-quart baking dish and set the oven to 400°. Combine the panko, ¼ cup Parmesan, parsley, and 1 Tbsp. oil in a bowl for the topping."
+   },
+   {
+    "n": 2,
+    "title": "Aromatics and base",
+    "text": "Warm 1 Tbsp. oil in a sauté pan over medium-high, add the scallions and bell pepper, and cook until just soft, 2 minutes. Stir in the minced garlic for 30 seconds, then pour in the sherry and reduce it nearly dry, scraping the pan."
+   },
+   {
+    "n": 3,
+    "title": "Build the filling",
+    "text": "Add the artichokes and cream; simmer 1 minute. Kill the heat and fold in the neufchatel until it melts completely, then fold in the ½ cup Parmesan, lemon zest and juice, Dijon mustard, tarragon, Tabasco, and Worcestershire sauce."
+   },
+   {
+    "n": 4,
+    "title": "Bake",
+    "text": "Gently fold the crabmeat into the mixture, pour into the prepared dish, sprinkle the topping over, and bake until the top is golden, 25–30 minutes. Serve hot with crostini."
+   }
+  ],
+  "attribution": "Cuisine at Home-85",
+  "calories": 179,
+  "protein_g": 10,
+  "carbs_g": 7,
+  "fat_g": 13,
+  "fiber_g": 1,
+  "sodium_mg": 447,
+  "est_cost_usd": 2.62,
+  "cal_per_dollar": 68
+ },
+ {
   "id": "crab-alfredo-baked-shells",
   "title": "Crab Alfredo Baked Shells",
   "subtitle": "",
@@ -6934,6 +7786,92 @@ export default [
   "cal_per_dollar": 151
  },
  {
+  "id": "cubano-black-beans",
+  "title": "Cubano Black Beans",
+  "subtitle": "",
+  "cuisine": "Cuban",
+  "servings": "4 servings",
+  "totalTime": "15 minutes",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "scallions"
+   },
+   {
+    "amount": "1",
+    "unit": "clove",
+    "item": "garlic, minced"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil, divided"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "black beans, drained and rinsed (15 oz.)"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each lime juice and dill pickle juice"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "prepared yellow mustard"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "quartered and sliced dill pickles"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "small-diced Swiss cheese"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Soften the scallion whites",
+    "text": "Slice the scallions, keeping the white and green parts separate. Sweat the whites with minced garlic in 1 Tbsp. oil over medium-low heat."
+   },
+   {
+    "n": 2,
+    "title": "Warm the beans",
+    "text": "Add the drained beans to the pan and stir until warmed through."
+   },
+   {
+    "n": 3,
+    "title": "Pickle dressing",
+    "text": "Whisk together the lime juice, pickle juice, remaining 1 Tbsp. oil, and mustard in a small bowl. Stir this into the beans."
+   },
+   {
+    "n": 4,
+    "title": "Finish off the heat",
+    "text": "Take the pan off the burner. Add the pickles, Swiss cheese, and scallion greens. Season with salt and pepper."
+   }
+  ],
+  "attribution": "Cuisine at Home-103",
+  "calories": 258,
+  "protein_g": 14,
+  "carbs_g": 19,
+  "fat_g": 15,
+  "fiber_g": 6,
+  "sodium_mg": 685,
+  "est_cost_usd": 1.71,
+  "cal_per_dollar": 151
+ },
+ {
   "id": "cup-o-ravioli-soup",
   "title": "Cup o’ Ravioli Soup",
   "subtitle": "",
@@ -7448,6 +8386,273 @@ export default [
   "sodium_mg": 1123,
   "est_cost_usd": 2.19,
   "cal_per_dollar": 128
+ },
+ {
+  "id": "fennel-shallots",
+  "title": "Fennel & Shallots",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "2 servings",
+  "totalTime": "40 minutes",
+  "ingredients": [
+   {
+    "amount": "6",
+    "unit": "oz.",
+    "item": "fingerling potatoes, halved lengthwise"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "fennel bulb, trimmed, cut into"
+   },
+   {
+    "amount": "8",
+    "unit": "",
+    "item": "wedges lengthwise"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "shallots, quartered lengthwise"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced fresh thyme"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each kosher salt and black pepper"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Preheat and prep",
+    "text": "Preheat the oven to 425°. Halve the fingerling potatoes lengthwise, cut the fennel bulb into 8 wedges lengthwise, and quarter the shallots lengthwise."
+   },
+   {
+    "n": 2,
+    "title": "Dress the vegetables",
+    "text": "Toss the potatoes, fennel, and shallots with the olive oil. Scatter the minced fresh thyme, kosher salt, and black pepper over them and toss again until well coated."
+   },
+   {
+    "n": 3,
+    "title": "Roast and turn",
+    "text": "Set the baking sheet in the oven and let it cook for 15 minutes until the edges start to color. Take it out, flip each vegetable piece over and give the pan a quarter turn to ensure even browning, then put it back in for another 15 minutes. The vegetables are done when they are caramelized on all sides and fork-tender."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 128,
+  "protein_g": 3,
+  "carbs_g": 16,
+  "fat_g": 7,
+  "fiber_g": 4,
+  "sodium_mg": 541,
+  "est_cost_usd": 1.23,
+  "cal_per_dollar": 104
+ },
+ {
+  "id": "fennel-cornbread",
+  "title": "Fennel Cornbread",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "12 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "grated fennel bulb"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "grated onion"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "each yellow cornmeal and all-purpose flour"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "baking powder"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each ground fennel and kosher salt"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "buttermilk"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "olive oil"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "honey"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "eggs"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Preheat and prep",
+    "text": "Preheat the oven to 400° and coat an 8×8-inch baking pan with nonstick spray."
+   },
+   {
+    "n": 2,
+    "title": "Sauté fennel and onion",
+    "text": "Sauté the grated fennel bulb and grated onion in 1 Tbsp. olive oil over medium-high heat until the liquid evaporates, about 5 minutes. Season with salt and pepper and set aside to cool."
+   },
+   {
+    "n": 3,
+    "title": "Mix the dry goods",
+    "text": "Whisk together the cornmeal, all-purpose flour, baking powder, ground fennel, and kosher salt in a large bowl."
+   },
+   {
+    "n": 4,
+    "title": "Combine wet and dry",
+    "text": "Whisk together the buttermilk, ⅓ cup olive oil, honey, and eggs in a separate bowl. Fold the wet mixture and the cooled fennel mixture into the dry ingredients just until blended — do not overmix. Pour the batter into the prepared pan."
+   },
+   {
+    "n": 5,
+    "title": "Bake until set",
+    "text": "Bake the cornbread until a toothpick inserted in the center comes out clean, 15–20 minutes. The top should be golden and firm to touch."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 193,
+  "protein_g": 4,
+  "carbs_g": 26,
+  "fat_g": 9,
+  "fiber_g": 2,
+  "sodium_mg": 252,
+  "est_cost_usd": 1.6,
+  "cal_per_dollar": 121
+ },
+ {
+  "id": "feta-topped-pitas-with-pepperoncini",
+  "title": "Feta-Topped Pitas",
+  "subtitle": "with pepperoncini",
+  "cuisine": "Greek",
+  "servings": "2 servings",
+  "totalTime": "15 minutes",
+  "ingredients": [
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "crumbled feta cheese",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "chopped pepperoncini",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "chopped fresh parsley",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "extra-virgin olive oil",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced lemon zest",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "minced fresh garlic",
+    "group": "Combine"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "pitas (6-inch)",
+    "group": "Brush"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Olive oil",
+    "group": "Brush"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Preheat the oven",
+    "text": "Heat the oven to 350°."
+   },
+   {
+    "n": 2,
+    "title": "Mix the topping",
+    "text": "Combine the feta, pepperoncini, parsley, 2 tsp. oil, lemon zest, and garlic. Season with salt and pepper."
+   },
+   {
+    "n": 3,
+    "title": "Brush and top the pitas",
+    "text": "Brush both sides of each pita with oil. Top with the feta mixture and set on a baking sheet."
+   },
+   {
+    "n": 4,
+    "title": "Toast and cut",
+    "text": "Run them through the oven for 10 minutes until the edges brown lightly. Slice into wedges."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 258,
+  "protein_g": 8,
+  "carbs_g": 35,
+  "fat_g": 9,
+  "fiber_g": 2,
+  "sodium_mg": 532,
+  "est_cost_usd": 1.54,
+  "cal_per_dollar": 168
  },
  {
   "id": "fish-florentine-with-parmesan-crumbs",
@@ -8385,6 +9590,102 @@ export default [
   "cal_per_dollar": 219
  },
  {
+  "id": "seasonal-kitchen-grapefruit-avocado-tostadas",
+  "title": "Grapefruit & Avocado Tostadas",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "6 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "6",
+    "unit": "",
+    "item": "yellow corn tortillas",
+    "group": "Brush"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Brush"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "fresh grapefruit segments (squeezing and reserving juice from the membranes)",
+    "group": "Toss"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "avocado, pitted, peeled, and sliced",
+    "group": "Toss"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "jalapeño, sliced into rings",
+    "group": "Toss"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "bell pepper, sliced into strips and halved on the bias",
+    "group": "Toss"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh cilantro",
+    "group": "Toss"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each ground cumin and coriander",
+    "group": "Toss"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Toss"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Queso fresco cheese",
+    "group": "Toss"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Crisp the tortillas",
+    "text": "Heat the oven to 350°. Brush both sides of the corn tortillas with oil, set them on a baking sheet, and bake until crisp, 20 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Build the topping",
+    "text": "Toss the grapefruit segments with avocado, jalapeño, bell pepper, cilantro, cumin, and coriander in a large bowl. Season with salt and pepper, then add 1 Tbsp. of the reserved grapefruit juice and toss."
+   },
+   {
+    "n": 3,
+    "title": "Top and garnish",
+    "text": "Divide the topping evenly among the crisped tortillas. Sprinkle queso fresco over each one."
+   }
+  ],
+  "attribution": "Cuisine at Home-91",
+  "calories": 147,
+  "protein_g": 2,
+  "carbs_g": 19,
+  "fat_g": 8,
+  "fiber_g": 5,
+  "sodium_mg": 9,
+  "est_cost_usd": 1.46,
+  "cal_per_dollar": 101
+ },
+ {
   "id": "greek-lentils-couscous",
   "title": "Greek Lentils & Couscous",
   "subtitle": "",
@@ -8912,6 +10213,66 @@ export default [
   "cal_per_dollar": 211
  },
  {
+  "id": "grilled-potato-wedges",
+  "title": "Grilled Potato Wedges",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "4 servings (16 wedges)",
+  "totalTime": "20 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each granulated garlic, kosher salt, and black pepper",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "large russet potatoes (1 lb.), each cut into 8 wedges",
+    "group": "Toss"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Toss"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "reserved lime vinaigrette (left)",
+    "group": "Toss"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Prepare the grill",
+    "text": "Heat the grill to medium-low and brush the grate with oil."
+   },
+   {
+    "n": 2,
+    "title": "Season the wedges",
+    "text": "Mix together the garlic powder, salt, and black pepper. Toss the potato wedges with oil, then toss with the spice blend."
+   },
+   {
+    "n": 3,
+    "title": "Grill until fork-tender",
+    "text": "Set the wedges on the grate and let them char slightly while they soften inside, 5–7 minutes per side. Pour the reserved lime vinaigrette over them and serve."
+   }
+  ],
+  "attribution": "Cuisine at Home-105",
+  "calories": 219,
+  "protein_g": 4,
+  "carbs_g": 35,
+  "fat_g": 8,
+  "fiber_g": 3,
+  "sodium_mg": 490,
+  "est_cost_usd": 1,
+  "cal_per_dollar": 219
+ },
+ {
   "id": "grilled-sausage-pepper-panzanella",
   "title": "Grilled Sausage & Pepper Panzanella",
   "subtitle": "",
@@ -9062,6 +10423,90 @@ export default [
   "sodium_mg": 1269,
   "est_cost_usd": 2.83,
   "cal_per_dollar": 211
+ },
+ {
+  "id": "grilled-veal-t-bones-with-rosemary-gremolata",
+  "title": "Grilled Veal T-Bones",
+  "subtitle": "with rosemary gremolata",
+  "cuisine": "Italian",
+  "servings": "2 servings",
+  "totalTime": "20 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh parsley",
+    "group": "Gremolata"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced lemon zest",
+    "group": "Gremolata"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced fresh garlic",
+    "group": "Gremolata"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced fresh rosemary",
+    "group": "Gremolata"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Gremolata"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "veal T-bone chops (8 oz. each), trimmed and seasoned with salt and black pepper",
+    "group": "Veal"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "lemon twists",
+    "group": "Veal"
+   },
+   {
+    "amount": "2",
+    "unit": "sprigs",
+    "item": "fresh rosemary",
+    "group": "Veal"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Prepare grill and gremolata",
+    "text": "Preheat the grill to medium and lightly oil the grate. Combine the parsley, lemon zest, minced garlic, and minced rosemary, then season with salt and black pepper for the gremolata."
+   },
+   {
+    "n": 2,
+    "title": "Grill the veal",
+    "text": "Coat the veal chops lightly with nonstick spray and grill until an instant-read thermometer inserted near (but not touching) the bone reads 135°, about 4 minutes per side. Tent with foil and let rest 5 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Serve",
+    "text": "Spoon the gremolata over the chops and garnish each with a lemon twist and a fresh rosemary sprig."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 280,
+  "protein_g": 46,
+  "carbs_g": 2,
+  "fat_g": 9,
+  "fiber_g": 1,
+  "sodium_mg": 218,
+  "est_cost_usd": 2.52,
+  "cal_per_dollar": 111
  },
  {
   "id": "hash-brown-omelet",
@@ -9998,6 +11443,108 @@ export default [
   "cal_per_dollar": 130
  },
  {
+  "id": "jalapeno-slaw",
+  "title": "Jalapeño Slaw",
+  "subtitle": "",
+  "cuisine": "Mexican",
+  "servings": "4 servings",
+  "totalTime": "15 minutes",
+  "ingredients": [
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "fresh lime juice",
+    "group": "Whisk"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "fresh orange juice",
+    "group": "Whisk"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "extra-virgin olive oil",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "sugar",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "ground cumin",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each kosher salt and black pepper",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "pkg.",
+    "item": "coleslaw mix (14 oz.)",
+    "group": "Toss"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "sliced mini sweet peppers",
+    "group": "Toss"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "thinly sliced red onion",
+    "group": "Toss"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh cilantro",
+    "group": "Toss"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "jalapeño, sliced",
+    "group": "Toss"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Mix the dressing",
+    "text": "Whisk together the fresh lime juice, fresh orange juice, extra-virgin olive oil, sugar, ground cumin, kosher salt, and black pepper."
+   },
+   {
+    "n": 2,
+    "title": "Prep the slaw",
+    "text": "Combine the coleslaw mix, sliced mini sweet peppers, thinly sliced red onion, chopped fresh cilantro, and sliced jalapeño in a large bowl."
+   },
+   {
+    "n": 3,
+    "title": "Dress and rest",
+    "text": "Pour the vinaigrette over the slaw and toss well to coat everything evenly. Let it sit for 5 minutes before serving so the vegetables soften slightly and soak up the dressing."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 144,
+  "protein_g": 2,
+  "carbs_g": 12,
+  "fat_g": 11,
+  "fiber_g": 3,
+  "sodium_mg": 311,
+  "est_cost_usd": 1.54,
+  "cal_per_dollar": 94
+ },
+ {
   "id": "jamaican-jerk-pork-with-mashed-sweet-potatoes",
   "title": "Jamaican Jerk Pork",
   "subtitle": "with mashed sweet potatoes",
@@ -10910,6 +12457,84 @@ export default [
   "cal_per_dollar": 191
  },
  {
+  "id": "lemony-garlic-bread",
+  "title": "Lemony Garlic Bread",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "2 servings",
+  "totalTime": "20 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, softened",
+    "group": "Combine"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced fresh garlic",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced lemon zest",
+    "group": "Combine"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "demi baguette, halved lengthwise (4 oz.)",
+    "group": "Brush"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped fresh parsley",
+    "group": "Brush"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Preheat and prep",
+    "text": "Set the oven to 400°. Mix the softened butter with oil, minced garlic, and lemon zest; season with salt and pepper."
+   },
+   {
+    "n": 2,
+    "title": "Butter the baguette",
+    "text": "Brush the cut sides of the halved baguette with the butter mixture, making sure it soaks into the crumb."
+   },
+   {
+    "n": 3,
+    "title": "Toast and finish",
+    "text": "Bake until the edges are golden and the butter has crisped the surface, 12–13 minutes. Scatter fresh parsley over the top before serving."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 407,
+  "protein_g": 8,
+  "carbs_g": 39,
+  "fat_g": 26,
+  "fiber_g": 2,
+  "sodium_mg": 427,
+  "est_cost_usd": 1.37,
+  "cal_per_dollar": 297
+ },
+ {
   "id": "lobster-stuffed-ny-strip-steaks",
   "title": "Lobster-Stuffed NY Strip Steaks",
   "subtitle": "",
@@ -11019,6 +12644,125 @@ export default [
   "sodium_mg": 777,
   "est_cost_usd": 4.2,
   "cal_per_dollar": 262
+ },
+ {
+  "id": "mango-wings-with-cilantro-dipping-sauce",
+  "title": "Mango Wings with",
+  "subtitle": "cilantro dipping sauce",
+  "cuisine": "American",
+  "servings": "12 servings",
+  "totalTime": "",
+  "ingredients": [
+   {
+    "amount": "12",
+    "unit": "",
+    "item": "whole chicken wings",
+    "group": "Wings"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "fresh mangoes, peeled, pitted, and chopped",
+    "group": "Pulse"
+   },
+   {
+    "amount": "4",
+    "unit": "cloves",
+    "item": "garlic",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "hot sauce",
+    "group": "Pulse"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(such as Frank’s)",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "mango jelly",
+    "group": "Pulse"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter, melted",
+    "group": "Pulse"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "kosher salt",
+    "group": "Pulse"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "fresh cilantro leaves",
+    "group": "Dipping sauce, purée"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "plain yogurt",
+    "group": "Dipping sauce, purée"
+   },
+   {
+    "amount": "4",
+    "unit": "oz.",
+    "item": "cream cheese, softened",
+    "group": "Dipping sauce, purée"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "fresh lime juice",
+    "group": "Dipping sauce, purée"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt to taste",
+    "group": "Dipping sauce, purée"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Prep wings and mango sauce",
+    "text": "Trim the wing tips and discard them. Separate each wing at the joint, then put all the pieces into a 3- to 4-quart slow cooker. Blend the fresh mangoes, garlic, hot sauce, mango jelly, butter, and salt until the mixture is smooth."
+   },
+   {
+    "n": 2,
+    "title": "Slow cook",
+    "text": "Reserve half of the mango sauce. Stir the remaining half into the slow cooker, cover, and cook on low until an instant-read thermometer inserted into a wing registers 165°, about 3 hours."
+   },
+   {
+    "n": 3,
+    "title": "Broil",
+    "text": "Preheat the broiler to high with the rack 6 inches from the element. Line the broiler pan with foil and coat the rack with nonstick spray. Arrange half the wings on the pan and broil 7–8 minutes, turn, and broil 7–8 minutes more until they begin to char. Repeat with the remaining wings."
+   },
+   {
+    "n": 4,
+    "title": "Cilantro dipping sauce",
+    "text": "Purée the cilantro, yogurt, cream cheese, and lime juice in a food processor until smooth, then season with salt. Serve alongside the wings with the reserved mango sauce for dipping."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 212,
+  "protein_g": 11,
+  "carbs_g": 13,
+  "fat_g": 13,
+  "fiber_g": 1,
+  "sodium_mg": 962,
+  "est_cost_usd": 1.96,
+  "cal_per_dollar": 108
  },
  {
   "id": "maple-cider-brisket-with-parsnip-apple-mash",
@@ -12364,6 +14108,128 @@ export default [
   "cal_per_dollar": 162
  },
  {
+  "id": "mixed-berry-betty",
+  "title": "Mixed Berry Betty",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "8 servings",
+  "totalTime": "2 hours (high)",
+  "ingredients": [
+   {
+    "amount": "16",
+    "unit": "oz.",
+    "item": "frozen raspberries, thawed",
+    "group": "Betty"
+   },
+   {
+    "amount": "16",
+    "unit": "oz.",
+    "item": "frozen blueberries, thawed",
+    "group": "Betty"
+   },
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "sugar",
+    "group": "Betty"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "cornstarch",
+    "group": "Betty"
+   },
+   {
+    "amount": "7–9",
+    "unit": "slices",
+    "item": "cinnamon swirl bread",
+    "group": "Toast"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(about 1/2 oz. each)",
+    "group": "Toast"
+   },
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "melted unsalted butter, divided",
+    "group": "Toast"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "each unsalted butter, slivered almonds, and old-fashioned rolled oats",
+    "group": "Crisp"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "packed brown sugar",
+    "group": "Crisp"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "crushed almond biscotti",
+    "group": "Stir"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Vanilla ice cream or lemon yogurt",
+    "group": "Garnish"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Toss the berries",
+    "text": "Combine the thawed raspberries and blueberries with sugar and cornstarch in a large bowl."
+   },
+   {
+    "n": 2,
+    "title": "Butter the bread",
+    "text": "Give 2 slices of cinnamon swirl bread a quick toast and brush with melted butter on both sides. For the remaining 4 slices, leave them untoasted but brush those with melted butter too."
+   },
+   {
+    "n": 3,
+    "title": "Assemble the shell",
+    "text": "Into a 3- to 4-qt. slow cooker, lay your toasted slices flat on the bottom for the foundation. Now build the walls: press the untoasted buttered bread vertically against the sides, patching gaps with cut pieces as needed. Pour the berry mixture in."
+   },
+   {
+    "n": 4,
+    "title": "First cook",
+    "text": "Cover and cook on high for 1 hour. Gently stir without breaking the bread crust, then cover again and cook until the berries are thick and bubbling, 30–40 minutes more."
+   },
+   {
+    "n": 5,
+    "title": "Toast the topping",
+    "text": "Set 2 Tbsp. butter over medium heat in a sauté pan. When it melts, add almonds and oats. Watch them toast for about 5 minutes. Stir in brown sugar and keep stirring until it melts, 3 minutes."
+   },
+   {
+    "n": 6,
+    "title": "Finish the crisp",
+    "text": "Fold the crushed almond biscotti into the warm almond mixture and cook until syrupy, then pull from the heat."
+   },
+   {
+    "n": 7,
+    "title": "Serve",
+    "text": "Top the berry mixture with the crisp, then top each serving with vanilla ice cream or lemon yogurt."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 353,
+  "protein_g": 5,
+  "carbs_g": 57,
+  "fat_g": 13,
+  "fiber_g": 5,
+  "sodium_mg": 141,
+  "est_cost_usd": 1.63,
+  "cal_per_dollar": 217
+ },
+ {
   "id": "mushroom-wellingtons-with-walnuts-and-roquefort-cheese",
   "title": "Mushroom Wellingtons",
   "subtitle": "with walnuts and Roquefort cheese",
@@ -12499,6 +14365,78 @@ export default [
   "sodium_mg": 552,
   "est_cost_usd": 2.33,
   "cal_per_dollar": 218
+ },
+ {
+  "id": "mustard-egg-noodles",
+  "title": "Mustard Egg Noodles",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "4 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "egg noodles",
+    "group": "Cook"
+   },
+   {
+    "amount": "8",
+    "unit": "oz.",
+    "item": "green beans, trimmed and cut into 1-inch pieces",
+    "group": "Cook"
+   },
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Melt"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "coarse-grain mustard",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh parsley",
+    "group": "Melt"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Melt"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Cook the noodles",
+    "text": "Boil the egg noodles in salted water according to package directions. Add the green beans during the last 3 minutes so they finish together. Drain both and set aside."
+   },
+   {
+    "n": 2,
+    "title": "Make the mustard sauce",
+    "text": "Melt butter in the same pot over medium heat. Whisk in the coarse-grain mustard, stirring until the flavors are fully blended and the butter is smooth and glossy."
+   },
+   {
+    "n": 3,
+    "title": "Combine and season",
+    "text": "Return the drained noodles and green beans to the pot, add the chopped parsley, and toss everything together until each strand is coated with the mustard butter. Season with salt and pepper and serve immediately."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 324,
+  "protein_g": 9,
+  "carbs_g": 44,
+  "fat_g": 12,
+  "fiber_g": 5,
+  "sodium_mg": 132,
+  "est_cost_usd": 1.31,
+  "cal_per_dollar": 247
  },
  {
   "id": "new-england-clam-chowder",
@@ -13024,6 +14962,171 @@ export default [
   "cal_per_dollar": 125
  },
  {
+  "id": "oysters-rockefeller-with-tabasco-beurre-blanc",
+  "title": "Oysters Rockefeller with Tabasco Beurre Blanc",
+  "subtitle": "with tabasco beurre blanc",
+  "cuisine": "American",
+  "servings": "24 oysters",
+  "totalTime": "40 minutes",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Oysters"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced garlic",
+    "group": "Oysters"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "panko bread crumbs",
+    "group": "Oysters"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "finely chopped scallions",
+    "group": "Oysters"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(green parts only)",
+    "group": "Oysters"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "grated Parmesan",
+    "group": "Oysters"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "packed fresh baby spinach, chopped",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped fresh parsley",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced celery",
+    "group": "Sauté"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "anise liqueur",
+    "group": "Sauté"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(such as Pernod)",
+    "group": "Sauté"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Sauté"
+   },
+   {
+    "amount": "3",
+    "unit": "lb.",
+    "item": "kosher or rock salt",
+    "group": "Spread"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "dozen fresh oysters, shucked, on the half shell",
+    "group": "Spread"
+   },
+   {
+    "amount": "3",
+    "unit": "strips",
+    "item": "bacon, cooked and crumbled",
+    "group": "Spread"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "dry white wine",
+    "group": "Beurre blanc"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "fresh lemon juice",
+    "group": "Beurre blanc"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "chopped shallots",
+    "group": "Beurre blanc"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "Tabasco sauce",
+    "group": "Beurre blanc"
+   },
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "cold unsalted butter, cubed",
+    "group": "Whisk in"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Preheat and garlic butter",
+    "text": "Set the oven to 450°. In a small sauté pan, warm 4 Tbsp. butter over medium-low, add the garlic, and cook gently for 2 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Divide and cook spinach",
+    "text": "Pour half the garlic butter into a bowl and toss it with the panko, scallions, and Parmesan for the topping. Return the pan to medium heat, add the spinach, parsley, and celery to the remaining butter, then pour in the Pernod and let it evaporate completely, 5 minutes. Season with salt and pepper."
+   },
+   {
+    "n": 3,
+    "title": "Assemble and roast",
+    "text": "Spread the salt on a baking sheet and nestle the oysters into it. Top each oyster with ½ tsp. spinach mixture, then the bread crumb mixture, then crumbled bacon. Roast until the oysters begin to curl and the crumbs are golden, 10–15 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Beurre blanc",
+    "text": "On high heat, cook down the wine, lemon juice, shallots, and Tabasco until only half remains, 5 minutes. Take the pan off the heat and whisk in the cold butter bit by bit, making sure each piece melts completely before the next goes in. Season to taste with salt and pepper."
+   },
+   {
+    "n": 5,
+    "title": "Serve",
+    "text": "Spoon the warm beurre blanc over the oysters and serve immediately."
+   }
+  ],
+  "attribution": "Cuisine at Home-85",
+  "calories": 77,
+  "protein_g": 3,
+  "carbs_g": 3,
+  "fiber_g": 0,
+  "sodium_mg": 113,
+  "est_cost_usd": 2.33,
+  "cal_per_dollar": 33
+ },
+ {
   "id": "pad-thai-with-shrimp-or-pork",
   "title": "Pad Thai",
   "subtitle": "with shrimp or pork",
@@ -13158,6 +15261,101 @@ export default [
   "sodium_mg": 1548,
   "est_cost_usd": 2.3,
   "cal_per_dollar": 162
+ },
+ {
+  "id": "panzanella-stuffed-tomatoes",
+  "title": "Panzanella-Stuffed Tomatoes",
+  "subtitle": "",
+  "cuisine": "Italian",
+  "servings": "6 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "6",
+    "unit": "",
+    "item": "large firm tomatoes",
+    "group": "Prepare"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper",
+    "group": "Prepare"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "extra-virgin olive oil",
+    "group": "Whisk"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh mint",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each chopped fresh basil and fresh lemon juice",
+    "group": "Whisk"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "each chopped kalamata olives and minced red onion",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "minced garlic",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "purchased croutons, chopped",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "fresh mozzarella pearls",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Hollow the tomatoes",
+    "text": "Slice the top off each tomato and reserve it. Using a spoon, gently scrape out the pulp and seeds into a fine-mesh strainer; save that pulp. Season the inside of each tomato shell with salt and pepper, then invert them on a paper-towel-lined plate to drain for a few minutes."
+   },
+   {
+    "n": 2,
+    "title": "Make the dressing",
+    "text": "Pass the strained tomato pulp through the strainer to release the juice. Whisk together the extra-virgin olive oil, fresh mint, chopped fresh basil, fresh lemon juice, and 3 Tbsp. of that strained tomato juice."
+   },
+   {
+    "n": 3,
+    "title": "Build the filling",
+    "text": "Combine the chopped kalamata olives, minced red onion, minced garlic, chopped croutons, and fresh mozzarella pearls in a bowl. Toss everything with the vinaigrette."
+   },
+   {
+    "n": 4,
+    "title": "Stuff and serve",
+    "text": "Divide the filling evenly among the hollowed tomatoes, mounding it gently. Serve at room temperature or slightly chilled."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1151",
+  "calories": 294,
+  "protein_g": 12,
+  "carbs_g": 18,
+  "fat_g": 21,
+  "fiber_g": 3,
+  "sodium_mg": 513,
+  "est_cost_usd": 1.65,
+  "cal_per_dollar": 178
  },
  {
   "id": "pecorino-risotto",
@@ -15762,6 +17960,125 @@ export default [
   "cal_per_dollar": 121
  },
  {
+  "id": "queso-fundido-with-poblanos-and-mushrooms",
+  "title": "Queso Fundido",
+  "subtitle": "with poblanos and mushrooms",
+  "cuisine": "Mexican",
+  "servings": "8 servings (4 cups)",
+  "totalTime": "about 45 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "poblano chiles",
+    "group": "Char"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "shredded pepper",
+    "group": "Combine"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Jack cheese",
+    "group": "Combine"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "cups",
+    "item": "Monterey Jack cheese",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "crumbled queso fresco or feta cheese",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "all-purpose flour",
+    "group": "Combine"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Melt"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "sliced cremini or button mushrooms",
+    "group": "Melt"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "lager beer (such as",
+    "group": "Melt"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Dos Equis)",
+    "group": "Melt"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Melt"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Tortilla chips",
+    "group": "Melt"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Char and steam poblanos",
+    "text": "Set the oven to 425°. Working over a gas flame, blacken the poblanos on all sides. Trap them in a covered bowl for 15 minutes — they'll steam loose in their own heat. Once soft, peel off the skin, remove the seeds, and cut into pieces."
+   },
+   {
+    "n": 2,
+    "title": "Mix the cheeses",
+    "text": "Toss together the pepper Jack, Monterey Jack, queso fresco, and flour."
+   },
+   {
+    "n": 3,
+    "title": "Sauté the mushrooms and poblanos",
+    "text": "Set butter to melt in a skillet on medium-high. When foaming, add mushrooms and let them brown, 4–5 minutes. Stir in the garlic and poblano pieces; cook 1 minute more. Pour the beer into the pan and let it reduce away. Season to taste."
+   },
+   {
+    "n": 4,
+    "title": "Bake until bubbly",
+    "text": "Pour the mushroom mixture over the cheese, toss to combine, and turn it into a 1-qt. baking dish. Bake until the cheese is bubbly and lightly browned at the edges, 10–12 minutes. Serve with tortilla chips."
+   }
+  ],
+  "attribution": "Cuisine at Home-103",
+  "calories": 241,
+  "protein_g": 14,
+  "carbs_g": 5,
+  "fat_g": 18,
+  "fiber_g": 0,
+  "sodium_mg": 354,
+  "est_cost_usd": 2.05,
+  "cal_per_dollar": 118
+ },
+ {
   "id": "quick-comfort-cream-of-spinach-soup",
   "title": "quick COMFORT Cream of Spinach Soup",
   "subtitle": "",
@@ -15896,6 +18213,132 @@ export default [
   "sodium_mg": 1053,
   "est_cost_usd": 2.36,
   "cal_per_dollar": 344
+ },
+ {
+  "id": "ramen-slaw",
+  "title": "Ramen Slaw",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 servings (8 cups)",
+  "totalTime": "30 minutes + chilling",
+  "ingredients": [
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "rice vinegar",
+    "group": "Dressing"
+   },
+   {
+    "amount": "3",
+    "unit": "Tbsp.",
+    "item": "low-sodium soy sauce",
+    "group": "Dressing"
+   },
+   {
+    "amount": "4",
+    "unit": "tsp.",
+    "item": "light brown sugar",
+    "group": "Dressing"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "fresh lime juice",
+    "group": "Dressing"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "chili garlic sauce",
+    "group": "Dressing"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "toasted sesame oil",
+    "group": "Dressing"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "each grated fresh garlic and ginger",
+    "group": "Dressing"
+   },
+   {
+    "amount": "1",
+    "unit": "bag",
+    "item": "broccoli slaw mix (10 oz.)",
+    "group": "Slaw"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "julienned carrots",
+    "group": "Slaw"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "matchstick-cut red bell peppers (about 1 pepper)",
+    "group": "Slaw"
+   },
+   {
+    "amount": "1",
+    "unit": "pkg.",
+    "item": "dry ramen noodles, broken into bite-sized pieces, seasoning packet discarded",
+    "group": "Top"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(3 oz.)",
+    "group": "Top"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "bias-sliced scallion greens (about 1 bunch)",
+    "group": "Top"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "each packed fresh cilantro and mint leaves",
+    "group": "Top"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "chopped dry-roasted peanuts",
+    "group": "Top"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Dressing",
+    "text": "Whisk together the vinegar, soy sauce, brown sugar, lime juice, chili garlic sauce, sesame oil, minced garlic, and minced ginger."
+   },
+   {
+    "n": 2,
+    "title": "Dress the slaw",
+    "text": "Toss the broccoli slaw, carrots, and bell peppers with the dressing, then cover and refrigerate for 2 hours."
+   },
+   {
+    "n": 3,
+    "title": "Finish and serve",
+    "text": "Scatter the ramen noodles, scallions, cilantro, and mint over the chilled slaw, add the peanuts, and toss gently to combine just before serving."
+   }
+  ],
+  "attribution": "Cuisine at Home-105",
+  "calories": 107,
+  "protein_g": 4,
+  "carbs_g": 15,
+  "fat_g": 5,
+  "fiber_g": 4,
+  "sodium_mg": 415,
+  "est_cost_usd": 1.94,
+  "cal_per_dollar": 55
  },
  {
   "id": "red-beans-rice",
@@ -17673,6 +20116,225 @@ export default [
   "cal_per_dollar": 222
  },
  {
+  "id": "sauteed-red-snapper-with-carrot-broth",
+  "title": "Sautéed Red Snapper with Carrot Broth",
+  "subtitle": "",
+  "cuisine": "French",
+  "servings": "2 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "medium carrots",
+    "group": "Broth"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion",
+    "group": "Broth"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "canola oil",
+    "group": "Broth"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "dry white wine",
+    "group": "Broth"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "purchased carrot juice",
+    "group": "Broth"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "1/4-inch-thick rounds fresh ginger (about 1/2 oz.)",
+    "group": "Broth"
+   },
+   {
+    "amount": "1/8",
+    "unit": "tsp.",
+    "item": "each kosher salt and Tabasco sauce",
+    "group": "Broth"
+   },
+   {
+    "amount": "2",
+    "unit": "",
+    "item": "skin-on red snapper fillets",
+    "group": "Fish"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(6 oz. each)",
+    "group": "Fish"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "canola oil",
+    "group": "Fish"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "kosher salt",
+    "group": "Fish"
+   },
+   {
+    "amount": "1/8",
+    "unit": "tsp.",
+    "item": "each black pepper and paprika",
+    "group": "Fish"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Make the broth base",
+    "text": "For the broth, shred the carrots until you have ⅓ cup for garnish and set aside. Dice the rest. Cook the diced carrots and onion in 1 tsp. oil in a saucepan over medium heat until the onion softens, 3–5 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Finish the broth",
+    "text": "Deglaze the pan with white wine. Add carrot juice and ginger; bring to a boil. Drop the heat to a simmer and cook uncovered for 15 minutes. Season with ⅛ tsp. salt and a dash of Tabasco."
+   },
+   {
+    "n": 3,
+    "title": "Ready the fish",
+    "text": "Score the skin of each fillet with a knife. Brush both sides with 2 tsp. oil and sprinkle with ¼ tsp. salt, pepper, and paprika."
+   },
+   {
+    "n": 4,
+    "title": "Sauté the fillets",
+    "text": "Heat a large nonstick skillet over medium. Sauté the fish skin-side down until the skin is crispy, 4 minutes. Flip and sauté until the flesh flakes easily, 4–5 minutes more."
+   },
+   {
+    "n": 5,
+    "title": "Serve",
+    "text": "Divide the broth between bowls, set a fillet in each, and garnish with the shredded carrots."
+   }
+  ],
+  "attribution": "Cuisine at Home-103",
+  "est_cost_usd": 1.91,
+  "cal_per_dollar": null
+ },
+ {
+  "id": "sauteed-scallops-with-mango-sauce",
+  "title": "Sautéed Scallops",
+  "subtitle": "with mango sauce",
+  "cuisine": "French",
+  "servings": "2 servings",
+  "totalTime": "about 40 minutes",
+  "ingredients": [
+   {
+    "amount": "3/4",
+    "unit": "cup",
+    "item": "diced fresh mango",
+    "group": "Sauce"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "diced shallots",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "curry powder",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1/3",
+    "unit": "cup",
+    "item": "water + more to thin sauce",
+    "group": "Sauce"
+   },
+   {
+    "amount": "1 1/2",
+    "unit": "tsp.",
+    "item": "fresh lemon juice",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "honey",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and cayenne pepper to taste",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "vegetable oil",
+    "group": "Scallops"
+   },
+   {
+    "amount": "10",
+    "unit": "",
+    "item": "large sea scallops, (about 1 lb.) rinsed, patted dry, feet removed, and seasoned with salt and black pepper",
+    "group": "Scallops"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Quartered red seedless grapes, chopped, fried and salted Marcona almonds, and minced fresh cilantro",
+    "group": "Scallops"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Cook the mango sauce",
+    "text": "In a saucepan over medium-low, cook the mango, shallots, butter, curry powder, and ⅓ cup water gently until both the mango and shallots break down, 10–15 minutes. Scrape the whole thing into a mini food processor."
+   },
+   {
+    "n": 2,
+    "title": "Purée and season",
+    "text": "Purée the mango mixture with the lemon juice and honey. Thin the sauce with water, 1 Tbsp. at a time, to reach your desired consistency, then season with salt and cayenne pepper."
+   },
+   {
+    "n": 3,
+    "title": "Sear the scallops",
+    "text": "Pour 1 Tbsp. oil into a sauté pan and get it smoking over high heat. Add half the scallops and cook until they're golden at the edges, 2–3 minutes per side. Do the same with the remaining oil and scallops."
+   },
+   {
+    "n": 4,
+    "title": "Plate and garnish",
+    "text": "Divide the sauce between two plates, arrange five scallops on each pool of sauce, and garnish with quartered red seedless grapes, chopped fried salted Marcona almonds, and minced fresh cilantro."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 240,
+  "protein_g": 11,
+  "carbs_g": 19,
+  "fat_g": 15,
+  "fiber_g": 2,
+  "sodium_mg": 308,
+  "est_cost_usd": 1.79,
+  "cal_per_dollar": 134
+ },
+ {
   "id": "senate-bean-soup",
   "title": "Senate Bean Soup",
   "subtitle": "",
@@ -17931,6 +20593,131 @@ export default [
   "sodium_mg": 1523,
   "est_cost_usd": 3.37,
   "cal_per_dollar": 234
+ },
+ {
+  "id": "shrimp-creole-with-andouille-sausage",
+  "title": "Shrimp Creole",
+  "subtitle": "with andouille sausage",
+  "cuisine": "American",
+  "servings": "2 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "3",
+    "unit": "oz.",
+    "item": "diced andouille sausage",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Sauté"
+   },
+   {
+    "amount": "4",
+    "unit": "oz.",
+    "item": "shrimp (16–20 count), peeled and deveined, halved lengthwise",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "each diced onion and green bell pepper",
+    "group": "Add"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "diced celery",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "each Italian seasoning, smoked paprika, and black pepper",
+    "group": "Add"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "cayenne pepper",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "low-sodium chicken broth",
+    "group": "Deglaze"
+   },
+   {
+    "amount": "1",
+    "unit": "can",
+    "item": "fire-roasted diced tomatoes in juice (14.5 oz.)",
+    "group": "Stir in"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "tomato paste",
+    "group": "Stir in"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt to taste",
+    "group": "Stir in"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "chopped scallions",
+    "group": "Garnish"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Tabasco sauce",
+    "group": "Garnish"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Brown the sausage and shrimp",
+    "text": "Brown the diced andouille sausage in oil in a sauté pan over medium-high heat, 3–5 minutes. Add the shrimp and cook until firm and opaque, 3 minutes, then transfer both to a plate."
+   },
+   {
+    "n": 2,
+    "title": "Build the base",
+    "text": "Add the diced onion, bell pepper, celery, and minced garlic to the pan and sauté until just beginning to soften, 2 minutes. Stir in the Italian seasoning, smoked paprika, black pepper, and cayenne pepper and cook until aromatic, 30 seconds."
+   },
+   {
+    "n": 3,
+    "title": "Deglaze and reduce",
+    "text": "Pour in the chicken broth, scrape up the brown bits, and simmer until the liquid reduces by half, 3–5 minutes. Stir in the fire-roasted tomatoes with their juice and tomato paste, then simmer until the sauce is thick, 2–3 minutes."
+   },
+   {
+    "n": 4,
+    "title": "Finish",
+    "text": "Return the sausage and shrimp to the pan and season with salt. Garnish with chopped scallions and serve with Tabasco sauce on the side."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 277,
+  "protein_g": 19,
+  "carbs_g": 21,
+  "fat_g": 13,
+  "fiber_g": 4,
+  "sodium_mg": 1184,
+  "est_cost_usd": 2.27,
+  "cal_per_dollar": 122
  },
  {
   "id": "shrimp-fra-diavolo",
@@ -18289,6 +21076,92 @@ export default [
   "sodium_mg": 220,
   "est_cost_usd": 2.49,
   "cal_per_dollar": 156
+ },
+ {
+  "id": "sliced-tomatoes-with-jalapeno-vinaigrette",
+  "title": "Sliced Tomatoes",
+  "subtitle": "with jalapeño vinaigrette",
+  "cuisine": "Mexican",
+  "servings": "4 servings",
+  "totalTime": "20 minutes",
+  "ingredients": [
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "fresh lime juice"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "olive oil"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "white wine vinegar"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "honey"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "kosher salt"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "black pepper"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "minced red onion"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced jalapeño"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "chopped fresh cilantro"
+   },
+   {
+    "amount": "8",
+    "unit": "slices",
+    "item": "tomato"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Make the vinaigrette",
+    "text": "Whisk together the fresh lime juice, olive oil, white wine vinegar, honey, kosher salt, and black pepper. Add the minced red onion, minced jalapeño, and chopped fresh cilantro and let it sit for a few minutes so the flavors marry."
+   },
+   {
+    "n": 2,
+    "title": "Slice the tomatoes",
+    "text": "Cut the tomatoes into ¼-inch-thick slices and arrange them on a serving plate or individual plates."
+   },
+   {
+    "n": 3,
+    "title": "Dress and serve",
+    "text": "Pour the vinaigrette and its onion and jalapeño over the tomato slices just before serving. Let it sit for 2–3 minutes so the tomatoes can absorb the dressing."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 93,
+  "protein_g": 1,
+  "carbs_g": 7,
+  "fat_g": 7,
+  "fiber_g": 1,
+  "sodium_mg": 243,
+  "est_cost_usd": 1.43,
+  "cal_per_dollar": 65
  },
  {
   "id": "sloppy-joes",
@@ -19783,6 +22656,87 @@ export default [
   "cal_per_dollar": 374
  },
  {
+  "id": "spicy-creamed-spinach",
+  "title": "Spicy Creamed Spinach",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "4 servings",
+  "totalTime": "20 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "jalapeño, sliced"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "each minced fresh ginger and garlic"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "unsalted butter"
+   },
+   {
+    "amount": "2",
+    "unit": "bags",
+    "item": "fresh spinach"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(9 oz. each)"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "golden raisins"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "cream cheese"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Toasted cashews (optional)"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Bloom the aromatics",
+    "text": "Melt the unsalted butter in a large sauté pan over medium-low heat. Add the sliced jalapeño, minced fresh ginger, and minced garlic; cook for 1 minute, stirring gently, until fragrant."
+   },
+   {
+    "n": 2,
+    "title": "Wilt the spinach",
+    "text": "Stir in the fresh spinach and golden raisins. Increase the heat to medium-high and cook, stirring occasionally, until most of the liquid from the spinach is released and evaporated, about 5 minutes. The spinach will shrink dramatically."
+   },
+   {
+    "n": 3,
+    "title": "Add the cream",
+    "text": "Off the heat, stir in the cream cheese until it melts completely into the spinach. Season with salt and black pepper. If you like, garnish with toasted cashews for crunch and richness."
+   }
+  ],
+  "attribution": "Cuisine at Home-103",
+  "calories": 214,
+  "protein_g": 5,
+  "carbs_g": 26,
+  "fat_g": 12,
+  "fiber_g": 7,
+  "sodium_mg": 284,
+  "est_cost_usd": 1.46,
+  "cal_per_dollar": 147
+ },
+ {
   "id": "spinach-bacon-frittata",
   "title": "Spinach & Bacon Frittata",
   "subtitle": "",
@@ -20042,6 +22996,96 @@ export default [
   "sodium_mg": 223,
   "est_cost_usd": 2.61,
   "cal_per_dollar": 124
+ },
+ {
+  "id": "steak-de-burgo-with-mushrooms",
+  "title": "Steak de Burgo",
+  "subtitle": "with mushrooms",
+  "cuisine": "American",
+  "servings": "2 servings",
+  "totalTime": "20 minutes",
+  "ingredients": [
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Heat"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Heat"
+   },
+   {
+    "amount": "4",
+    "unit": "",
+    "item": "beef tenderloin filets, patted dry and seasoned with salt and black pepper (4 oz. each, 1-inch thick)",
+    "group": "Heat"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "sliced button mushrooms",
+    "group": "Add"
+   },
+   {
+    "amount": "2",
+    "unit": "tsp.",
+    "item": "minced fresh garlic",
+    "group": "Add"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "each dried basil and oregano",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "heavy cream",
+    "group": "Combine"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "dry vermouth",
+    "group": "Combine"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Chopped fresh parsley",
+    "group": "Combine"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sear the filets",
+    "text": "Combine butter and oil in a sauté pan over medium-high. Sear the filets until an instant-read thermometer reads 130° at the thickest part for medium-rare, 2 minutes per side, then transfer to a plate and tent with foil."
+   },
+   {
+    "n": 2,
+    "title": "Mushroom sauce",
+    "text": "Add the mushrooms to the pan and sauté until browned and tender, 3–4 minutes. Stir in the minced garlic, basil, and oregano and cook until fragrant, 1 minute. Pour in the cream and vermouth, stir, and let it reduce by half, 2–3 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Finish and serve",
+    "text": "Return the filets with all their accumulated juices to the pan, heat through, and serve garnished with chopped fresh parsley."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1701",
+  "calories": 623,
+  "protein_g": 47,
+  "carbs_g": 8,
+  "fat_g": 43,
+  "fiber_g": 0,
+  "sodium_mg": 140,
+  "est_cost_usd": 2.63,
+  "cal_per_dollar": 237
  },
  {
   "id": "stewed-green-beans",
@@ -20368,6 +23412,123 @@ export default [
   "sodium_mg": 955,
   "est_cost_usd": 3.45,
   "cal_per_dollar": 181
+ },
+ {
+  "id": "stuffed-shrimp-wrapped-with-bacon",
+  "title": "Stuffed Shrimp",
+  "subtitle": "wrapped with bacon",
+  "cuisine": "Mexican",
+  "servings": "4 servings",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "cloves",
+    "item": "garlic, unpeeled",
+    "group": "Sauté"
+   },
+   {
+    "amount": "1",
+    "unit": "tsp.",
+    "item": "vegetable oil",
+    "group": "Sauté"
+   },
+   {
+    "amount": "20",
+    "unit": "strips",
+    "item": "thin-sliced center-cut bacon",
+    "group": "Cook"
+   },
+   {
+    "amount": "4",
+    "unit": "oz.",
+    "item": "cream cheese, softened",
+    "group": "Beat"
+   },
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "shredded Monterey",
+    "group": "Beat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Jack cheese",
+    "group": "Beat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "minced fresh cilantro",
+    "group": "Beat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "cup",
+    "item": "panko bread crumbs",
+    "group": "Beat"
+   },
+   {
+    "amount": "1",
+    "unit": "",
+    "item": "chipotle in adobo sauce, minced",
+    "group": "Beat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Juice of 1 lime",
+    "group": "Beat"
+   },
+   {
+    "amount": "20",
+    "unit": "",
+    "item": "extra-large shrimp (16-20 count), peeled, deveined, and butterflied",
+    "group": "Butterfly"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Prep the broiler",
+    "text": "Preheat the broiler to high with the rack positioned 6 inches from the element. Coat a baking sheet with nonstick spray."
+   },
+   {
+    "n": 2,
+    "title": "Mash roasted garlic",
+    "text": "Sauté the unpeeled garlic cloves in a small skillet over medium heat for 3 minutes, stirring often, until the skins brown. When cool enough to handle, remove the skins and mash the garlic into a paste."
+   },
+   {
+    "n": 3,
+    "title": "Brown the bacon",
+    "text": "Cook the bacon strips in a sauté pan over medium heat in batches just until they begin to brown around the edges. Transfer to a paper-towel-lined plate to drain and cool slightly."
+   },
+   {
+    "n": 4,
+    "title": "Make the filling",
+    "text": "Beat together the mashed garlic, softened cream cheese, shredded Monterey Jack, fresh cilantro, panko, minced chipotle, and lime juice with a hand mixer until the mixture is smooth and blended."
+   },
+   {
+    "n": 5,
+    "title": "Stuff and wrap",
+    "text": "Flatten each butterflied shrimp along the cut to open it fully. Mound 2–3 tsp. of filling onto each opened shrimp. Wrap one bacon strip around each shrimp to enclose the filling and place it seam-side down on the prepared baking sheet."
+   },
+   {
+    "n": 6,
+    "title": "Broil until done",
+    "text": "Broil the shrimp until they are opaque and the bacon is fully cooked through, about 7 minutes. Do not walk away — they cook fast."
+   }
+  ],
+  "attribution": "Cuisine at Home-125",
+  "calories": 331,
+  "protein_g": 21,
+  "carbs_g": 6,
+  "fat_g": 26,
+  "fiber_g": 0,
+  "sodium_mg": 1071,
+  "est_cost_usd": 2.07,
+  "cal_per_dollar": 160
  },
  {
   "id": "sunday-fried-chicken",
@@ -21653,6 +24814,238 @@ export default [
   "sodium_mg": 1468,
   "est_cost_usd": 3.31,
   "cal_per_dollar": 192
+ },
+ {
+  "id": "tomato-cheddar-soup",
+  "title": "Tomato-Cheddar Soup",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "6 servings (12 cups)",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "4",
+    "unit": "Tbsp.",
+    "item": "unsalted butter",
+    "group": "Melt"
+   },
+   {
+    "amount": "2",
+    "unit": "cups",
+    "item": "diced onions",
+    "group": "Melt"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "minced fresh garlic",
+    "group": "Melt"
+   },
+   {
+    "amount": "2",
+    "unit": "Tbsp.",
+    "item": "tomato paste",
+    "group": "Melt"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "red pepper flakes",
+    "group": "Melt"
+   },
+   {
+    "amount": "2",
+    "unit": "cans",
+    "item": "whole San Marzano tomatoes in juice",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(28 oz. each)",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium chicken",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "shredded sharp",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Cheddar",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "cup",
+    "item": "whole milk",
+    "group": "Off heat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Salt and black pepper to taste",
+    "group": "Off heat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Sliced fresh basil",
+    "group": "Off heat"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Shredded sharp Cheddar",
+    "group": "Off heat"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sweat the base",
+    "text": "Melt butter in a large pot over medium heat, add diced onions and cook until softened, about 5 minutes. Stir in the minced garlic, tomato paste, and red pepper flakes; cook 1 minute more to deepen the flavors."
+   },
+   {
+    "n": 2,
+    "title": "Build the broth",
+    "text": "Tip in the tomatoes, lightly crush them with the back of a spoon, then add the broth. Bring to a simmer and cook for 10 minutes."
+   },
+   {
+    "n": 3,
+    "title": "Smooth it",
+    "text": "Working in batches if needed, purée the entire pot with a handheld blender until completely smooth. If you prefer a standard blender, do it in manageable batches so you don't overfill it."
+   },
+   {
+    "n": 4,
+    "title": "Melt in the cheese",
+    "text": "Turn the heat down to medium. Begin stirring in the shredded Cheddar in small handfuls, waiting for each one to disappear completely before you add more — this gradual method prevents the cheese from becoming grainy and separating."
+   },
+   {
+    "n": 5,
+    "title": "Finish and season",
+    "text": "Off the heat, stir in the milk and season with salt and pepper. Top each bowl with a sliver of fresh basil and a scatter of Cheddar."
+   }
+  ],
+  "attribution": "Cuisine at Home-C1821",
+  "calories": 491,
+  "protein_g": 22,
+  "carbs_g": 26,
+  "fat_g": 33,
+  "fiber_g": 4,
+  "sodium_mg": 980,
+  "est_cost_usd": 2.36,
+  "cal_per_dollar": 208
+ },
+ {
+  "id": "tomato-kale-soup",
+  "title": "Tomato-Kale Soup",
+  "subtitle": "",
+  "cuisine": "American",
+  "servings": "9 cups (4 servings)",
+  "totalTime": "30 minutes",
+  "ingredients": [
+   {
+    "amount": "1/2",
+    "unit": "cup",
+    "item": "diced onion",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "minced garlic",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1/4",
+    "unit": "tsp.",
+    "item": "red pepper flakes",
+    "group": "Sweat"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "olive oil",
+    "group": "Sweat"
+   },
+   {
+    "amount": "2",
+    "unit": "cans",
+    "item": "low-sodium diced tomatoes in juice",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "(28 oz. each)",
+    "group": "Add"
+   },
+   {
+    "amount": "4",
+    "unit": "cups",
+    "item": "low-sodium vegetable broth",
+    "group": "Add"
+   },
+   {
+    "amount": "8",
+    "unit": "cups",
+    "item": "chopped kale (1 bunch)",
+    "group": "Add"
+   },
+   {
+    "amount": "1",
+    "unit": "Tbsp.",
+    "item": "balsamic vinegar",
+    "group": "Add"
+   },
+   {
+    "amount": "1/2",
+    "unit": "tsp.",
+    "item": "kosher salt",
+    "group": "Add"
+   },
+   {
+    "amount": "",
+    "unit": "",
+    "item": "Black pepper to taste",
+    "group": "Add"
+   }
+  ],
+  "steps": [
+   {
+    "n": 1,
+    "title": "Sweat onion and spice",
+    "text": "Warm the olive oil in a large pot over medium-low heat. Add the diced onion, minced garlic, and red pepper flakes; cook until the onion softens, about 5 minutes."
+   },
+   {
+    "n": 2,
+    "title": "Simmer the base",
+    "text": "Increase the heat to high and add the diced tomatoes with their juice and the vegetable broth. Bring to a boil, then reduce to a simmer."
+   },
+   {
+    "n": 3,
+    "title": "Add the kale and finish",
+    "text": "Stir in the chopped kale, balsamic vinegar, and kosher salt. Simmer for 15 minutes until the kale is tender. Season with black pepper. The vinegar adds depth to the tomato."
+   }
+  ],
+  "attribution": "Cuisine at Home-91",
+  "calories": 219,
+  "protein_g": 8,
+  "carbs_g": 38,
+  "fat_g": 5,
+  "fiber_g": 7,
+  "sodium_mg": 486,
+  "est_cost_usd": 1.71,
+  "cal_per_dollar": 128
  },
  {
   "id": "tuna-melts-with-sicilian-aioli",

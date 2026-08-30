@@ -179,7 +179,7 @@ export default function App() {
         {room === "Chains" && <ChainsRoom onOpenRecipe={openRecipe} />}
         {room === "Web" && <WebRoom onOpenRecipe={openRecipe} />}
         {room === "Library" && <LibraryRoom basket={basket} onOpenShopping={() => setShowShopping(true)} />}
-        {room === "My Kitchen" && <KitchenRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} />}
+        {room === "My Kitchen" && <KitchenRoom saved={saved} onToggleSave={toggleSave} onOpenRecipe={openRecipe} onOpenShopping={() => setShowShopping(true)} onOpenLibrary={() => setRoom("Library")} />}
       </div>
 
       {openMeal && (

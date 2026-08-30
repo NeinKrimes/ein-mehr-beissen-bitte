@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { MEALS, mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, label, mono, display, rgba, hairline } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
+import PantryStaples from "./PantryStaples";
 
 const monthCost = MEALS.reduce((sum, meal) => sum + meal.cost, 0);
 const avgKcal = Math.round(MEALS.reduce((sum, meal) => sum + meal.kcal, 0) / MEALS.length);
@@ -15,7 +16,7 @@ function PantryStat({ labelText, value, color }) {
   );
 }
 
-export default function KitchenRoom({ saved, onToggleSave, onOpenRecipe, onOpenShopping }) {
+export default function KitchenRoom({ saved, onToggleSave, onOpenRecipe, onOpenShopping, onOpenLibrary }) {
   const isMobile = useIsMobile();
   // Memoize mapping, filtering and sorting to only run when the 'saved' set changes
   const savedMeals = useMemo(() => {
@@ -42,6 +43,8 @@ export default function KitchenRoom({ saved, onToggleSave, onOpenRecipe, onOpenS
           <PantryStat labelText="Average plate" value={`$${(monthCost / MEALS.length).toFixed(2)}`} color={COLORS.green} />
           <PantryStat labelText="Average energy" value={`${avgKcal} kcal`} color={COLORS.amber} />
         </div>
+
+        <PantryStaples onOpenLibrary={onOpenLibrary} />
 
         <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
           <span style={{ ...label(10, COLORS.muted, ".2em"), whiteSpace: "nowrap" }}>Recipe rail</span>
