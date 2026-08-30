@@ -118,6 +118,15 @@ describe("findSourceRecipe", () => {
     expect(findSourceRecipe("Coq au Vin Stew")?.id).toBe("coq-au-vin-stew");
   });
 
+  it("will not match a short query against a much longer title", () => {
+    // Overlap is scored in both directions. Scoring only the query's words
+    // against the title let "Peanut Butter Sandwich" hit "Peanut Butter-Oatmeal
+    // Energy Bars" at 0.67 once the corpus grew large enough to contain it —
+    // tier 3 of useRecipe would then have served energy bars for that night.
+    expect(findSourceRecipe("Peanut Butter Sandwich")).toBeNull();
+    expect(findSourceRecipe("Garlic Bread")?.id).not.toBe("pepperoncini-garlic-bread");
+  });
+
   it("returns null for a weak match rather than guessing", () => {
     expect(findSourceRecipe("Peanut Butter Sandwich")).toBeNull();
     expect(findSourceRecipe("")).toBeNull();

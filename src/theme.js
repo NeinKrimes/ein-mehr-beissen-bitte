@@ -41,7 +41,7 @@ export const CUISINE_COLORS = {
   // Library room, but every swatch has to resolve or the dot renders blank.
   German: "#6B5540", Spanish: "#8A4A24", Korean: "#7A3F52", Portuguese: "#2F5F52",
   Brazilian: "#4A6B33", Swedish: "#456A85", Cuban: "#8A6A22",
-  Swiss: "#8A4351", British: "#4F5E36", Lebanese: "#5C7A4A",
+  Swiss: "#8A4351", British: "#4F5E36", Lebanese: "#5C7A4A", Moroccan: "#A05A2C",
 };
 
 // Every cuisine resolves to a swatch; unknown ones fall back to the accent
