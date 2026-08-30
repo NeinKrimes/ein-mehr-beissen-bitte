@@ -11,3 +11,6 @@ dist/
 # Supabase CLI local artifacts
 supabase/.branches
 supabase/.temp
+
+# Extractor output: holds the source publisher's method prose. Never commit.
+data/source-recipes.raw.json
