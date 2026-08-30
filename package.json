@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "seed": "node --env-file-if-exists=.env.local --env-file-if-exists=.env scripts/seed-recipes.mjs",
     "export:vault": "node --env-file-if-exists=.env.local --env-file-if-exists=.env scripts/export-obsidian.mjs",
-    "build:recipes": "node scripts/build-source-recipes.mjs"
+    "build:recipes": "node scripts/build-source-recipes.mjs",
+    "seed:library": "node --env-file-if-exists=.env.local --env-file-if-exists=.env scripts/seed-source-library.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.103.0",

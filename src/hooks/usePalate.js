@@ -77,6 +77,9 @@ export function usePalate() {
 
   // Subscribe to auth changes
   useEffect(() => {
+    // No backend means no account — signed out is the correct state, not a crash.
+    if (!supabase) return;
+
     supabase.auth.getSession().then(({ data }) => {
       setUser(data.session?.user ?? null);
     });

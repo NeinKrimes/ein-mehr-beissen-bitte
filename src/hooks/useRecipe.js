@@ -173,6 +173,7 @@ async function persistToSupabase(mealId, meal, cuisine, recipe) {
     fat_g: parseInt(String(recipe.fat_g ?? ""), 10) || null,
     est_cost_usd: Number(recipe.est_cost_usd) || null,
   };
+  if (!supabase) return;
   try {
     await supabase.from(LIBRARY_TABLE).upsert(row, { onConflict: "meal_name,cuisine" });
   } catch {
@@ -198,6 +199,7 @@ export function useRecipe() {
   // shopping list have data without clicking each meal. Zero Anthropic calls.
   // We preload them as the canonical recipes.
   const preloadLibrary = useCallback(async () => {
+    if (!supabase) return;
     const { data, error } = await supabase.from(LIBRARY_TABLE).select("*");
     if (error || !data) return;
     let added = false;
@@ -240,7 +242,7 @@ export function useRecipe() {
       // The name match runs against the static index; only on a hit do we pull
       // the corpus chunk down, so a miss costs nothing.
       if (!recipe && pKey === "canonical") {
-        const hit = findSourceRecipe(meal);
+        const hit = await findSourceRecipe(meal);
         if (hit) recipe = fromSourceRecipe(await loadSourceRecipe(hit.id));
       }
 

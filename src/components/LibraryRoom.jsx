@@ -1,12 +1,17 @@
 import { useState, useMemo, useEffect, useCallback } from "react";
-import { SOURCE_INDEX, SOURCE_CUISINES, loadSourceRecipe } from "../data/sourceRecipes";
+import { SOURCE_CUISINES, SOURCE_RECIPE_COUNT, loadSourceIndex, loadSourceRecipe } from "../data/sourceRecipes";
 import { COLORS, FONTS, EASE, label, mono, display, rgba, hairline, cuisineColor } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
 
 // The library — the back half of the cookbook, where the recipes that aren't
-// on the calendar live. Everything on this screen comes from SOURCE_INDEX,
-// which carries no ingredients or steps; the full record is fetched only when
-// a row is opened, so browsing the whole library downloads nothing extra.
+// on the calendar live. Everything on this screen comes from the index, which
+// carries no ingredients or steps; the full record is fetched only when a row is
+// opened, so browsing the whole library downloads nothing extra.
+//
+// The index itself is fetched (Supabase, or the bundled chunk when it cannot
+// answer) rather than imported, so it costs nothing until this room is opened.
+// The headline count comes from the eager summary instead, so the page has a
+// real number to draw before the rows land.
 
 // A recipe with no printed calories sorts last on every numeric lens rather
 // than first, so a gap in the source never looks like a bargain.
@@ -174,9 +179,20 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
   // { loading } | { recipe } | { error } — the corpus arrives as its own chunk.
   const [detail, setDetail] = useState(null);
 
+  // null until the index arrives. Filtering an empty list in the meantime shows
+  // the room's chrome immediately rather than a blank screen.
+  const [index, setIndex] = useState(null);
+  useEffect(() => {
+    let live = true;
+    loadSourceIndex()
+      .then((rows) => live && setIndex(rows))
+      .catch(() => live && setIndex([]));
+    return () => { live = false; };
+  }, []);
+
   const rows = useMemo(
-    () => filterAndSort(SOURCE_INDEX, { query, cuisine, sortId }),
-    [query, cuisine, sortId],
+    () => filterAndSort(index ?? [], { query, cuisine, sortId }),
+    [index, query, cuisine, sortId],
   );
 
   const open = useCallback((id) => setOpenId((cur) => (cur === id ? null : id)), []);
@@ -203,9 +219,9 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
   // Counts drive the filter chips, so an empty cuisine can't be selected.
   const counts = useMemo(() => {
     const m = new Map();
-    for (const r of SOURCE_INDEX) m.set(r.cuisine, (m.get(r.cuisine) ?? 0) + 1);
+    for (const r of index ?? []) m.set(r.cuisine, (m.get(r.cuisine) ?? 0) + 1);
     return m;
-  }, []);
+  }, [index]);
 
   const controlStyle = {
     fontFamily: FONTS.body, fontSize: 14, color: COLORS.parchment,
@@ -217,7 +233,7 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
     <div style={{ flex: 1, minHeight: 0, overflowY: "auto", background: COLORS.ground, color: COLORS.parchment }}>
       <div style={{ minHeight: "100%", padding: isMobile ? "24px 16px 40px" : "34px clamp(20px,4vw,54px) 48px" }}>
         <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 8 }}>
-          The library · {SOURCE_INDEX.length} recipes
+          The library · {SOURCE_RECIPE_COUNT} recipes
         </div>
         <div style={{ ...display(isMobile ? 30 : 42, 1) }}>
           The back of the book, <span style={{ fontStyle: "italic", color: COLORS.gold }}>off-calendar.</span>
@@ -272,7 +288,7 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
                 }}
               >
                 {c}
-                <span style={mono(10, on ? rgba(COLORS.page, .8) : COLORS.faintest)}>{c === "All" ? SOURCE_INDEX.length : counts.get(c)}</span>
+                <span style={mono(10, on ? rgba(COLORS.page, .8) : COLORS.faintest)}>{c === "All" ? (index?.length ?? SOURCE_RECIPE_COUNT) : counts.get(c)}</span>
               </button>
             );
           })}
@@ -280,7 +296,7 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
 
         <div style={{ display: "flex", alignItems: "center", gap: 14, margin: "10px 0 4px" }}>
           <span style={{ ...label(10, COLORS.muted, ".2em"), whiteSpace: "nowrap" }}>
-            {rows.length} {rows.length === 1 ? "recipe" : "recipes"}
+            {index === null ? "Fetching the shelf" : `${rows.length} ${rows.length === 1 ? "recipe" : "recipes"}`}
           </span>
           <span style={{ height: 1, background: COLORS.border, flex: 1 }} />
           <span style={mono(10, COLORS.faint)}>tap a line to read it</span>
@@ -288,7 +304,13 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
 
         <div style={{ display: "grid", gridTemplateColumns: isMobile || !openId ? "1fr" : "minmax(0,1fr) minmax(360px, 440px)", gap: isMobile ? 0 : 34, alignItems: "start" }}>
           <div>
-            {rows.length === 0 ? (
+            {index === null ? (
+              /* The index is a fetch now, so "no matches" would be a lie until it
+                 lands. Say which of the two is happening. */
+              <div style={{ padding: "38px", textAlign: "center", marginTop: 14, fontFamily: FONTS.body, fontStyle: "italic", color: COLORS.muted }}>
+                Pulling the contents page…
+              </div>
+            ) : rows.length === 0 ? (
               <div style={{ padding: "38px", border: `1px dashed ${COLORS.borderStrong}`, background: COLORS.page, textAlign: "center", marginTop: 14 }}>
                 <div style={{ ...display(25) }}>Nothing on that shelf.</div>
                 <div style={{ fontFamily: FONTS.body, fontStyle: "italic", fontSize: 15, color: COLORS.muted, marginTop: 8 }}>
