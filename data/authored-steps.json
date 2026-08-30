@@ -1273,7 +1273,13 @@
     "pecan-sticky-rolls-sticky-rolls": "Step 3 defers to 'prepare one recipe Cinnamon Rolls' — method unusable without that recipe",
     "sour-cream-old-fashioned-doughnuts": "Step 4 references 'Prepare glaze according to directions, page 18' — page not scanned",
     "sausage-peppers-rigatoni": "Recipe defers to 'Sausage & Peppers, left' (not in extract); cannot be authored without that source method",
-    "spinach-artichoke-filling": "Method defers to omelet recipe on page 47 which is not in our corpus"
+    "spinach-artichoke-filling": "Method defers to omelet recipe on page 47 which is not in our corpus",
+    "lemon-curd-bars-with-coconut-crust": "Method is incomplete — step 2 describes the crust but the recipe cuts off before the curd filling, topping, and baking instructions",
+    "grilled-pork-medallions-with-smoky-dry-rub": "Extract mangled with garbage text appended (commentary about portion sizes and health claims mixed into method)",
+    "scallion-salad": "Incomplete extract (only 2 steps, second is cut off mid-step)",
+    "shrimp-starters-beer-battered-fried-shrimp-with-honey-mustard-sa": "Extract truncated mid-sentence in step 1; the batter's flour and baking-powder quantities are lost. Reconstructing them would be inventing a recipe.",
+    "coconut-oil-slab-pie-dough": "Method corrupted mid-step (step 4); cannot reasonably reconstruct from partial text",
+    "pastrami-brining": "Method defers to 'Pastrami recipe continues on page 44' — recipe not in extract"
   },
   "ricotta-stuffed-shells": {
     "cuisine": "Italian",
@@ -5613,6 +5619,1529 @@
       {
         "title": "Bake and cool",
         "text": "Bake until golden brown, 30 minutes, stirring halfway through. Press into clumps if you like, then let cool on the sheet. Store in an airtight container."
+      }
+    ]
+  },
+  "ginger-jasmine-tea-sushi-rice": {
+    "cuisine": "Japanese",
+    "steps": [
+      {
+        "title": "Bloom the aromatics",
+        "text": "Cook the scallions, ginger, garlic, and pepper flakes in oil in a saucepan over medium-low for 1 minute until fragrant."
+      },
+      {
+        "title": "Toast the rice",
+        "text": "Stir in the rice to coat it well with oil and cook 1 minute. Raise the heat to high and add water and tea bags, bringing the water to a boil."
+      },
+      {
+        "title": "Simmer and rest",
+        "text": "Once boiling, drop the heat to low and clamp the lid down. The rice will cook gently for about 20 minutes as it absorbs all the liquid. When done, take it off the flame and let it rest under the lid for another 10 minutes."
+      },
+      {
+        "title": "Season and serve",
+        "text": "Remove and discard the tea bags. Fold in salt, black pepper, and vinegar, then scatter the scallions over the top."
+      }
+    ]
+  },
+  "tofu-tofu-mac-n-cheese": {
+    "title": "Tofu Mac and Cheese",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook the pasta",
+        "text": "Boil the cavatappi in salted water following the package directions, then drain."
+      },
+      {
+        "title": "Make the tofu cream",
+        "text": "Throw the tofu, onion, and garlic into a food processor and run it until the mixture becomes completely smooth with no lumps."
+      },
+      {
+        "title": "Build the sauce",
+        "text": "Melt the butter in a large saucepan over medium heat. Whisk in the tofu purée, milk, mustard, and Tabasco, and warm it through. Once hot, add the Cheddar and stir until the cheese melts completely."
+      },
+      {
+        "title": "Toss and season",
+        "text": "Stir the drained pasta into the cheese sauce to coat it evenly. Season with salt and pepper to taste."
+      }
+    ]
+  },
+  "banana-bread-pancakes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix the dry",
+        "text": "Whisk together the flour, baking soda, and salt in a large bowl."
+      },
+      {
+        "title": "Mix the wet",
+        "text": "In a separate bowl, whisk the mashed bananas, buttermilk, sugar, butter, egg, and vanilla until combined."
+      },
+      {
+        "title": "Combine and cook",
+        "text": "Fold the wet ingredients into the dry, stirring gently just until no flour streaks remain — overworking the batter makes tough pancakes. Set a griddle or nonstick pan to 375°, or use medium-low on the stovetop, and coat with nonstick spray. Working in batches, spoon batter onto the hot surface using 2 Tbsp. per pancake. Cook until bubbles break across the surface and the bottoms turn golden brown, roughly 4 minutes. Flip and give the other side 2 minutes to brown."
+      },
+      {
+        "title": "Serve warm",
+        "text": "Serve the pancakes with Bananas Foster Syrup, sliced bananas, and pecans."
+      }
+    ]
+  },
+  "flounder-piccata": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Dredge the fillets",
+        "text": "Pat the flounder fillets dry and coat both sides in flour, shaking off the excess."
+      },
+      {
+        "title": "Sear in batches",
+        "text": "Heat 2 tsp. oil in a nonstick skillet over medium-high until shimmering. Working in two batches, cook the fillets until golden, about 2 minutes per side. Set each batch on a platter and tent with foil."
+      },
+      {
+        "title": "Make the sauce",
+        "text": "In the same skillet, add the wine, lemon juice, and capers and cook 30 seconds. Off the heat, swirl in the butter until it melts, then season with ½ tsp. pepper and ¼ tsp. salt."
+      },
+      {
+        "title": "Plate and serve",
+        "text": "Spoon the sauce over the fillets and garnish each serving with parsley."
+      }
+    ]
+  },
+  "lemon-spinach-orzo": {
+    "cuisine": "Greek",
+    "steps": [
+      {
+        "title": "Build the base",
+        "text": "Heat oil in a saucepan over medium-high and cook the onion, stirring, until it turns soft and golden, 3–5 minutes. Stir in the garlic and cook until you smell it, about 1 minute."
+      },
+      {
+        "title": "Toast and cook",
+        "text": "Stir in the orzo to coat it with oil and cook 1–2 minutes. Pour in the broth and water, stirring often, and cook until the liquid is absorbed and the orzo is tender, 9–10 minutes."
+      },
+      {
+        "title": "Finish and serve",
+        "text": "Off the heat, fold in the spinach, zest, butter, salt, pepper, and nutmeg, stirring until the spinach wilts into the warm orzo."
+      }
+    ]
+  },
+  "miso-glazed-salmon": {
+    "cuisine": "Japanese",
+    "steps": [
+      {
+        "title": "Set up broiler",
+        "text": "Preheat the broiler to high with the rack positioned 6 inches from the element. Line a baking sheet with foil and lightly coat with nonstick spray."
+      },
+      {
+        "title": "Make the glaze",
+        "text": "Whisk together the miso, vinegar, mirin, oil, brown sugar, ginger, and garlic until smooth."
+      },
+      {
+        "title": "Prepare the fish",
+        "text": "Lay the salmon fillets skin side down on the prepared sheet. Spread the miso glaze evenly over the flesh side of each fillet."
+      },
+      {
+        "title": "Broil and serve",
+        "text": "Broil until the glaze caramelizes and the center is just opaque, about 10 minutes. Using a fish spatula, transfer the fillets to a plate, leaving the skin behind. Scatter scallion greens over each serving."
+      }
+    ]
+  },
+  "spicy-sugar-snap-peas": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Heat the pan",
+        "text": "Heat oil in a nonstick skillet over medium-high until hot."
+      },
+      {
+        "title": "Sauté the peas",
+        "text": "Add the peas and sauté until they turn crisp-tender and bright green, about 4 minutes."
+      },
+      {
+        "title": "Season and serve",
+        "text": "Stir in the chili garlic sauce, sesame seeds, and salt, tossing until everything is coated evenly."
+      }
+    ]
+  },
+  "mexican-shrimp-cocktail": {
+    "cuisine": "Mexican",
+    "steps": [
+      {
+        "title": "Cook the shrimp",
+        "text": "Get 1 qt. water going in a saucepan over medium-high until it boils, then slip in the shrimp with their shells, the juice of 1 lime, and salt. Once you see them turn opaque and firm, 2–3 minutes, drain them. Dunk them into ice water to stop the cooking, then drain again. Chop half of them fine for the salad and keep the rest whole for garnish."
+      },
+      {
+        "title": "Make the salsa",
+        "text": "Fold the tomatoes, cucumber, onion, olives, and minced cilantro into the chopped shrimp."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Whisk together the ketchup, ⅓ cup lime juice, oil, and hot sauce. Toss this dressing with the shrimp mixture, then fold in the avocado at the last moment. Garnish each serving with whole shrimp."
+      }
+    ]
+  },
+  "cheesy-bean-dip": {
+    "cuisine": "Mexican",
+    "steps": [
+      {
+        "title": "Prepare the dish",
+        "text": "Heat the oven to 425°. Coat a 1 qt. baking dish with nonstick spray."
+      },
+      {
+        "title": "Make the filling",
+        "text": "In a saucepan, combine the pinto beans, refried beans, ½ cup Cheddar, salsa, and jalapeños. Heat over medium, stirring, until the cheese melts, 5–6 minutes. Season with salt and pepper."
+      },
+      {
+        "title": "Assemble and bake",
+        "text": "Scrape the bean mixture into the prepared dish and sprinkle with the remaining ½ cup Cheddar. Bake until the cheese begins to brown, 12–15 minutes."
+      },
+      {
+        "title": "Garnish and serve",
+        "text": "Scatter cilantro and scallions over the warm dip and serve with chips."
+      }
+    ]
+  },
+  "asian-sloppy-joes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook aromatics",
+        "text": "Heat oil in a large skillet over medium-high and add celery and scallion whites. Cook until softened, 4–5 minutes. Add garlic and ginger; cook 1 minute more."
+      },
+      {
+        "title": "Build the mixture",
+        "text": "Add ground sirloin, soy sauce, chili garlic sauce, and brown sugar. Crush the meat to a fine consistency with a potato masher and cook 5 minutes."
+      },
+      {
+        "title": "Finish and serve",
+        "text": "Stir in water chestnuts, tomatoes, and hoisin. Crush the tomatoes with the masher, drop heat to medium, and cook until thickened, about 5 minutes. Off heat, stir in scallion greens and lime juice; season with salt. Serve on buns with cilantro."
+      }
+    ]
+  },
+  "spiced-beef-patties-yogurt-sauce-with-flatbread": {
+    "cuisine": "Indian",
+    "steps": [
+      {
+        "title": "Make the sauce",
+        "text": "Blend yogurt with 1 Tbsp. each mint and cilantro, grated garlic, grated ginger, salt, and pepper."
+      },
+      {
+        "title": "Toast the aromatics",
+        "text": "Use a food processor to mince the garlic, onion, and ginger. Heat oil in a large sauté pan over medium-high. Add the minced mixture with salt, black pepper, cardamom, and pepper flakes; cook until the onion dries and turns golden, 5 minutes. Cool."
+      },
+      {
+        "title": "Form patties",
+        "text": "Pulse the ground sirloin to a fine consistency in the food processor, then combine with the cooled aromatics, ¼ cup each of mint and cilantro. Form the mixture into 12 patties, pressing each firmly."
+      },
+      {
+        "title": "Sear patties",
+        "text": "Sear on a nonstick-sprayed griddle over medium heat, 8–10 minutes total, until browned on both sides."
+      },
+      {
+        "title": "Plate and serve",
+        "text": "Place 3 patties on each flatbread and top with sauce, mint leaves, and cilantro sprigs."
+      }
+    ]
+  },
+  "dark-chocolate-molten-cakes": {
+    "cuisine": "French",
+    "steps": [
+      {
+        "title": "Prepare ramekins",
+        "text": "Coat eight 4-oz. ramekins with a mixture of 2 Tbsp. butter, 2 Tbsp. sugar, and cocoa; arrange on a baking sheet. Preheat oven to 450°."
+      },
+      {
+        "title": "Melt chocolate",
+        "text": "Combine butter and chocolate in a double boiler over medium heat, stirring until smooth. Remove from heat, fold in vanilla, and set aside to cool 10 minutes, stirring from time to time."
+      },
+      {
+        "title": "Make the batter",
+        "text": "In a bowl, whisk eggs, yolks, and 6 Tbsp. sugar on high speed until the mixture is pale and thick, 7 minutes. Sprinkle in flour, espresso powder, and salt; mix 30 seconds. Fold in the cooled chocolate until just combined."
+      },
+      {
+        "title": "Fill ramekins",
+        "text": "Spoon a generous ⅓ cup batter into each prepared ramekin."
+      },
+      {
+        "title": "Bake and turn out",
+        "text": "Bake until the sides are set and centers are sunken and soft, 8–9 minutes, rotating the pan halfway through. Cool 30 seconds; run a paring knife around the edges of each ramekin."
+      },
+      {
+        "title": "Invert and finish",
+        "text": "Place an inverted plate over each cake and flip carefully. Wait 5 minutes while they cool in the ramekins, then unmold and serve at once."
+      }
+    ]
+  },
+  "greek-chicken-roulades-with-white-wine-reduction": {
+    "cuisine": "Greek",
+    "steps": [
+      {
+        "title": "Make filling",
+        "text": "Dice 6 olives for garnish. Pulse the remaining olives, tomatoes, bread crumbs, zest, garlic, and oregano until minced."
+      },
+      {
+        "title": "Pound and fill",
+        "text": "Place chicken between plastic sheets. Use the flat side of a meat mallet to pound it to ¼-inch thick. Distribute the filling over the flattened pieces. Roll up each one and fasten closed with toothpicks."
+      },
+      {
+        "title": "Brown and braise",
+        "text": "Heat oil in a large nonstick skillet over medium-high. Sear the roulades until golden, 4 minutes, then move to a plate. Sauté the onion until soft, 2 minutes. Deglaze with wine and simmer until nearly dry, 1–2 minutes. Pour in broth, bring to a boil, add olives, and return roulades to pan."
+      },
+      {
+        "title": "Finish sauce",
+        "text": "Reduce heat to medium-low, cover the pan, and cook the roulades gently 10 minutes. Take them out and set aside. Mix lemon juice and cornstarch into a smooth paste, then stir into the sauce; cook 1 minute more. Slice the roulades and serve with the sauce spooned over."
+      }
+    ]
+  },
+  "creamy-orzo-with-feta": {
+    "cuisine": "Greek",
+    "steps": [
+      {
+        "title": "Start broth",
+        "text": "Bring broth to a boil in a small saucepan."
+      },
+      {
+        "title": "Cook orzo",
+        "text": "Add orzo and bring back to a boil. Continue cooking uncovered, stirring now and then, until all the broth has been absorbed, 9 minutes."
+      },
+      {
+        "title": "Add cheese",
+        "text": "Off heat, stir in tomatoes and feta, mixing until the feta melts slightly. Season with salt and pepper. Serve with Chicken Roulades."
+      }
+    ]
+  },
+  "spicy-garlic-chicken-with-lemon-glaze": {
+    "cuisine": "Greek",
+    "steps": [
+      {
+        "title": "Season and dredge",
+        "text": "Season chicken with salt and pepper. Mix panko with garlic and oregano; dredge both sides of chicken in the mixture."
+      },
+      {
+        "title": "Make glaze",
+        "text": "Whisk together zest, lemon juice, honey, and Tabasco."
+      },
+      {
+        "title": "Cook chicken",
+        "text": "Warm oil in a nonstick skillet over medium heat. Cook the chicken, turning once, until the outside is golden and the meat is cooked through, 6 minutes per side. Move to a plate."
+      },
+      {
+        "title": "Reduce glaze",
+        "text": "Add lemon mixture to the skillet and reduce until syrupy, about 1 minute. Return chicken and toss to coat in the glaze."
+      },
+      {
+        "title": "Serve",
+        "text": "Serve chicken with Pesto Green Beans."
+      }
+    ]
+  },
+  "light-turkey-enchiladas-with-corn-spinach": {
+    "cuisine": "Mexican",
+    "steps": [
+      {
+        "title": "Set up",
+        "text": "Preheat broiler with rack 6–8 inches from the element. Coat an 8-inch square baking dish with nonstick spray."
+      },
+      {
+        "title": "Cook filling",
+        "text": "In a nonstick skillet over medium-high, cook bell pepper, onion, and garlic in oil until the onion is tender, 3 minutes. Stir in spinach, turkey, and corn; cook 2 minutes until the spinach collapses."
+      },
+      {
+        "title": "Thicken filling",
+        "text": "Sprinkle flour over the mixture and add milk; simmer 2 minutes until thickened. Stir in neufchatel, salt, and black pepper."
+      },
+      {
+        "title": "Assemble",
+        "text": "Warm salsa in a small skillet over medium. Dip each tortilla quickly in the hot salsa, lay it sauce-side up in the baking dish, add ¼ cup filling to the center, roll, and lay seam-side down. Repeat until all tortillas are filled."
+      },
+      {
+        "title": "Broil and finish",
+        "text": "Pour remaining salsa over the enchiladas and top with feta. Broil 3 minutes and garnish with scallions."
+      }
+    ]
+  },
+  "margarita-tomatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Zest citrus",
+        "text": "Zest an orange and a lime; set the zests aside."
+      },
+      {
+        "title": "Make dressing",
+        "text": "Whisk together the zests, orange juice, lime juice, sugar, salt, and Tabasco."
+      },
+      {
+        "title": "Plate and serve",
+        "text": "Arrange tomatoes on two plates. Pour the dressing over each portion and top with chives."
+      }
+    ]
+  },
+  "pork-stir-fry-with-carrots-snow-peas": {
+    "cuisine": "Chinese",
+    "steps": [
+      {
+        "title": "Marinate pork",
+        "text": "Toss pork strips with 1 Tbsp. soy sauce, cover, and refrigerate while you prepare the other components."
+      },
+      {
+        "title": "Mix sauce",
+        "text": "Whisk together remaining 2 Tbsp. soy sauce, broth, sherry, cornstarch, honey, tomato paste, and pepper."
+      },
+      {
+        "title": "Cook pork",
+        "text": "Preheat wok over medium-high. Spray with nonstick spray. Add 1 tsp. oil and stir-fry half the pork until cooked through, 2–3 minutes. Move to a plate. Stir-fry remaining pork; add to the plate."
+      },
+      {
+        "title": "Start vegetables",
+        "text": "Pour the remaining oil into the wok. Quick-fry the garlic and ginger, 10–15 seconds, then add snow peas and cook 2 minutes."
+      },
+      {
+        "title": "Finish stir-fry",
+        "text": "Return pork and add sauce; cook until thickened, 1–2 minutes. Add carrots and stir-fry 1 minute."
+      },
+      {
+        "title": "Serve",
+        "text": "Serve stir-fry over Pineapple-Ginger Brown Rice and scatter scallions and sesame seeds over each serving."
+      }
+    ]
+  },
+  "pineapple-ginger-brown-rice": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Bring to boil",
+        "text": "Bring water, pineapple juice, ginger, and rice to a boil in a saucepan over medium-high heat."
+      },
+      {
+        "title": "Simmer rice",
+        "text": "Lower heat to medium-low, cover, and simmer until the water is absorbed, 10–12 minutes."
+      },
+      {
+        "title": "Finish rice",
+        "text": "Fluff rice with a fork. Fold in pineapple, soy sauce, sesame oil, and salt. Serve with Pork Stir-Fry."
+      }
+    ]
+  },
+  "pork-chops-with-sauteed-apples-pecans": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Brown the chops",
+        "text": "Season the pork with salt and pepper. Heat oil in a skillet over medium-high and brown the chops 5 minutes per side. Transfer to a plate and tent loosely with foil."
+      },
+      {
+        "title": "Build the sauce",
+        "text": "In the same pan, sauté the apples and onion for 4–5 minutes. Stir in the mustard, cinnamon and salt until fragrant, then add apple juice and lemon juice. Cook until the apples soften."
+      },
+      {
+        "title": "Finish and serve",
+        "text": "Return the chops and their juices to the skillet. Cook uncovered to an internal temperature of 155°. Spoon the apple mixture over each chop and scatter toasted pecans on top."
+      }
+    ]
+  },
+  "potatoes-with-bacon": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Render the bacon",
+        "text": "Cook the bacon in a skillet until crisp, then transfer to paper towel to drain and cool. Crumble when it's dry."
+      },
+      {
+        "title": "Cook and dry potatoes",
+        "text": "Boil the potatoes in salted water, covered, until tender (12–15 minutes). Drain well, then return to the pot. Stir over medium heat for about 1 minute to evaporate any remaining moisture."
+      },
+      {
+        "title": "Mash and finish",
+        "text": "Off the heat, add milk, yogurt and salt to the potatoes. Mash until smooth, fold in the crumbled bacon and 2 Tbsp. Cheddar. Garnish with the last tablespoon of Cheddar and scallions."
+      }
+    ]
+  },
+  "peppered-beef-with-spinach-tomatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Sear steaks, make sauce",
+        "text": "Season the filets with salt and press peppercorns onto one side. Heat oil in a sauté pan over medium-high, cook the filets 3–4 minutes per side for medium-rare, then transfer to a plate and tent with foil. Off heat, add bourbon and return to heat; simmer until the liquid reduces by half (about 1 minute). Add broth and shallots, simmer 2–3 minutes. Stir in the half-and-half, mustard and any drippings from the filets."
+      },
+      {
+        "title": "Sauté vegetables",
+        "text": "Heat oil in a large skillet over medium. Sauté the tomatoes and garlic until fragrant (1–2 minutes), then add the spinach and cook until wilted, about 2 minutes."
+      },
+      {
+        "title": "Season and plate",
+        "text": "Season the spinach mixture with lemon juice, salt and pepper. Serve the steak with the sauce, vegetables and galettes on the side."
+      }
+    ]
+  },
+  "potato-parsnip-galettes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Season vegetables",
+        "text": "Toss the potatoes and parsnips with oil, salt and pepper to coat evenly."
+      },
+      {
+        "title": "Layer in skillet",
+        "text": "Spray a large skillet and place it over medium heat. Layer the potatoes and parsnips in two overlapping circles about 5 inches wide, working through all the slices."
+      },
+      {
+        "title": "Brown and finish",
+        "text": "Cook uncovered until the bottoms are light brown (12–14 minutes). Raise the heat to medium-high, cook 3 minutes more, then carefully flip the galettes. Cook until tender, about 5 minutes more."
+      }
+    ]
+  },
+  "smashed-peas-with-fresh-mint": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Soften onion",
+        "text": "Heat oil in a skillet over medium. Add the onion and cook until it begins to soften, about 3–5 minutes."
+      },
+      {
+        "title": "Cook peas",
+        "text": "Add the peas and cook for 3 minutes, stirring gently."
+      },
+      {
+        "title": "Mash and finish",
+        "text": "Off the heat, add the cream cheese and mint. Mash everything together with a potato masher until well combined, then season with salt to taste."
+      }
+    ]
+  },
+  "blackened-ham-melon-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare grill",
+        "text": "Heat the grill to high and brush the grate with oil."
+      },
+      {
+        "title": "Spice the ham",
+        "text": "Combine brown sugar, paprika, granulated garlic, black pepper and cayenne. Rub the spice mixture onto both sides of the ham steak."
+      },
+      {
+        "title": "Blacken ham",
+        "text": "Grill the ham steak covered until blackened, 4–5 minutes per side."
+      },
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk together the lemon zest, lime juice, oil, honey and vinegar. Season with salt and pepper. Set aside 3 Tbsp. for any potato wedges."
+      },
+      {
+        "title": "Assemble salad",
+        "text": "Toss the arugula, cantaloupe, honeydew, cucumbers, mozzarella, basil and mint with the vinaigrette. Serve the salad with the blackened ham steak."
+      }
+    ]
+  },
+  "campari-citrus-soda-cocktail": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make citrus syrup",
+        "text": "Heat the water, sugar and orange and lemon zests in a saucepan over medium until the sugar dissolves. Off the heat, stir in the orange juice and lemon juice, then chill."
+      },
+      {
+        "title": "Add soda",
+        "text": "Just before serving, strain the chilled mixture and add the club soda."
+      },
+      {
+        "title": "Mix and serve",
+        "text": "Pour the citrus soda and Campari into a pitcher with a pinch of salt and stir gently. Distribute across ice-filled glasses and crown each with an orange slice."
+      }
+    ]
+  },
+  "tabbouleh-salad-with-grilled-portobello-mushrooms": {
+    "title": "Tabbouleh with Grilled Portobellos",
+    "cuisine": "Lebanese",
+    "steps": [
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk together the lemon zest, lemon juice, oil and garlic. Season with salt and pepper. Reserve 3 Tbsp. to brush on the mushrooms."
+      },
+      {
+        "title": "Cook bulgur",
+        "text": "Cook the bulgur according to package directions, then transfer to a baking sheet and let cool."
+      },
+      {
+        "title": "Prepare grill",
+        "text": "Heat the grill to medium-high and brush the grate with oil."
+      },
+      {
+        "title": "Assemble tabbouleh",
+        "text": "Combine the tomatoes, cucumber, chickpeas, parsley, scallions, mint, olives and cooled bulgur. Toss with the vinaigrette and chill until ready to serve."
+      },
+      {
+        "title": "Grill mushrooms",
+        "text": "Coat the portobello caps on both sides with the reserved vinaigrette and season with salt and pepper. Set on the grill uncovered; they're done when marked and tender (about 2 minutes per side)."
+      },
+      {
+        "title": "Plate and serve",
+        "text": "Slice the grilled mushrooms into ½-inch-thick strips and serve on top of the tabbouleh, crumbled feta scattered over."
+      }
+    ]
+  },
+  "strawberry-pistachio-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make dressing",
+        "text": "Whisk together the lemon zest, lemon juice, oil, parsley and honey in a small bowl. Season to taste with salt and pepper."
+      },
+      {
+        "title": "Prepare berries and nuts",
+        "text": "Slice the strawberries and roughly chop or halve the pistachios, keeping some texture. Place in a serving bowl."
+      },
+      {
+        "title": "Toss and serve",
+        "text": "Pour the dressing over the strawberries and pistachios and toss gently to coat. Serve at once."
+      }
+    ]
+  },
+  "tomato-honey-mustard-barbecue-sauce": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Sweat onions and garlic",
+        "text": "Heat oil in a saucepan over medium heat. Cook the onion, stirring, until it softens, about 3–4 minutes. Stir in the garlic and cook 1 minute more."
+      },
+      {
+        "title": "Add tomatoes",
+        "text": "Add the tomatoes and cook, stirring, until they break down, about 4–5 minutes."
+      },
+      {
+        "title": "Finish with vinegar and spice",
+        "text": "Pour in the vinegar and let it bubble down by half. Stir in the Dijon, honey, and cayenne. Bring to a boil, then lower the heat and simmer, stirring now and then, until the sauce thickens, about 5 minutes."
+      }
+    ]
+  },
+  "vegetables-with-smoky-vinaigrette": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk together the oil, cumin, oregano, salt, black pepper, paprika, and lemon juice. Toss the green beans, corn, and bell pepper in the vinaigrette."
+      },
+      {
+        "title": "Shape foil basket",
+        "text": "Fold a 36×18-inch foil sheet to make a 12×18-inch basket, then fold up the edges. Lay the coated vegetables in the basket."
+      },
+      {
+        "title": "Grill until crisp-tender",
+        "text": "Set the basket on a grill preheated to medium-high. Cook, stirring occasionally, until the vegetables are crisp-tender, about 10 minutes."
+      }
+    ]
+  },
+  "lemon-thyme-potato-salad-with-goat-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook potatoes",
+        "text": "Boil the potatoes in salted water until a fork goes through, about 10 minutes. Drain."
+      },
+      {
+        "title": "Cool and combine",
+        "text": "Rinse the potatoes with cold water, then drain again. In a large bowl, toss the potatoes with the onion, yogurt, mayonnaise, goat cheese, zest, lemon juice, and thyme."
+      },
+      {
+        "title": "Chill before serving",
+        "text": "Cover and refrigerate until you are ready to serve."
+      }
+    ]
+  },
+  "vanilla-yogurt": {
+    "title": "Strawberry-Pineapple Trifle",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Macerate the fruit",
+        "text": "Toss the strawberries and pineapple with the Amaretto and lemon juice. Let them sit for 15 minutes so the flavours meld."
+      },
+      {
+        "title": "Layer the trifles",
+        "text": "Lay half the angel food cake into each of four 1½-cup trifle dishes. Top each with half the macerated fruit, half the yogurt, and half the nuts. Repeat the layers once more."
+      },
+      {
+        "title": "Garnish and serve",
+        "text": "Scatter mint over each trifle. Serve at once or chill until needed."
+      }
+    ]
+  },
+  "caesar-smashed-potatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil potatoes",
+        "text": "Cook the potatoes in salted boiling water for 30 minutes, until they are tender enough to break with a fork. Drain well."
+      },
+      {
+        "title": "Mash with oil and aromatics",
+        "text": "Add the oil and smash the potatoes coarsely with a masher. Fold in the mayonnaise, garlic, lemon zest, lemon juice, and anchovy paste, mashing gently until everything is distributed. Stop when the potatoes still have some texture."
+      },
+      {
+        "title": "Season with cheese and salt",
+        "text": "Fold in the Parmesan. Taste and adjust with salt and pepper."
+      }
+    ]
+  },
+  "tomato-salad-with-steak-sauce-vinaigrette": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Whisk the dressing",
+        "text": "Whisk together the steak sauce, oil, vinegar, horseradish, and Dijon. Season with salt and pepper."
+      },
+      {
+        "title": "Grill the onions",
+        "text": "Brush the onion slices with steak sauce. Set them on a grill preheated to medium-high, cover, and cook until they soften slightly, about 5 minutes. Chop them coarsely."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Place the tomatoes and grilled onions in a bowl. Drizzle with the vinaigrette and scatter parsley over the top."
+      }
+    ]
+  },
+  "creamed-spinach-sauce": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Reduce the cream",
+        "text": "In a small saucepan over medium-high heat, simmer the cream with the garlic and pepper flakes until it reduces to about ⅔ cup, roughly 10 minutes."
+      },
+      {
+        "title": "Process spinach and herbs",
+        "text": "In a food processor, pulse the spinach, parsley, oil, and lemon juice until coarsely chopped. Add the hot cream and pulse again until the spinach is finely minced."
+      },
+      {
+        "title": "Season and serve",
+        "text": "Taste and season with salt and black pepper. Serve warm."
+      }
+    ]
+  },
+  "buttermilk-biscuits": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix dry ingredients",
+        "text": "Whisk the flour, baking powder, salt, and baking soda together. Heat your oven to 425°."
+      },
+      {
+        "title": "Make the dough",
+        "text": "Rub the cold butter and shortening into the flour mixture with your fingertips until the pieces are pea-sized. Stir in the buttermilk gently, then turn the shaggy dough onto a floured surface and knead it just until it comes together. Pat it to 1 inch thick and cut out biscuits with a 2¾-inch-round cutter. Set them on a baking sheet."
+      },
+      {
+        "title": "Bake until golden",
+        "text": "Bake until the biscuits are golden, 14–15 minutes. Brush or drizzle with the Sriracha-Honey Butter before serving."
+      }
+    ]
+  },
+  "lotus-root-salad": {
+    "cuisine": "Vietnamese",
+    "steps": [
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk rice vinegar, oil, garlic, ginger, sugar, and chili powder together; season with salt. Set aside."
+      },
+      {
+        "title": "Acidulate and soak",
+        "text": "Combine cold water and distilled vinegar, then divide into thirds. Trim and peel the lotus root, slice into ¼-inch rounds, and place in the first third of the acidulated water as you cut it to prevent browning."
+      },
+      {
+        "title": "Blanch lotus",
+        "text": "Bring the second third of acidulated water to a boil, then drain and add the lotus. Cover and let it sit 10 minutes. Drain again, rinse well, then immerse in the final third of cold acidulated water and allow to cool."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Pat the lotus dry; toss with vinaigrette and cilantro. Serve cold."
+      }
+    ]
+  },
+  "faster-with-fewer-buffalo-dogs": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make sauce and prep",
+        "text": "Heat grill to medium and brush the grate with oil. Whisk mayonnaise, hot sauce, and lemon juice together; set aside."
+      },
+      {
+        "title": "Grill hot dogs and buns",
+        "text": "Grill hot dogs until done, then grill buns until lightly toasted, about 1 minute."
+      },
+      {
+        "title": "Assemble",
+        "text": "Set each hot dog in a bun, top with sauce, diced celery, blue cheese, and celery leaves."
+      }
+    ]
+  },
+  "circus-dogs-with-pimento-cheese": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make pimento cheese",
+        "text": "Blend Cheddar, mayonnaise, and cream cheese in a food processor until entirely smooth. Add pimentos and pulse just to combine without overworking; season with Tabasco."
+      },
+      {
+        "title": "Prep grill",
+        "text": "Heat grill to medium and brush the grate with oil."
+      },
+      {
+        "title": "Wrap and grill hot dogs",
+        "text": "Wrap bacon around each hot dog and secure the ends with toothpicks. Grill until the bacon is crisp, then remove toothpicks. Grill buns until lightly toasted, about 1 minute."
+      },
+      {
+        "title": "Serve",
+        "text": "Set each hot dog in a bun with romaine and a generous dollop of pimento cheese."
+      }
+    ]
+  },
+  "cream-slab-pie": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Heat oven",
+        "text": "Get oven to 500° with a baking stone positioned on the lowest rack — give it 30 minutes to preheat. Ready the pie dough as directed."
+      },
+      {
+        "title": "Make cream filling",
+        "text": "Use a mixer to beat cream cheese with 1 egg until smooth. Incorporate ½ cup cream of coconut and beat again until smooth; spread this across the crust bottom. Drop oven to 400°."
+      },
+      {
+        "title": "Top with blueberry mixture",
+        "text": "Combine the remaining ½ cup cream of coconut with lemon juice, tapioca, and coconut extract, whisking to blend. Coat the blueberries in this mixture, then scatter over the cream cheese."
+      },
+      {
+        "title": "Cut and arrange topping",
+        "text": "Roll the remaining dough to a 12-inch square and cut into 2½×2½-inch squares (you will have extra). Mix 1 egg with cream and brush over each square."
+      },
+      {
+        "title": "Checkerboard pattern",
+        "text": "Overlap the dough squares on the pie in diagonal lines to make a checkerboard pattern. Dust the surface with sugar."
+      },
+      {
+        "title": "Bake",
+        "text": "Bake 35–40 minutes until the top is golden. Let cool entirely before slicing."
+      }
+    ]
+  },
+  "brazilian-flank-steak-with-fresh-citrus-salsa": {
+    "cuisine": "Brazilian",
+    "steps": [
+      {
+        "title": "Make salsa",
+        "text": "Combine orange segments, tomatoes, onion, cilantro, serrano, and a pinch of salt in a bowl. Chill until ready to serve."
+      },
+      {
+        "title": "Prep grill and steak",
+        "text": "Heat grill to medium-high and brush the grate with oil. Mix chili powder, oregano, 1 tsp salt, and black pepper; stir in vinegar and rub the paste over both sides of the steak."
+      },
+      {
+        "title": "Grill steak",
+        "text": "Put steaks on grill with lid down, cook 4–5 minutes on each side for medium-rare doneness. Tent with foil and rest 5 minutes."
+      },
+      {
+        "title": "Slice and serve",
+        "text": "Cut thinly against the grain. Plate the meat and crown with salsa."
+      }
+    ]
+  },
+  "sauteed-collard-greens-with-kidney-beans": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Sauté collards",
+        "text": "Warm oil in a large sauté pan over medium-high until it shimmers. Cook garlic for 30 seconds, then add collard greens and toss with tongs until wilted, 3–4 minutes."
+      },
+      {
+        "title": "Add broth and beans",
+        "text": "Pour in broth and simmer until the liquid evaporates. Stir in beans and season with salt and pepper flakes; cook until the beans are heated through."
+      },
+      {
+        "title": "Finish",
+        "text": "Drizzle in vinegar and serve."
+      }
+    ]
+  },
+  "korean-triangle-steaks-with-asian-pear-kimchi": {
+    "cuisine": "Korean",
+    "steps": [
+      {
+        "title": "Make marinade",
+        "text": "Whisk soy sauce, rice vinegar, molasses, garlic, ginger, sesame oil, and 2 tsp chili garlic sauce together. Pour into a baking dish."
+      },
+      {
+        "title": "Marinate steaks",
+        "text": "Add steaks and marinate uncovered for 10–15 minutes, flipping every 2 minutes."
+      },
+      {
+        "title": "Make kimchi",
+        "text": "Combine distilled vinegar and 1 Tbsp chili garlic sauce in a large bowl; add pears, cucumbers, bell pepper, and onion. Toss until coated and chill until ready to serve."
+      },
+      {
+        "title": "Grill steaks",
+        "text": "Heat grill to medium-high and brush the grate with oil. Grill steaks covered, 3–4 minutes per side for medium-rare. Tent with foil and let rest 5 minutes."
+      },
+      {
+        "title": "Serve",
+        "text": "Set steaks on plates with kimchi alongside and garnish with sesame seeds."
+      }
+    ]
+  },
+  "scallion-pancakes-with-soy-dipping-sauce": {
+    "cuisine": "Chinese",
+    "steps": [
+      {
+        "title": "Make dipping sauce",
+        "text": "Whisk together soy sauce, lemon juice, chili garlic sauce, and sesame oil; set aside."
+      },
+      {
+        "title": "Make batter",
+        "text": "Combine eggs, water, and flour in a bowl, stirring until smooth. Fold in scallions and bean sprouts."
+      },
+      {
+        "title": "Cook pancake",
+        "text": "Heat vegetable oil in a 10-inch nonstick skillet over medium-high until shimmering. Pour in the batter and cook until the bottom is brown, 7–8 minutes. Flip and brown the other side, 7–8 minutes more."
+      },
+      {
+        "title": "Cut and serve",
+        "text": "Cut into 8 wedges and serve with dipping sauce."
+      }
+    ]
+  },
+  "spanish-pasta-salad-with-almonds-oranges": {
+    "cuisine": "Spanish",
+    "steps": [
+      {
+        "title": "Cook pasta",
+        "text": "Boil pasta in salted water following package directions. Run through a sieve to drain, rinse under cool water, then transfer to a bowl."
+      },
+      {
+        "title": "Toast almonds and combine",
+        "text": "Brown almonds in a small nonstick skillet over medium heat with frequent stirring, 3–4 minutes. Toss into the pasta along with onion, mint, capers, and orange zest."
+      },
+      {
+        "title": "Make vinaigrette and dress",
+        "text": "Combine orange juice and oil, whisking together. Pour over the salad and toss to coat; taste and adjust seasoning with salt and pepper."
+      },
+      {
+        "title": "Serve",
+        "text": "Divide among four plates and serve with fresh orange or tomato slices."
+      }
+    ]
+  },
+  "paprika-pork-chops": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Season the chops",
+        "text": "Mix paprika, black pepper, and salt together, then coat both sides of the pork chops evenly with the mixture."
+      },
+      {
+        "title": "Brown in skillet",
+        "text": "Heat oil in a large skillet over medium-high. Add the chops and brown, 3 minutes per side. Transfer to a plate."
+      },
+      {
+        "title": "Finish with wine",
+        "text": "Pour wine into the skillet and let it simmer until almost all the liquid evaporates, about 2 minutes, scraping the browned bits as it cooks. Return the chops, check they register 145° on an instant-read thermometer near the bone, tent with foil, and rest 3 minutes before serving with the pan sauce."
+      }
+    ]
+  },
+  "pork-radish-saute-with-tarragon-sauce": {
+    "cuisine": "French",
+    "steps": [
+      {
+        "title": "Pound the pork",
+        "text": "Slice the pork tenderloin into 4 thick pieces. Butterfly each one, place between plastic sheets, and pound to an even ¼ inch thickness using the flat of a mallet."
+      },
+      {
+        "title": "Sear pork",
+        "text": "Warm 2 teaspoons oil in a nonstick skillet to medium-high heat. Once it shimmers, cook the pork, flipping halfway through, until the outside is lightly browned and the inside cooked through, 3–4 minutes on each side. Set the pork on a plate and cover loosely with foil."
+      },
+      {
+        "title": "Cook vegetables",
+        "text": "In the same skillet, sauté the radishes in the remaining 1 teaspoon oil until they begin to soften, about 2 minutes. Add the shallots and stir for another 30 seconds."
+      },
+      {
+        "title": "Reduce Madeira",
+        "text": "Pour in the Madeira and simmer until it reduces to about half its original volume. Using a slotted spoon, transfer the radishes to the plate with the pork."
+      },
+      {
+        "title": "Make sauce",
+        "text": "Pour the broth into the reduced Madeira in the skillet; whisk in the cream and Dijon mustard until smooth. Let it simmer gently for a moment until it thickens slightly, then stir in 1 tablespoon tarragon. Plate the pork and radishes, spoon sauce around them, and scatter the remaining tarragon over each serving."
+      }
+    ]
+  },
+  "barley-grape-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook barley",
+        "text": "Pour 1 cup grape juice and 1 cup water into a medium saucepan and bring to a rolling boil over high heat. Add barley and salt, then lower the heat, cover, and let it simmer gently until the liquid is nearly all absorbed and the grains are tender, 14–16 minutes. Drain well and rinse."
+      },
+      {
+        "title": "Combine",
+        "text": "Toss the cooked barley with grapes and fresh spinach in a large bowl."
+      },
+      {
+        "title": "Dress and chill",
+        "text": "Whisk together ⅓ cup grape juice, vinegar, Dijon, honey, and ⅛ teaspoon salt. Pour over the barley mixture, toss well, and refrigerate until ready to serve."
+      }
+    ]
+  },
+  "grilled-chicken-breasts-with-cherry-chipotle-sauce": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Make glaze",
+        "text": "In a saucepan over medium heat, combine barbecue sauce, jam, brown sugar, vinegar, and 1 chipotle in adobo, chopped. Simmer until it thickens, about 5 minutes. Add fresh cherries and cook for another 2 minutes. Finish with lime juice."
+      },
+      {
+        "title": "Prep grill",
+        "text": "Heat your grill to medium-high and brush the grate with oil. Coat the chicken with nonstick spray and season with salt."
+      },
+      {
+        "title": "Grill chicken",
+        "text": "Grill the chicken, covered, 4 minutes per side until lightly cooked."
+      },
+      {
+        "title": "Glaze and finish",
+        "text": "Brush both sides with the cherry glaze and grill until the glaze caramelizes and the chicken is cooked through, about 2 minutes more. Serve with the remaining sauce on the side."
+      }
+    ]
+  },
+  "kohlrabi-coleslaw": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Shred vegetables",
+        "text": "Run the kohlrabi and carrot through a food processor (or work them over a box grater) to produce fine shreds."
+      },
+      {
+        "title": "Combine with herbs",
+        "text": "Toss the shreds together in a large bowl with the chopped parsley and sliced scallions."
+      },
+      {
+        "title": "Dress",
+        "text": "Whisk together mayonnaise, vinegar, Dijon, honey, celery seeds, salt, and cayenne. Pour over the vegetables, toss well to coat, and refrigerate. This slaw keeps up to 1 day ahead."
+      }
+    ]
+  },
+  "grilled-shrimp-with-piri-piri-sauce": {
+    "cuisine": "Portuguese",
+    "steps": [
+      {
+        "title": "Make piri-piri sauce",
+        "text": "Heat butter and oil in a small saucepan over medium. Add garlic, ginger, red pepper flakes, hot sauce, lemon zest, paprika, and salt. Simmer to cook the garlic through, 3–4 minutes, then add lemon juice and simmer another 2–3 minutes."
+      },
+      {
+        "title": "Prep grill and shrimp",
+        "text": "Heat your grill to medium-high and brush the grate with oil. Toss the shrimp with ¼ cup of the sauce in a bowl."
+      },
+      {
+        "title": "Grill shrimp",
+        "text": "Set the shrimp on the hot grill, covered, and cook until the surface turns pink and the flesh feels firm to the touch, about 1–2 minutes per side."
+      },
+      {
+        "title": "Finish",
+        "text": "Remove from the grill and toss with the remaining sauce. Divide among four plates and serve."
+      }
+    ]
+  },
+  "spinach-rice": {
+    "cuisine": "Indian",
+    "steps": [
+      {
+        "title": "Sauté onion",
+        "text": "Heat oil in a saucepan over medium. Add the onion and sauté until softened, 4–5 minutes."
+      },
+      {
+        "title": "Cook rice",
+        "text": "Stir in the rice and lemon zest; cook for 1 minute. Add the broth and bring to a boil, then reduce heat to low, cover, and cook until the rice is tender, 15 minutes."
+      },
+      {
+        "title": "Finish with spinach",
+        "text": "Remove from heat and let sit, covered, for 5 minutes. Add the spinach to the rice and toss with tongs until it wilts completely into the grains."
+      }
+    ]
+  },
+  "prosciutto-wrapped-tilapia-with-fresh-sage": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Make topping",
+        "text": "Stir together lemon juice, grated Parmesan, 1 tablespoon oil, honey, salt, and red pepper flakes; set aside."
+      },
+      {
+        "title": "Wrap fish",
+        "text": "Dry the tilapia fillets thoroughly with paper towels. Lay 2 sage leaves across each fillet, then wrap the bundle with 1 slice of prosciutto and fix it in place with a long toothpick. Brush the top of each package with 1 teaspoon oil."
+      },
+      {
+        "title": "Prep grill",
+        "text": "Heat your grill to medium-high and brush the grate with oil."
+      },
+      {
+        "title": "Grill fillets",
+        "text": "Grill the wrapped fillets, covered, until cooked through, 3–4 minutes per side. Remove toothpicks."
+      },
+      {
+        "title": "Serve",
+        "text": "Divide the risotto and wrapped fillets among four plates. Scatter walnuts over both, then pour the lemon-Parmesan mixture across the fish and the risotto."
+      }
+    ]
+  },
+  "broccolini-risotto": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Start risotto",
+        "text": "Get the grill going at medium-high and oil the grate well. Meanwhile, warm 1 tablespoon oil in a saucepan over medium heat. Toss in the shallots and let them cook until soft and translucent, 3–4 minutes. Add the rice and cook for another minute."
+      },
+      {
+        "title": "Build risotto",
+        "text": "Pour in the wine and simmer, stirring constantly, until the liquid evaporates. Add ½ cup hot water and stir frequently until absorbed. Continue adding hot water in ½-cup increments, stirring often, waiting for each portion to be mostly absorbed before adding more, until the rice is tender and creamy—about 15–20 minutes total."
+      },
+      {
+        "title": "Grill and finish",
+        "text": "Rub the broccolini with the remaining 1 tablespoon oil and place on the hot grill, covered. Turn it every minute or so until the edges blacken all around, about 5 minutes. Chop into bite-sized pieces and fold into the risotto."
+      }
+    ]
+  },
+  "skillet-fried-pork-chops-with-apple-sauce": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prep chops",
+        "text": "Season the pork chops on both sides with salt and pepper. Dredge them in flour, shaking off any excess but setting the excess aside for the sauce."
+      },
+      {
+        "title": "Sear in cast iron",
+        "text": "In a 12-inch cast-iron skillet over medium-high heat, melt 2 tablespoons butter until it foams. Add the chops to the hot pan and cook until their surfaces brown deeply and an instant-read thermometer shows 140° (inserted near but not touching the bone), 7–10 minutes per side. Transfer to a plate, tent loosely with foil, and rest 10 minutes."
+      },
+      {
+        "title": "Build sauce base",
+        "text": "Melt 1 tablespoon butter in the same skillet over medium-high heat. Add the onions and garlic; cook until softened, 3–5 minutes. Stir in about 2 tablespoons of the reserved flour and cook for 1–2 minutes, stirring constantly."
+      },
+      {
+        "title": "Finish sauce",
+        "text": "Deglaze the skillet with broth and cider, scraping up any browned bits from the bottom. Bring to a boil, reduce heat to medium, and simmer until the sauce thickens, about 5 minutes. Stir in the apples, vinegar, and minced sage; season with salt and pepper. Simmer until the apples begin to soften, about 3 minutes more."
+      },
+      {
+        "title": "Complete dish",
+        "text": "Return the chops to the skillet along with any juices from the plate. Coat them well with the warm sauce and garnish with fresh sage leaves."
+      }
+    ]
+  },
+  "country-smashed-sweet-potatoes": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Boil potatoes",
+        "text": "Boil the sweet potatoes in salted water until fork-tender, 10–15 minutes."
+      },
+      {
+        "title": "Cook and dry",
+        "text": "Drain the potatoes and return them to the pot, then cook over medium-low heat, stirring, to evaporate the excess moisture, 1–2 minutes."
+      },
+      {
+        "title": "Mash and season",
+        "text": "Off heat, add the butter, half-and-half, brown sugar, and cinnamon, then crush everything with a potato masher until you reach the consistency you want. Season with salt and pepper, then garnish with parsley."
+      }
+    ]
+  },
+  "grapefruit-cucumber-salad": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare ingredients",
+        "text": "Segment the grapefruit, peel and slice the cucumber into half-moons, thinly slice the onion, and chop the parsley."
+      },
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk the lemon juice, oil, honey, and Dijon together."
+      },
+      {
+        "title": "Dress and season",
+        "text": "Toss the grapefruit, cucumber, onion, and parsley in a bowl with the vinaigrette, then season with salt and pepper."
+      }
+    ]
+  },
+  "skillet-shepherds-pie-with-cheddar-mashed-potatoes": {
+    "title": "Skillet Shepherd's Pie",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Cook and dry potatoes",
+        "text": "Boil the potatoes in salted water until fork-tender, 10–12 minutes, then drain. Cook them over medium-low heat, stirring, to remove the excess moisture, 1–2 minutes."
+      },
+      {
+        "title": "Mash with cheese",
+        "text": "Stir in the half-and-half and butter, crushing with a potato masher until smooth, then add the cheese and scallions. Season with salt and cayenne."
+      },
+      {
+        "title": "Build the filling",
+        "text": "Warm a 10-inch cast-iron skillet over medium with oil. Soften the onion, celery, carrot, and garlic in it, 5–7 minutes, then raise the heat to medium-high and add the ground sirloin. Brown it, 5–7 minutes more."
+      },
+      {
+        "title": "Simmer until thick",
+        "text": "Stir in the rosemary, flour, and tomato paste, cook 1–2 minutes, then deglaze with wine, scraping the browned bits, and reduce until nearly evaporated. Add the broth, corn, green beans, and Worcestershire, bring to a boil, then simmer until the liquid reduces nearly away, 7–8 minutes. Transfer the skillet to a baking sheet."
+      },
+      {
+        "title": "Broil until brown",
+        "text": "Preheat the broiler to high with the rack 6 inches from the element. Spread the potato topping over the filling and broil until the potatoes are browned, 3–4 minutes. Let the pie rest 5 minutes before serving."
+      }
+    ]
+  },
+  "romaine-grape-salad-with-honey-mustard-vinaigrette": {
+    "title": "Romaine & Grape Salad",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Prepare ingredients",
+        "text": "Chop the romaine into bite-sized pieces, halve the grapes, and measure the sunflower seeds."
+      },
+      {
+        "title": "Make vinaigrette",
+        "text": "Whisk the oil, vinegar, honey, Dijon, and shallots together, then season with salt and pepper."
+      },
+      {
+        "title": "Dress the salad",
+        "text": "Toss the romaine, grapes, and sunflower seeds in a large bowl with the vinaigrette."
+      }
+    ]
+  },
+  "fig-bars": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Simmer the figs",
+        "text": "Combine the figs, 2½ cups water, zest, orange juice, brandy, ¼ cup brown sugar, allspice, and ⅛ tsp. salt in a saucepan over medium-high. Bring to a boil until the sugar dissolves, then reduce to medium-low and simmer until the liquid evaporates and the figs soften enough to flatten easily with a spatula, about 1 hour, adding ¼ cup water at a time as needed."
+      },
+      {
+        "title": "Process and cool",
+        "text": "Once the figs are tender enough to crush easily, run them through a food processor until completely smooth, then let the purée come to room temperature."
+      },
+      {
+        "title": "Prepare the pan",
+        "text": "Fit your pan with a parchment sling — it makes lifting out the bars much easier — and coat it well with butter."
+      },
+      {
+        "title": "Mix the crust",
+        "text": "Whisk together the flours, oats, walnuts, baking powder, and ½ tsp. salt."
+      },
+      {
+        "title": "Cream the dough",
+        "text": "On medium speed with a mixer, blend the butter with the brown sugar (1 cup) and honey until pale and fluffy, 3–5 minutes. Then add the egg, yolk, and vanilla and mix until combined."
+      },
+      {
+        "title": "Build and chill",
+        "text": "Mix in the flour mixture on low speed until just combined. Divide the dough in half; wrap one half in plastic and shape into a rectangle, then press the other half into the prepared pan. Chill both for at least 1 hour."
+      },
+      {
+        "title": "Assemble and bake",
+        "text": "Preheat the oven to 350°. Lay out the remaining dough between two pieces of parchment, rolling it to a 9×13-inch rectangle, then freeze it until rigid. Lay that top dough over the fig filling already spread in the pan. Bake until golden and set on top, 35–40 minutes. Cool fully in the pan, then lift out by the parchment handles."
+      }
+    ]
+  },
+  "sticky-bun-casserole-with-whipped-cream-bacon": {
+    "title": "Sticky Bun Casserole",
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Toast the bread",
+        "text": "Set the oven to 350° and ready a 9×13-inch baking dish with nonstick spray. Dry the bread on a baking sheet, 10 minutes each side, then transfer to a cooling rack and turn off the oven."
+      },
+      {
+        "title": "Make the caramel",
+        "text": "Combine the brown sugar, butter, corn syrup, and salt in a saucepan and heat over medium until the butter melts. Raise the heat to medium-high, bring to a boil, and cook until the sugar dissolves, 2 minutes. Stir in the pecans and pour into the prepared dish."
+      },
+      {
+        "title": "Soak the bread",
+        "text": "Whisk together the eggs, half-and-half, vanilla, and cinnamon, then dip both sides of each bread piece in the custard and arrange on top of the caramel."
+      },
+      {
+        "title": "Chill overnight",
+        "text": "Spoon the remaining custard over the bread layer, cover with plastic wrap, and refrigerate for at least 2 hours or as long as overnight."
+      },
+      {
+        "title": "Bake and invert",
+        "text": "Heat the oven to 350°. Take the casserole from the fridge and let it sit for about 30 minutes at room temperature, then peel off the plastic. Bake until the custard is set and registers 160° on a thermometer at the center, 40–45 minutes. Rest for 5 minutes, then flip the whole thing onto a serving platter with the caramel facing up. Top with whipped cream and bacon."
+      }
+    ]
+  },
+  "chicken-egg-drop-soup-with-bok-choy": {
+    "cuisine": "Chinese",
+    "steps": [
+      {
+        "title": "Prepare aromatics",
+        "text": "Separate bok choy whites from greens. Mince the ginger and garlic. Slice the scallions, keeping whites and greens separate."
+      },
+      {
+        "title": "Simmer broth base",
+        "text": "Combine the broth, bok choy whites, mirin, ginger, garlic, and scallion whites in a pot and bring to a boil over medium-high. Drop the heat to medium and let it simmer until the bok choy whites are tender, 5 minutes."
+      },
+      {
+        "title": "Cook chicken and egg",
+        "text": "Raise the heat to high, stir in the bok choy greens and chicken, and simmer until cooked through, 2 minutes. Slowly pour in the eggs in a steady stream, let them sit 30 seconds, then stir to break them into pieces. Lower the heat to medium and let them cook 1 minute, then stir in the scallion greens and sesame oil. Season with pepper."
+      }
+    ]
+  },
+  "sour-beef-hot-pot-with-fresh-herbs": {
+    "title": "Sour Beef Hot Pot",
+    "cuisine": "Vietnamese",
+    "steps": [
+      {
+        "title": "Cook the noodles",
+        "text": "Following package directions, cook the noodles and set them aside."
+      },
+      {
+        "title": "Build the broth",
+        "text": "Anchovies and both oils go into the pot together over medium-high. Give them about 3 minutes — they will collapse into the oil and all but disappear, which is the point. Garlic, minced chile and ½ cup of the pineapple follow, cooked only until they soften."
+      },
+      {
+        "title": "Simmer with herbs",
+        "text": "Stir in the broth, vinegar, shallots, and lemongrass, bring to a boil, then reduce to medium and simmer 15–20 minutes. Discard the lemongrass, then stir in the noodles, remaining ½ cup pineapple, basil, mint, and cilantro."
+      },
+      {
+        "title": "Serve",
+        "text": "Divide the steak among four bowls and ladle the soup over it. Garnish each serving with sliced chile."
+      }
+    ]
+  },
+  "make-ahead-pot-pies-herbed-pie-dough": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Mix dry",
+        "text": "Pulse the flour, sugar, parsley, thyme, salt, and pepper together in a food processor."
+      },
+      {
+        "title": "Cut in fat",
+        "text": "Add the butter and shortening and pulse until they break into pea-sized bits. Sprinkle the water over in 2-Tbsp. additions, pulsing after each addition, until the dough just comes together."
+      },
+      {
+        "title": "Rest and portion",
+        "text": "Tip it out and work it by hand only as long as it takes for the dry crumbs at the bottom of the bowl to come together. Split the dough into 8 for individual pies, or 2 for one large. Press each piece flat into a disc, wrap in plastic, and chill: 30 minutes at the least, 3 days at the most."
+      }
+    ]
+  },
+  "boeuf-bourguignon-pot-pie-with-rosemary-thyme": {
+    "title": "Beef Bourguignon Pot Pie",
+    "cuisine": "French",
+    "steps": [
+      {
+        "title": "Brown the mushrooms",
+        "text": "Melt the butter in a sauté pan over medium-high. Add the mushrooms, onions, and rosemary and thyme sprigs, then cook, stirring occasionally, until the mushrooms begin to brown, 8–10 minutes. Season with salt and pepper, then remove from heat and discard the herb sprigs."
+      },
+      {
+        "title": "Render the bacon",
+        "text": "Cook the bacon in a sauté pan until crisp, then transfer to a paper-towel-lined plate and reserve the drippings."
+      },
+      {
+        "title": "Brown the steak",
+        "text": "Toss the steak with the dried rosemary, 2 tsp. salt, and 2 tsp. pepper. Working in batches, sear the steak in the drippings over medium-high heat on all sides, 5–6 minutes per batch, then transfer to a plate."
+      },
+      {
+        "title": "Make the sauce base",
+        "text": "Add the carrots, celery, and garlic to the pan, season with salt and pepper, cover, reduce to medium, and sweat until crisp-tender, 6–8 minutes. Stir in the tomato paste and cook 1 minute, then add the flour and cook 1 minute more."
+      },
+      {
+        "title": "Build the filling",
+        "text": "Wine goes in next, straight into the hot pan so the fond lifts off the bottom; the broth follows. Bring it up hard to a boil, then drop it back to a simmer for 3–5 minutes — it is ready when it coats the back of a spoon. Off the heat, fold through the rosemary and thyme with the mushrooms, bacon and steak."
+      },
+      {
+        "title": "Bottom crust",
+        "text": "Set one dough disc between 2 sheets of parchment and roll it into a 13-inch round. Press it into a 9-inch pie plate without stretching, then pour the filling in."
+      },
+      {
+        "title": "Cover the filling",
+        "text": "The second disc gets the same treatment — parchment above and below, rolled to a 13-inch round — but this one goes over the filling. Leave a ½-inch overhang, press the edges together and tuck them under, crimp, and cut a slit in the top. Wrap and freeze. Pull it out 30 minutes before it bakes and unwrap it, but do not let it thaw."
+      },
+      {
+        "title": "Bake until done",
+        "text": "Heat the oven to 425° and line a baking sheet with foil. Mix the egg with water and paint it over the crust. Set the pie on the sheet and bake until the crust is golden and a thermometer reads 165° at the center, 100–110 minutes, covering the edge with foil if it browns too fast. Rest 15 minutes before slicing."
+      }
+    ]
+  },
+  "cornmeal-scones-with-honey": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Dry mix",
+        "text": "Set oven to 425° and line a sheet with parchment. In a bowl, combine flour, cornmeal, granulated sugar, baking powder, and salt."
+      },
+      {
+        "title": "Work in butter",
+        "text": "Dice cold butter and cut it through the flour mixture with your fingers or a pastry cutter until it resembles rough breadcrumbs, keeping some pea-sized lumps. Add cream and stir gently — stop as soon as the mixture holds together."
+      },
+      {
+        "title": "Shape and finish",
+        "text": "Flour your work surface lightly. Press the dough into a compact disk about 8 inches across and 3/4-inch thick. Divide it into 8 equal wedges using a knife. Arrange them on the parchment, brush generously with honey, and top with sparkling sugar."
+      },
+      {
+        "title": "Bake",
+        "text": "Bake 15–18 minutes until the tops brown. Cool for a few minutes on the sheet, or serve at room temperature."
+      }
+    ]
+  },
+  "apple-pear-tarts-with-caramel-sauce": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Oven and prep",
+        "text": "Start the oven at 425°. Line a baking sheet with parchment."
+      },
+      {
+        "title": "Make spice coat",
+        "text": "In a small bowl, combine granulated sugar, 2 Tbsp brown sugar, 1/4 tsp salt, and cinnamon; set aside."
+      },
+      {
+        "title": "Coat fruit",
+        "text": "Coat apples and pears with lemon juice to prevent browning, then dust them with the spice mixture."
+      },
+      {
+        "title": "Assemble and bake",
+        "text": "Set puff pastry halves on the sheet and shingle the apple and pear slices over them, keeping a margin at the edge. Fold the edges in slightly to frame the fruit. Bake 20–25 minutes until the pastry browns and puffs."
+      },
+      {
+        "title": "Caramel sauce",
+        "text": "As the tarts bake, combine 1/4 cup brown sugar, butter, cream, vanilla, and 1/8 tsp salt in a saucepan. Cook over medium-low heat, stirring now and then, until thick, 5–7 minutes. Pour over the baked tarts and top with pecans."
+      }
+    ]
+  },
+  "cheesy-cauliflower": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Steam cauliflower",
+        "text": "Boil an inch of water in a pot fitted with a steamer basket. Set florets in and steam them, covered, tossing once or twice, until they soften, roughly 10 minutes. Drain into a bowl and season to taste with salt and pepper."
+      },
+      {
+        "title": "Make roux and build sauce",
+        "text": "In a saucepan over medium heat, melt butter then work in flour to make a smooth paste. Gradually pour in half-and-half, beer, Dijon, and Worcestershire, whisking as you go. When the sauce is glossy and coats a spoon thickly, leaving a trail that does not disappear when swiped, 5–7 minutes total, reduce heat to low."
+      },
+      {
+        "title": "Finish with cheese",
+        "text": "Pull from heat. Add Cheddar in handfuls, letting each batch melt before the next arrives. Adjust with salt, pepper, and a few drops of Tabasco. Ladle over the florets and top with fresh chives."
+      }
+    ]
+  },
+  "tomato-anchovy-sauce": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Sweat aromatics",
+        "text": "Heat oil in a saucepan over medium. Add onion, anchovy paste, and oregano; cook until the onion softens and liquid evaporates, 5 minutes."
+      },
+      {
+        "title": "Deepen with paste",
+        "text": "Stir in tomato paste and cook 1 minute, letting it caramelize slightly."
+      },
+      {
+        "title": "Add tomatoes and simmer",
+        "text": "Add crushed tomatoes and tomato sauce; bring to a simmer and cook 10 minutes until the sauce thickens. Stir in vinegar, then season with salt and pepper."
+      }
+    ]
+  },
+  "faster-with-fewer-green-olive-sauce": {
+    "title": "Herb Green Olive Sauce",
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Build base in processor",
+        "text": "Set half the olives, parsley, basil, pecorino, and the orange and lemon zests plus honey in a food processor. Pulse to a rough chop."
+      },
+      {
+        "title": "Wet it down",
+        "text": "Add the orange and lemon juice. Pulse again until the olives break down to a fine chop."
+      },
+      {
+        "title": "Warm through",
+        "text": "Warm oil in a saucepan over medium. When it moves easily, add garlic and pepper flakes and let them release their perfume, 1 minute. Fold in the minced olive mixture and the remaining halved olives. Let everything warm through, 3–4 minutes, and finish with cracked pepper."
+      }
+    ]
+  },
+  "fresh-tomato-vodka-sauce-with-pancetta": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Render pancetta",
+        "text": "In a sauté pan over medium-high heat, cook pancetta until the edges crisp. Lift to a paper towel and reserve the fat in the pan."
+      },
+      {
+        "title": "Build aromatics and tomatoes",
+        "text": "Add oil to the pan if needed, then warm it gently. Sauté onion until it yields, 3–4 minutes. Stir in garlic and tomato paste; let them darken a bit, 1 minute. Add fresh tomatoes and give them 2–3 minutes to collapse."
+      },
+      {
+        "title": "Deglaze and sauce",
+        "text": "Pour in vodka, scraping hard at the pan bottom to lift any stuck bits. Cook off most of the alcohol, about 3 minutes. Stir in cream and bring to a bubble; let it cook 1 minute. Off heat, fold in basil and the pancetta. Season with salt, black pepper, and red pepper flakes."
+      }
+    ]
+  },
+  "gorgonzola-sauce-with-walnuts": {
+    "cuisine": "Italian",
+    "steps": [
+      {
+        "title": "Reduce cream base",
+        "text": "In a saucepan, combine cream and vermouth. Simmer gently over medium heat until it thickens and reduces slightly, roughly 10 minutes."
+      },
+      {
+        "title": "Add cheese and finish",
+        "text": "Introduce Gorgonzola and Parmesan slowly, whisking as they melt in. Cook another 5 minutes until the sauce is glossy and dense. Whisk in lemon zest and juice, then adjust seasoning with salt, pepper, and a pinch of nutmeg."
+      },
+      {
+        "title": "Serve",
+        "text": "Plate and scatter toasted walnuts and fresh parsley over each portion."
+      }
+    ]
+  },
+  "mocha-boston-cream-pie": {
+    "cuisine": "American",
+    "steps": [
+      {
+        "title": "Ready the oven and pans",
+        "text": "Start oven at 325°. Cut parchment to fit three 9×2-inch-round cake pans, then coat each pan well with nonstick spray, lay in a parchment round, and spray the paper too."
+      },
+      {
+        "title": "Mix cake batter",
+        "text": "Sift flour, 1 cup sugar, baking powder, and 1/2 tsp salt together. In another bowl, whisk 6 egg yolks with 3/4 cup milk, oil, 4 Tbsp melted butter, and 1 Tbsp vanilla until smooth and pale. Fold in the dry mix, stirring just until no flour specks remain."
+      },
+      {
+        "title": "Whip and fold egg whites",
+        "text": "In a clean bowl with a hand mixer, beat egg whites and cream of tartar on medium until pillowy peaks appear, 5 minutes. Crank to medium-high and rain in the remaining 1/4 cup sugar while beating, 3–4 minutes more, until glossy and firm peaks hold. In four turns, fold the whites into the batter, scraping the bowl between each addition, until no white streaks show."
+      },
+      {
+        "title": "Bake cakes",
+        "text": "Split the batter among the pans. Bake 30 minutes, rotating the pans halfway, until the tops spring back when touched lightly and the cakes smell golden. Cool in the pans 10 minutes, then turn out onto racks and cool completely."
+      },
+      {
+        "title": "Pastry cream foundation",
+        "text": "Whisk 6 egg yolks, cornstarch, 1/4 cup sugar, and liqueur until the yolks lighten. Warm 2½ cups milk and remaining 1/2 cup sugar in a saucepan until it just begins to bubble, 12 minutes. Remove from heat and stir in 4 oz chocolate until it dissolves."
+      },
+      {
+        "title": "Cook pastry cream",
+        "text": "Pour half the chocolate-milk into the yolk mixture, whisking steadily, then return everything to the saucepan and return to medium heat. Whisk constantly until it thickens, 2–3 minutes. Take off heat. Stir in 1 Tbsp vanilla mixed with espresso powder, then 5 Tbsp butter and 1/4 tsp salt. Pour into a bowl, press plastic wrap flush to the surface, and refrigerate until chilled through, at least 2 hours."
+      },
+      {
+        "title": "Prepare ganache",
+        "text": "In a saucepan, warm cream and corn syrup over medium until they shimmer. Remove from heat. Drop in 4 oz chocolate, let it sit 8 minutes undisturbed, then whisk until smooth and glossy. Stir in 1/2 tsp vanilla."
+      },
+      {
+        "title": "Assemble and set",
+        "text": "Place one cake layer on a plate. Spread 1½ cups pastry cream over it, stopping short of the edge by 1/4 inch. Set the second layer on top, repeat the cream, then crown with the last layer. Pour ganache over the top and tilt to spread it gently to the edges. Let rest at room temperature 30 minutes before slicing."
+      }
+    ]
+  },
+  "nopales-salad-with-crema-dressing": {
+    "cuisine": "Mexican",
+    "steps": [
+      {
+        "title": "Make crema dressing",
+        "text": "Whisk together vinegar, crema, shallots, sugar, thyme, and Dijon in a small bowl. Season with salt and pepper. Set aside."
+      },
+      {
+        "title": "Combine greens and vegetables",
+        "text": "In a large bowl, toss together romaine, nopales, queso fresco, and onion."
+      },
+      {
+        "title": "Dress and serve",
+        "text": "Drizzle the salad with dressing and toss gently to coat. Serve immediately."
       }
     ]
   }
