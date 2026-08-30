@@ -43,7 +43,7 @@ function Dot({ cuisine, size = 7 }) {
 }
 
 // A contents-page row: number, cuisine dot, title, dotted rule, one number.
-function LeaderRow({ recipe, n, selected, onOpen, isMobile }) {
+function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
   const color = cuisineColor(recipe.cuisine);
   return (
     <div
@@ -66,6 +66,7 @@ function LeaderRow({ recipe, n, selected, onOpen, isMobile }) {
       </span>
       {/* The dotted leader. A repeating gradient, so it stretches to any width. */}
       <span aria-hidden="true" style={{ flex: 1, minWidth: 18, alignSelf: "center", height: 1, background: `repeating-linear-gradient(to right, ${rgba(COLORS.border, .85)} 0 2px, transparent 2px 6px)` }} />
+      {inBasket && <span style={{ ...label(8, COLORS.gold, ".12em"), whiteSpace: "nowrap" }}>On list</span>}
       <span style={{ ...mono(12, COLORS.green), whiteSpace: "nowrap" }}>${(recipe.est_cost_usd ?? 0).toFixed(2)}</span>
     </div>
   );
@@ -84,7 +85,7 @@ function Ingredients({ list }) {
   );
 }
 
-function Detail({ state, onClose, isMobile }) {
+function Detail({ state, onClose, isMobile, inBasket, onToggleBasket }) {
   if (state.loading) {
     return <div style={{ ...mono(12, COLORS.faint), padding: 26 }}>Fetching the recipe…</div>;
   }
@@ -123,6 +124,22 @@ function Detail({ state, onClose, isMobile }) {
         ))}
       </div>
 
+      {onToggleBasket && (
+        <button
+          onClick={() => onToggleBasket(r.id)}
+          aria-pressed={!!inBasket}
+          style={{
+            ...label(10, inBasket ? COLORS.gold : COLORS.page, ".15em"),
+            width: "100%", minHeight: 44, marginBottom: 22, cursor: "pointer", borderRadius: 4,
+            background: inBasket ? "transparent" : COLORS.gold,
+            border: `1px solid ${COLORS.gold}`,
+            transition: `all 180ms ${EASE}`,
+          }}
+        >
+          {inBasket ? "On the shopping list — remove" : "Add to shopping list"}
+        </button>
+      )}
+
       <div style={{ ...label(10, COLORS.muted, ".2em"), marginBottom: 8 }}>Ingredients</div>
       <Ingredients list={r.ingredients} />
 
@@ -148,7 +165,7 @@ function Detail({ state, onClose, isMobile }) {
   );
 }
 
-export default function LibraryRoom() {
+export default function LibraryRoom({ basket, onOpenShopping }) {
   const isMobile = useIsMobile();
   const [query, setQuery] = useState("");
   const [cuisine, setCuisine] = useState("All");
@@ -199,13 +216,28 @@ export default function LibraryRoom() {
   return (
     <div style={{ flex: 1, minHeight: 0, overflowY: "auto", background: COLORS.ground, color: COLORS.parchment }}>
       <div style={{ minHeight: "100%", padding: isMobile ? "24px 16px 40px" : "34px clamp(20px,4vw,54px) 48px" }}>
-        <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 8 }}>The library · {SOURCE_INDEX.length} recipes</div>
+        <div style={{ ...label(10, COLORS.gold, ".3em"), marginBottom: 8 }}>
+          The library · {SOURCE_INDEX.length} recipes
+        </div>
         <div style={{ ...display(isMobile ? 30 : 42, 1) }}>
           The back of the book, <span style={{ fontStyle: "italic", color: COLORS.gold }}>off-calendar.</span>
         </div>
         <div style={{ fontFamily: FONTS.body, fontStyle: "italic", color: COLORS.muted, marginTop: 9, maxWidth: 560, lineHeight: 1.5 }}>
           Real recipes adapted from the source shelf — not the 46 nights, just the shelf they were picked from.
         </div>
+
+        {/* Adding a recipe is pointless if you cannot then get to the list. */}
+        {basket?.count > 0 && onOpenShopping && (
+          <button
+            onClick={onOpenShopping}
+            style={{
+              ...label(10, COLORS.ground, ".15em"), marginTop: 16, minHeight: 44, padding: "0 18px",
+              background: COLORS.gold, border: `1px solid ${COLORS.gold}`, borderRadius: 4, cursor: "pointer",
+            }}
+          >
+            {basket.count} on the shopping list — open it
+          </button>
+        )}
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center", margin: "24px 0 14px" }}>
           <input
@@ -264,7 +296,7 @@ export default function LibraryRoom() {
                 </div>
               </div>
             ) : rows.map((r, i) => (
-              <LeaderRow key={r.id} recipe={r} n={i} selected={r.id === openId} onOpen={open} isMobile={isMobile} />
+              <LeaderRow key={r.id} recipe={r} n={i} selected={r.id === openId} inBasket={basket?.has(r.id)} onOpen={open} isMobile={isMobile} />
             ))}
           </div>
 
@@ -272,7 +304,7 @@ export default function LibraryRoom() {
               Mobile: it takes the screen, because a rail at 375px is a joke. */}
           {openId && detail && !isMobile && (
             <aside style={{ background: COLORS.page, border: hairline, borderRadius: 3, position: "sticky", top: 0, maxHeight: "calc(100vh - 150px)", overflowY: "auto" }}>
-              <Detail state={detail} onClose={() => setOpenId(null)} isMobile={false} />
+              <Detail state={detail} onClose={() => setOpenId(null)} isMobile={false} inBasket={basket?.has(openId)} onToggleBasket={basket?.toggle} />
             </aside>
           )}
         </div>
@@ -280,7 +312,7 @@ export default function LibraryRoom() {
 
       {openId && detail && isMobile && (
         <div role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, zIndex: 40, background: COLORS.page, overflowY: "auto" }}>
-          <Detail state={detail} onClose={() => setOpenId(null)} isMobile />
+          <Detail state={detail} onClose={() => setOpenId(null)} isMobile inBasket={basket?.has(openId)} onToggleBasket={basket?.toggle} />
         </div>
       )}
     </div>

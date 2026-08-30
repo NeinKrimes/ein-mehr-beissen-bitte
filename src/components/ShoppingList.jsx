@@ -96,7 +96,62 @@ function RetailerButton({ retailer, items }) {
   );
 }
 
-export default function ShoppingList({ flatDays, getRecipe, onClose }) {
+// One aggregated block: a heading, its retailer buttons, and the item grid.
+// The calendar weeks and the library basket are the same thing on screen, so
+// they share this rather than diverging as either one changes.
+function ListSection({ heading, note, recipes, emptyText, isMobile, children }) {
+  const items = aggregate(recipes);
+  const total = weekTotalCost(recipes);
+
+  return (
+    <div style={{ marginBottom: "22px" }}>
+      <div style={{
+        display: "flex", flexDirection: isMobile ? "column" : "row",
+        justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "baseline",
+        gap: isMobile ? 8 : 0,
+        borderBottom: hairline, paddingBottom: "6px", marginBottom: "10px",
+      }}>
+        <div style={{ fontSize: "13px", color: COLORS.gold, letterSpacing: "1px" }}>{heading}</div>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
+          <div style={{ fontSize: "12px", color: COLORS.muted }}>
+            {recipes.length > 0
+              ? <>est. <span style={{ color: COLORS.green }}>${total.toFixed(2)}</span></>
+              : <span style={{ color: COLORS.muted }}>{note}</span>}
+          </div>
+          {items.size > 0 && (
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+              {RETAILERS.map((r) => <RetailerButton key={r.id} retailer={r} items={items} />)}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {children}
+
+      {items.size === 0 ? (
+        <div style={{ fontSize: "12px", color: COLORS.muted, fontStyle: "italic" }}>{emptyText}</div>
+      ) : (
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "4px 16px" }}>
+          {[...items.keys()].sort().map((item) => {
+            const units = items.get(item);
+            const qty = [...units.entries()]
+              .map(([unit, amt]) => (amt === null ? unit : `${fmtAmount(amt)} ${unit}`.trim()))
+              .filter(Boolean)
+              .join(" · ");
+            return (
+              <div key={item} style={{ display: "flex", gap: "6px", padding: "3px 0", fontSize: "12px", borderBottom: hairline }}>
+                <span style={{ color: COLORS.gold, minWidth: "64px", textAlign: "right", flexShrink: 0 }}>{qty}</span>
+                <span style={{ color: COLORS.listInk }}>{item}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function ShoppingList({ flatDays, getRecipe, onClose, basket = [], onRemoveFromBasket }) {
   const isMobile = useIsMobile();
   // Group days into 7-day spans (week 1 = days 1–7, …).
   const weeks = new Map();
@@ -134,65 +189,51 @@ export default function ShoppingList({ flatDays, getRecipe, onClose }) {
           >✕</button>
         </div>
 
+        {/* The chosen half of the list, above the calendar because you put it
+            there deliberately. Absent entirely when the basket is empty. */}
+        {basket.length > 0 && (
+          <ListSection
+            heading={`From the library · ${basket.length} ${basket.length === 1 ? "recipe" : "recipes"}`}
+            note=""
+            recipes={basket}
+            emptyText="These recipes have no ingredients on file."
+            isMobile={isMobile}
+          >
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "10px" }}>
+              {basket.map((r) => (
+                <span key={r.id} style={{
+                  display: "inline-flex", alignItems: "center", gap: "6px",
+                  fontSize: "11px", color: COLORS.listInk,
+                  background: COLORS.pageAlt, border: hairline, borderRadius: 999, padding: "4px 6px 4px 11px",
+                }}>
+                  {r.title}
+                  {onRemoveFromBasket && (
+                    <button
+                      onClick={() => onRemoveFromBasket(r.id)}
+                      aria-label={`Remove ${r.title} from the shopping list`}
+                      style={{ background: "none", border: 0, color: COLORS.faint, cursor: "pointer", fontSize: "14px", lineHeight: 1, padding: "4px 6px" }}
+                    >×</button>
+                  )}
+                </span>
+              ))}
+            </div>
+          </ListSection>
+        )}
+
         {[...weeks.keys()].sort((a, b) => a - b).map((w) => {
           const days = weeks.get(w);
           const recipes = days
             .map((d) => getRecipe(d.mealId))
             .filter((r) => r && !r.loading && !r.error);
-          const items = aggregate(recipes);
-          const total = weekTotalCost(recipes);
-          const dayRange = `${days[0].day}–${days[days.length - 1].day}`;
-
           return (
-            <div key={w} style={{ marginBottom: "22px" }}>
-              <div style={{
-                display: "flex", flexDirection: isMobile ? "column" : "row",
-                justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "baseline",
-                gap: isMobile ? 8 : 0,
-                borderBottom: hairline, paddingBottom: "6px", marginBottom: "10px",
-              }}>
-                <div style={{ fontSize: "13px", color: COLORS.gold, letterSpacing: "1px" }}>
-                  Week {w} · Days {dayRange}
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "12px", flexWrap: "wrap" }}>
-                  <div style={{ fontSize: "12px", color: COLORS.muted }}>
-                    {recipes.length > 0
-                      ? <>est. <span style={{ color: COLORS.green }}>${total.toFixed(2)}</span></>
-                      : <span style={{ color: COLORS.muted }}>not seeded yet</span>}
-                  </div>
-                  {items.size > 0 && (
-                    <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-                      {RETAILERS.map((r) => (
-                        <RetailerButton key={r.id} retailer={r} items={items} />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {items.size === 0 ? (
-                <div style={{ fontSize: "12px", color: COLORS.muted, fontStyle: "italic" }}>
-                  Recipes for this week aren’t in the library yet — run the seed.
-                </div>
-              ) : (
-                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "4px 16px" }}>
-                  {[...items.keys()].sort().map((item) => {
-                    const units = items.get(item);
-                    const qty = [...units.entries()]
-                      .map(([unit, amt]) =>
-                        amt === null ? unit : `${fmtAmount(amt)} ${unit}`.trim())
-                      .filter(Boolean)
-                      .join(" · ");
-                    return (
-                      <div key={item} style={{ display: "flex", gap: "6px", padding: "3px 0", fontSize: "12px", borderBottom: hairline }}>
-                        <span style={{ color: COLORS.gold, minWidth: "64px", textAlign: "right", flexShrink: 0 }}>{qty}</span>
-                        <span style={{ color: COLORS.listInk }}>{item}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+            <ListSection
+              key={w}
+              heading={`Week ${w} · Days ${days[0].day}–${days[days.length - 1].day}`}
+              note="not seeded yet"
+              recipes={recipes}
+              emptyText="Recipes for this week aren’t in the library yet — run the seed."
+              isMobile={isMobile}
+            />
           );
         })}
       </div>
