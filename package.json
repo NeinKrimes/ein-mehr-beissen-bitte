@@ -26,7 +26,13 @@
     "eslint": "^9.0.0",
     "eslint-plugin-react": "^7.35.0",
     "jsdom": "^29.1.1",
-    "vite": "^8.0.8",
+    "vite": "^8.2.2",
     "vitest": "^4.1.10"
+  },
+  "_overrides_note": "postcss, js-yaml and ws are transitive (vite, eslint, @supabase/realtime-js). Their parents have not shipped patched ranges yet, so the floor is pinned here. Drop an entry once its parent carries the fix itself.",
+  "overrides": {
+    "postcss": "^8.5.26",
+    "js-yaml": "^4.3.2",
+    "ws": "^8.21.3"
   }
 }
