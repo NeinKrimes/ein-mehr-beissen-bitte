@@ -1,3 +1,4 @@
+import React from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -22,12 +23,19 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
 
       <div style={{ display: "flex", flexDirection: "column", gap: 64 }}>
         {chains.map((chain, i) => (
-          <Spread key={chain.id} chain={chain} index={i} getRecipe={getRecipe} onSelectDay={onSelectDay} isCooked={isCooked} selectedMealId={selectedMealId} />
+          <MemoizedSpread key={chain.id} chain={chain} index={i} getRecipe={getRecipe} onSelectDay={onSelectDay} isCooked={isCooked} selectedMealId={selectedMealId} />
         ))}
       </div>
     </div>
   );
 }
+
+const MemoizedSpread = React.memo(Spread, (prev, next) => {
+  if (prev.chain !== next.chain || prev.index !== next.index || prev.getRecipe !== next.getRecipe || prev.onSelectDay !== next.onSelectDay || prev.isCooked !== next.isCooked) return false;
+  const prevInChain = prev.chain.days.some(d => mealId(prev.chain.id, d.day) === prev.selectedMealId);
+  const nextInChain = next.chain.days.some(d => mealId(next.chain.id, d.day) === next.selectedMealId);
+  return prev.selectedMealId === next.selectedMealId || (!prevInChain && !nextInChain);
+});
 
 function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
