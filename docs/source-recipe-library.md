@@ -98,7 +98,7 @@ Pork Phở down as Mexican and Jamaican Jerk Pork as Mexican).
 Technical facts inside a step — temperatures, times, pan sizes, quantities —
 are facts and stay accurate. The phrasing is ours.
 
-**Status: 148 of 506 authored.** The pipeline is complete and the remaining 358
+**Status: 183 of 506 authored.** The pipeline is complete and the remaining 323
 are extracted and waiting; each new tranche is a matter of adding ids to
 `authored-steps.json` and re-running `npm run build:recipes`.
 
@@ -129,6 +129,12 @@ Recipes were prioritised by fit with the project's thesis — passive cooking,
 frugal cuts, world cuisines — which is what surfaced pot roasts, bean soups,
 daube, feijoada, caldo verde and lamb shanks ahead of the desserts.
 
+That ranking stopped paying around 150 authored: the mains worth having were
+gone, and the picker started returning four mashed-potato variants per tranche.
+Sides, breakfasts and breads are in scope from there on — a reference library
+wants them — so the side-dish penalty now only breaks ties, and the concept key
+stops near-identical ones crowding a single batch.
+
 ## How the app uses it
 
 `useRecipe` gained a tier:
@@ -152,7 +158,7 @@ needs to answer *is this meal in the library?*. The ingredients and steps live i
 `await import(...)` inside `loadSourceRecipe()`, so Vite gives it its own chunk
 and a tier-3 **miss** downloads nothing at all.
 
-At 148 recipes: 434 kB entry (125 kB gzip) + a 339 kB corpus chunk (78 kB gzip)
+At 183 recipes: 451 kB entry (130 kB gzip) + a 404 kB corpus chunk (94 kB gzip)
 that most sessions never fetch.
 
 ## The Library room

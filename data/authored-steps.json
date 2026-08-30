@@ -1263,7 +1263,8 @@
   "italian-milk-braised-pork-roast": "duplicate of italian-milk-braised-pork-roast-with-porcini-mushrooms (same recipe in a later issue)",
   "slow-cooked-comfort-lemony-polenta": "duplicate of lemony-polenta, with a section header stuck to the title",
   "tasty-tart-grapefruit-tart": "duplicate of grapefruit-tart-with-oatmeal-brown-sugar-crust, with a section header stuck to the title",
-  "cheesy-mexican-butter-stuffed-chicken": "Method defers to 'directions on page 34' for breading/frying — incomplete without that reference"
+  "cheesy-mexican-butter-stuffed-chicken": "Method defers to 'directions on page 34' for breading/frying — incomplete without that reference",
+  "potato-rosemary-topping": "Method defers to 'Puglia-Style Focaccia directions, page 41' we never scanned; incomplete without baking instructions"
  },
  "ricotta-stuffed-shells": {
   "cuisine": "Italian",
@@ -3558,6 +3559,747 @@
    {
     "title": "Make the gravy",
     "text": "Drain all but 3 Tbsp of the frying oil from the skillet and bring it to medium-high heat. Whisk in ¼ cup flour and cook for 1 minute while stirring constantly. Whisk in 1¼ cups whole milk and 1 cup low-sodium chicken broth slowly, cooking until thick and bubbly, about 5 minutes. Whisk in the cracked black pepper, Worcestershire sauce, and cayenne pepper. Season the gravy with salt and serve alongside the chicken."
+   }
+  ]
+ },
+ "cup-o-ravioli-soup": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Layer in jar",
+    "text": "Layer the ravioli, chicken, spinach, garlic, and Italian seasoning in a large quart jar with a sealing lid."
+   },
+   {
+    "title": "Add broth and pesto",
+    "text": "Whisk the broth and pesto together, pour it over the ingredients, seal the jar, and refrigerate until ready to eat."
+   },
+   {
+    "title": "Microwave and season",
+    "text": "Remove the lid, microwave the soup on high until the pasta is tender, 6–8 minutes. Season with salt and pepper."
+   }
+  ]
+ },
+ "pork-saltimbocca-with-sherry-sauce": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Pound and season pork",
+    "text": "From the pork tenderloin, cut six thick 1-inch slices. Pound each one down to ½-inch medallions using a meat mallet. Season well with salt and pepper, then dust with flour, shaking off excess."
+   },
+   {
+    "title": "Crisp prosciutto and sear pork",
+    "text": "Heat the oil in a sauté pan over medium. Render the diced prosciutto until it crisps, 3–4 minutes, and transfer to paper towels. In the same pan, brown the medallions, 2 minutes each side, then set aside."
+   },
+   {
+    "title": "Make the mushroom sauce",
+    "text": "Return the pan to the heat and add the mushrooms. Let them cook, releasing and evaporating their liquid, 5–6 minutes. Drop the garlic in and cook 1 minute, stirring. Pour in the sherry and broth, scraping up all the dark bits from the bottom, and let the liquid reduce by half, about 3 minutes."
+   },
+   {
+    "title": "Finish with sage and butter",
+    "text": "Off heat, whisk in the butter and sage until the sauce coats the back of a spoon. Return the medallions to the pan and turn them through the sauce. Serve topped with the crispy prosciutto."
+   }
+  ]
+ },
+ "chicken-a-la-king-hash": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Sweat mushrooms and aromatics",
+    "text": "In a sauté pan over medium-high, melt 3 Tbsp. butter and add the quartered mushrooms. Let them cook until golden and their liquid evaporates, about 10 minutes; transfer to a bowl. Lower the heat to medium, add the remaining 2 Tbsp. butter, then the scallions and cayenne. Cook gently until the scallions soften, 1–2 minutes."
+   },
+   {
+    "title": "Make the sauce",
+    "text": "Sprinkle the flour into the pan and cook 1 minute, stirring constantly. Slowly whisk in the broth, milk, and sherry until smooth. Simmer until thick, about 7 minutes, then season with more sherry, lemon juice, salt, and pepper."
+   },
+   {
+    "title": "Fold in chicken and vegetables",
+    "text": "Stir in the chicken, peas, pimentos, and the cooked mushroom mixture. Simmer until heated through, 3–5 minutes."
+   },
+   {
+    "title": "Serve over hash browns",
+    "text": "Serve over Waffle Hash Browns and garnish with Manchego cheese and sliced scallion greens."
+   }
+  ]
+ },
+ "chicken-zoodles-with-tomatoes": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Make the relish",
+    "text": "Whisk together the oil, balsamic, and garlic, season with salt and pepper, then toss with the tomatoes. Add the fresh basil just before serving."
+   },
+   {
+    "title": "Season the chicken",
+    "text": "Combine the Italian seasoning, granulated garlic, ½ tsp. salt, and ½ tsp. pepper and rub onto the chicken breasts."
+   },
+   {
+    "title": "Cook chicken to temperature",
+    "text": "Heat the oil in a nonstick skillet over medium-high until shimmering. Add the chicken and cook until a thermometer reads 165° in the thickest part, about 5 minutes per side. Cool slightly, then slice."
+   },
+   {
+    "title": "Finish with zoodles and mozzarella",
+    "text": "Add the zucchini, relish, and mozzarella to the same skillet and cook just until the zucchini and tomatoes soften, 2 minutes. Season with salt and pepper. Serve the chicken with the zoodles."
+   }
+  ]
+ },
+ "refried-bean-tostadas-with-oregano-garlic": {
+  "cuisine": "Mexican",
+  "steps": [
+   {
+    "title": "Toast tortillas",
+    "text": "Preheat the oven to 350°. Brush the tortilla halves with bacon drippings, season with salt, place on a baking sheet, and bake until crisp, 10 minutes. Cool."
+   },
+   {
+    "title": "Warm and mash beans",
+    "text": "Sauté the beans, oregano, and garlic in 2 tsp. bacon drippings in a saucepan over medium-high until heated through, 1–2 minutes. Add the salsa and mash until smooth."
+   },
+   {
+    "title": "Assemble and broil",
+    "text": "Spread the bean mixture on the tostadas and top with cheese. Preheat the broiler to high with the rack 3–4 inches from the element. Broil until the cheese melts, 2 minutes."
+   }
+  ]
+ },
+ "vinegar-shrimp-ramen-noodles": {
+  "cuisine": "Vietnamese",
+  "steps": [
+   {
+    "title": "Marinate shrimp",
+    "text": "Whisk together the vinegar, soy sauce, brown sugar, and chili garlic sauce. Place the shrimp in a shallow dish, pour the marinade over, and let sit, flipping occasionally."
+   },
+   {
+    "title": "Cook noodles",
+    "text": "In a pot of salted boiling water, cook the ramen until just tender, 3 minutes. Drain thoroughly, rinse under cold water, and drain again."
+   },
+   {
+    "title": "Sear shrimp and vegetables",
+    "text": "Heat 2 tsp. oil in a sauté pan over medium-high. Remove the shrimp from the marinade, add to the pan, and cook until firm, 1–2 minutes per side; transfer to a plate. Add the remaining 2 tsp. oil to the pan, then add the mushrooms, scallion whites, shallots, and carrots and cook, stirring, until softened, 2 minutes. Stir in the ginger and garlic and cook until fragrant, 30 seconds."
+   },
+   {
+    "title": "Finish with noodles and herbs",
+    "text": "Deglaze the pan with the reserved marinade and cook 1 minute. Toss in the noodles, scallion greens, and cilantro. Serve the ramen with the shrimp."
+   }
+  ]
+ },
+ "roasted-salmon-with-herbed-olive-oil": {
+  "cuisine": "French",
+  "steps": [
+   {
+    "title": "Prepare and infuse oil",
+    "text": "While the oven preheats to 450°, whisk together the oil, fresh dill, chives, and parsley with the lemon zest and juice. Season this herb mixture well with salt and pepper. Line a baking sheet with parchment."
+   },
+   {
+    "title": "Roast salmon",
+    "text": "Pat the salmon dry and season with salt and pepper. Lay the fillets skin side down on the prepared baking sheet and roast until the flesh is opaque and firm, about 12 minutes."
+   },
+   {
+    "title": "Rest and finish with herbs",
+    "text": "Slide the cooked salmon onto a serving plate and pour the herbed oil over it. Tent loosely with foil and let it rest 5 minutes before serving."
+   }
+  ]
+ },
+ "noodle-bake": {
+  "title": "Port-Salut Noodle Bake",
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Cook noodles",
+    "text": "Preheat the oven to 325° and coat an 8-inch square baking dish with nonstick spray. Cook the noodles according to package directions, drain, and transfer to a bowl."
+   },
+   {
+    "title": "Mix noodles with cheese",
+    "text": "Stir 2 Tbsp. butter and the Port-Salut into the noodles and season with salt and pepper. Transfer to the prepared dish, cover with foil, and bake 30 minutes."
+   },
+   {
+    "title": "Make topping",
+    "text": "Combine the panko, Parmesan, rosemary, and remaining 2 Tbsp. butter. Sprinkle evenly over the noodles."
+   },
+   {
+    "title": "Broil until golden",
+    "text": "Heat the broiler to high with the rack 6 inches from the element. Broil until the topping is golden brown, about 2 minutes. Let stand 5 minutes before serving."
+   }
+  ]
+ },
+ "easy-egg-rolls": {
+  "cuisine": "Chinese",
+  "steps": [
+   {
+    "title": "Build the filling",
+    "text": "Brown the ground pork in a nonstick skillet over medium-high heat, breaking it up with a potato masher as it cooks. Once no pink remains, add the garlic and ginger and cook 1 minute. Stir in the coleslaw mix and scallions and cook until wilted, 2 minutes. Add the soy sauce and cook until the liquid reduces. Cool the mixture thoroughly before filling."
+   },
+   {
+    "title": "Fill and seal rolls",
+    "text": "Spoon 3 Tbsp. filling into the center of each egg roll wrap. Fold the corner up over the filling and fold in the sides. Brush the remaining corner with egg wash and seal."
+   },
+   {
+    "title": "Deep fry",
+    "text": "Pour 2–3 inches of oil into a pot and bring to 350°. Working in two batches so the oil stays hot, fry the egg rolls until the wrappers turn deep golden, 2–3 minutes per batch. Transfer to paper towels to drain."
+   }
+  ]
+ },
+ "pecorino-risotto": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Heat broth",
+    "text": "Simmer the broth in a saucepan over medium heat."
+   },
+   {
+    "title": "Sweat shallots",
+    "text": "In a large saucepan over medium, cook the shallots gently in butter until they begin to soften, 2 minutes."
+   },
+   {
+    "title": "Toast rice and add wine",
+    "text": "Add the rice and cook, stirring often, 1 minute. Add the wine and stir until completely absorbed, 1–2 minutes."
+   },
+   {
+    "title": "Finish risotto",
+    "text": "Ladle the hot broth into the rice in three parts, stirring often and waiting until each addition nearly disappears into the rice before pouring the next, about 25 minutes total."
+   },
+   {
+    "title": "Finish with cheese",
+    "text": "Stir in the grated Pecorino until it melts and season with salt and pepper. Garnish servings with shaved Pecorino and toasted walnuts."
+   }
+  ]
+ },
+ "breakfast-pizza": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Scramble eggs and ham",
+    "text": "Set up a two-zone grill, one side hot, one side cool. Whisk the eggs with milk and season with salt and pepper. In a nonstick skillet over medium, melt the butter, add the ham, and sauté 3–4 minutes. Pour in the eggs and let them set 1 minute, then push them from the edges toward the center with a spatula, making large curds. Remove from heat."
+   },
+   {
+    "title": "Build the pizza",
+    "text": "Spread the picante sauce over the crust and scatter the scrambled egg mixture on top, followed by the cheese. Set the pizza on the cool side of the grill, cover, and let the crust brown and the cheese melt, 5–7 minutes."
+   },
+   {
+    "title": "Make fresh pico",
+    "text": "While the pizza finishes, combine the bell pepper, tomato, and scallions in a small bowl."
+   },
+   {
+    "title": "Finish and cut",
+    "text": "Slide the cooked pizza onto a cutting board, top with the fresh pico de gallo, slice into 8 pieces, and serve right away."
+   }
+  ]
+ },
+ "spiced-oatmeal-chai-spiced-steel-cut-oatmeal": {
+  "title": "Chai-Spiced Steel-Cut Oatmeal",
+  "cuisine": "Indian",
+  "steps": [
+   {
+    "title": "Combine oats and spices",
+    "text": "Combine the water, half-and-half, oats, mashed banana, honey, salt, nutmeg, cardamom, cinnamon, pepper, cloves, and ginger in a 4-cup Pyrex measuring cup. Add the tea bag, pressing it into the liquid."
+   },
+   {
+    "title": "Slow cook overnight",
+    "text": "Nestle the measuring cup into a 6- to 8-qt. slow cooker and surround it with enough hot water to come halfway up. Cover everything and let the oats cook on low until they reach the tender stage, 7–8 hours. Pull out and discard the tea bag."
+   },
+   {
+    "title": "Finish and serve",
+    "text": "Stir in the vanilla and top servings with toasted almonds and sliced bananas."
+   }
+  ]
+ },
+ "quick-comfort-creamy-romesco-soup": {
+  "title": "Creamy Romesco Soup",
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Soften aromatics",
+    "text": "Melt butter and oil in a pot over medium-high. Add onion, garlic, paprika, and pepper flakes, cook until the onion softens, about 3 minutes."
+   },
+   {
+    "title": "Build the soup",
+    "text": "Deglaze the pot with sherry, let it nearly evaporate. Add broth, tomatoes, and roasted peppers. Bring to a boil, then drop the heat to medium-low and simmer half-covered for 15 minutes."
+   },
+   {
+    "title": "Blend and finish",
+    "text": "Purée until smooth using a hand blender or in batches with a standard blender. Stir in cream and season with salt, pepper, and vinegar. Top each serving with parsley and toasted almonds."
+   }
+  ]
+ },
+ "stewed-green-beans": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Render bacon",
+    "text": "Cook bacon in a saucepan until crisp, transfer to paper towels. Leave 2 Tbsp. drippings in the pan."
+   },
+   {
+    "title": "Brown onions",
+    "text": "Heat the drippings over medium-high. Add onions and cook until softened and browned, 3–5 minutes. Add garlic and cook until fragrant, 1 minute."
+   },
+   {
+    "title": "Simmer slowly",
+    "text": "Stir in green beans, tomatoes, water, and bacon. Season with salt and pepper, drop to medium-low. Cover and simmer 45 minutes, stirring occasionally, until the beans are very tender."
+   }
+  ]
+ },
+ "spiced-creamy-spinach-casserole": {
+  "cuisine": "Indian",
+  "steps": [
+   {
+    "title": "Prepare dish",
+    "text": "Heat oven to 375°. Coat a 2-qt baking dish with nonstick spray."
+   },
+   {
+    "title": "Sweat spices",
+    "text": "Melt butter in a sauté pan over medium-low. Add onion, ginger, garlic, jalapeño, cumin, coriander, turmeric, and fenugreek. Sweat until the onion is soft, about 5 minutes."
+   },
+   {
+    "title": "Make gravy",
+    "text": "Dust with flour and stir to coat everything, cook 1 minute. Whisk in milk and cook 5–8 minutes, stirring, until the gravy thickens slightly."
+   },
+   {
+    "title": "Build casserole",
+    "text": "Fold in naan, cheese, and spinach, coating them with gravy. Season with salt and pepper. Pour into the prepared dish."
+   },
+   {
+    "title": "Bake",
+    "text": "Bake 15–20 minutes until hot and bubbling at the edges. Serve with lime wedges."
+   }
+  ]
+ },
+ "potato-celery-root-mash": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Boil vegetables",
+    "text": "Boil potatoes and celery root in salted water until fork-tender, about 20 minutes. Drain, reserving ½ cup liquid."
+   },
+   {
+    "title": "Dry them out",
+    "text": "Return them to the pan over medium-low heat for 1 minute to evaporate excess moisture. Rice or mash until smooth."
+   },
+   {
+    "title": "Finish with dairy",
+    "text": "Stir in cream cheese and butter. Season with salt, pepper, and nutmeg. Work in reserved liquid a bit at a time until you have the texture you want. Garnish with celery leaves."
+   }
+  ]
+ },
+ "sweet-sour-cabbage": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Start the pan",
+    "text": "Melt butter in a large sauté pan over medium heat, getting it warm before you add the cabbage."
+   },
+   {
+    "title": "Braise long",
+    "text": "Add cabbage, water, sugar, vinegar, and salt, tossing to coat evenly. Cover, drop to medium-low, and simmer 30 minutes, stirring occasionally."
+   },
+   {
+    "title": "Finish with preserves",
+    "text": "Stir in preserves and simmer uncovered about 15 minutes until they melt and most of the liquid evaporates."
+   }
+  ]
+ },
+ "hash-brown-omelet": {
+  "title": "Hash Brown Omelet",
+  "cuisine": "French",
+  "steps": [
+   {
+    "title": "Prepare fillings",
+    "text": "Cook asparagus in boiling salted water until just crisp-tender, 3 minutes. Cool in cold water. Whip the Brie with cream until fluffy, fold in chives and season with salt and pepper."
+   },
+   {
+    "title": "Start potatoes",
+    "text": "Heat oil in a skillet over medium-high. When it shimmers, add butter and swirl for about 30 seconds until foaming to keep it from burning."
+   },
+   {
+    "title": "First side",
+    "text": "Add potatoes and press into a disk with a spatula. Cook without stirring until golden on the edges, 7–8 minutes."
+   },
+   {
+    "title": "Flip and finish",
+    "text": "Slide the hash onto a plate, cover with another plate, invert so the golden side is up. Slide back into the skillet and cook 5–6 minutes more until golden brown all over."
+   },
+   {
+    "title": "Fill and fold",
+    "text": "Lay asparagus on half the hash, top with Brie mixture. Fold in half and let sit 1 minute for the cheese to melt and warm the asparagus. Plate and top with extra whipped Brie."
+   }
+  ]
+ },
+ "lobster-stuffed-ny-strip-steaks": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Build filling",
+    "text": "Cook bacon in a sauté pan until crisp, then transfer to paper towels to drain. Leave 2 Tbsp. of fat in the pan. Pulse scallions and mushrooms in a food processor into fine pieces."
+   },
+   {
+    "title": "Cook mushrooms",
+    "text": "In the same pan over medium-high, cook the mushroom-scallion mix until the mushrooms release and evaporate their liquid, about 3–4 minutes."
+   },
+   {
+    "title": "Finish filling",
+    "text": "Deglaze the pan with sherry, scraping up brown bits, cook until the sherry evaporates. Off heat, fold in lobster, crackers, and parsley. Season with salt and pepper."
+   },
+   {
+    "title": "Prepare steaks",
+    "text": "Heat grill to medium-high and brush the grate with oil. Trim excess fat from each steak to ⅛-inch. Cut a horizontal pocket into each, starting about 1-inch from one end, extending nearly to the other end."
+   },
+   {
+    "title": "Stuff and season",
+    "text": "Stuff each pocket with about ¼ cup filling, press closed firmly. Season both sides generously with salt and pepper."
+   },
+   {
+    "title": "Grill",
+    "text": "Grill the stuffed steaks covered, 3–4 minutes per side, to medium-rare. Tent loosely with foil and let them rest 5 minutes."
+   }
+  ]
+ },
+ "shrimp-spring-rolls": {
+  "cuisine": "Thai",
+  "steps": [
+   {
+    "title": "Make sauce",
+    "text": "Heat water and 2 Tbsp. sugar in a saucepan over medium until the sugar dissolves. Off heat, add fish sauce, lime juice, shredded carrot, and chili garlic sauce. Chill until ready to serve."
+   },
+   {
+    "title": "Prepare filling",
+    "text": "Mix vinegar, 2 Tbsp. sugar, and salt. Toss ¼ cup of this mixture with noodles. Toss coleslaw and julienned carrots with the remaining ¾ cup. Drain the noodles."
+   },
+   {
+    "title": "Cook shrimp",
+    "text": "Sauté shrimp in oil over medium-high heat until pink and opaque, 2–3 minutes. Set 24 halves aside for garnish, chop the rest."
+   },
+   {
+    "title": "Wrap and roll",
+    "text": "Soak a wrapper in hot water until it gives, about 30 seconds. Pat it dry on a towel. Set 2 Tbsp noodles, ¼ cup coleslaw mix, 2 Tbsp chopped shrimp, and 1 Tbsp scallions on the bottom third. Roll it up halfway, then arrange 3 mint leaves and 3 reserved shrimp halves across the top. Tuck in the sides and continue rolling to seal. Do the same with the rest. Cover with plastic wrap until ready to eat."
+   }
+  ]
+ },
+ "chicken-miso-soup-with-ramen-noodles": {
+  "cuisine": "Japanese",
+  "steps": [
+   {
+    "title": "Toast aromatics",
+    "text": "Heat oil in a large saucepan over medium-high. Add scallion whites, ginger, and garlic, cook until they begin to brown, about 3 minutes."
+   },
+   {
+    "title": "Simmer broth",
+    "text": "Add broth and simmer 10 minutes. Whisk miso into 1 cup warm broth in a bowl until dissolved, then stir it back into the pot. Drop to medium-low and keep at a gentle simmer."
+   },
+   {
+    "title": "Finish soup",
+    "text": "Add chicken, bamboo shoots, corn, carrot, and noodles. Cook 3–5 minutes until the noodles are tender and everything is hot. Off heat, fold in spinach and serve garnished with scallion greens."
+   }
+  ]
+ },
+ "waffle-hash-browns": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Heat iron",
+    "text": "Heat the waffle iron to medium-high following the maker's instructions."
+   },
+   {
+    "title": "Mix potato batter",
+    "text": "Toss potatoes with scallions, garlic, flour, salt, pepper, and paprika. Stir in egg white and oil, let sit 5 minutes to soak."
+   },
+   {
+    "title": "Cook hash browns",
+    "text": "Spray the iron, spread potato mix to the edges on the bottom, press the top down firmly. Cook about 15 minutes until golden and crisp (ignore automatic alerts). Lift out carefully."
+   }
+  ]
+ },
+ "strip-steak-with-pink-peppercorns-thyme-with-red-wine-sauce": {
+  "title": "Strip Steak with Pink Peppercorns & Thyme",
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Heat oven",
+    "text": "Preheat oven to 425°."
+   },
+   {
+    "title": "Crust the steak",
+    "text": "Crush peppercorns in a bag using a rolling pin. Mix with minced thyme and salt. Brush steak with oil on both sides, press firmly into the peppercorn mix to coat."
+   },
+   {
+    "title": "Sear and roast",
+    "text": "Heat 2 tsp. oil in an ovenproof skillet over medium-high until it shimmers. Sear steak 2½ minutes per side, then transfer the pan to the oven. Roast to 130°F for medium-rare, about 8–10 minutes depending on thickness."
+   },
+   {
+    "title": "Make sauce",
+    "text": "Sauté shallots in the pan drippings over medium heat until soft, 2 minutes. Deglaze with wine, scraping brown bits. Add a thyme sprig and bay leaf, bring to medium-high, and reduce by half, about 4–5 minutes."
+   },
+   {
+    "title": "Finish sauce",
+    "text": "Whisk in demi-glace and boil 1 minute until the sauce thickens. Off heat, whisk in butter, season with salt and pepper."
+   },
+   {
+    "title": "Plate",
+    "text": "Slice the steak across the grain and plate it. Spoon the sauce over top."
+   }
+  ]
+ },
+ "pork-au-poivre": {
+  "cuisine": "French",
+  "steps": [
+   {
+    "title": "Prepare pork",
+    "text": "Heat oven to 375°. Coat pork chops on both sides with crushed peppercorns."
+   },
+   {
+    "title": "Sear and roast",
+    "text": "Heat oil in an ovenproof skillet over medium-high until it shimmers. Sear the pork 2 minutes per side until browned, then transfer the pan to the oven. Roast until a thermometer reads 145°F for medium, about 12–15 minutes."
+   },
+   {
+    "title": "Build sauce",
+    "text": "Deglaze the pan with brandy, scraping brown bits, and cook over medium-high until it nearly evaporates, about 2 minutes."
+   },
+   {
+    "title": "Reduce and mount",
+    "text": "Add broth, vinegar, and thyme, reduce over medium-high for 4 minutes more. Off heat, mount with butter one cube at a time, whisking until each piece emulsifies before adding the next."
+   },
+   {
+    "title": "Serve",
+    "text": "Plate the pork and spoon sauce over it."
+   }
+  ]
+ },
+ "wild-rice-pilaf": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Toast the rice",
+    "text": "Heat oil in a saucepan over medium-high. Cook onion, carrot, and garlic until soft, about 3 minutes. Add the rice blend and stir it constantly until lightly toasted, 1 minute."
+   },
+   {
+    "title": "Cook with wine and broth",
+    "text": "Pour in the wine and let it reduce to nearly nothing, stirring. Add the broth and bring to a boil, then cover and drop the heat to low. Cook until the rice is tender, 25–30 minutes."
+   },
+   {
+    "title": "Finish with nuts and herbs",
+    "text": "Stir in the almonds, lemon juice, and thyme. Taste and season with salt and pepper."
+   }
+  ]
+ },
+ "light-italian-mac-n-cheese-with-four-cheeses": {
+  "title": "Four-Cheese Mac 'n Cheese",
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Cook the pasta",
+    "text": "Get a pot of salted water boiling. Cook the penne according to package directions until al dente, then drain."
+   },
+   {
+    "title": "Purée the cottage cheese base",
+    "text": "Blend the cottage cheese, onion, garlic, Dijon, salt, nutmeg, and cayenne in a food processor until completely smooth."
+   },
+   {
+    "title": "Make the milk sauce",
+    "text": "Heat the milk in a large saucepan over medium until steaming. Whisk the flour in slowly — do it gradually to avoid lumps — and stir often until it thickens, 8–10 minutes. Add the cottage cheese mixture and whisk until smooth."
+   },
+   {
+    "title": "Melt in the cheeses",
+    "text": "Mix the fontina, Parmesan, and mozzarella together. Add them to the milk by the handful, whisking between each addition until melted. Stir in the drained penne until well coated."
+   },
+   {
+    "title": "Garnish and serve",
+    "text": "Divide among serving dishes and top each portion with quartered tomatoes and fresh basil."
+   }
+  ]
+ },
+ "swiss-eibrot": {
+  "cuisine": "Swiss",
+  "steps": [
+   {
+    "title": "Soak the first batch",
+    "text": "Whisk eggs, milk, vanilla, and cinnamon together. Toss in half the bread cubes and let them soak until thoroughly wet, about 5 minutes."
+   },
+   {
+    "title": "Fry and sugar the first batch",
+    "text": "Heat half the oil in a large nonstick skillet over medium-high and fry the soaked bread in a single layer, stirring now and then, until golden, about 8 minutes. Add half the butter and stir until it coats everything. Sprinkle half the sugar over the bread, toss it until the sugar melts into syrup, then move it to a serving platter."
+   },
+   {
+    "title": "Soak and fry the second batch",
+    "text": "While the first batch cooks, soak the remaining bread in the remaining egg mixture. Fry it the same way with the remaining oil, butter, and sugar, then add to the platter and serve."
+   }
+  ]
+ },
+ "new-england-clam-chowder": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Build the roux base",
+    "text": "Melt the butter in a pot over high. Cook the onions and 1 tablespoon marjoram until soft, 3–5 minutes. Stir in the flour and cook 2–3 minutes more."
+   },
+   {
+    "title": "Add the liquids",
+    "text": "Whisk in the half-and-half and clam juice together."
+   },
+   {
+    "title": "Cook the potatoes",
+    "text": "Add the diced potatoes and bring to a boil. Lower the heat to medium-low and simmer until the potatoes are fork-tender, about 20 minutes."
+   },
+   {
+    "title": "Finish with clams and herbs",
+    "text": "Stir in the clams and the remaining tablespoon of marjoram until heated through. Season with salt and pepper. Serve with oyster crackers, Tabasco, and lemon."
+   }
+  ]
+ },
+ "korean-bulgogi-tacos": {
+  "cuisine": "Korean",
+  "steps": [
+   {
+    "title": "Make the marinade",
+    "text": "Blend the pear nectar, soy sauce, brown sugar, scallions, sherry, rice vinegar, sesame oil, garlic, and ginger until smooth. Pour into a resealable bag."
+   },
+   {
+    "title": "Marinate the steak",
+    "text": "Add the sliced flank steak to the bag and refrigerate for 6 hours or overnight. Remove it from the marinade, pat it dry, and discard the liquid."
+   },
+   {
+    "title": "Char the meat",
+    "text": "Heat a double-burner grill pan to high and brush it with oil. Grill the steak in batches, charring it hard, 1 minute per side, until cooked through."
+   },
+   {
+    "title": "Assemble the tacos",
+    "text": "Sprinkle the meat with sesame seeds and serve on warm flour tortillas with Korean chili paste and any pickled sides you like."
+   }
+  ]
+ },
+ "rye-bread": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Proof the yeast",
+    "text": "Mix the warm water with the brown sugar and yeast; let it sit until foamy, 5 minutes. Stir in the oil."
+   },
+   {
+    "title": "Mix the dough",
+    "text": "Measure out the bread flour, rye flour, potato flakes, caraway seeds, salt, and onion powder into the bowl of your stand mixer. Attach the dough hook. Pour the foamy yeast mixture into the dry ingredients and start mixing on low — it takes 2 minutes for the flour to disappear and the streaks to vanish. Switch to medium speed and let the mixer work the dough smooth and elastic, 10 minutes total. It should be sticky; if it seems impossible to manage, add 1–2 tablespoons more bread flour and let the hook knead it in."
+   },
+   {
+    "title": "First rise",
+    "text": "Oil a bowl and put the dough in it. Cover with plastic wrap and set it in a warm spot to rise until doubled, 1 hour."
+   },
+   {
+    "title": "Shape and second rise",
+    "text": "Dust a work surface with flour, turn the dough out, and shape it into an 8-inch loaf. Place it in an 8½×4½-inch loaf pan coated with nonstick spray. Cover the pan with plastic coated with nonstick spray and let it rise until it climbs above the rim, 1–2 hours."
+   },
+   {
+    "title": "Bake",
+    "text": "Preheat to 350° with the rack at the very bottom. Bake the loaf until golden and a thermometer in the center reads 190°, 30–35 minutes. Cool in the pan for 5 minutes, then turn it out onto a rack to cool all the way through."
+   }
+  ]
+ },
+ "lemon-orzo-with-green-beans": {
+  "cuisine": "Greek",
+  "steps": [
+   {
+    "title": "Cook the pasta and beans",
+    "text": "Boil the orzo in salted water according to package directions. In the last 3–4 minutes, add the green beans. Drain both together."
+   },
+   {
+    "title": "Dress with Parmesan and lemon",
+    "text": "Transfer to a bowl and toss with the Parmesan, lemon zest, and lemon juice."
+   },
+   {
+    "title": "Season",
+    "text": "Taste and season with salt and pepper."
+   }
+  ]
+ },
+ "rice-and-greens": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Boil the broth",
+    "text": "Bring the broth to a boil in a 4-quart saucepan."
+   },
+   {
+    "title": "Add rice and butter",
+    "text": "Stir in the rice, butter, and salt."
+   },
+   {
+    "title": "Wilt in the greens",
+    "text": "Add the chopped collards a handful at a time, stirring between additions until all the greens have gone in. Bring to a boil, then cover, lower the heat to a simmer, and cook until the rice is tender, 15–20 minutes. Season with salt and pepper before serving."
+   }
+  ]
+ },
+ "pizza-nachos-with-pesto-pepperoni": {
+  "cuisine": "Italian",
+  "steps": [
+   {
+    "title": "Heat the oil",
+    "text": "Bring the peanut or vegetable oil to 375° in a 7- to 8-quart pot, checked with a candy thermometer."
+   },
+   {
+    "title": "Make the creamy pesto",
+    "text": "Heat the olive oil and butter in a saucepan over medium. Cook the garlic for 1–2 minutes, then stir in the flour and cook 1 minute more. Whisk in the milk and simmer until thickened, 3 minutes. Whisk in the pesto and season with salt and pepper."
+   },
+   {
+    "title": "Cook the pepperoni and mushrooms",
+    "text": "Brown the pepperoni slices in a skillet over medium-high heat until crisp, 5–7 minutes, then transfer to a paper-towel-lined plate. Cook the mushroom slices in the drippings until they release their water and brown, 8–10 minutes. Preheat the broiler with the rack 6–8 inches from the element."
+   },
+   {
+    "title": "Cut and fry the dough",
+    "text": "On a lightly floured surface, roll the pizza dough to ⅛-inch thick and cut it into 2-inch squares. Working in 6 batches, fry the squares until golden brown, 1½ minutes per batch. Use a slotted spoon to fish them out and toss with salt, then spread on a clean baking sheet."
+   },
+   {
+    "title": "Assemble and broil",
+    "text": "Top each chip with the creamy pesto, pepperoni, mushrooms, bell pepper, onion, and cheeses. Broil until the cheese is melted and bubbly, about 2 minutes, and serve right away with warm pizza sauce."
+   }
+  ]
+ },
+ "mushroom-wellingtons-with-walnuts-and-roquefort-cheese": {
+  "cuisine": "British",
+  "steps": [
+   {
+    "title": "Prep and roast the mushrooms",
+    "text": "Move an oven rack to the middle and set the temperature to 425°. Put parchment on a baking sheet. On each portobello gill, spread 1 teaspoon of Dijon, scatter ½ teaspoon of thyme, then season with salt and pepper. Roast them until the tops brown slightly, 20 minutes."
+   },
+   {
+    "title": "Make the duxelles",
+    "text": "Sauté the leeks, shallots, and garlic in oil over medium-high heat until soft, 4–5 minutes. Add the button and shiitake mushrooms and cook until the liquid has evaporated and everything is tender, about 7 minutes. Stir in the walnuts, chives, 1 teaspoon Dijon, and 1 teaspoon thyme. Season with salt and pepper."
+   },
+   {
+    "title": "Assemble the Wellingtons",
+    "text": "Cut two 5-inch rounds from the puff pastry. On a floured surface, roll each one to 10 inches wide. Take a roasted portobello and top it with 1 teaspoon Roquefort, then divide the duxelles and heap it over the cheese. Place the mushroom in the center of one pastry round, gather the edges up around it, and fold them inward, leaving a small opening at the very top. Repeat with the second mushroom. Give each pastry parcel a brush of egg wash and slide both onto the baking sheet."
+   },
+   {
+    "title": "Bake until golden",
+    "text": "Bake until the pastry is golden and puffed, 20–22 minutes."
+   }
+  ]
+ },
+ "mini-grasshopper-pies": {
+  "cuisine": "American",
+  "steps": [
+   {
+    "title": "Make the crusts",
+    "text": "Heat the oven to 350° and fit mini muffin pans with paper liners. Crush the cookies in a food processor until they have broken into small pieces that just start to hold together when squeezed. Add the melted butter and pulse a few times until the mixture resembles wet sand and will hold its shape when pressed. Divide the crumb mixture among the liners — about 2 teaspoons per cup — and push it firmly into the bottom and up the sides. Bake 5 minutes, then take the pans out to cool."
+   },
+   {
+    "title": "Steep the tea",
+    "text": "Set a metal bowl over a saucepan with 1 inch of water for a double boiler. Steep the tea bags in ½ cup heavy cream over medium-low heat for 15 minutes, then squeeze out the cream from the bags and discard them."
+   },
+   {
+    "title": "Whip the cream",
+    "text": "Beat the remaining ½ cup heavy cream to stiff peaks, cover, and refrigerate."
+   },
+   {
+    "title": "Bloom the gelatin",
+    "text": "Sprinkle the gelatin over the crème de menthe in a small bowl and let it sit for 5 minutes."
+   },
+   {
+    "title": "Temper the yolks",
+    "text": "Whisk the egg yolks and sugar together in a separate bowl. Prepare an ice water bath. Add the gelatin mixture to the steeped cream in the double boiler and whisk to combine. When it steams, slowly whisk it into the yolk mixture to temper it. Return the yolk-cream mixture to the double boiler and cook, whisking occasionally, until an instant-read thermometer reads 150°, 1–2 minutes."
+   },
+   {
+    "title": "Cool to pudding",
+    "text": "Transfer the bowl to the ice water bath and whisk constantly until cool and the consistency of thin pudding, about 1 minute — whisk it often so it cools evenly and stays smooth."
+   },
+   {
+    "title": "Fill and chill",
+    "text": "Have your piping bag with the small star tip at the ready. Into a large bowl, transfer the cooled mint custard. Working in thirds, sweep the chilled whipped cream down from the top of the bowl and fold it into the custard, turning the bowl as you go, until no white streaks remain. Pipe the combined filling into each crust, filling it all the way to the rim. Cover with plastic wrap and set in the refrigerator for at least 1 hour before serving, or make them the night before."
+   },
+   {
+    "title": "Garnish and serve",
+    "text": "Top with chocolate shavings before serving."
    }
   ]
  }
