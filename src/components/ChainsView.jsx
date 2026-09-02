@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,36 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prevProps, nextProps) => {
+  // If anything other than selectedMealId changed, re-render
+  if (
+    prevProps.chain !== nextProps.chain ||
+    prevProps.index !== nextProps.index ||
+    prevProps.getRecipe !== nextProps.getRecipe ||
+    prevProps.onSelectDay !== nextProps.onSelectDay ||
+    prevProps.isCooked !== nextProps.isCooked
+  ) {
+    return false;
+  }
+
+  if (prevProps.selectedMealId === nextProps.selectedMealId) {
+    return true;
+  }
+
+  // If only selectedMealId changed, we only care if this chain is involved
+  // A chain is involved if either the previous selection or the new selection belongs to it
+  const chainMeals = prevProps.chain.days.map(d => mealId(prevProps.chain.id, d.day));
+  const wasSelected = chainMeals.includes(prevProps.selectedMealId);
+  const isSelected = chainMeals.includes(nextProps.selectedMealId);
+
+  // Re-render if the chain is losing the selection, gaining the selection, or changing selection within the chain.
+  if (wasSelected || isSelected) {
+    return false; // Re-render
+  }
+
+  // If neither the old nor the new selection is in this chain, no need to re-render.
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
