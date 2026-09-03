@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,23 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  if (prev.chain !== next.chain) return false;
+  if (prev.index !== next.index) return false;
+  if (prev.getRecipe !== next.getRecipe) return false;
+  if (prev.onSelectDay !== next.onSelectDay) return false;
+  if (prev.isCooked !== next.isCooked) return false;
+
+  // selectedMealId only affects the Spread if the old or new selection falls within this specific chain.
+  // The prefix of mealId is always `{chain.id}-` (e.g. `ca-d1`)
+  if (prev.selectedMealId !== next.selectedMealId) {
+    const prevRelevant = prev.selectedMealId ? prev.selectedMealId.startsWith(next.chain.id + "-") : false;
+    const nextRelevant = next.selectedMealId ? next.selectedMealId.startsWith(next.chain.id + "-") : false;
+    if (prevRelevant || nextRelevant) return false;
+  }
+
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
