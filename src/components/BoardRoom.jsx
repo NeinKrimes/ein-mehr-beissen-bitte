@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, EASE, label, mono, display, parch, rgba } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -27,7 +27,17 @@ const FILTERS = [
 export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("all");
-  const shown = PLATES.filter((p) => FILTERS.find((f) => f.key === filter).test(p.meal));
+
+  // ⚡ Bolt: Memoize plate filtering in BoardRoom
+  // 💡 What: Extract the active filter finding and apply useMemo to the list filtering.
+  // 🎯 Why: Previously, filtering plates happened on every render. Finding the active filter was an O(M) operation
+  //    executed inside the O(N) filter loop, making it O(N*M). The list also didn't need recalculating if `filter`
+  //    didn't change.
+  // 📊 Impact: Turns O(N*M) redundant calculation on every render into an O(N+M) calculation only when `filter` changes.
+  const shown = useMemo(() => {
+    const activeFilter = FILTERS.find((f) => f.key === filter);
+    return PLATES.filter((p) => activeFilter.test(p.meal));
+  }, [filter]);
 
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px 24px" : "30px 40px 24px", background: COLORS.page, overflowY: "auto" }}>
