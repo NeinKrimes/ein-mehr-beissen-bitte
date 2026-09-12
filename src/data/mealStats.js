@@ -100,9 +100,17 @@ export const LENSES = {
   time:     { label: "Time",     unit: "min",   key: "time", color: COLORS.steel,   high: false, ...bounds("time") },
 };
 
-export const mealByDay = (day) => MEALS.find((m) => m.day === day);
-export const mealsByChain = (chainId) => MEALS.filter((m) => m.chainId === chainId);
-export const mealById = (id) => MEALS.find((m) => m.mealId === id);
+const _mealByDay = new Map(MEALS.map((m) => [m.day, m]));
+const _mealsByChain = new Map();
+for (const m of MEALS) {
+  if (!_mealsByChain.has(m.chainId)) _mealsByChain.set(m.chainId, []);
+  _mealsByChain.get(m.chainId).push(m);
+}
+const _mealById = new Map(MEALS.map((m) => [m.mealId, m]));
+
+export const mealByDay = (day) => _mealByDay.get(day);
+export const mealsByChain = (chainId) => _mealsByChain.get(chainId) || [];
+export const mealById = (id) => _mealById.get(id);
 
 // Cuisine-swap pilot alternates — deliberately kept OUT of MEALS so Board/
 // Calendar/Kitchen/Web (which all iterate MEALS by day) are unaffected;
@@ -126,5 +134,12 @@ export const VARIANT_MEALS = chains.flatMap((c) =>
   ),
 );
 
-export const variantsForDay = (day) => VARIANT_MEALS.filter((m) => m.day === day);
-export const variantMealById = (id) => VARIANT_MEALS.find((m) => m.mealId === id);
+const _variantsForDay = new Map();
+for (const m of VARIANT_MEALS) {
+  if (!_variantsForDay.has(m.day)) _variantsForDay.set(m.day, []);
+  _variantsForDay.get(m.day).push(m);
+}
+const _variantMealById = new Map(VARIANT_MEALS.map((m) => [m.mealId, m]));
+
+export const variantsForDay = (day) => _variantsForDay.get(day) || [];
+export const variantMealById = (id) => _variantMealById.get(id);
