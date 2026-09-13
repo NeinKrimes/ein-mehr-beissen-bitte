@@ -1,3 +1,4 @@
+import React from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = React.memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,21 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  // Only re-render if the selection change affects THIS specific chain's meals
+  const affectsThisChain = (id) => id && id.startsWith(`${prev.chain.id}-d`);
+
+  return (
+    prev.chain.id === next.chain.id &&
+    prev.index === next.index &&
+    prev.getRecipe === next.getRecipe &&
+    prev.onSelectDay === next.onSelectDay &&
+    prev.isCooked === next.isCooked &&
+    // Check if the selected meal change actually matters for this spread
+    (prev.selectedMealId === next.selectedMealId ||
+      (!affectsThisChain(prev.selectedMealId) && !affectsThisChain(next.selectedMealId)))
+  );
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
