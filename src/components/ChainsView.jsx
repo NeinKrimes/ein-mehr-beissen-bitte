@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,20 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  if (prev.chain !== next.chain) return false;
+  if (prev.index !== next.index) return false;
+  if (prev.getRecipe !== next.getRecipe) return false;
+  if (prev.onSelectDay !== next.onSelectDay) return false;
+  if (prev.isCooked !== next.isCooked) return false;
+  // Only re-render if the selection actually affects a meal in this chain
+  const hasSelectedMeal = next.chain.days.some(d => mealId(next.chain.id, d.day) === next.selectedMealId);
+  const hadSelectedMeal = prev.chain.days.some(d => mealId(prev.chain.id, d.day) === prev.selectedMealId);
+  if (hasSelectedMeal !== hadSelectedMeal) return false;
+  // If both have selected a meal in this chain, re-render if it's a different one
+  if (hasSelectedMeal && hadSelectedMeal && prev.selectedMealId !== next.selectedMealId) return false;
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
