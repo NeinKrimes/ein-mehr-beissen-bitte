@@ -100,9 +100,26 @@ export const LENSES = {
   time:     { label: "Time",     unit: "min",   key: "time", color: COLORS.steel,   high: false, ...bounds("time") },
 };
 
-export const mealByDay = (day) => MEALS.find((m) => m.day === day);
-export const mealsByChain = (chainId) => MEALS.filter((m) => m.chainId === chainId);
-export const mealById = (id) => MEALS.find((m) => m.mealId === id);
+// ⚡ Bolt Optimization: Pre-computed Map Lookups
+// What: Replaced O(N) array scans (find/filter) with O(1) Map lookups for frequently accessed static meal data.
+// Why: These lookup functions (mealByDay, mealsByChain, etc.) are called heavily during component rendering (e.g. RecipePage, ChainsView).
+// Impact: Reduces time complexity from O(N) to O(1) per lookup, significantly decreasing main thread blocking and CPU overhead during re-renders, especially on lower-end devices.
+const mealsByDayMap = new Map();
+const mealsByChainMap = new Map();
+const mealsByIdMap = new Map();
+
+for (const m of MEALS) {
+  mealsByDayMap.set(m.day, m);
+  mealsByIdMap.set(m.mealId, m);
+  if (!mealsByChainMap.has(m.chainId)) {
+    mealsByChainMap.set(m.chainId, []);
+  }
+  mealsByChainMap.get(m.chainId).push(m);
+}
+
+export const mealByDay = (day) => mealsByDayMap.get(day);
+export const mealsByChain = (chainId) => mealsByChainMap.get(chainId) || [];
+export const mealById = (id) => mealsByIdMap.get(id);
 
 // Cuisine-swap pilot alternates — deliberately kept OUT of MEALS so Board/
 // Calendar/Kitchen/Web (which all iterate MEALS by day) are unaffected;
@@ -126,5 +143,16 @@ export const VARIANT_MEALS = chains.flatMap((c) =>
   ),
 );
 
-export const variantsForDay = (day) => VARIANT_MEALS.filter((m) => m.day === day);
-export const variantMealById = (id) => VARIANT_MEALS.find((m) => m.mealId === id);
+const variantsByDayMap = new Map();
+const variantByIdMap = new Map();
+
+for (const m of VARIANT_MEALS) {
+  if (!variantsByDayMap.has(m.day)) {
+    variantsByDayMap.set(m.day, []);
+  }
+  variantsByDayMap.get(m.day).push(m);
+  variantByIdMap.set(m.mealId, m);
+}
+
+export const variantsForDay = (day) => variantsByDayMap.get(day) || [];
+export const variantMealById = (id) => variantByIdMap.get(id);
