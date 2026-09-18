@@ -1,3 +1,4 @@
+import React from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = React.memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,21 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prevProps, nextProps) => {
+  return (
+    prevProps.chain.id === nextProps.chain.id &&
+    prevProps.index === nextProps.index &&
+    prevProps.getRecipe === nextProps.getRecipe &&
+    prevProps.onSelectDay === nextProps.onSelectDay &&
+    prevProps.isCooked === nextProps.isCooked &&
+    // Check if the selection change actually affects this specific chain instance
+    // A chain is affected if either the old or new selection falls within its days
+    (prevProps.selectedMealId === nextProps.selectedMealId ||
+      (!prevProps.chain.days.some(d => mealId(prevProps.chain.id, d.day) === prevProps.selectedMealId) &&
+       !nextProps.chain.days.some(d => mealId(nextProps.chain.id, d.day) === nextProps.selectedMealId))
+    )
+  );
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
