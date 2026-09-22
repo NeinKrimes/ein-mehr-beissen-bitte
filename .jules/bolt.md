@@ -3,3 +3,6 @@
 ## 2026-08-02 - [Memoize list rendering in App Rooms]
 **Learning:** React re-renders components frequently during state updates or navigation. Large list rendering (e.g. 35 `MealCard` instances in `CalendarRoom`) or heavy mapping/filtering of data (e.g. `MEALS.filter` in `ChainsRoom` and `KitchenRoom`) causes unnecessary garbage collection and main thread blockages when parent components re-render without the underlying data actually changing.
 **Action:** Applied `React.memo` to complex stateless list items (`MealCard`, `ChainConnectors`) and `useMemo` for derived dataset computations in heavy view components to avoid O(N) redundant calculations on simple state changes. Next time, preemptively memoize expensive derivations based on global constants that are manipulated locally.
+## 2026-08-04 - [Memoize LeaderRow list rendering in LibraryRoom]
+**Learning:** Large list rendering (e.g. mapping `index` array inside `LibraryRoom`) causes unnecessary garbage collection and main thread blockages when parent component state updates trigger re-renders without the underlying row data changing.
+**Action:** Applied `React.memo` to `LeaderRow` in `LibraryRoom.jsx` to avoid O(N) redundant calculations on simple state changes. Next time, preemptively memoize expensive or frequently rendered child components in large lists.
