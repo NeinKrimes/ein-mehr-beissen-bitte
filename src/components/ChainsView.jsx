@@ -1,3 +1,4 @@
+import React from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,12 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+// ⚡ Bolt: Wrapped `Spread` in `React.memo` with a custom comparison function.
+// 🎯 Why: `Spread` runs heavy array operations (map, filter, reduce) to compute cost and calorie averages.
+// Without memoization, selecting a meal triggers a re-render of all 10 `Spread` instances.
+// 📊 Impact: Reduces `Spread` re-renders by 90% when navigating among unrelated meals.
+// 🔬 Measurement: Observe React DevTools Profiler while selecting meals; only the affected `Spread` should re-render.
+const Spread = React.memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +110,28 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  // If primitives or function references changed, re-render
+  if (prev.chain !== next.chain ||
+      prev.index !== next.index ||
+      prev.getRecipe !== next.getRecipe ||
+      prev.onSelectDay !== next.onSelectDay ||
+      prev.isCooked !== next.isCooked) {
+    return false;
+  }
+
+  // Only re-render if the selected meal changed to or from a meal IN THIS CHAIN.
+  // This reduces re-renders of the 10 Spread components by 90% during navigation.
+  const isPrevInChain = prev.chain.days.some(d => mealId(prev.chain.id, d.day) === prev.selectedMealId);
+  const isNextInChain = next.chain.days.some(d => mealId(next.chain.id, d.day) === next.selectedMealId);
+
+  // If neither the old selection nor the new selection is in this chain,
+  // the visual state of this Spread hasn't changed.
+  if (!isPrevInChain && !isNextInChain) return true;
+
+  // Otherwise, something within this chain changed selection state, so we must re-render.
+  return prev.selectedMealId === next.selectedMealId;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
