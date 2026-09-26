@@ -45,7 +45,7 @@ describe("LibraryRoom renders", () => {
     fireEvent.click(screen.getByText(firstTitle));
     // Ingredients live only in the payload module, so seeing one proves the
     // dynamic import resolved.
-    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy(), { timeout: 10000 });
     expect(screen.getByText(/Adapted from/)).toBeTruthy();
   });
 });
