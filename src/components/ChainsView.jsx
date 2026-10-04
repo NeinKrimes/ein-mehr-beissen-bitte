@@ -1,3 +1,4 @@
+import React from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = React.memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,19 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  // If generic props like functions change, re-render
+  if (prev.chain !== next.chain || prev.index !== next.index || prev.getRecipe !== next.getRecipe || prev.onSelectDay !== next.onSelectDay || prev.isCooked !== next.isCooked) {
+    return false;
+  }
+  // Otherwise, only re-render if the selectedMealId changed and it affects THIS chain
+  const prevWasHere = prev.chain.days.some(d => mealId(prev.chain.id, d.day) === prev.selectedMealId);
+  const nextIsHere = next.chain.days.some(d => mealId(next.chain.id, d.day) === next.selectedMealId);
+  if (prevWasHere || nextIsHere) {
+    return prev.selectedMealId === next.selectedMealId; // Return false if they differ, triggering re-render
+  }
+  return true; // Neither selected before nor now, skip re-render
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
