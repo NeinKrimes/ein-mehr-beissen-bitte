@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, memo } from "react";
 import { SOURCE_CUISINES, SOURCE_RECIPE_COUNT, loadSourceIndex, loadSourceRecipe } from "../data/sourceRecipes";
 import { COLORS, FONTS, EASE, label, mono, display, rgba, hairline, cuisineColor } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -47,8 +47,9 @@ function Dot({ cuisine, size = 7 }) {
   return <span aria-hidden="true" style={{ width: size, height: size, borderRadius: "50%", flex: `0 0 ${size}px`, background: cuisineColor(cuisine) }} />;
 }
 
+// ⚡ Bolt: Wrapped LeaderRow in React.memo() to prevent O(N) re-renders of the large recipe list during state changes
 // A contents-page row: number, cuisine dot, title, dotted rule, one number.
-function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
+const LeaderRow = memo(function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
   const color = cuisineColor(recipe.cuisine);
   return (
     <div
@@ -75,7 +76,7 @@ function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
       <span style={{ ...mono(12, COLORS.green), whiteSpace: "nowrap" }}>${(recipe.est_cost_usd ?? 0).toFixed(2)}</span>
     </div>
   );
-}
+});
 
 function Ingredients({ list }) {
   return (
