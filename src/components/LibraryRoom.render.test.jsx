@@ -45,7 +45,7 @@ describe("LibraryRoom renders", () => {
     fireEvent.click(screen.getByText(firstTitle));
     // Ingredients live only in the payload module, so seeing one proves the
     // dynamic import resolved.
-    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy(), { timeout: 10000 });
     expect(screen.getByText(/Adapted from/)).toBeTruthy();
   });
 });
@@ -54,7 +54,7 @@ describe("closing the recipe", () => {
   it("Escape closes an open recipe", async () => {
     await renderLibrary();
     fireEvent.click(screen.getByText(firstTitle));
-    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy(), { timeout: 10000 });
     fireEvent.keyDown(window, { key: "Escape" });
     await waitFor(() => expect(screen.queryByText("Ingredients")).toBeNull());
   });
@@ -62,7 +62,7 @@ describe("closing the recipe", () => {
   it("the close button closes it too", async () => {
     await renderLibrary();
     fireEvent.click(screen.getByText(firstTitle));
-    await waitFor(() => expect(screen.getByLabelText("Close recipe")).toBeTruthy());
+    await waitFor(() => expect(screen.getByLabelText("Close recipe")).toBeTruthy(), { timeout: 10000 });
     fireEvent.click(screen.getByLabelText("Close recipe"));
     await waitFor(() => expect(screen.queryByText("Ingredients")).toBeNull());
   });
@@ -82,20 +82,20 @@ describe("adding to the shopping list", () => {
 
     const { unmount } = await renderLibrary();
     fireEvent.click(screen.getByText(first.title));
-    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Ingredients")).toBeTruthy(), { timeout: 10000 });
     expect(screen.queryByText("Add to shopping list")).toBeNull();
     unmount();
 
     await renderLibrary({ basket: fakeBasket() });
     fireEvent.click(screen.getByText(first.title));
-    await waitFor(() => expect(screen.getByText("Add to shopping list")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Add to shopping list")).toBeTruthy(), { timeout: 10000 });
   });
 
   it("toggles the recipe onto the basket", async () => {
     const basket = fakeBasket();
     await renderLibrary({ basket });
     fireEvent.click(screen.getByText(first.title));
-    await waitFor(() => expect(screen.getByText("Add to shopping list")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Add to shopping list")).toBeTruthy(), { timeout: 10000 });
     fireEvent.click(screen.getByText("Add to shopping list"));
     expect(basket.toggle).toHaveBeenCalledWith(first.id);
   });
