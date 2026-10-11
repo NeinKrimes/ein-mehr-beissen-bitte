@@ -2,7 +2,7 @@
 // like items and summing amounts where units match, with an estimated total cost.
 // Reads from the preloaded recipe cache (getRecipe) — no network, no AI calls.
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { sendToRetailer } from "../lib/shoppingCart";
 import { COLORS, FONTS, hairline } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -100,8 +100,8 @@ function RetailerButton({ retailer, items }) {
 // The calendar weeks and the library basket are the same thing on screen, so
 // they share this rather than diverging as either one changes.
 function ListSection({ heading, note, recipes, emptyText, isMobile, children }) {
-  const items = aggregate(recipes);
-  const total = weekTotalCost(recipes);
+  const items = useMemo(() => aggregate(recipes), [recipes]);
+  const total = useMemo(() => weekTotalCost(recipes), [recipes]);
 
   return (
     <div style={{ marginBottom: "22px" }}>
