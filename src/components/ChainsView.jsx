@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,28 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prevProps, nextProps) => {
+  if (
+    prevProps.chain !== nextProps.chain ||
+    prevProps.index !== nextProps.index ||
+    prevProps.getRecipe !== nextProps.getRecipe ||
+    prevProps.onSelectDay !== nextProps.onSelectDay ||
+    prevProps.isCooked !== nextProps.isCooked
+  ) {
+    return false;
+  }
+
+  const prevWasInChain = prevProps.chain.days.some(d => mealId(prevProps.chain.id, d.day) === prevProps.selectedMealId);
+  const nextIsInChain = nextProps.chain.days.some(d => mealId(nextProps.chain.id, d.day) === nextProps.selectedMealId);
+
+  if (prevWasInChain || nextIsInChain) {
+    if (prevProps.selectedMealId !== nextProps.selectedMealId) {
+      return false;
+    }
+  }
+
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
