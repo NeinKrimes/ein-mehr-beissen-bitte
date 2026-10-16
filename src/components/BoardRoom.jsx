@@ -27,7 +27,8 @@ const FILTERS = [
 export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("all");
-  const shown = PLATES.filter((p) => FILTERS.find((f) => f.key === filter).test(p.meal));
+  const activeFilter = FILTERS.find((f) => f.key === filter);
+  const shown = PLATES.filter((p) => activeFilter.test(p.meal));
 
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px 24px" : "30px 40px 24px", background: COLORS.page, overflowY: "auto" }}>

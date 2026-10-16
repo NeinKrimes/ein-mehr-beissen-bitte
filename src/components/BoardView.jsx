@@ -30,14 +30,16 @@ const FILTERS = [
 export default function BoardView({ getRecipe, onSelectDay }) {
   const [saved, setSaved] = useState(readSaved);
   const [filter, setFilter] = useState("all");
-  const f = FILTERS.find((x) => x.key === filter);
 
-  const pins = useMemo(() => PINS.filter((p) => {
-    if (filter === "all") return true;
-    const rec = getRecipe(p.id);
-    const r = rec && !rec.loading && !rec.error ? rec : null;
-    return r && f.test(r);
-  }), [filter, getRecipe, f]);
+  const pins = useMemo(() => {
+    const f = FILTERS.find((x) => x.key === filter);
+    return PINS.filter((p) => {
+      if (filter === "all") return true;
+      const rec = getRecipe(p.id);
+      const r = rec && !rec.loading && !rec.error ? rec : null;
+      return r && f.test(r);
+    });
+  }, [filter, getRecipe]);
 
   function toggleSave(id, e) {
     e.stopPropagation();
