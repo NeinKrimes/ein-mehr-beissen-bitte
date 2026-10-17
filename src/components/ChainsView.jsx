@@ -1,3 +1,4 @@
+import React from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = React.memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,6 +105,35 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
+}, (prev, next) => {
+  if (prev.chain.id !== next.chain.id) return false;
+  if (prev.index !== next.index) return false;
+
+  if (prev.getRecipe !== next.getRecipe) return false;
+  if (prev.onSelectDay !== next.onSelectDay) return false;
+
+  const wasSelected = chainContainsMeal(prev.chain, prev.selectedMealId);
+  const isSelected = chainContainsMeal(next.chain, next.selectedMealId);
+  if (wasSelected !== isSelected) return false;
+
+  // Checking if the selected state changed *within* the currently active chain
+  if (isSelected && prev.selectedMealId !== next.selectedMealId) return false;
+
+  // The isCooked callback closure likely updates on every app state change.
+  // Instead of re-rendering everything, we check if any specific meal
+  // in this chain has flipped its cooked state.
+  const hasCookedStateChanged = prev.chain.days.some((d) => {
+    const id = mealId(prev.chain.id, d.day);
+    return prev.isCooked(id) !== next.isCooked(id);
+  });
+  if (hasCookedStateChanged) return false;
+
+  return true;
+});
+
+function chainContainsMeal(chain, mealIdStr) {
+  if (!mealIdStr) return false;
+  return chain.days.some((d) => mealId(chain.id, d.day) === mealIdStr);
 }
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
