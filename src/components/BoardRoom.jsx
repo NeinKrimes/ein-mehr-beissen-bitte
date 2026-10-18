@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { mealByDay } from "../data/mealStats";
 import { COLORS, FONTS, EASE, label, mono, display, parch, rgba } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -27,7 +27,13 @@ const FILTERS = [
 export default function BoardRoom({ saved, onToggleSave, onOpenRecipe }) {
   const isMobile = useIsMobile();
   const [filter, setFilter] = useState("all");
-  const shown = PLATES.filter((p) => FILTERS.find((f) => f.key === filter).test(p.meal));
+
+  // ⚡ Bolt: Memoized PLATES filtering.
+  // Impact: Prevents O(N) redundant iteration and array creation during every render.
+  // Reduces unnecessary allocations when parent state changes but filter remains the same.
+  const shown = useMemo(() =>
+    PLATES.filter((p) => FILTERS.find((f) => f.key === filter).test(p.meal)),
+  [filter]);
 
   return (
     <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px 24px" : "30px 40px 24px", background: COLORS.page, overflowY: "auto" }}>
