@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,35 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  // If base props changed, re-render
+  if (
+    prev.chain !== next.chain ||
+    prev.index !== next.index ||
+    prev.getRecipe !== next.getRecipe ||
+    prev.onSelectDay !== next.onSelectDay ||
+    prev.isCooked !== next.isCooked
+  ) {
+    return false;
+  }
+
+  // If selectedMealId didn't change, no need to re-render based on selection
+  if (prev.selectedMealId === next.selectedMealId) {
+    return true;
+  }
+
+  // Check if either the old or the new selection belongs to this chain.
+  // If it does, we must re-render to update the visual state.
+  const prevWasHere = prev.selectedMealId?.startsWith(`${prev.chain.id}-d`);
+  const nextIsHere = next.selectedMealId?.startsWith(`${next.chain.id}-d`);
+
+  if (prevWasHere || nextIsHere) {
+    return false; // re-render
+  }
+
+  // Neither selection affects this chain, skip re-render
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
