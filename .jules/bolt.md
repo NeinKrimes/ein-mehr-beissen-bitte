@@ -3,3 +3,6 @@
 ## 2026-08-02 - [Memoize list rendering in App Rooms]
 **Learning:** React re-renders components frequently during state updates or navigation. Large list rendering (e.g. 35 `MealCard` instances in `CalendarRoom`) or heavy mapping/filtering of data (e.g. `MEALS.filter` in `ChainsRoom` and `KitchenRoom`) causes unnecessary garbage collection and main thread blockages when parent components re-render without the underlying data actually changing.
 **Action:** Applied `React.memo` to complex stateless list items (`MealCard`, `ChainConnectors`) and `useMemo` for derived dataset computations in heavy view components to avoid O(N) redundant calculations on simple state changes. Next time, preemptively memoize expensive derivations based on global constants that are manipulated locally.
+## 2026-10-23 - [Optimize static array lookups to Map]
+**Learning:** Frequent array iterations (`Array.prototype.find()` and `.filter()`) on static datasets like `MEALS` inside rendering cycles cause O(N) redundant calculations per render per item. Converting these static arrays into `Map` lookups transforms O(N) operations into O(1), drastically improving rendering performance in large components.
+**Action:** Always precompute Maps for static array lookups when the dataset is queried frequently by unique identifiers or properties (e.g., id, day) during React rendering cycles.
