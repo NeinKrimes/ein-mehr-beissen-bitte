@@ -100,9 +100,20 @@ export const LENSES = {
   time:     { label: "Time",     unit: "min",   key: "time", color: COLORS.steel,   high: false, ...bounds("time") },
 };
 
-export const mealByDay = (day) => MEALS.find((m) => m.day === day);
-export const mealsByChain = (chainId) => MEALS.filter((m) => m.chainId === chainId);
-export const mealById = (id) => MEALS.find((m) => m.mealId === id);
+// ⚡ Bolt: Pre-computed Map lookups replace O(N) Array.prototype.find/filter calls
+// to improve performance during frequent renders of components like RecipePage.
+const mealByDayMap = new Map(MEALS.map((m) => [m.day, m]));
+export const mealByDay = (day) => mealByDayMap.get(day);
+
+const mealsByChainMap = new Map();
+MEALS.forEach((m) => {
+  if (!mealsByChainMap.has(m.chainId)) mealsByChainMap.set(m.chainId, []);
+  mealsByChainMap.get(m.chainId).push(m);
+});
+export const mealsByChain = (chainId) => mealsByChainMap.get(chainId) || [];
+
+const mealByIdMap = new Map(MEALS.map((m) => [m.mealId, m]));
+export const mealById = (id) => mealByIdMap.get(id);
 
 // Cuisine-swap pilot alternates — deliberately kept OUT of MEALS so Board/
 // Calendar/Kitchen/Web (which all iterate MEALS by day) are unaffected;
@@ -126,5 +137,13 @@ export const VARIANT_MEALS = chains.flatMap((c) =>
   ),
 );
 
-export const variantsForDay = (day) => VARIANT_MEALS.filter((m) => m.day === day);
-export const variantMealById = (id) => VARIANT_MEALS.find((m) => m.mealId === id);
+// ⚡ Bolt: Cached variant lookups avoid O(N) iterations on large arrays
+const variantsForDayMap = new Map();
+VARIANT_MEALS.forEach((m) => {
+  if (!variantsForDayMap.has(m.day)) variantsForDayMap.set(m.day, []);
+  variantsForDayMap.get(m.day).push(m);
+});
+export const variantsForDay = (day) => variantsForDayMap.get(day) || [];
+
+const variantMealByIdMap = new Map(VARIANT_MEALS.map((m) => [m.mealId, m]));
+export const variantMealById = (id) => variantMealByIdMap.get(id);
