@@ -101,7 +101,7 @@ describe("adding to the shopping list", () => {
   });
 
   it("marks rows already on the list, and links to it", async () => {
-    const basket = { ...fakeBasket(), count: 2, has: (id) => id === first.id };
+    const basket = { ...fakeBasket(), count: 2, ids: [first.id] };
     await renderLibrary({ basket, onOpenShopping: () => {} });
     expect(screen.getAllByText("On list")).toHaveLength(1);
     expect(screen.getByText("2 on the shopping list — open it")).toBeTruthy();
