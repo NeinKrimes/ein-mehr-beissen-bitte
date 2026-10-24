@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useCallback } from "react";
+import { useState, useMemo, useEffect, useCallback, memo } from "react";
 import { SOURCE_CUISINES, SOURCE_RECIPE_COUNT, loadSourceIndex, loadSourceRecipe } from "../data/sourceRecipes";
 import { COLORS, FONTS, EASE, label, mono, display, rgba, hairline, cuisineColor } from "../theme";
 import { useIsMobile } from "../hooks/useViewport";
@@ -48,7 +48,8 @@ function Dot({ cuisine, size = 7 }) {
 }
 
 // A contents-page row: number, cuisine dot, title, dotted rule, one number.
-function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
+// Bolt Optimization: Wrap row in React.memo to prevent O(N) redundant renders of the entire list when a single openId changes.
+const LeaderRow = memo(function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
   const color = cuisineColor(recipe.cuisine);
   return (
     <div
@@ -75,7 +76,7 @@ function LeaderRow({ recipe, n, selected, inBasket, onOpen, isMobile }) {
       <span style={{ ...mono(12, COLORS.green), whiteSpace: "nowrap" }}>${(recipe.est_cost_usd ?? 0).toFixed(2)}</span>
     </div>
   );
-}
+});
 
 function Ingredients({ list }) {
   return (
@@ -216,6 +217,8 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [openId]);
 
+    // Bolt Optimization: Pre-compute a Set for O(1) lookups inside the large mapping loop instead of calling Array.includes on every item.
+  const basketSet = useMemo(() => new Set(basket?.ids || []), [basket?.ids]);
   // Counts drive the filter chips, so an empty cuisine can't be selected.
   const counts = useMemo(() => {
     const m = new Map();
@@ -318,7 +321,7 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
                 </div>
               </div>
             ) : rows.map((r, i) => (
-              <LeaderRow key={r.id} recipe={r} n={i} selected={r.id === openId} inBasket={basket?.has(r.id)} onOpen={open} isMobile={isMobile} />
+              <LeaderRow key={r.id} recipe={r} n={i} selected={r.id === openId} inBasket={basketSet.has(r.id)} onOpen={open} isMobile={isMobile} />
             ))}
           </div>
 
@@ -326,7 +329,7 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
               Mobile: it takes the screen, because a rail at 375px is a joke. */}
           {openId && detail && !isMobile && (
             <aside style={{ background: COLORS.page, border: hairline, borderRadius: 3, position: "sticky", top: 0, maxHeight: "calc(100vh - 150px)", overflowY: "auto" }}>
-              <Detail state={detail} onClose={() => setOpenId(null)} isMobile={false} inBasket={basket?.has(openId)} onToggleBasket={basket?.toggle} />
+              <Detail state={detail} onClose={() => setOpenId(null)} isMobile={false} inBasket={basketSet.has(openId)} onToggleBasket={basket?.toggle} />
             </aside>
           )}
         </div>
@@ -334,7 +337,7 @@ export default function LibraryRoom({ basket, onOpenShopping }) {
 
       {openId && detail && isMobile && (
         <div role="dialog" aria-modal="true" style={{ position: "fixed", inset: 0, zIndex: 40, background: COLORS.page, overflowY: "auto" }}>
-          <Detail state={detail} onClose={() => setOpenId(null)} isMobile inBasket={basket?.has(openId)} onToggleBasket={basket?.toggle} />
+          <Detail state={detail} onClose={() => setOpenId(null)} isMobile inBasket={basketSet.has(openId)} onToggleBasket={basket?.toggle} />
         </div>
       )}
     </div>
