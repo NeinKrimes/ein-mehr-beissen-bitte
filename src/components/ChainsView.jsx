@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,33 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prevProps, nextProps) => {
+  // If the chain, index, or any callbacks changed (which shouldn't normally happen if stable), re-render.
+  if (prevProps.chain !== nextProps.chain ||
+      prevProps.index !== nextProps.index ||
+      prevProps.getRecipe !== nextProps.getRecipe ||
+      prevProps.onSelectDay !== nextProps.onSelectDay ||
+      prevProps.isCooked !== nextProps.isCooked) {
+    return false;
+  }
+
+  // Check if the selected meal ID changed, but ONLY re-render if it affects THIS specific chain.
+  // A chain is affected if the previous selected meal was in this chain OR the new selected meal is in this chain.
+  const chainMealIds = new Set(nextProps.chain.days.map(d => mealId(nextProps.chain.id, d.day)));
+  const wasSelected = chainMealIds.has(prevProps.selectedMealId);
+  const isSelected = chainMealIds.has(nextProps.selectedMealId);
+
+  // If the selection status of this chain changed, or if a meal inside this chain was selected and changed to another meal inside this chain
+  if (wasSelected || isSelected) {
+    // If the selected meal ID actually changed, we must re-render
+    if (prevProps.selectedMealId !== nextProps.selectedMealId) {
+       return false;
+    }
+  }
+
+  // Otherwise, skip re-render
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
