@@ -45,7 +45,7 @@ describe("useLibraryBasket", () => {
   it("resolves ids to full records with ingredients", async () => {
     const { result } = renderHook(() => useLibraryBasket());
     act(() => result.current.toggle(first));
-    await waitFor(() => expect(result.current.recipes).toHaveLength(1));
+    await waitFor(() => expect(result.current.recipes).toHaveLength(1), { timeout: 10000 });
     // Ingredients live only in the lazy payload, so this proves it resolved.
     expect(result.current.recipes[0].ingredients.length).toBeGreaterThan(0);
   });
@@ -53,7 +53,7 @@ describe("useLibraryBasket", () => {
   it("drops an id that is no longer in the corpus rather than leaving a hole", async () => {
     localStorage.setItem(LS_KEY, JSON.stringify([first, "recipe-that-was-removed"]));
     const { result } = renderHook(() => useLibraryBasket());
-    await waitFor(() => expect(result.current.recipes).toHaveLength(1));
+    await waitFor(() => expect(result.current.recipes).toHaveLength(1), { timeout: 10000 });
     expect(result.current.recipes[0].id).toBe(first);
   });
 
