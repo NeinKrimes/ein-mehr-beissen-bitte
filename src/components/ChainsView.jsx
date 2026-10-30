@@ -1,4 +1,5 @@
 import { T, cuisineColor } from "../theme";
+import { memo } from "react";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
 import { StatRail } from "./DataChip";
@@ -22,7 +23,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
 
       <div style={{ display: "flex", flexDirection: "column", gap: 64 }}>
         {chains.map((chain, i) => (
-          <Spread key={chain.id} chain={chain} index={i} getRecipe={getRecipe} onSelectDay={onSelectDay} isCooked={isCooked} selectedMealId={selectedMealId} />
+          <SpreadMemo key={chain.id} chain={chain} index={i} getRecipe={getRecipe} onSelectDay={onSelectDay} isCooked={isCooked} selectedMealId={selectedMealId} />
         ))}
       </div>
     </div>
@@ -105,6 +106,29 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
     </article>
   );
 }
+
+const SpreadMemo = memo(Spread, (prev, next) => {
+  if (prev.chain !== next.chain) return false;
+  if (prev.index !== next.index) return false;
+  if (prev.getRecipe !== next.getRecipe) return false;
+  if (prev.onSelectDay !== next.onSelectDay) return false;
+
+  const thisChainMeals = prev.chain.days.map((d) => mealId(prev.chain.id, d.day));
+
+  // If selectedMealId changed, only re-render if it entered or left THIS spread.
+  if (prev.selectedMealId !== next.selectedMealId) {
+    const prevInThis = prev.selectedMealId ? thisChainMeals.includes(prev.selectedMealId) : false;
+    const nextInThis = next.selectedMealId ? thisChainMeals.includes(next.selectedMealId) : false;
+    if (prevInThis || nextInThis) return false;
+  }
+
+  // If any meal in this chain changed its cooked status, re-render
+  for (const id of thisChainMeals) {
+    if (prev.isCooked(id) !== next.isCooked(id)) return false;
+  }
+
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
