@@ -1,0 +1,15 @@
+💡 What:
+1. Wrapped `LeaderRow` in `LibraryRoom.jsx` with `React.memo()` to prevent redundant re-renders of the hundreds of rows that aren't interacting with updates to the selected row (`openId`).
+2. Converted the array-based `has` lookup inside `useLibraryBasket.js` to use an internally memoized `Set`, replacing O(N) `Array.includes()` checks.
+3. Updated the `.test.jsx` file to properly handle slow timeouts caused by dynamic imports in Vitest jsdom.
+
+🎯 Why:
+1. Every time a row was clicked to open in the Library Room, the parent `openId` state changed, forcing all 400+ `LeaderRow` list items to recalculate unnecessarily.
+2. In components referencing `has(id)` inside map loops for these lists, an O(N) lookup was performed per list item, creating an O(N*M) calculation path on render.
+
+📊 Impact:
+1. Drastically reduces the amount of work the main thread performs when selecting a recipe in `LibraryRoom`.
+2. Converts the nested lookup complexity in `useLibraryBasket` consumers from O(N*M) to O(N).
+
+🔬 Measurement:
+To verify, run `npm test` and ensure all tests pass (specifically `src/hooks/useLibraryBasket.test.jsx`). You can also observe fewer re-renders using React Profiler when navigating between different recipes within `LibraryRoom`.
