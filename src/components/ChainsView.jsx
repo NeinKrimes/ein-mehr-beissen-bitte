@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,32 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prevProps, nextProps) => {
+  // If globally selected meal/cooked state changes, only re-render the chain
+  // that actually contains the selected/cooked meal.
+  const chainMeals = new Set(prevProps.chain.days.map(d => mealId(prevProps.chain.id, d.day)));
+
+  // Checking if the previously selected or newly selected meal belongs to this chain
+  const hadSelectedMeal = chainMeals.has(prevProps.selectedMealId);
+  const hasSelectedMeal = chainMeals.has(nextProps.selectedMealId);
+  if (hadSelectedMeal || hasSelectedMeal) return false;
+
+  // Check if cooked state has changed for any meal in this chain
+  for (const day of prevProps.chain.days) {
+    const mId = mealId(prevProps.chain.id, day.day);
+    if (prevProps.isCooked(mId) !== nextProps.isCooked(mId)) {
+      return false;
+    }
+    // Deep equality on recipes isn't strictly necessary for the global state changes,
+    // but if the recipe itself changed (loading -> loaded), we need to re-render.
+    if (prevProps.getRecipe(mId) !== nextProps.getRecipe(mId)) {
+        return false;
+    }
+  }
+
+  // Otherwise, if none of the above conditions apply, it's safe to skip re-render
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
