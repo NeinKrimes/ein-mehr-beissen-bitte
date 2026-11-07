@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo } from "react";
 import { loadSourceRecipe } from "../data/sourceRecipes";
 
 // Library recipes the user wants on the shopping list. The calendar half of
@@ -27,6 +27,10 @@ export function useLibraryBasket() {
   const [ids, setIds] = useState(read);
   const [recipes, setRecipes] = useState([]);
 
+  // Use a Set for O(1) lookups inside list mapping loops to prevent O(N*M)
+  // rendering bottlenecks.
+  const idsSet = useMemo(() => new Set(ids), [ids]);
+
   const toggle = useCallback((id) => {
     if (!id) return;
     setIds((prev) => {
@@ -46,7 +50,7 @@ export function useLibraryBasket() {
 
   const clear = useCallback(() => { setIds([]); write([]); }, []);
 
-  const has = useCallback((id) => ids.includes(id), [ids]);
+  const has = useCallback((id) => idsSet.has(id), [idsSet]);
 
   // Resolve ids to full records. An id that no longer exists in the corpus is
   // dropped rather than left as a hole in the list.
