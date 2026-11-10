@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { T, cuisineColor } from "../theme";
 import { chains, mealId } from "../data/chains";
 import { Eyebrow, Button, Plate } from "./Gloam";
@@ -29,7 +30,7 @@ export default function ChainsView({ getRecipe, onSelectDay, isCooked, selectedM
   );
 }
 
-function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
+const Spread = memo(function SpreadComponent({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId }) {
   const recs = chain.days.map((d) => ({ d, r: cleanRec(getRecipe(mealId(chain.id, d.day))) }));
   const anchorRec = recs[0]?.r;
   const costs = recs.map((x) => Number(x.r?.est_cost_usd)).filter(Number.isFinite);
@@ -104,7 +105,29 @@ function Spread({ chain, index, getRecipe, onSelectDay, isCooked, selectedMealId
       </div>
     </article>
   );
-}
+}, (prev, next) => {
+  // If anything other than selectedMealId changes, trigger standard shallow re-render.
+  if (
+    prev.chain !== next.chain ||
+    prev.index !== next.index ||
+    prev.getRecipe !== next.getRecipe ||
+    prev.onSelectDay !== next.onSelectDay ||
+    prev.isCooked !== next.isCooked
+  ) {
+    return false;
+  }
+
+  // If only selectedMealId changed, ONLY re-render the spreads that contain
+  // the old selected day OR the new selected day. All other spreads can be skipped.
+  if (prev.selectedMealId !== next.selectedMealId) {
+    const chainMeals = new Set(next.chain.days.map((d) => mealId(next.chain.id, d.day)));
+    const hasPrev = prev.selectedMealId && chainMeals.has(prev.selectedMealId);
+    const hasNext = next.selectedMealId && chainMeals.has(next.selectedMealId);
+    return !(hasPrev || hasNext); // True = skip render; False = render
+  }
+
+  return true;
+});
 
 const cleanRec = (e) => (e && !e.loading && !e.error ? e : null);
 function passiveShort(passive) {
